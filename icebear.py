@@ -232,6 +232,8 @@ if not os.path.exists(image_filepath):
 
     with open(image_filepath, "wb") as f:
         f.write(image_bytes)
+    
+    print(f"Image generated for {artworks[index]['title']} by {artworks[index]['artist']}")
 
 requests.post(
     f"{os.getenv('MAILGUN_DOMAIN')}",
@@ -244,3 +246,4 @@ requests.post(
         "text": f"Todays artwork is {artworks[index]['title']} by {artworks[index]['artist']}. Have a great bear day!",
     },
 )
+print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
