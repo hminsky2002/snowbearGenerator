@@ -232,8 +232,10 @@ if not os.path.exists(image_filepath):
 
     with open(image_filepath, "wb") as f:
         f.write(image_bytes)
-    
-    print(f"Image generated for {artworks[index]['title']} by {artworks[index]['artist']}")
+
+    print(
+        f"Image generated for {artworks[index]['title']} by {artworks[index]['artist']}"
+    )
 
 requests.post(
     f"{os.getenv('MAILGUN_DOMAIN')}",
@@ -242,6 +244,7 @@ requests.post(
     data={
         "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
         "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
+        "cc": f"{os.getenv('MAILGUN_CC_NAME')} <{os.getenv('MAILGUN_CC_EMAIL')}>",
         "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
         "text": f"Todays artwork is {artworks[index]['title']} by {artworks[index]['artist']}. Have a great bear day!",
     },
