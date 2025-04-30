@@ -21,7 +21,7 @@ The following environment variables are required:
 - MAILGUN_FROM
 - MAILGUN_TO
 - MAILGUN_TO_NAME
-
+- MAILGUN_CC_EMAILS (optional) - a comma separated list of email addresses to cc the email to
 # RUNNING LOCALLY
 
 to run the script locally, you can use the following command:

@@ -237,16 +237,21 @@ if not os.path.exists(image_filepath):
         f"Image generated for {artworks[index]['title']} by {artworks[index]['artist']}"
     )
 
+data = {
+    "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
+    "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
+    "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
+    "text": f"Todays artwork is {artworks[index]['title']} by {artworks[index]['artist']}. Have a great bear day!",
+}
+
+if os.getenv("MAILGUN_CC_EMAILS"):
+    cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
+    data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
+
 requests.post(
     f"{os.getenv('MAILGUN_DOMAIN')}",
     auth=("api", os.environ["MAILGUN_API_KEY"]),
     files=[("inline", open(image_filepath, "rb"))],
-    data={
-        "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
-        "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
-        "cc": f"{os.getenv('MAILGUN_CC_NAME')} <{os.getenv('MAILGUN_CC_EMAIL')}>",
-        "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
-        "text": f"Todays artwork is {artworks[index]['title']} by {artworks[index]['artist']}. Have a great bear day!",
-    },
+    data=data,
 )
 print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
