@@ -209,7 +209,7 @@ index = difference % len(artworks)
 
 prompt = f"""
 Generate an image inspired by the artwork {artworks[index]["title"]} by {artworks[index]['artist']} with a cartoon polar substituted for the people, or if there are no people
-in the original artwork, add that cartoon polar bear somewhere in the image. The polar bear cartoon character should be inspired by ice bear from the we bare bears cartoon. Make sure the polar bear blends in to the spirit and technique of the image, substituting it for persons, and if there are no persons, perhaps adding in an ice bear, making sure it is in the style of the original image.
+in the original artwork, add that cartoon polar bear somewhere in the image. The polar bear cartoon character should be inspired by ice bear from the we bare bears cartoon. Make sure the polar bear blends in to the spirit and technique of the image, substituting it for persons, and if there are no persons, perhaps adding in an ice bear, making sure it is in the style of the original image. Even if the image is abstract art, make ice bear blend in.
 
 """
 
