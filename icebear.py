@@ -4,6 +4,9 @@ import base64
 import random
 from datetime import datetime
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 artworks = [
     {"title": "I ❤️ NY", "artist": "Milton Glaser", "year": "1977"},
