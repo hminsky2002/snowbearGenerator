@@ -377,7 +377,6 @@ index = random.randint(0, len(artworks) - 1)
 
 artwork_choice = artworks[index]
 
-
 def create_prompt(artwork, bear_modifier=""):
     return f"""
 Generate an image which takes inspiration from the artwork "{artwork["title"]}" by {artwork["artist"]} {bear_modifier}.
@@ -423,7 +422,7 @@ if not os.path.exists(image_filepath):
             break
         try:
             print(f"Attempt {i+1} with prompt: {current_prompt}")
-            result = client.images.generate(model="dall-e-3", prompt=current_prompt, n=1, size="1024x1024", response_format="b64_json") # Corrected model name
+            result = client.images.generate(model="gpt-image-1", prompt=current_prompt)
             image_base64 = result.data[0].b64_json
             if image_base64 is None:
                 raise ValueError("No image data returned from API")
