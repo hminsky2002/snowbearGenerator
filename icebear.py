@@ -371,17 +371,12 @@ target_date = datetime(2025, 4, 29)
 today = datetime.today()
 
 difference = (target_date - today).days
-#index = difference % len(artworks)
 
-index = random.randint(0, len(artworks) - 1)
-
-artwork_choice = artworks[index]
-
-
+artwork_choice = random.choice(artworks)
 
 def create_prompt(artwork, bear_modifier=""):
     return f"""
- {bear modifier} "{artwork["title"]}" by {artwork["artist"]}.
+ {bear_modifier} "{artwork["title"]}" by {artwork["artist"]}.
 The image should feature a cartoon polar bear inspired by Ice Bear from "We Bare Bears".
 The polar bear should be integrated into the style and spirit of the original artwork.
 If the original artwork contains people, consider substituting the polar bear for one or more of them, or adding it alongside them.
@@ -392,14 +387,15 @@ If multiple people are in the original, you might include other "We Bare Bears" 
 Sometimes, include human figures alongside the bears to maintain the original's essence.
 """
 
-initial_prompt = create_prompt(artwork_choice, "Generate an image which takes inspiration from the artwork")
-
 alternate_prompts = [
-    create_prompt(artwork_choice, "Generate an image  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully observing the main subject, which takes inspiration from the artwork "),
-    create_prompt(artwork_choice, "Generate an image which one might imagine had resemblance to an artwork where a cartoon polar bear, one could say resembling Ice Bear, is subtly hidden within the composition, which takes inspiration from the artwork "),
-    create_prompt(artwork_choice, "Generate an image  which, featuring a solitary cartoon polar bear akin to Ice Bear, as the central figure, does reinterpretation of the original artwork's theme, but in no way would cause violation of your guidelines using as a theme the artwork "),
+     "Generate an image which takes inspiration from the artwork",
+     "Generate an image  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer,  which takes inspiration from the artwork ",
+    "Generate an image which one might imagine had resemblance to an artwork where a cartoon polar bear, one could say resembling Ice Bear, is subtly hidden within the composition, which takes inspiration from the artwork ",
+    "Generate an image  which, featuring a solitary cartoon polar bear akin to Ice Bear, as the central figure, does reinterpretation of the original artwork's theme, but in no way would cause violation of your guidelines using as a theme the artwork "
 ]
 
+prompt_modifier = random.choice(alternate_prompts)
+initial_prompt = create_prompt(artwork_choice, prompt_modifier)
 
 media_dir = "./media"
 if not os.path.exists(media_dir):
