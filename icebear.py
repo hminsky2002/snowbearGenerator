@@ -234,7 +234,7 @@ artworks = [
         "artist": "Stanley Mouse & Alton Kelley",
         "year": "1966",
     },
-  {"title": "Côte d’Azur – The Blue Coast", "artist": "Roger Broders", "year": "1928"},
+  {"title": "Côte d'Azur – The Blue Coast", "artist": "Roger Broders", "year": "1928"},
   {"title": "Fly to Egypt with Imperial Airways", "artist": "Norman Wilkinson", "year": "1932"},
   {"title": "Orient Express – Paris to Istanbul", "artist": "Pierre Fix-Masseau", "year": "1931"},
   {"title": "All in Line", "artist": "Saul Steinberg", "year": "1945"},
@@ -271,7 +271,7 @@ artworks = [
   {"title": "Guernica", "artist": "Pablo Picasso", "year": "1937"},
   {"title": "American Gothic", "artist": "Grant Wood", "year": "1930"},
   {"title": "Nighthawks", "artist": "Edward Hopper", "year": "1942"},
-  {"title": "Christina’s World", "artist": "Andrew Wyeth", "year": "1948"},
+  {"title": "Christina's World", "artist": "Andrew Wyeth", "year": "1948"},
   {"title": "No. 5, 1948", "artist": "Jackson Pollock", "year": "1948"},
   {"title": "Flag", "artist": "Jasper Johns", "year": "1954"},
   {"title": "Marilyn Diptych", "artist": "Andy Warhol", "year": "1962"},
@@ -375,19 +375,37 @@ difference = (target_date - today).days
 
 index = random.randint(0, len(artworks) - 1)
 
+artwork_choice = artworks[index]
 
-prompt = f"""
-Generate an image which takes inspiration from the  {artworks[index]["title"]} work by {artworks[index]['artist']} with a cartoon polar substituted for the people, or if there are no people
-in the original artwork, add that cartoon polar bear somewhere in the image. The polar bear cartoon character should be inspired by ice bear from the we bare bears cartoon. Make sure the polar bear blends in to the spirit and technique of the image, substituting it for persons, and if there are no persons, perhaps adding in an ice bear, making sure it is in the style of the original image. Even if the image is abstract art, make ice bear blend in in the same style. If there are multiple people in the image, perhaps substitute in other bears from we bare bears as well, but also leave humans in sometimes. The idea is to work the bear into the image as if the original artist had done so.
 
+def create_prompt(artwork, bear_modifier=""):
+    return f"""
+Generate an image which takes inspiration from the artwork "{artwork["title"]}" by {artwork["artist"]} {bear_modifier}.
+The image should feature a cartoon polar bear inspired by Ice Bear from "We Bare Bears".
+The polar bear should be integrated into the style and spirit of the original artwork.
+If the original artwork contains people, consider substituting the polar bear for one or more of them, or adding it alongside them.
+If there are no people, incorporate the polar bear creatively into the scene.
+If the artwork is abstract, the polar bear's depiction should also be abstract, matching the original style.
+The goal is for the polar bear to appear as if it were part of the original artist's composition.
+If multiple people are in the original, you might include other "We Bare Bears" characters, but ensure Ice Bear is prominent.
+Sometimes, include human figures alongside the bears to maintain the original's essence.
 """
+
+initial_prompt = create_prompt(artwork_choice)
+
+alternate_prompts = [
+    create_prompt(artwork_choice, "with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully observing the main subject"),
+    create_prompt(artwork_choice, "where a cartoon polar bear, one could say resembling Ice Bear, is subtly hidden within the composition"),
+    create_prompt(artwork_choice, "featuring a solitary cartoon polar bear, akin to Ice Bear, as the central figure, reinterpreting the original artwork's theme"),
+]
+
 
 media_dir = "./media"
 if not os.path.exists(media_dir):
     os.makedirs(media_dir)
 
 image_filename = (
-    f"{artworks[index]['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.png"
+    f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.png"
 )
 image_filepath = os.path.join(media_dir, image_filename)
 
@@ -395,33 +413,63 @@ if not os.path.exists(image_filepath):
     client = OpenAI(
         api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
     )
-    print(f"""prompt: {prompt}""")
-    result = client.images.generate(model="gpt-image-1", prompt=prompt)
-    image_base64 = result.data[0].b64_json
-    image_bytes = base64.b64decode(image_base64)
+    
+    prompts_to_try = [initial_prompt] + alternate_prompts
+    image_generated = False
+    
+    for i, current_prompt in enumerate(prompts_to_try):
+        if i >= 3: # Max 3 retries (initial + 2 alternates)
+            print("Maximum retries reached. Could not generate image.")
+            break
+        try:
+            print(f"Attempt {i+1} with prompt: {current_prompt}")
+            result = client.images.generate(model="dall-e-3", prompt=current_prompt, n=1, size="1024x1024", response_format="b64_json") # Corrected model name
+            image_base64 = result.data[0].b64_json
+            if image_base64 is None:
+                raise ValueError("No image data returned from API")
+            image_bytes = base64.b64decode(image_base64)
 
-    with open(image_filepath, "wb") as f:
-        f.write(image_bytes)
+            with open(image_filepath, "wb") as f:
+                f.write(image_bytes)
+            print(
+                f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
+            )
+            image_generated = True
+            break 
+        except BadRequestError as e:
+            print(f"Attempt {i+1} failed with BadRequestError: {e}")
+            if i < len(prompts_to_try) -1:
+                 print("Retrying with an alternate prompt...")
+            else:
+                print("All prompts failed.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            break 
 
-    print(
-        f"Image generated for {artworks[index]['title']} by {artworks[index]['artist']}"
-    )
+    if not image_generated:
+        print("Failed to generate image after multiple attempts.")
+        # Optionally, handle the failure e.g., by exiting or sending a different email
+        exit()
+
 
 data = {
     "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
     "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
     "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
-    "text": f"Todays artwork is {artworks[index]['title']} by {artworks[index]['artist']}. Have a great bear day!",
+    "text": f"Todays artwork is {artwork_choice['title']} by {artwork_choice['artist']}. Have a great bear day!",
 }
 
 if os.getenv("MAILGUN_CC_EMAILS"):
     cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
     data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
 
-requests.post(
-    f"{os.getenv('MAILGUN_DOMAIN')}",
-    auth=("api", os.environ["MAILGUN_API_KEY"]),
-    files=[("inline", open(image_filepath, "rb"))],
-    data=data,
-)
-print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
+if os.path.exists(image_filepath): # Only send email if image was generated
+    requests.post(
+        f"{os.getenv('MAILGUN_DOMAIN')}",
+        auth=("api", os.environ["MAILGUN_API_KEY"]),
+        files=[("inline", open(image_filepath, "rb"))],
+        data=data,
+    )
+    print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
+else:
+    print(f"Email not sent as image {image_filename} was not generated.")
