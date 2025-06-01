@@ -411,7 +411,8 @@ if not os.path.exists(image_filepath):
         api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
     )
     
-    prompts_to_try = [initial_prompt] + alternate_prompts
+    prompts_to_try = [initial_prompt] + list(map(lambda prompt: create_prompt(artwork_choice, prompt), alternate_prompts))
+
     image_generated = False
     
     for i, current_prompt in enumerate(prompts_to_try):
