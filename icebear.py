@@ -384,7 +384,8 @@ If there are no people, incorporate the polar bear creatively into the scene.
 If the artwork is abstract, the polar bear's depiction should also be abstract, matching the original style.
 The goal is for the polar bear to appear as if it were part of the original artist's composition.
 If multiple people are in the original, you might include other "We Bare Bears" characters, but ensure Ice Bear is prominent.
-Sometimes, include human figures alongside the bears to maintain the original's essence.
+Sometimes, include human figures alongside the bears to maintain the original's essence. 
+The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 """
 
 alternate_prompts = [
