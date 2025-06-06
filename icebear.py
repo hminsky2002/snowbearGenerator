@@ -281,7 +281,6 @@ artworks = [
   {"title": "Untitled Film Still #21", "artist": "Cindy Sherman", "year": "1978"},
   {"title": "The Dinner Party", "artist": "Judy Chicago", "year": "1979"},
   {"title": "Untitled (Your Body is a Battleground)", "artist": "Barbara Kruger", "year": "1989"},
-  {"title": "Balloon Dog (Orange)", "artist": "Jeff Koons", "year": "2000"},
   {"title": "For the Love of God", "artist": "Damien Hirst", "year": "2007"},
   {"title": "Untitled", "artist": "Jean-Michel Basquiat", "year": "1982"},
   {"title": "Sky Mirror", "artist": "Anish Kapoor", "year": "2001"},
@@ -378,14 +377,18 @@ def create_prompt(artwork, bear_modifier=""):
     return f"""
  {bear_modifier} "{artwork["title"]}" by {artwork["artist"]}.
 The image should feature a cartoon polar bear inspired by Ice Bear from "We Bare Bears".
-The polar bear should be integrated into the style and spirit of the original artwork.
+The polar bear should be well integrated into the style and spirit of the original artwork.
 If the original artwork contains people, consider substituting the polar bear for one or more of them, or adding it alongside them.
 If there are no people, incorporate the polar bear creatively into the scene.
 If the artwork is abstract, the polar bear's depiction should also be abstract, matching the original style.
 The goal is for the polar bear to appear as if it were part of the original artist's composition.
 If multiple people are in the original, you might include other "We Bare Bears" characters, but ensure Ice Bear is prominent.
 Sometimes, include human figures alongside the bears to maintain the original's essence. 
+Again, The polar bear should be well integrated into the style and spirit of the original artwork, in terms of drawing, paint, 
+colors, texture, and in relation to the objects and activities in the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
+Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
+use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene.
 """
 
 alternate_prompts = [
@@ -417,7 +420,7 @@ if not os.path.exists(image_filepath):
     image_generated = False
     
     for i, current_prompt in enumerate(prompts_to_try):
-        if i >= 3: # Max 3 retries (initial + 2 alternates)
+        if i >= 5: # Max 3 retries (initial + 2 alternates)
             print("Maximum retries reached. Could not generate image.")
             break
         try:
@@ -457,6 +460,7 @@ data = {
     "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
     "text": f"Todays artwork is {artwork_choice['title']} by {artwork_choice['artist']}. Have a great bear day!",
 }
+
 
 if os.getenv("MAILGUN_CC_EMAILS"):
     cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
