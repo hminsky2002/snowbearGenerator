@@ -8,7 +8,7 @@ source venv/bin/activate
 set -a source .env
 
 # Run the script
-python icebear.py
+python icebear-selfgen.py
 
 # Deactivate virtual environment
 deactivate
