@@ -25,7 +25,7 @@ colors, texture, and in relation to the objects and activities in the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the
-artwork must guide how the bear or bears are integrated into it. Also render into the image a caption which has the title of the original artwork, the artist, and what year the artwork was made. 
+artwork must guide how the bear or bears are integrated into it. Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made. We must give credit to the original artist by putting in this title caption.
 
 """
 
@@ -99,7 +99,7 @@ data = {
     "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
     "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
     "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
-    "text": f"Todays artwork was randomly selected by chatGPT. Have a great bear day!",
+    "text": f"Here is today's iconic artwork. Have a great bear day!",
 }
 
 
