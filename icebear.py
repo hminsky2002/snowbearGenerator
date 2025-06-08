@@ -40,7 +40,6 @@ artworks = [
     {"title": "La Loïe Fuller", "artist": "Jules Chéret", "year": "1893"},
     {"title": "Starry Night", "artist": "Vincent van Gogh", "year": "1889"},
     {"title": "24 Heures du Mans", "artist": "A. M. Cassandre", "year": "1931"},
-    {"title": "Hope", "artist": "Shepard Fairey", "year": "2008"},
     {"title": "The Son of Man", "artist": "René Magritte", "year": "1964"},
     {"title": "E.T. the Extra-Terrestrial", "artist": "John Alvin", "year": "1982"},
     {
@@ -362,8 +361,80 @@ artworks = [
   {"title": "The Raft of the Medusa", "artist": "Théodore Géricault", "year": "1819"},
   {"title": "The Gleaners", "artist": "Jean-François Millet", "year": "1857"},
   {"title": "Olympia", "artist": "Édouard Manet", "year": "1863"},
-
+  {"title": "Migrant Mother", "artist": "Dorothea Lange", "year": "1936"},
+  {"title": "Untitled (Cowboy)", "artist": "Richard Prince", "year": "1989"},
+  {"title": "Identical Twins, Roselle, New Jersey", "artist": "Diane Arbus", "year": "1967"},
+  {"title": "Dovima with Elephants", "artist": "Richard Avedon", "year": "1955"},
+  {"title": "Beirut", "artist": "Gabriele Basilico", "year": "1991"},
+  {"title": "Alabama, 1963 (Tank Man of Selma)", "artist": "Charles Moore", "year": "1963"},
+  
+  {"title": "Who’s Afraid of Aunt Jemima?", "artist": "Faith Ringgold", "year": "1983"},
+  {"title": "F-111", "artist": "James Rosenquist", "year": "1965"},
+  {"title": "The City Rises", "artist": "Umberto Boccioni", "year": "1910"},
+  {"title": "Man Pointing", "artist": "Alberto Giacometti", "year": "1947"},
+  {"title": "The Two Fridas", "artist": "Frida Kahlo", "year": "1939"},
+  {"title": "Detroit Industry Murals", "artist": "Diego Rivera", "year": "1932–1933"},
+  {"title": "Self-Portrait/Nursing", "artist": "Catherine Opie", "year": "2004"},
+  {"title": "Babel", "artist": "Cildo Meireles", "year": "2001"},
+  {"title": "Bloodline: Big Family No. 3", "artist": "Zhang Xiaogang", "year": "1995"},
+  
+  {"title": "Tilted Arc", "artist": "Richard Serra", "year": "1981"},
+  {"title": "Accumulation of Jugs", "artist": "Arman", "year": "1960"},
+  {"title": "The Dinner Party", "artist": "Judy Chicago", "year": "1974–1979"},
+  {"title": "Field for the British Isles", "artist": "Antony Gormley", "year": "1993"},
+  {"title": "For the Love of God", "artist": "Damien Hirst", "year": "2007"},
+  {"title": "Spiral Jetty", "artist": "Robert Smithson", "year": "1970"},
+  
+  {"title": "Just What Is It that Makes Today's Homes So Different, So Appealing?", "artist": "Richard Hamilton", "year": "1956"},
+  {"title": "Cut with the Kitchen Knife Dada Through the Last Weimar Beer-Belly Cultural Epoch of Germany", "artist": "Hannah Höch", "year": "1919–1920"},
+  {"title": "Back of the Neck (from The First Papers of Surrealism)", "artist": "Marcel Duchamp", "year": "1942"},
+  {"title": "The Treachery of Images", "artist": "René Magritte", "year": "1929"},
+  {"title": "Untitled (Your Body is a Battleground)", "artist": "Barbara Kruger", "year": "1989"},
+  {"title": "West Side Story", "artist": "Saul Bass", "year": "1961"},
+  {"title": "I AM A MAN", "artist": "Anonymous (Memphis Sanitation Strike)", "year": "1968"},
+  {"title": "View of the World from 9th Avenue", "artist": "Saul Steinberg", "year": "1976"},
+  {"title": "I Can See the Whole Room!... and There's Nobody in It!", "artist": "Roy Lichtenstein", "year": "1961"},
+  {"title": "The Critic Laughs", "artist": "Richard Hamilton", "year": "1968"},
+  {"title": "Self-Portrait as a Drowned Man", "artist": "Hippolyte Bayard", "year": "1840"},
+  {"title": "Ceci n’est pas une pipe", "artist": "René Magritte", "year": "1929"},
+  {"title": "Sunday Afternoon in the Island of La Grande Jatte", "artist": "Georges Seurat", "year": "1886"},
+  {"title": "A Bigger Splash", "artist": "David Hockney", "year": "1967"},
+  {"title": "The Singing Butler", "artist": "Jack Vettriano", "year": "1992"},
+  {"title": "Dog Balloon (Blue)", "artist": "Jeff Koons", "year": "1994"},
+  {"title": "Learning to Love You More", "artist": "Miranda July and Harrell Fletcher", "year": "2002"},
+  {"title": "The Snail", "artist": "Henri Matisse", "year": "1953"},
+  {"title": "The Alphabet", "artist": "Jasper Johns", "year": "1960"},
+  {"title": "Maman", "artist": "Louise Bourgeois", "year": "1999"},
+  {"title": "Untitled (We Don’t Need Another Hero)", "artist": "Barbara Kruger", "year": "1987"},
+  {"title": "Sunflower Seeds", "artist": "Ai Weiwei", "year": "2010"},
+  {"title": "I Shop Therefore I Am", "artist": "Barbara Kruger", "year": "1987"},
+  {"title": "The Art of Clean Up", "artist": "Ursus Wehrli", "year": "2013"},
+  {"title": "Untitled (Chair Transformation)", "artist": "Erwin Wurm", "year": "2002"},
+  {"title": "The Party", "artist": "Marcel Dzama", "year": "2004"},
+  {"title": "The Parade", "artist": "Alexander Calder", "year": "1957"},
+  {"title": "See America – Glacier National Park", "artist": "Brotherhood of Sleeping Car Porters (WPA Poster)", "year": "1930s"},
+  {"title": "Fly TWA to New York", "artist": "David Klein", "year": "1956"},
+  {"title": "Visit India", "artist": "Unknown (Indian Tourism Board)", "year": "1950s"},
+  {"title": "Normandie", "artist": "Cassandre", "year": "1935"},
+  {"title": "Côte d’Azur Pullman Express", "artist": "Roger Broders", "year": "1920s"},
+  {"title": "London by Underground", "artist": "Horace Taylor", "year": "1924"},
+  {"title": "Switzerland – Jungfrau Railway", "artist": "Emil Cardinaux", "year": "1910s"},
+  {"title": "See Canada by Canadian Pacific", "artist": "Peter Ewart", "year": "1950s"},
+  {"title": "Japan Travel Poster", "artist": "Kiyoshi Awazu", "year": "1960s"},
+  {"title": "La Route des Alpes", "artist": "Geo Dorival", "year": "1920s"},
+  {"title": "Visit the USA – Yellowstone", "artist": "Anonymous (WPA Project)", "year": "1930s"},
+  {"title": "TWA San Francisco", "artist": "David Klein", "year": "1958"},
+  {"title": "Fly the Finest – BOAC", "artist": "Frank Wootton", "year": "1950s"},
+  {"title": "Italia – Venice", "artist": "Anonymous (ENIT)", "year": "1950s"},
+  {"title": "Greece – Travel Poster", "artist": "Spiros Vassiliou", "year": "1960"},
+  {"title": "Mexico – The Land of Charm!", "artist": "Erick F. Carlson", "year": "1940s"},
+  {"title": "New Zealand Railways – Tongariro National Park", "artist": "Marcus King", "year": "1930s"},
+  {"title": "Air France – Afrique Occidentale", "artist": "Jean Carlu", "year": "1948"},
+  {"title": "Discover Puerto Rico", "artist": "Antonio Martorell", "year": "1960s"},
+  {"title": "SAS – Over the Pole", "artist": "Otto Nielsen", "year": "1950s"}
 ]
+
+
 
 target_date = datetime(2025, 4, 29)
 
@@ -382,13 +453,14 @@ If the original artwork contains people, consider substituting the polar bear fo
 If there are no people, incorporate the polar bear creatively into the scene.
 If the artwork is abstract, the polar bear's depiction should also be abstract, matching the original style.
 The goal is for the polar bear to appear as if it were part of the original artist's composition.
-If multiple people are in the original, you might include other "We Bare Bears" characters, but ensure Ice Bear is prominent.
+If multiple people are in the original, you might include other "We Bare Bears" characters, such as Griz or Panda,but ensure Ice Bear is prominent.
 Sometimes, include human figures alongside the bears to maintain the original's essence. 
 Again, The polar bear should be well integrated into the style and spirit of the original artwork, in terms of drawing, paint, 
 colors, texture, and in relation to the objects and activities in the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
-use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene.
+use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the 
+artwork must guide how the bear or bears are integrated into it.
 """
 
 alternate_prompts = [
