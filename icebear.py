@@ -431,7 +431,58 @@ artworks = [
   {"title": "New Zealand Railways – Tongariro National Park", "artist": "Marcus King", "year": "1930s"},
   {"title": "Air France – Afrique Occidentale", "artist": "Jean Carlu", "year": "1948"},
   {"title": "Discover Puerto Rico", "artist": "Antonio Martorell", "year": "1960s"},
-  {"title": "SAS – Over the Pole", "artist": "Otto Nielsen", "year": "1950s"}
+  {"title": "SAS – Over the Pole", "artist": "Otto Nielsen", "year": "1950s"},
+  {
+    "title": "Bright Light at Russell's Corners",
+    "artist": "George Ault",
+    "year": "1946"
+  },
+  {
+    "title": "January, Full Moon",
+    "artist": "George Ault",
+    "year": "1941"
+  },
+  {
+    "title": "Black Night: Russell’s Corners",
+    "artist": "George Ault",
+    "year": "1943"
+  },
+  {
+    "title": "Hoboken Factory",
+    "artist": "George Ault",
+    "year": "1932"
+  },
+  {
+    "title": "New York Night",
+    "artist": "George Ault",
+    "year": "1928"
+  },
+  {
+    "title": "Daylight at Russell’s Corners",
+    "artist": "George Ault",
+    "year": "1944"
+  },
+  {
+    "title": "Depot in Winter",
+    "artist": "George Ault",
+    "year": "1941"
+  },
+  {
+    "title": "From Brooklyn Heights",
+    "artist": "George Ault",
+    "year": "1925"
+  },
+  {
+    "title": "Night in August",
+    "artist": "George Ault",
+    "year": "1945"
+  },
+  {
+    "title": "Sullivan Street",
+    "artist": "George Ault",
+    "year": "1943"
+  }
+
 ]
 
 
