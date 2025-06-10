@@ -10,8 +10,11 @@ load_dotenv()
 
 def create_prompt():
     return f"""
-Generate an image  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer,  \
-which takes inspiration from an iconic artwork, but not one that is so famous that it has become cliche.
+Choose an iconic artwork at random, but not one that is so famous that it has become cliche.
+Remember the title, artist's name, and year that the artwork was created. You will need this later when 
+titling an image you generate. 
+
+Now, generate an image using the original artwork as inspiration  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer.
 The image should feature a cartoon polar bear inspired by Ice Bear from "We Bare Bears".
 The polar bear should be well integrated into the style and spirit of the original artwork.
 If the original artwork contains people, consider substituting the polar bear for one or more of them, or adding it alongside them.
@@ -25,7 +28,7 @@ colors, texture, and in relation to the objects and activities in the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the
-artwork must guide how the bear or bears are integrated into it. Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made. We must give credit to the original artist by putting in this title caption.
+artwork must guide how the bear or bears are integrated into it. Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption.
 
 """
 
@@ -106,6 +109,7 @@ data = {
 if os.getenv("MAILGUN_CC_EMAILS"):
     cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
     data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
+
 
 if os.path.exists(image_filepath): # Only send email if image was generated
     requests.post(
