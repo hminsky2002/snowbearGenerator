@@ -10,7 +10,8 @@ load_dotenv()
 
 def create_prompt():
     return f"""
-Choose an iconic artwork at random, but not one that is so famous that it has become cliche.
+Make a list of 50 iconic artworks at random,  ones that are somewhat known but not so common that they have become cliche.
+Pick an artwork at random from this list,
 Remember the title, artist's name, and year that the artwork was created. You will need this later when 
 titling an image you generate. 
 
