@@ -10,8 +10,7 @@ load_dotenv()
 
 def create_prompt():
     return f"""
-Make a list of 100 iconic artworks at random , using today's weather in iowa as a sort key, picking artworkss that are somewhat known but not so common that they have become cliche.  Take another look at your list and remove overly publicized or overly well known art works.  Then Pick an artwork at random from the remaining ones in your list.
-Remember the title, artist's name, and year that the artwork was created. You will need this later when 
+Make a list of info about 100 iconic artworks, each entry having artist and title and year of creation,  at random picking artworks that are somewhat known but not so common that they have become cliche. Take another look at your list and remove overly publicized or overly well known art works.  Then pick a random entry from that list using a random number between 0 and 100 as an index ,   Then Pick an artwork at random from the remaining ones in your list. Remember the title, artist's name, and year that the artwork was created. You will need this later when 
 titling an image you generate. 
 
 Now, generate an image using the original artwork as inspiration  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer.
@@ -28,7 +27,7 @@ colors, texture, and in relation to the objects and activities in the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the
-artwork must guide how the bear or bears are integrated into it. Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption.
+artwork must guide how the bear or bears are integrated into it. Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption. Make sure there is room in the image for the title, and artist info, so it is not cut off at the edge.
 
 """
 
