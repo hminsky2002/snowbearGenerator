@@ -10,7 +10,7 @@ load_dotenv()
 
 def create_prompt():
     return f"""
-Make a list of info about 100 iconic artworks, each entry having artist and title and year of creation,  at random picking artworks that are somewhat known but not so common that they have become cliche. Take another look at your list and remove overly publicized or overly well known art works.  Then pick a random entry from that list using a random number between 0 and 100 as an index ,   Then Pick an artwork at random from the remaining ones in your list. Remember the title, artist's name, and year that the artwork was created. You will need this later when 
+Make a list of info about 10 works of art;  These artworks should be more than just paintings; for example drawings by Saul Steinberg, Photographs by famous photographers, collage, really all forms of graphic art. Perhaps even a famous patent drawing. each entry should have the artist name ,  title of the artwork and year of creation. You should pick random artworks that are  somewhat known, or by artists somewhat known, but not so common that they have become cliche.   Reach outside of the cliche. Take another look at your list and remove overly publicized or overly well known art works.  Then pick a random entry from that list using a random number between 0 and 10 as an index ,   Then Pick an artwork at random from the remaining ones in your list. Remember the title, artist's name, and year that the artwork was created. You will need this later when 
 titling an image you generate. 
 
 Now, generate an image using the original artwork as inspiration  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer.

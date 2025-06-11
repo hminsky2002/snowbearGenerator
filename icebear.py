@@ -9,6 +9,301 @@ from dotenv import load_dotenv
 load_dotenv()
 
 artworks = [
+{"title": "View of the World from 9th Avenue", "artist": "Saul Steinberg", "year": "1976"},
+{"title": "Flying-Machine Patent Drawing", "artist": "Orville and Wilbur Wright", "year": "1906"},
+{"title": "Phonograph Patent Drawing", "artist": "Thomas Edison", "year": "1878"},
+{"title": "The Ancient of Days", "artist": "William Blake", "year": "1794"},
+{"title": "Melencolia I", "artist": "Albrecht Dürer", "year": "1514"},
+{"title": "Knight, Death and the Devil", "artist": "Albrecht Dürer", "year": "1513"},
+{"title": "Courtesan Viewing Cherry Blossoms", "artist": "Utagawa Kunisada", "year": "circa 1850"},
+{"title": "Anatomy of a Murder Poster", "artist": "Saul Bass", "year": "1959"},
+{"title": "Swiss National Exhibition Poster", "artist": "Herbert Matter", "year": "1954"},
+{"title": "RCA Victor Poster", "artist": "Lester Beall", "year": "1930"},
+{"title": "Harper's Bazaar Cover", "artist": "Alexey Brodovitch", "year": "1934"},
+{"title": "Seated Woman with Bent Knee", "artist": "Egon Schiele", "year": "1917"},
+{"title": "Salome Illustration", "artist": "Aubrey Beardsley", "year": "1893"},
+{"title": "East of the Sun and West of the Moon Illustration", "artist": "Kay Nielsen", "year": "1914"},
+{"title": "Little Nemo in Slumberland (Sunday strip)", "artist": "Winsor McCay", "year": "1905"},
+{"title": "Gods' Man Wood Engraving", "artist": "Lynd Ward", "year": "1929"},
+{"title": "The Beautiful Girl", "artist": "Hannah Höch", "year": "1919"},
+{"title": "Merz Picture 46A", "artist": "Kurt Schwitters", "year": "1923"},
+{"title": "Adolf the Superman: Swallows Gold and Spouts Tin", "artist": "John Heartfield", "year": "1932"},
+{"title": "Observatory Time – The Lovers", "artist": "Man Ray", "year": "1932"},
+{"title": "Matrix Composition", "artist": "Frieder Nake", "year": "1965"},
+{"title": "Portrait of a Lady (Lithograph)", "artist": "Édouard Manet", "year": "1867"},
+{"title": "Woman with Dead Child", "artist": "Käthe Kollwitz", "year": "1903"},
+{"title": "Sueño No. 7", "artist": "Grete Stern", "year": "1949"},
+{"title": "Fallingwater Architectural Drawing", "artist": "Frank Lloyd Wright", "year": "1935"},
+{"title": "The Sleep of Reason Produces Monsters", "artist": "Francisco Goya", "year": "1799"},
+{"title": "Bob Dylan Poster", "artist": "Milton Glaser", "year": "1967"},
+{"title": "A Young Man in Curlers at Home on West 20th Street, N.Y.C.", "artist": "Diane Arbus", "year": "1966"},
+{"title": "Self-Portrait in Hitler's Bathtub", "artist": "Lee Miller", "year": "1945"},
+{"title": "Chicago Sidewalk", "artist": "Vivian Maier", "year": "1956"},
+{"title": "Subway Passengers #17", "artist": "Walker Evans", "year": "1938"},
+{"title": "I'm Too Sad to Tell You", "artist": "Bas Jan Ader", "year": "1970"},
+{"title": "Mother & Child Magazine Cover", "artist": "Herb Lubalin", "year": "1970"},
+{"title": "Histology of the Different Classes of Uterine Tumors", "artist": "Wangechi Mutu", "year": "2005"},
+{"title": "Fear and Loathing Illustration", "artist": "Ralph Steadman", "year": "1971"},
+{"title": "Untitled Film Still #21", "artist": "Cindy Sherman", "year": "1978"},
+{"title": "Imaginary Prison Plate VI", "artist": "Giovanni Battista Piranesi", "year": "1745"},
+{"title": "The Scholars", "artist": "Kara Walker", "year": "2006"},
+{"title": "The Doubtful Guest", "artist": "Edward Gorey", "year": "1957"},
+{"title": "Matrix Study (Plotter Drawing)", "artist": "Vera Molnár", "year": "1968"},
+{"title": "Photomontage of a New Order", "artist": "Grete L. Stern", "year": "1951"},
+{"title": "Urban Pattern (Photograph)", "artist": "Roy DeCarava", "year": "1948"},
+{"title": "Blueprint for a Futurist City", "artist": "Antonio Sant'Elia", "year": "1914"},
+{"title": "Collage No. 1", "artist": "Romare Bearden", "year": "1963"},
+{"title": "Silhouette Study", "artist": "Kara Walker", "year": "2000"},
+{"title": "Experimental Typography Poster", "artist": "Jan Tschichold", "year": "1925"},
+{"title": "Abstract Photo (Camera-less)", "artist": "László Moholy-Nagy", "year": "1922"},
+{"title": "Early Computer Composition", "artist": "Georg Nees", "year": "1965"},
+{"title": "Architectural Drawing for a Modern Pavilion", "artist": "Eileen Gray", "year": "1930"},
+{"title": "Zodiac Collage", "artist": "Max Ernst", "year": "1940"},
+  {
+    "title": "The Cloud",
+    "artist": "Saul Steinberg",
+    "year": "1960"
+  },
+  {
+    "title": "Migrant Mother",
+    "artist": "Dorothea Lange",
+    "year": "1936"
+  },
+  {
+    "title": "Just what is it that makes today's homes so different, so appealing?",
+    "artist": "Richard Hamilton",
+    "year": "1956"
+  },
+  {
+    "title": "Horse in Motion",
+    "artist": "Eadweard Muybridge",
+    "year": "1878"
+  },
+  {
+    "title": "Self-Portrait with Cropped Hair",
+    "artist": "Frida Kahlo",
+    "year": "1940"
+  },
+  {
+    "title": "Electric Dress",
+    "artist": "Atsuko Tanaka",
+    "year": "1956"
+  },
+  {
+    "title": "Cut with the Kitchen Knife Dada Through the Last Weimar Beer-Belly Cultural Epoch of Germany",
+    "artist": "Hannah Höch",
+    "year": "1919"
+  },
+  {
+    "title": "Metamorphosis II",
+    "artist": "M.C. Escher",
+    "year": "1940"
+  },
+  {
+    "title": "The Treachery of Images",
+    "artist": "René Magritte",
+    "year": "1929"
+  },
+  {
+    "title": "Typewriter Eraser, Scale X",
+    "artist": "Claes Oldenburg and Coosje van Bruggen",
+    "year": "1999"
+  },
+  {
+    "title": "Nude Descending a Staircase, No. 2",
+    "artist": "Marcel Duchamp",
+    "year": "1912"
+  },
+  {
+    "title": "Man Ray's Kiki with African Mask",
+    "artist": "Man Ray",
+    "year": "1926"
+  },
+  {
+    "title": "Pepper No. 30",
+    "artist": "Edward Weston",
+    "year": "1930"
+  },
+  {
+    "title": "Rhine II",
+    "artist": "Andreas Gursky",
+    "year": "1999"
+  },
+  {
+    "title": "A Book from the Sky",
+    "artist": "Xu Bing",
+    "year": "1987-1991"
+  },
+  {
+    "title": "The Great Wave Off Kanagawa",
+    "artist": "Katsushika Hokusai",
+    "year": "c. 1829-1833"
+  },
+  {
+    "title": "Composition VII",
+    "artist": "Wassily Kandinsky",
+    "year": "1913"
+  },
+  {
+    "title": "Broadway Boogie Woogie",
+    "artist": "Piet Mondrian",
+    "year": "1943"
+  },
+  {
+    "title": "Bicycle Wheel",
+    "artist": "Marcel Duchamp",
+    "year": "1913"
+  },
+  {
+    "title": "The Lovers",
+    "artist": "René Magritte",
+    "year": "1928"
+  },
+  {
+    "title": "Flag",
+    "artist": "Jasper Johns",
+    "year": "1954-1955"
+  },
+  {
+    "title": "One and Three Chairs",
+    "artist": "Joseph Kosuth",
+    "year": "1965"
+  },
+  {
+    "title": "Fountain",
+    "artist": "Marcel Duchamp",
+    "year": "1917"
+  },
+  {
+    "title": "Atmospheres",
+    "artist": "Wolfgang Tillmans",
+    "year": "2000"
+  },
+  {
+    "title": "Patent Drawing for the Incandescent Lamp",
+    "artist": "Thomas Edison",
+    "year": "1880"
+  },
+  {
+    "title": "The World as a Hologram",
+    "artist": "Nam June Paik",
+    "year": "1992"
+  },
+  {
+    "title": "Guernica (study drawing)",
+    "artist": "Pablo Picasso",
+    "year": "1937"
+  },
+  {
+    "title": "The Persistence of Memory",
+    "artist": "Salvador Dalí",
+    "year": "1931"
+  },
+  {
+    "title": "Glass Tears",
+    "artist": "Man Ray",
+    "year": "1932"
+  },
+  {
+    "title": "White on White",
+    "artist": "Kazimir Malevich",
+    "year": "1918"
+  },
+  {
+    "title": "Canyon",
+    "artist": "Robert Rauschenberg",
+    "year": "1959"
+  },
+  {
+    "title": "Target with Four Faces",
+    "artist": "Jasper Johns",
+    "year": "1955"
+  },
+  {
+    "title": "I Am a Man",
+    "artist": "Ernest Withers",
+    "year": "1968"
+  },
+  {
+    "title": "Black Square",
+    "artist": "Kazimir Malevich",
+    "year": "1915"
+  },
+  {
+    "title": "Le Corbeau et le Renard (The Crow and the Fox)",
+    "artist": "Marc Chagall",
+    "year": "1927"
+  },
+  {
+    "title": "Drawing for 'Homage to the Square'",
+    "artist": "Josef Albers",
+    "year": "1960s"
+  },
+  {
+    "title": "The Last Supper (drawing)",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1495–1498"
+  },
+  {
+    "title": "The Dream",
+    "artist": "Henri Rousseau",
+    "year": "1910"
+  },
+  {
+    "title": "Woman with a Hat",
+    "artist": "Henri Matisse",
+    "year": "1905"
+  },
+  {
+    "title": "The Scream (Pastel)",
+    "artist": "Edvard Munch",
+    "year": "1893"
+  },
+  {
+    "title": "Drawing Hands",
+    "artist": "M.C. Escher",
+    "year": "1948"
+  },
+  {
+    "title": "The Human Condition",
+    "artist": "René Magritte",
+    "year": "1933"
+  },
+  {
+    "title": "Campbell's Soup Cans",
+    "artist": "Andy Warhol",
+    "year": "1962"
+  },
+  {
+    "title": "Falling Water",
+    "artist": "Frank Lloyd Wright",
+    "year": "1939"
+  },
+  {
+    "title": "Drawn in the Corner",
+    "artist": "Saul Steinberg",
+    "year": "1940"
+  },
+  {
+    "title": "Nighthawks (study)",
+    "artist": "Edward Hopper",
+    "year": "1942"
+  },
+  {
+    "title": "The Red Room (Harmony in Red)",
+    "artist": "Henri Matisse",
+    "year": "1908"
+  },
+  {
+    "title": "The Son of Man",
+    "artist": "René Magritte",
+    "year": "1964"
+  },
+  {
+    "title": "Woman I",
+    "artist": "Willem de Kooning",
+    "year": "1950-1952"
+  },
   {"title": "The Song of Love", "artist": "Giorgio de Chirico", "year": "1914"},
   {"title": "Dynamism of a Dog on a Leash", "artist": "Giacomo Balla", "year": "1912"},
   {"title": "The Large Bathers", "artist": "Paul Cézanne", "year": "1906"},
@@ -609,7 +904,7 @@ The artwork must be constructed so that in no way would cause violation of openA
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the 
 artwork must guide how the bear or bears are integrated into it.
-Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption.
+Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption. Make sure there is room in the image for the title, and artist info, so it is not cut off at the edge.
 """
 
 alternate_prompts = [
