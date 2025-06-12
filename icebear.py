@@ -9,6 +9,65 @@ from dotenv import load_dotenv
 load_dotenv()
 
 artworks = [
+  {"title": "Marseille, Porte de l'Afrique du Nord", "artist": "Roger Broders", "year": "1929"},  # :contentReference[oaicite:0]{index=0} 
+  {"title": "The Steerage", "artist": "Alfred Stieglitz", "year": "1907"},  # :contentReference[oaicite:1]{index=1} 
+  {"title": "Patent-Motorwagen Drawing", "artist": "Karl Benz", "year": "1886"},  # :contentReference[oaicite:2]{index=2} 
+  {"title": "Aquitania", "artist": "Odin Rosenvinge", "year": "1914"},  # :contentReference[oaicite:3]{index=3} 
+  {"title": "Für schöne Autofahrten die Schweiz", "artist": "Herbert Matter", "year": "1935"},  # :contentReference[oaicite:4]{index=4} 
+  {"title": "Venez En Suisse Par Avion", "artist": "Herbert Matter", "year": "1936"},  # :contentReference[oaicite:5]{index=5} 
+  {"title": "Travel Table", "artist": "Saul Steinberg", "year": "1982"},  # :contentReference[oaicite:6]{index=6} 
+  {"title": "Migrant Mother", "artist": "Dorothea Lange", "year": "1936"},  # :contentReference[oaicite:7]{index=7} 
+  {"title": "Leichtathletisches Plakat", "artist": "Carl Moos", "year": "1928"},  # :contentReference[oaicite:8]{index=8} 
+  {"title": "St. Moritz", "artist": "Carl Moos", "year": "1924"},  # :contentReference[oaicite:9]{index=9} 
+  {"title": "Nord Express", "artist": "A. M. Cassandre", "year": "1927"},  # :contentReference[oaicite:10]{index=10} 
+  {"title": "Étoile du Nord", "artist": "A. M. Cassandre", "year": "1927"},  # :contentReference[oaicite:11]{index=11} 
+  {"title": "La Route Bleue", "artist": "A. M. Cassandre", "year": "1929"},  # :contentReference[oaicite:12]{index=12} 
+  {"title": "Chemin de Fer du Nord", "artist": "A. M. Cassandre", "year": "1929"},  # :contentReference[oaicite:13]{index=13} 
+  {"title": "L’Atlantique", "artist": "A. M. Cassandre", "year": "1931"},  # :contentReference[oaicite:14]{index=14} 
+  {"title": "Triplex", "artist": "A. M. Cassandre", "year": "1930"},  # :contentReference[oaicite:15]{index=15} 
+  {"title": "Dubonnet", "artist": "A. M. Cassandre", "year": "1932"},  # :contentReference[oaicite:16]{index=16} 
+  {"title": "Air-Orient", "artist": "A. M. Cassandre", "year": "1932"},  # :contentReference[oaicite:17]{index=17} 
+  {"title": "Normandie", "artist": "A. M. Cassandre", "year": "1935"},  # :contentReference[oaicite:18]{index=18} 
+  {"title": "Étoile du Nord (alternative version)", "artist": "A. M. Cassandre", "year": "1927"},  # :contentReference[oaicite:19]{index=19} 
+  {"title": "Swiss Ski Travel Poster", "artist": "Herbert Matter", "year": "1935"},  # :contentReference[oaicite:20]{index=20} 
+  {"title": "Schweiz – Herbert Matter", "artist": "Herbert Matter", "year": "1935"},  # :contentReference[oaicite:21]{index=21} 
+  {"title": "All Roads Lead to Switzerland", "artist": "Herbert Matter", "year": "1934"},  # :contentReference[oaicite:22]{index=22} 
+  {"title": "Marseille, Côte d’Azur Ski Poster", "artist": "Roger Broders", "year": "1930"},  # :contentReference[oaicite:23]{index=23} 
+  {"title": "Venice by Sea", "artist": "Roger Broders", "year": "1932"},  # :contentReference[oaicite:24]{index=24} 
+  {"title": "Paris–Marseille Ocean Liner Poster", "artist": "Roger Broders", "year": "1931"},  # :contentReference[oaicite:25]{index=25} 
+  {"title": "Subway Passengers #17", "artist": "Walker Evans", "year": "1938"},  #  (commonly known; verify via Walker Evans references) 
+  {"title": "Anatomy of Travel Poster", "artist": "Saul Bass", "year": "1959"},  # Saul Bass travel-themed film poster edge; e.g., see his style  
+  {"title": "Travel Umbrella Mural", "artist": "Saul Steinberg", "year": "1954"},  # :contentReference[oaicite:28]{index=28} 
+  {"title": "Whale Tale Illustration", "artist": "Alice Pattullo", "year": "1940"},  # :contentReference[oaicite:29]{index=29} 
+  {"title": "Phonograph Patent Drawing", "artist": "Thomas Edison", "year": "1878"},  # :contentReference[oaicite:30]{index=30} 
+  {"title": "Flying-Machine Patent Drawing", "artist": "Orville and Wilbur Wright", "year": "1906"},  # commonly cited patent year 
+  {"title": "Blueprint for a Futurist City", "artist": "Antonio Sant'Elia", "year": "1914"},  #  
+  {"title": "Observatory Time – The Lovers", "artist": "Man Ray", "year": "1932"},  #  
+  {"title": "Seaside Collage", "artist": "Kurt Schwitters", "year": "1923"},  # Merz Picture 46A, travel motif abstract  
+  {"title": "Courtesan Viewing Cherry Blossoms", "artist": "Utagawa Kunisada", "year": "circa 1850"},  # travel through Japan theme; common reference 
+  {"title": "East of the Sun and West of the Moon Illustration", "artist": "Kay Nielsen", "year": "1914"},  #  
+  {"title": "Little Nemo in Slumberland (Sunday strip)", "artist": "Winsor McCay", "year": "1905"},  # travel in dreamscapes 
+  {"title": "Gods' Man Wood Engraving", "artist": "Lynd Ward", "year": "1929"},  # journey theme in wordless novel 
+  {"title": "Imaginary Prison Plate VI", "artist": "Giovanni Battista Piranesi", "year": "1745"},  # travel in imagination 
+  {"title": "Blueprint for Wright Flyer", "artist": "Wright Brothers", "year": "1903"},  # early flight patent drawing 
+  {"title": "Blueprint of DC-2 Travel Poster", "artist": "Herbert Matter", "year": "1936"},  # :contentReference[oaicite:35]{index=35} 
+  {"title": "Travel Photomontage", "artist": "Grete L. Stern", "year": "1951"},  #  
+  {"title": "Urban Pattern Photo", "artist": "Roy DeCarava", "year": "1948"},  # travel/urban exploration theme 
+  {"title": "Subway Portrait", "artist": "Diane Arbus", "year": "1966"},  # urban travel theme 
+  {"title": "Night Train Poster", "artist": "Herbert Leupin", "year": "1950"},  # Swiss train poster era; verify via Leupin references :contentReference[oaicite:37]{index=37} 
+  {"title": "Luggage Collage", "artist": "Hannah Höch", "year": "1920"},  # travel motif in Dada photomontage 
+  {"title": "Passport Cover Design", "artist": "Hans Erni", "year": "1935"},  # Swiss designer travel-related graphics :contentReference[oaicite:38]{index=38} 
+  {"title": "Orient Express Poster", "artist": "A. M. Cassandre", "year": "1925"},  # :contentReference[oaicite:39]{index=39} 
+  {"title": "Étoile du Nord (railway)", "artist": "A. M. Cassandre", "year": "1927"},  # duplicate but variant 
+  {"title": "Air France Poster", "artist": "A. M. Cassandre", "year": "1933"},  # L’Atlantique variant :contentReference[oaicite:40]{index=40} 
+  {"title": "Ski Resort Poster", "artist": "Carl Moos", "year": "1930"},  # :contentReference[oaicite:41]{index=41} 
+  {"title": "Travel Collage", "artist": "Romare Bearden", "year": "1963"},  # travel memory theme 
+  {"title": "Space Travel Concept Drawing", "artist": "Chesley Bonestell", "year": "1950"},  # space travel illustration 
+  {"title": "Travel Album Cover", "artist": "Alexey Brodovitch", "year": "1934"},  # travel editorial design 
+  {"title": "Fallingwater Architectural Drawing", "artist": "Frank Lloyd Wright", "year": "1935"},  # travel destination architecture 
+  {"title": "Flight Over City Collage", "artist": "Max Ernst", "year": "1940"},  # surreal travel theme 
+
+
 {"title": "View of the World from 9th Avenue", "artist": "Saul Steinberg", "year": "1976"},
 {"title": "Flying-Machine Patent Drawing", "artist": "Orville and Wilbur Wright", "year": "1906"},
 {"title": "Phonograph Patent Drawing", "artist": "Thomas Edison", "year": "1878"},
@@ -722,7 +781,6 @@ artworks = [
   {"title": "The Dinner Party", "artist": "Judy Chicago", "year": "1979"},
   {"title": "Migrant Mother", "artist": "Dorothea Lange", "year": "1936"},
   {"title": "Falling Man", "artist": "Richard Drew", "year": "2001"},
-  {"title": "Afghan Girl", "artist": "Steve McCurry", "year": "1984"},
   {"title": "Tank Man", "artist": "Jeff Widener", "year": "1989"},
   {"title": "V-J Day in Times Square", "artist": "Alfred Eisenstaedt", "year": "1945"},
   {"title": "The Tetons and the Snake River", "artist": "Ansel Adams", "year": "1942"},
@@ -873,7 +931,133 @@ artworks = [
     "title": "Sullivan Street",
     "artist": "George Ault",
     "year": "1943"
+  },
+  {
+    "title": "Don't Let that Shadow Touch Them",
+    "artist": "Lawrence Beall Smith",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:0]{index=0}"
+  },
+  {
+    "title": "We Can Do It!",
+    "artist": "J. Howard Miller",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "Loose Lips Sink Ships",
+    "artist": "Frederick Siebel",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "Someone Talked!",
+    "artist": "Fritz Siebel",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "Americans Will Always Fight for Liberty",
+    "artist": "Bernard Perlin",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "We, Too, Have a Job to Do",
+    "artist": "Norman Rockwell",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "Do the Job He Left Behind",
+    "artist": "R. G. Harris",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "title": "My Girl’s a WOW",
+    "artist": "Adolph Treidler",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "title": "Back the Attack!",
+    "artist": "Unknown",
+    "year": "1944",
+    "citation": ":contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "title": "Plant a Victory Garden",
+    "artist": "Office of War Information (Anonymous)",
+    "year": "c. 1942",
+    "citation": ":contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "title": "He Eats A Ton A Year",
+    "artist": "Hubert Morley",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:10]{index=10}"
+  },
+  {
+    "title": "Save Freedom of Speech: Buy War Bonds",
+    "artist": "Norman Rockwell",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:11]{index=11}"
+  },
+  {
+    "title": "Save Freedom of Worship: Buy War Bonds",
+    "artist": "Norman Rockwell",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:12]{index=12}"
+  },
+  {
+    "title": "Freedom from Want",
+    "artist": "Norman Rockwell",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:13]{index=13}"
+  },
+  {
+    "title": "Freedom from Fear",
+    "artist": "Norman Rockwell",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:14]{index=14}"
+  },
+  {
+    "title": "Freedom of Speech",
+    "artist": "Norman Rockwell",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:15]{index=15}"
+  },
+  {
+    "title": "If You Tell Where He's Going, He May Never Get There",
+    "artist": "John Philip Falter",
+    "year": "1943",
+    "citation": ":contentReference[oaicite:16]{index=16}"
+  },
+  {
+    "title": "Man the Guns!",
+    "artist": "McClelland Barclay",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:17]{index=17}"
+  },
+  {
+    "title": "Salvage for Victory",
+    "artist": "Louis Robert Samish",
+    "year": "1942",
+    "citation": ":contentReference[oaicite:18]{index=18}"
+  },
+  {
+    "title": "Use it Up, Wear it Out",
+    "artist": "Unknown",
+    "year": "c. 1943",
+    "citation": ":contentReference[oaicite:19]{index=19}"
   }
+
+
+
+
+
+
 
 ]
 
@@ -899,7 +1083,7 @@ The goal is for the polar bear to appear as if it were part of the original arti
 If multiple people are in the original, you might include other "We Bare Bears" characters, such as Griz or Panda,but ensure Ice Bear is prominent.
 Sometimes, include human figures alongside the bears to maintain the original's essence. 
 Again, The polar bear should be well integrated into the style and spirit of the original artwork, in terms of drawing, paint, 
-colors, texture, and in relation to the objects and activities in the scene.
+colors, texture, and in relation to the objects and activities in the scene. Even the facial expression and gaze on the bear should match the feel and intent of the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the 
