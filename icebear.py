@@ -1083,7 +1083,7 @@ The goal is for the polar bear to appear as if it were part of the original arti
 If multiple people are in the original, you might include other "We Bare Bears" characters, such as Griz or Panda,but ensure Ice Bear is prominent.
 Sometimes, include human figures alongside the bears to maintain the original's essence. 
 Again, The polar bear should be well integrated into the style and spirit of the original artwork, in terms of drawing, paint, 
-colors, texture, and in relation to the objects and activities in the scene. Even the facial expression and gaze on the bear should match the feel and intent of the scene.
+colors, texture, and in relation to the objects and activities in the scene. If there is some principal or background activity, the bear should be engaged in it. Even the facial expression and gaze on the bear should match the feel and intent of the scene.
 The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
 Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
 use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the 
