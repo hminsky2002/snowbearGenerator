@@ -7,7 +7,6 @@ cd ~/src/snowbearGenerator
 source venv/bin/activate
 set -a source .hqmenv
 
-set
 # Run the script
 python icebear.py
 

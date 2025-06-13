@@ -481,7 +481,6 @@ artworks = [
         "artist": "John William Waterhouse",
         "year": "1888",
     },
-    {"title": "Mona Lisa", "artist": "Leonardo da Vinci", "year": "c. 1503–1506"},
     {"title": "Dubonnet", "artist": "A. M. Cassandre", "year": "1932"},
     {"title": "The Garden of Love", "artist": "Peter Paul Rubens", "year": "1633"},
     {"title": "The Fighting Temeraire", "artist": "J.M.W. Turner", "year": "1839"},
@@ -592,7 +591,6 @@ artworks = [
         "artist": "Sandro Botticelli",
         "year": "c. 1484–1486",
     },
-    {"title": "The Last Supper", "artist": "Leonardo da Vinci", "year": "c. 1495–1498"},
     {"title": "West Side Story", "artist": "Saul Bass", "year": "1961"},
     {
         "title": "The Raft of the Medusa",
@@ -694,8 +692,6 @@ artworks = [
   {"title": "Reflections and Shadows", "artist": "Saul Steinberg", "year": "2002"},
   {"title": "View of the World from 9th Avenue", "artist": "Saul Steinberg", "year": "1976"},
   {"title": "The Elephant Table", "artist": "Saul Steinberg", "year": "1975"},
-  {"title": "Mona Lisa", "artist": "Leonardo da Vinci", "year": "1503"},
-  {"title": "The Last Supper", "artist": "Leonardo da Vinci", "year": "1498"},
   {"title": "The School of Athens", "artist": "Raphael", "year": "1511"},
   {"title": "The Birth of Venus", "artist": "Sandro Botticelli", "year": "1486"},
   {"title": "The Garden of Earthly Delights", "artist": "Hieronymus Bosch", "year": "1515"},
@@ -1049,12 +1045,295 @@ artworks = [
     "artist": "Unknown",
     "year": "c. 1943",
     "citation": ":contentReference[oaicite:19]{index=19}"
+  },
+    {
+  "title": "Vitruvian Man",
+  "artist": "Leonardo da Vinci",
+  "year": "c. 1490"
+    },
+  {
+    "title": "Continuous Motion Machine",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1490"
+  },
+  {
+    "title": "Screw Cutting Machine",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1500"
+  },
+  {
+    "title": "Automaton Knight",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1495"
+  },
+  {
+    "title": "Hydraulic Saw",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1493"
+  },
+  {
+    "title": "The Vascular System of the Brain",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1508"
+  },
+  {
+    "title": "Studies of the Spinal Column and Vertebrae",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1510"
+  },
+  {
+    "title": "Section of a Human Skull",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1498"
+  },
+  {
+    "title": "Turbulence Studies",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1508"
+  },
+  {
+    "title": "Canal Locks and Water Elevators",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1485"
+  },
+  {
+    "title": "Deluge Drawings",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1515"
+  },
+  {
+    "title": "Studies of the Camera Obscura",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1502"
+  },
+  {
+    "title": "Shadow and Perspective in Geometric Solids",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1492"
+  },
+  {
+    "title": "Vitruvian Man",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1490"
+  },
+  {
+    "title": "Design for the Ideal City",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1487"
+  },
+  {
+    "title": "Section of St. Peter's Basilica",
+    "artist": "Michelangelo Buonarroti",
+    "year": "c. 1547"
+  },
+  {
+    "title": "Plan of the New St. Peter’s Basilica",
+    "artist": "Donato Bramante",
+    "year": "c. 1506"
+  },
+  {
+    "title": "Perspective Drawing of a Palace Facade",
+    "artist": "Leon Battista Alberti",
+    "year": "c. 1450"
+  },
+  {
+    "title": "Drawing for Villa Rotonda",
+    "artist": "Andrea Palladio",
+    "year": "c. 1567"
+  },
+  {
+    "title": "Design for a Futurist City",
+    "artist": "Antonio Sant’Elia",
+    "year": "c. 1914"
+  },
+  {
+    "title": "Monument to the Third International",
+    "artist": "Vladimir Tatlin",
+    "year": "c. 1920"
+  },
+  {
+    "title": "Dom-ino House Structural Diagram",
+    "artist": "Le Corbusier",
+    "year": "1914"
+  },
+  {
+    "title": "Fallingwater Preliminary Sketch",
+    "artist": "Frank Lloyd Wright",
+    "year": "1935"
+  },
+  {
+    "title": "Guggenheim Museum New York Concept Drawing",
+    "artist": "Frank Lloyd Wright",
+    "year": "c. 1943"
+  },
+  {
+    "title": "Pompidou Centre Structural Concept",
+    "artist": "Renzo Piano and Richard Rogers",
+    "year": "c. 1971"
+  },
+  {
+    "title": "Crystal Palace Interior View, Great Exhibition of 1851",
+    "artist": "Joseph Nash",
+    "year": "1851"
+  },
+  {
+    "title": "Panoramic View of the 1889 Exposition Universelle, Paris",
+    "artist": "Georges Garen",
+    "year": "1889"
+  },
+  {
+    "title": "Eiffel Tower Construction Sketches",
+    "artist": "Gustave Eiffel",
+    "year": "1887"
+  },
+  {
+    "title": "Official Poster for the Exposition Universelle, Paris 1900",
+    "artist": "Alfred Choubrac",
+    "year": "1900"
+  },
+  {
+    "title": "Transportation Building, World’s Columbian Exposition",
+    "artist": "Louis Sullivan",
+    "year": "1893"
+  },
+  {
+    "title": "Visionary Design for the Tower of Progress, 1915 Panama-Pacific International Exposition",
+    "artist": "Bernard Maybeck",
+    "year": "1915"
+  },
+  {
+    "title": "Poster for the 1939 New York World's Fair",
+    "artist": "Joseph Binder",
+    "year": "1938"
+  },
+  {
+    "title": "Trylon and Perisphere Architectural Drawing",
+    "artist": "Wallace Harrison and J. André Fouilhoux",
+    "year": "1937"
+  },
+  {
+    "title": "Expo 58 Atomium Concept Drawing",
+    "artist": "André Waterkeyn",
+    "year": "1955"
+  },
+  {
+    "title": "Expo 67 Habitat 67 Concept Sketch",
+    "artist": "Moshe Safdie",
+    "year": "1961"
+  },
+  {
+    "title": "Official Poster for Expo 70, Osaka",
+    "artist": "Kiyoshi Awazu",
+    "year": "1970"
+  },
+  {
+    "title": "U.S. Pavilion Geodesic Dome for Expo 67",
+    "artist": "Buckminster Fuller",
+    "year": "1967"
+  },
+
+
+
+  {
+    "title": "Studies of Flying Machines",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1485"
+  },
+  {
+    "title": "Aeropittura: Flight over the City",
+    "artist": "Tullio Crali",
+    "year": "1939"
+  },
+  {
+    "title": "The Flying Boat",
+    "artist": "Charles Sheeler",
+    "year": "1942"
+  },
+  {
+    "title": "Cloud Shepherd (Wolkenhirt)",
+    "artist": "Jean Arp",
+    "year": "1953"
+  },
+  {
+    "title": "Airplane Flying",
+    "artist": "Kazimir Malevich",
+    "year": "1915"
+  },
+  {
+    "title": "Falling Aircraft",
+    "artist": "Paul Nash",
+    "year": "1944"
+  },
+  {
+    "title": "Spitfires Attacking Flying Bombs",
+    "artist": "Roy Nockolds",
+    "year": "1944"
+  },
+  {
+    "title": "Airplane Over the Trenches",
+    "artist": "C.R.W. Nevinson",
+    "year": "1917"
+  },
+  {
+    "title": "Design for a Zeppelin Poster",
+    "artist": "Ludwig Hohlwein",
+    "year": "c. 1910"
+  },
+  {
+    "title": "Aviation Poster for Pan Am",
+    "artist": "Joseph Binder",
+    "year": "1950"
+  },
+  {
+    "title": "Flight: Chase Through the Clouds",
+    "artist": "Robert Delaunay",
+    "year": "1913"
+  },
+  {
+    "title": "Airplane and Woman",
+    "artist": "Gerald Murphy",
+    "year": "1929"
+  },
+ {
+    "title": "View of the Canal Grande with Santa Maria della Salute",
+    "artist": "Canaletto",
+    "year": "c. 1730"
+  },
+  {
+    "title": "Construction of a Canal Lock",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1500"
+  },
+  {
+    "title": "The Canal at Dusk",
+    "artist": "John Atkinson Grimshaw",
+    "year": "c. 1875"
+  },
+  {
+    "title": "Industrial Canal Scene",
+    "artist": "L.S. Lowry",
+    "year": "c. 1943"
+  },
+  {
+    "title": "Barges on the Canal, Ghent",
+    "artist": "Albert Baertsoen",
+    "year": "1901"
+  },
+  {
+    "title": "View of Delft",
+    "artist": "Johannes Vermeer",
+    "year": "c. 1660"
+  },
+  {
+    "title": "Locks at Dolo",
+    "artist": "Bernardo Bellotto",
+    "year": "c. 1743"
+  },
+  {
+    "title": "Canal under Snow",
+    "artist": "Claude Monet",
+    "year": "1869"
   }
-
-
-
-
-
 
 
 ]
@@ -1070,24 +1349,42 @@ difference = (target_date - today).days
 artwork_choice = random.choice(artworks)
 
 def create_prompt(artwork, bear_modifier=""):
-    return f"""
- {bear_modifier} "{artwork["title"]}" by {artwork["artist"]}.
-The image should feature a cartoon polar bear inspired by Ice Bear from "We Bare Bears".
-The polar bear should be well integrated into the style and spirit of the original artwork.
-If the original artwork contains people, consider substituting the polar bear for one or more of them, or adding it alongside them.
-If there are no people, incorporate the polar bear creatively into the scene.
-If the artwork is abstract, the polar bear's depiction should also be abstract, matching the original style.
-The goal is for the polar bear to appear as if it were part of the original artist's composition.
-If multiple people are in the original, you might include other "We Bare Bears" characters, such as Griz or Panda,but ensure Ice Bear is prominent.
-Sometimes, include human figures alongside the bears to maintain the original's essence. 
-Again, The polar bear should be well integrated into the style and spirit of the original artwork, in terms of drawing, paint, 
-colors, texture, and in relation to the objects and activities in the scene. If there is some principal or background \activity, the bear should be engaged in it. Even the facial expression and gaze on the bear should match the feel and intent of the scene.
-The artwork must be constructed so that in no way would cause violation of openAI image generation guidelines.
-Make every effort to make Ice Bear or bears blend in with the style and background, e.g., wear the same type of clothing,
-use same kind of lighting, shadows, coloring,  and brush strokes, be properly occluded by objects in the scene. The intent of the 
-artwork must guide how the bear or bears are integrated into it. Artworks are unique because of the particular style they have, so use the original as a very literal guide, to preserve that unique style and colors, textures, technqiue, really the appearance must match up as much as possible.
-Also MAKE SURE to render into the image a text title which has the title of the original artwork, the artist, and what year the artwork was made, which you were careful to remember. We must give credit to the original artist by putting in this title caption. Make sure there is room in the image for the title, and artist info, so it is not cut off at the edge.
-"""
+    return f""" {bear_modifier} "{artwork["title"]}" by {artwork["artist"]}. First fetch the image 
+so you have the pixels to work with. Then, make an image inspired by the original image, but the new
+ image should feature a cartoon polar bear inspired by Ice Bear from
+ "We Bare Bears". The polar bear should be well integrated into the
+ style and spirit of the original artwork. If the original artwork
+ contains people, consider substituting the polar bear for one or more
+ of them, or adding it alongside them. If there are no people,
+ incorporate the polar bear creatively into the scene. If the artwork
+ is abstract, the polar bear's depiction should also be abstract,
+ matching the original style. The goal is for the polar bear to appear
+ as if it were part of the original artist's composition. If multiple
+ people are in the original, you might include other "We Bare Bears"
+ characters, such as Griz or Panda,but ensure Ice Bear is prominent.
+ Sometimes, include human figures alongside the bears to maintain the
+ original's essence. Again, The polar bear should be well integrated
+ into the style and spirit of the original artwork, in terms of
+ drawing, paint, colors, texture, and in relation to the objects and
+ activities in the scene. If there is some principal or background
+ activity, the bear should be engaged in it. Even the facial
+ expression and gaze on the bear should match the feel and intent of
+ the scene. The artwork must be constructed so that in no way would
+ cause violation of openAI image generation guidelines. Make every
+ effort to make Ice Bear or bears blend in with the style and
+ background, e.g., wear the same type of clothing, use same kind of
+ lighting, shadows, coloring, and brush strokes, be properly occluded
+ by objects in the scene. The intent of the artwork must guide how the
+ bear or bears are integrated into it. Artworks are unique because of
+ the particular style they have, so use the original as a very literal
+ guide, to preserve that unique style and colors, textures, technqiue,
+ really the appearance must match up as much as possible. Also MAKE
+ SURE to render into the image a text title which has the title of the
+ original artwork, the artist, and what year the artwork was made,
+ which you were careful to remember. We must give credit to the
+ original artist by putting in this title caption. Make sure there is
+ room in the image for the title, and artist info, so it is not cut
+ off at the edge. """
 
 alternate_prompts = [
      "Generate an image which takes inspiration from the artwork",
