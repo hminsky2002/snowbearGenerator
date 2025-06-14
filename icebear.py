@@ -378,8 +378,6 @@ artworks = [
   {"title": "The Equatorial Jungle", "artist": "Henri Rousseau", "year": "1909"},
   {"title": "The Tilled Field", "artist": "Joan Miró", "year": "1923"},
   {"title": "City Building", "artist": "Thomas Hart Benton", "year": "1930"},
-  {"title": "Christina’s World", "artist": "Andrew Wyeth", "year": "1948"},
-  {"title": "The Sleeping Gypsy", "artist": "Henri Rousseau", "year": "1897"},
   {"title": "The Lovers", "artist": "René Magritte", "year": "1928"},
   {"title": "Red Balloon", "artist": "Paul Klee", "year": "1922"},
   {"title": "Black Iris III", "artist": "Georgia O’Keeffe", "year": "1926"},
@@ -1374,7 +1372,8 @@ so you have the pixels to work with. Then, make an image inspired by the origina
  effort to make Ice Bear or bears blend in with the style and
  background, e.g., wear the same type of clothing, use same kind of
  lighting, shadows, coloring, and brush strokes, be properly occluded
- by objects in the scene. The intent of the artwork must guide how the
+ by objects in the scene. If the original is a sculpture, make a rendering
+of a scuplture with the bear modifications. The intent of the artwork must guide how the
  bear or bears are integrated into it. Artworks are unique because of
  the particular style they have, so use the original as a very literal
  guide, to preserve that unique style and colors, textures, technqiue,
@@ -1393,9 +1392,6 @@ alternate_prompts = [
     "Generate an image  which, featuring a solitary cartoon polar bear akin to Ice Bear, as the central figure, does reinterpretation of the original artwork's theme, but in no way would cause violation of your guidelines using as a theme the artwork "
 ]
 
-prompt_modifier = random.choice(alternate_prompts)
-initial_prompt = create_prompt(artwork_choice, prompt_modifier)
-
 media_dir = "./media"
 if not os.path.exists(media_dir):
     os.makedirs(media_dir)
@@ -1410,17 +1406,14 @@ if not os.path.exists(image_filepath):
         api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
     )
     
-    prompts_to_try = [initial_prompt] + list(map(lambda prompt: create_prompt(artwork_choice, prompt), alternate_prompts))
+    prompts = [create_prompt(artwork_choice, random.choice(alternate_prompts)) for i in range(0,8)]
 
     image_generated = False
     
-    for i, current_prompt in enumerate(prompts_to_try):
-        if i >= 5: # Max 3 retries (initial + 2 alternates)
-            print("Maximum retries reached. Could not generate image.")
-            break
+    for i, prompt in enumerate(prompts):
         try:
-            print(f"Attempt {i+1} with prompt: {current_prompt}")
-            result = client.images.generate(model="gpt-image-1", prompt=current_prompt)
+            print(f"Attempt {i+1} with prompt: {prompt}")
+            result = client.images.generate(model="gpt-image-1", prompt=prompt)
             image_base64 = result.data[0].b64_json
             if image_base64 is None:
                 raise ValueError("No image data returned from API")
@@ -1435,7 +1428,7 @@ if not os.path.exists(image_filepath):
             break 
         except BadRequestError as e:
             print(f"Attempt {i+1} failed with BadRequestError: {e}")
-            if i < len(prompts_to_try) -1:
+            if i < len(prompts) -1:
                  print("Retrying with an alternate prompt...")
             else:
                 print("All prompts failed.")
