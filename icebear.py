@@ -1344,7 +1344,7 @@ today = datetime.today()
 
 difference = (target_date - today).days
 
-artwork_choice = random.choice(artworks)
+
 
 def create_prompt(artwork, bear_modifier=""):
     return f""" {bear_modifier} "{artwork["title"]}" by {artwork["artist"]}. First fetch the image 
@@ -1396,50 +1396,52 @@ media_dir = "./media"
 if not os.path.exists(media_dir):
     os.makedirs(media_dir)
 
-image_filename = (
-    f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.png"
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
 )
-image_filepath = os.path.join(media_dir, image_filename)
-
-if not os.path.exists(image_filepath):
-    client = OpenAI(
-        api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
-    )
     
-    prompts = [create_prompt(artwork_choice, random.choice(alternate_prompts)) for i in range(0,8)]
-
-    image_generated = False
+image_generated = False
+N_PROMPTS = 8
     
-    for i, prompt in enumerate(prompts):
-        try:
-            print(f"Attempt {i+1} with prompt: {prompt}")
-            result = client.images.generate(model="gpt-image-1", prompt=prompt)
-            image_base64 = result.data[0].b64_json
-            if image_base64 is None:
-                raise ValueError("No image data returned from API")
-            image_bytes = base64.b64decode(image_base64)
+for i in range(0,N_PROMPTS):
+    try:
+        artwork_choice = random.choice(artworks)
+        prompt = create_prompt(artwork_choice, random.choice(alternate_prompts))
+        print(f"Attempt {i+1} with prompt: {prompt}")
 
-            with open(image_filepath, "wb") as f:
-                f.write(image_bytes)
-            print(
-                f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
-            )
-            image_generated = True
-            break 
-        except BadRequestError as e:
-            print(f"Attempt {i+1} failed with BadRequestError: {e}")
-            if i < len(prompts) -1:
-                 print("Retrying with an alternate prompt...")
-            else:
-                print("All prompts failed.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-            break 
 
-    if not image_generated:
-        print("Failed to generate image after multiple attempts.")
-        # Optionally, handle the failure e.g., by exiting or sending a different email
-        exit()
+        image_filename = (
+            f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.png"
+        )
+        image_filepath = os.path.join(media_dir, image_filename)
+
+        result = client.images.generate(model="gpt-image-1", prompt=prompt)
+        image_base64 = result.data[0].b64_json
+        if image_base64 is None:
+            raise ValueError("No image data returned from API")
+        image_bytes = base64.b64decode(image_base64)
+
+        with open(image_filepath, "wb") as f:
+            f.write(image_bytes)
+        print(
+            f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
+        )
+        image_generated = True
+        break 
+    except BadRequestError as e:
+        print(f"Attempt {i+1} failed with BadRequestError: {e}")
+        if i < N_PROMPTS:
+             print("Retrying with an alternate prompt...")
+        else:
+            print("All prompts failed.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        break 
+
+if not image_generated:
+    print("Failed to generate image after multiple attempts.")
+    # Optionally, handle the failure e.g., by exiting or sending a different email
+    exit()
 
 
 data = {
