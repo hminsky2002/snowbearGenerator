@@ -5,6 +5,8 @@ import random
 from datetime import datetime
 import requests
 from dotenv import load_dotenv
+from PIL import Image
+import io
 
 load_dotenv()
 
@@ -23,7 +25,7 @@ artworks = [
   {"title": "Étoile du Nord", "artist": "A. M. Cassandre", "year": "1927"},  # :contentReference[oaicite:11]{index=11} 
   {"title": "La Route Bleue", "artist": "A. M. Cassandre", "year": "1929"},  # :contentReference[oaicite:12]{index=12} 
   {"title": "Chemin de Fer du Nord", "artist": "A. M. Cassandre", "year": "1929"},  # :contentReference[oaicite:13]{index=13} 
-  {"title": "L’Atlantique", "artist": "A. M. Cassandre", "year": "1931"},  # :contentReference[oaicite:14]{index=14} 
+  {"title": "L'Atlantique", "artist": "A. M. Cassandre", "year": "1931"},  # :contentReference[oaicite:14]{index=14} 
   {"title": "Triplex", "artist": "A. M. Cassandre", "year": "1930"},  # :contentReference[oaicite:15]{index=15} 
   {"title": "Dubonnet", "artist": "A. M. Cassandre", "year": "1932"},  # :contentReference[oaicite:16]{index=16} 
   {"title": "Air-Orient", "artist": "A. M. Cassandre", "year": "1932"},  # :contentReference[oaicite:17]{index=17} 
@@ -32,7 +34,7 @@ artworks = [
   {"title": "Swiss Ski Travel Poster", "artist": "Herbert Matter", "year": "1935"},  # :contentReference[oaicite:20]{index=20} 
   {"title": "Schweiz – Herbert Matter", "artist": "Herbert Matter", "year": "1935"},  # :contentReference[oaicite:21]{index=21} 
   {"title": "All Roads Lead to Switzerland", "artist": "Herbert Matter", "year": "1934"},  # :contentReference[oaicite:22]{index=22} 
-  {"title": "Marseille, Côte d’Azur Ski Poster", "artist": "Roger Broders", "year": "1930"},  # :contentReference[oaicite:23]{index=23} 
+  {"title": "Marseille, Côte d'Azur Ski Poster", "artist": "Roger Broders", "year": "1930"},  # :contentReference[oaicite:23]{index=23} 
   {"title": "Venice by Sea", "artist": "Roger Broders", "year": "1932"},  # :contentReference[oaicite:24]{index=24} 
   {"title": "Paris–Marseille Ocean Liner Poster", "artist": "Roger Broders", "year": "1931"},  # :contentReference[oaicite:25]{index=25} 
   {"title": "Subway Passengers #17", "artist": "Walker Evans", "year": "1938"},  #  (commonly known; verify via Walker Evans references) 
@@ -59,7 +61,7 @@ artworks = [
   {"title": "Passport Cover Design", "artist": "Hans Erni", "year": "1935"},  # Swiss designer travel-related graphics :contentReference[oaicite:38]{index=38} 
   {"title": "Orient Express Poster", "artist": "A. M. Cassandre", "year": "1925"},  # :contentReference[oaicite:39]{index=39} 
   {"title": "Étoile du Nord (railway)", "artist": "A. M. Cassandre", "year": "1927"},  # duplicate but variant 
-  {"title": "Air France Poster", "artist": "A. M. Cassandre", "year": "1933"},  # L’Atlantique variant :contentReference[oaicite:40]{index=40} 
+  {"title": "Air France Poster", "artist": "A. M. Cassandre", "year": "1933"},  # L'Atlantique variant :contentReference[oaicite:40]{index=40} 
   {"title": "Ski Resort Poster", "artist": "Carl Moos", "year": "1930"},  # :contentReference[oaicite:41]{index=41} 
   {"title": "Travel Collage", "artist": "Romare Bearden", "year": "1963"},  # travel memory theme 
   {"title": "Space Travel Concept Drawing", "artist": "Chesley Bonestell", "year": "1950"},  # space travel illustration 
@@ -372,7 +374,7 @@ artworks = [
   {"title": "Melancholy and Mystery of a Street", "artist": "Giorgio de Chirico", "year": "1914"},
   {"title": "Battle of Lights, Coney Island", "artist": "Joseph Stella", "year": "1913"},
   {"title": "Zapatista Landscape", "artist": "Diego Rivera", "year": "1915"},
-  {"title": "The Liver is the Cock’s Comb", "artist": "Arshile Gorky", "year": "1944"},
+  {"title": "The Liver is the Cock's Comb", "artist": "Arshile Gorky", "year": "1944"},
   {"title": "Three Musicians", "artist": "Fernand Léger", "year": "1921"},
   {"title": "The Cockfight", "artist": "Jean-Léon Gérôme", "year": "1846"},
   {"title": "The Equatorial Jungle", "artist": "Henri Rousseau", "year": "1909"},
@@ -380,7 +382,7 @@ artworks = [
   {"title": "City Building", "artist": "Thomas Hart Benton", "year": "1930"},
   {"title": "The Lovers", "artist": "René Magritte", "year": "1928"},
   {"title": "Red Balloon", "artist": "Paul Klee", "year": "1922"},
-  {"title": "Black Iris III", "artist": "Georgia O’Keeffe", "year": "1926"},
+  {"title": "Black Iris III", "artist": "Georgia O'Keeffe", "year": "1926"},
   {"title": "The Green Stripe", "artist": "Henri Matisse", "year": "1905"},
   {"title": "Broadway Boogie Woogie", "artist": "Piet Mondrian", "year": "1943"},
   {"title": "The Revolt of the Masses", "artist": "David Alfaro Siqueiros", "year": "1931"},
@@ -424,7 +426,7 @@ artworks = [
   {"title": "The Boating Party", "artist": "Mary Cassatt", "year": "1893"},
   {"title": "Portrait of Adele Bloch-Bauer II", "artist": "Gustav Klimt", "year": "1912"},
   {"title": "The Tree of Life", "artist": "Gustav Klimt", "year": "1909"},
-  {"title": "Dancer at the Photographer’s Studio", "artist": "Edgar Degas", "year": "1875"},
+  {"title": "Dancer at the Photographer's Studio", "artist": "Edgar Degas", "year": "1875"},
   {"title": "The Siesta", "artist": "Paul Gauguin", "year": "1892"},
   {"title": "Where Do We Come From? What Are We? Where Are We Going?", "artist": "Paul Gauguin", "year": "1897"},
   {"title": "Woman with a Parrot", "artist": "Édouard Manet", "year": "1866"},
@@ -435,7 +437,7 @@ artworks = [
   {"title": "Portrait of Edith Schiele", "artist": "Egon Schiele", "year": "1915"},
   {"title": "Street, Berlin", "artist": "Ernst Ludwig Kirchner", "year": "1913"},
   {"title": "Dancers, Pink and Green", "artist": "Edgar Degas", "year": "1890"},
-  {"title": "The Dream of the Fisherman’s Wife", "artist": "Hokusai", "year": "1814"},
+  {"title": "The Dream of the Fisherman's Wife", "artist": "Hokusai", "year": "1814"},
   {"title": "The Basket of Apples", "artist": "Paul Cézanne", "year": "1893"},
   {"title": "The Gulf of Marseille Seen from L'Estaque", "artist": "Paul Cézanne", "year": "1885"},
   {"title": "Women of Algiers", "artist": "Eugène Delacroix", "year": "1834"},
@@ -810,7 +812,7 @@ artworks = [
   {"title": "Beirut", "artist": "Gabriele Basilico", "year": "1991"},
   {"title": "Alabama, 1963 (Tank Man of Selma)", "artist": "Charles Moore", "year": "1963"},
   
-  {"title": "Who’s Afraid of Aunt Jemima?", "artist": "Faith Ringgold", "year": "1983"},
+  {"title": "Who's Afraid of Aunt Jemima?", "artist": "Faith Ringgold", "year": "1983"},
   {"title": "F-111", "artist": "James Rosenquist", "year": "1965"},
   {"title": "The City Rises", "artist": "Umberto Boccioni", "year": "1910"},
   {"title": "Man Pointing", "artist": "Alberto Giacometti", "year": "1947"},
@@ -838,7 +840,7 @@ artworks = [
   {"title": "I Can See the Whole Room!... and There's Nobody in It!", "artist": "Roy Lichtenstein", "year": "1961"},
   {"title": "The Critic Laughs", "artist": "Richard Hamilton", "year": "1968"},
   {"title": "Self-Portrait as a Drowned Man", "artist": "Hippolyte Bayard", "year": "1840"},
-  {"title": "Ceci n’est pas une pipe", "artist": "René Magritte", "year": "1929"},
+  {"title": "Ceci n'est pas une pipe", "artist": "René Magritte", "year": "1929"},
   {"title": "Sunday Afternoon in the Island of La Grande Jatte", "artist": "Georges Seurat", "year": "1886"},
   {"title": "A Bigger Splash", "artist": "David Hockney", "year": "1967"},
   {"title": "The Singing Butler", "artist": "Jack Vettriano", "year": "1992"},
@@ -847,7 +849,7 @@ artworks = [
   {"title": "The Snail", "artist": "Henri Matisse", "year": "1953"},
   {"title": "The Alphabet", "artist": "Jasper Johns", "year": "1960"},
   {"title": "Maman", "artist": "Louise Bourgeois", "year": "1999"},
-  {"title": "Untitled (We Don’t Need Another Hero)", "artist": "Barbara Kruger", "year": "1987"},
+  {"title": "Untitled (We Don't Need Another Hero)", "artist": "Barbara Kruger", "year": "1987"},
   {"title": "Sunflower Seeds", "artist": "Ai Weiwei", "year": "2010"},
   {"title": "I Shop Therefore I Am", "artist": "Barbara Kruger", "year": "1987"},
   {"title": "The Art of Clean Up", "artist": "Ursus Wehrli", "year": "2013"},
@@ -858,7 +860,7 @@ artworks = [
   {"title": "Fly TWA to New York", "artist": "David Klein", "year": "1956"},
   {"title": "Visit India", "artist": "Unknown (Indian Tourism Board)", "year": "1950s"},
   {"title": "Normandie", "artist": "Cassandre", "year": "1935"},
-  {"title": "Côte d’Azur Pullman Express", "artist": "Roger Broders", "year": "1920s"},
+  {"title": "Côte d'Azur Pullman Express", "artist": "Roger Broders", "year": "1920s"},
   {"title": "London by Underground", "artist": "Horace Taylor", "year": "1924"},
   {"title": "Switzerland – Jungfrau Railway", "artist": "Emil Cardinaux", "year": "1910s"},
   {"title": "See Canada by Canadian Pacific", "artist": "Peter Ewart", "year": "1950s"},
@@ -885,7 +887,7 @@ artworks = [
     "year": "1941"
   },
   {
-    "title": "Black Night: Russell’s Corners",
+    "title": "Black Night: Russell's Corners",
     "artist": "George Ault",
     "year": "1943"
   },
@@ -900,7 +902,7 @@ artworks = [
     "year": "1928"
   },
   {
-    "title": "Daylight at Russell’s Corners",
+    "title": "Daylight at Russell's Corners",
     "artist": "George Ault",
     "year": "1944"
   },
@@ -967,7 +969,7 @@ artworks = [
     "citation": ":contentReference[oaicite:6]{index=6}"
   },
   {
-    "title": "My Girl’s a WOW",
+    "title": "My Girl's a WOW",
     "artist": "Adolph Treidler",
     "year": "1943",
     "citation": ":contentReference[oaicite:7]{index=7}"
@@ -1125,7 +1127,7 @@ artworks = [
     "year": "c. 1547"
   },
   {
-    "title": "Plan of the New St. Peter’s Basilica",
+    "title": "Plan of the New St. Peter's Basilica",
     "artist": "Donato Bramante",
     "year": "c. 1506"
   },
@@ -1141,7 +1143,7 @@ artworks = [
   },
   {
     "title": "Design for a Futurist City",
-    "artist": "Antonio Sant’Elia",
+    "artist": "Antonio Sant'Elia",
     "year": "c. 1914"
   },
   {
@@ -1190,7 +1192,7 @@ artworks = [
     "year": "1900"
   },
   {
-    "title": "Transportation Building, World’s Columbian Exposition",
+    "title": "Transportation Building, World's Columbian Exposition",
     "artist": "Louis Sullivan",
     "year": "1893"
   },
@@ -1373,7 +1375,7 @@ so you have the pixels to work with. Then, make an image inspired by the origina
  background, e.g., wear the same type of clothing, use same kind of
  lighting, shadows, coloring, and brush strokes, be properly occluded
  by objects in the scene. If the original is a sculpture, make a rendering
-of a scuplture with the bear modifications. The intent of the artwork must guide how the
+ of a scuplture with the bear modifications. The intent of the artwork must guide how the
  bear or bears are integrated into it. Artworks are unique because of
  the particular style they have, so use the original as a very literal
  guide, to preserve that unique style and colors, textures, technqiue,
@@ -1411,7 +1413,7 @@ for i in range(0,N_PROMPTS):
 
 
         image_filename = (
-            f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.png"
+            f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.jpg"
         )
         image_filepath = os.path.join(media_dir, image_filename)
 
@@ -1421,8 +1423,18 @@ for i in range(0,N_PROMPTS):
             raise ValueError("No image data returned from API")
         image_bytes = base64.b64decode(image_base64)
 
-        with open(image_filepath, "wb") as f:
-            f.write(image_bytes)
+        # Convert PNG to JPG using PIL
+        png_image = Image.open(io.BytesIO(image_bytes))
+        # Convert to RGB if necessary (PNG might have transparency)
+        if png_image.mode in ('RGBA', 'LA', 'P'):
+            rgb_image = Image.new('RGB', png_image.size, (255, 255, 255))
+            if png_image.mode == 'P':
+                png_image = png_image.convert('RGBA')
+            rgb_image.paste(png_image, mask=png_image.split()[-1] if png_image.mode in ('RGBA', 'LA') else None)
+            png_image = rgb_image
+        
+        # Save as JPG
+        png_image.save(image_filepath, 'JPEG', quality=95)
         print(
             f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
         )
