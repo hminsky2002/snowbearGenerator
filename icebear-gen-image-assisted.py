@@ -1860,12 +1860,12 @@ if os.getenv("MAILGUN_CC_EMAILS"):
     data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
 
 if os.path.exists(image_filepath): # Only send email if image was generated
-    requests.post(
+    print(requests.post(
         f"{os.getenv('MAILGUN_DOMAIN')}",
         auth=("api", os.environ["MAILGUN_API_KEY"]),
         files=[("inline", open(image_filepath, "rb"))],
         data=data,
-    )
+    ))
     print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
 else:
     print(f"Email not sent as image {image_filename} was not generated.")
