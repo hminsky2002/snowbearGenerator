@@ -1,3 +1,5 @@
 .venv
 .env
 media
+search_images
+__pycache__
