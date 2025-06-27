@@ -1786,7 +1786,7 @@ client = OpenAI(
 image_generated = False
 N_PROMPTS = 8
 
-file_name = google_search_api_call(f'High quality image of {artwork_choice['title']} by {artwork_choice['artist']}')
+file_name = google_search_api_call(f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}")
 links_and_format_pairs, search_terms = google_search_response_parser(file_name)
 download_images(links_and_format_pairs, search_terms)
 
