@@ -1791,7 +1791,7 @@ links_and_format_pairs, search_terms = google_search_response_parser(file_name)
 download_images(links_and_format_pairs, search_terms)
 
 image_files = glob.glob(f"{media_dir}/search_images/{search_terms}/*")
-
+image_files.sort()
 
 
 image_generated = False
