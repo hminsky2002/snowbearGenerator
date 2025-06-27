@@ -80,7 +80,7 @@ artworks = [
   {"title": "Tragic Kingdom", "artist": "No Doubt", "year": "1995"},
   {"title": "Aja", "artist": "Steely Dan", "year": "1977"},
   {"title": "She’s So Unusual", "artist": "Cyndi Lauper", "year": "1983"},
-  {"title": "Revolver", "artist": "The Beatles", "year": "1966"},,
+  {"title": "Revolver", "artist": "The Beatles", "year": "1966"},
   {"title": "The Dark Side of the Moon", "artist": "Pink Floyd", "year": "1973"},
   {"title": "Abbey Road", "artist": "The Beatles", "year": "1969"},
   {"title": "Nevermind", "artist": "Nirvana", "year": "1991"},
