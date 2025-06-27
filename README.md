@@ -22,6 +22,9 @@ The following environment variables are required:
 - MAILGUN_TO
 - MAILGUN_TO_NAME
 - MAILGUN_CC_EMAILS (optional) - a comma separated list of email addresses to cc the email to
+- GOOGLE_SEARCH_API_KEY (for the google custom search API, icebear-selfgen-image.py)
+- GOOGLE_SEARCH_ENGINE_ID (for the google custom search API, icebear-selfgen-image.py)
+
 # RUNNING LOCALLY
 
 to run the script locally, you can use the following command:
