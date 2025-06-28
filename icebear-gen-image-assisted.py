@@ -4,6 +4,7 @@ import base64
 import random
 from datetime import datetime
 import requests
+import argparse
 from dotenv import load_dotenv
 from PIL import Image
 import io
@@ -14,7 +15,13 @@ from google_custom_search_image_downloader import (
     download_images,
 )
 
-load_dotenv()
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Generate IceBear artwork images')
+parser.add_argument('--env', type=str, help='Path to .env file (optional)')
+args = parser.parse_args()
+
+# Load environment variables
+load_dotenv(args.env)
 
 artworks = [
     {
