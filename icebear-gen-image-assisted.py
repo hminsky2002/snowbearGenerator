@@ -1763,14 +1763,9 @@ def create_prompt(bear_modifier=""):
  the particular style they have, so use the original as a very literal
  guide, to preserve that unique style and colors, textures, technqiue,
  really the appearance must match up as much as possible. If there is text in the
-artwork image, put in some subtle references to bears or to Ice Bear, either
-altering words to have some bear-like reference or substituting occasional reference to bear things. Also MAKE
- SURE to render into the image a text title which has the title of the
- original artwork, the artist, and what year the artwork was made,
- which you were careful to remember. We must give credit to the
- original artist by putting in this title caption. Make sure there is
- room in the image for the title, and artist info, so it is not cut
- off at the edge. """
+artwork image, put in just a subtle references to bears or to Ice Bear, either
+altering a single name to have some bear-like reference or a altering single word to be more  bear-like. Don't overdo it, be
+subtle.  """
 
 
 alternate_prompts = [
