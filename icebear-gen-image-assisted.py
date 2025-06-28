@@ -21,7 +21,7 @@ parser.add_argument('--env', type=str, help='Path to .env file (optional)')
 args = parser.parse_args()
 
 # Load environment variables
-load_dotenv(args.env)
+load_dotenv(dotenv_path=args.env,override=True)
 
 artworks = [
     {
@@ -1762,7 +1762,9 @@ def create_prompt(bear_modifier=""):
  bear or bears are integrated into it. Artworks are unique because of
  the particular style they have, so use the original as a very literal
  guide, to preserve that unique style and colors, textures, technqiue,
- really the appearance must match up as much as possible. Also MAKE
+ really the appearance must match up as much as possible. If there is text in the
+artwork image, put in some subtle references to bears or to Ice Bear, either
+altering words to have some bear-like reference or substituting occasional reference to bear things. Also MAKE
  SURE to render into the image a text title which has the title of the
  original artwork, the artist, and what year the artwork was made,
  which you were careful to remember. We must give credit to the
