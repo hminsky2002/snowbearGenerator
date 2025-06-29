@@ -391,11 +391,6 @@ artworks = [
         "year": "1970",
     },
     {
-        "title": "Histology of the Different Classes of Uterine Tumors",
-        "artist": "Wangechi Mutu",
-        "year": "2005",
-    },
-    {
         "title": "Fear and Loathing Illustration",
         "artist": "Ralph Steadman",
         "year": "1971",
@@ -1722,7 +1717,307 @@ artworks = [
     {"title": "View of Delft", "artist": "Johannes Vermeer", "year": "c. 1660"},
     {"title": "Locks at Dolo", "artist": "Bernardo Bellotto", "year": "c. 1743"},
     {"title": "Canal under Snow", "artist": "Claude Monet", "year": "1869"},
+  {
+    "title": "Fear and Loathing in Las Vegas",
+    "artist": "Ralph Steadman",
+    "year": "1971"
+  },
+  {
+    "title": "I, Leonardo",
+    "artist": "Ralph Steadman",
+    "year": "1983"
+  },
+  {
+    "title": "The Grapes of Ralph",
+    "artist": "Ralph Steadman",
+    "year": "1992"
+  },
+  {
+    "title": "Alice in Wonderland",
+    "artist": "Ralph Steadman",
+    "year": "1967"
+  },
+  {
+    "title": "Animal Farm",
+    "artist": "Ralph Steadman",
+    "year": "1995"
+  },
+  {
+    "title": "Sigmund Freud",
+    "artist": "Ralph Steadman",
+    "year": "1979"
+  },
+  {
+    "title": "The Big I Am",
+    "artist": "Ralph Steadman",
+    "year": "1988"
+  },
+  {
+    "title": "The Joke’s Over: Bruised Memories—Gonzo, Hunter S. Thompson, and Me",
+    "artist": "Ralph Steadman",
+    "year": "2006"
+  },
+  {
+    "title": "Still Life with Raspberry",
+    "artist": "Ralph Steadman",
+    "year": "1993"
+  },
+  {
+    "title": "Extinct Boids",
+    "artist": "Ralph Steadman",
+    "year": "2012"
+  },
+
+
+  {
+    "title": "The Gashlycrumb Tinies",
+    "artist": "Edward Gorey",
+    "year": "1963"
+  },
+  {
+    "title": "The Doubtful Guest",
+    "artist": "Edward Gorey",
+    "year": "1957"
+  },
+  {
+    "title": "The Curious Sofa",
+    "artist": "Edward Gorey",
+    "year": "1961"
+  },
+  {
+    "title": "The Willowdale Handcar",
+    "artist": "Edward Gorey",
+    "year": "1962"
+  },
+  {
+    "title": "The Epiplectic Bicycle",
+    "artist": "Edward Gorey",
+    "year": "1969"
+  },
+  {
+    "title": "The Wuggly Ump",
+    "artist": "Edward Gorey",
+    "year": "1963"
+  },
+  {
+    "title": "The Object-Lesson",
+    "artist": "Edward Gorey",
+    "year": "1958"
+  },
+  {
+    "title": "The Loathsome Couple",
+    "artist": "Edward Gorey",
+    "year": "1977"
+  },
+  {
+    "title": "Amphigorey",
+    "artist": "Edward Gorey",
+    "year": "1972"
+  },
+  {
+    "title": "The Haunted Tea-Cosy",
+    "artist": "Edward Gorey",
+    "year": "1997"
+  },
+  {
+    "title": "Karikaturen (3/4 17 = ?)",
+    "artist": "H. Schwarz",
+    "medium": "Feder und Aquarell auf Papier",
+    "date": "1921"
+  },
+  {
+    "title": "Untitled caricature (16 × 25 cm)",
+    "artist": "H. Schwarz",
+    "medium": "Pen and watercolor on paper",
+    "date": "1921"
+  },
+  {
+    "title": "Karikatur Studies, 1921",
+    "artist": "H. Schwarz",
+    "medium": "Ink and watercolor",
+    "date": "1921"
+  },
+  {
+    "title": "Castrovalva",
+    "artist": "M. C. Escher",
+    "year": "1930"
+  },
+  {
+    "title": "Calvi",
+    "artist": "M. C. Escher",
+    "year": "1933"
+  },
+  {
+    "title": "Atrani, Coast of Amalfi",
+    "artist": "M. C. Escher",
+    "year": "1931"
+  },
+  {
+    "title": "View of Toledo",
+    "artist": "M. C. Escher",
+    "year": "1932"
+  },
+  {
+    "title": "Bonifacio",
+    "artist": "M. C. Escher",
+    "year": "1928"
+  },
+  {
+    "title": "Pentedattilo",
+    "artist": "M. C. Escher",
+    "year": "1930"
+  },
+  {
+    "title": "Tropea, Calabria",
+    "artist": "M. C. Escher",
+    "year": "1931"
+  },
+  {
+    "title": "Cava d'Ispica",
+    "artist": "M. C. Escher",
+    "year": "1936"
+  },
+  {
+    "title": "St. Peter’s, Rome",
+    "artist": "M. C. Escher",
+    "year": "1935"
+  },
+  {
+    "title": "The Bridge",
+    "artist": "M. C. Escher",
+    "year": "1930"
+  },
+  {
+    "title": "Spruce with grey mountains",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on panel"
+  },
+  {
+    "title": "Green volcano landscape",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on panel"
+  },
+  {
+    "title": "Sequoias with yellow sky",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Forest and water at sunset",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Oak tree and young spruce",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on canvas"
+  },
+  {
+    "title": "Purple Moonlight",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Mystical Nature",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2022",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Forest Study, Worlingham",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2024",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Costa Rica Ocean",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2025",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Ibiza tree scape",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2024",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Ibiza garden study",
+    "artist": "Daisy Dodd-Noble",
+    "year": "2023",
+    "medium": "oil on linen"
+  },
+  {
+    "title": "Herbal illustration - leafy plant with red roots",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f1r"
+  },
+  {
+    "title": "Astronomical chart with zodiac signs",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f70v2"
+  },
+  {
+    "title": "Biological illustration - nude women in green pools",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f78r"
+  },
+  {
+    "title": "Pharmaceutical page - labeled jars and plant roots",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f88r"
+  },
+  {
+    "title": "Circular cosmological diagram",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f86v"
+  },
+  {
+    "title": "Stars and labeled circles - possible calendar",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f67r2"
+  },
+  {
+    "title": "Foldout map - rosettes and cities connected by paths",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f85v–f86r"
+  },
+  {
+    "title": "Composite plant with blue and red flowers",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f4v"
+  },
+  {
+    "title": "Plant diagram with labeled roots and buds",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f17r"
+  },
+  {
+    "title": "Biological diagram of tubes and bathing figures",
+    "artist": "Unknown (Voynich Manuscript)",
+    "year": "Early 15th century",
+    "folio": "f83r"
+  }
 ]
+
+
+
+
 
 
 target_date = datetime(2025, 4, 29)
