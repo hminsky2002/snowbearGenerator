@@ -80,7 +80,7 @@ def download_images(links_and_format_pairs: list[dict], search_terms: str):
             continue
 
         subprocess.run(
-            f"curl -fL {link_and_format_pair['link']} -o media/search_images/{search_terms}/{index}.{file_format} ",
+            f"curl -fL '{link_and_format_pair['link']}' -o 'media/search_images/{search_terms}/{index}.{file_format}' ",
             shell=True,
         )
 
