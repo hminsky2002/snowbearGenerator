@@ -17,14 +17,14 @@ from google_custom_search_image_downloader import (
 )
 
 # Parse command line arguments
-parser = argparse.ArgumentParser(description='Generate IceBear artwork images')
-parser.add_argument('--env', type=str, help='Path to .env file (optional)')
+parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
+parser.add_argument("--env", type=str, help="Path to .env file (optional)")
 args = parser.parse_args()
 
 # Load environment variables
-load_dotenv(dotenv_path=args.env,override=True)
+load_dotenv(dotenv_path=args.env, override=True)
 
-with open('artworks.json', 'r', encoding='utf-8') as f:
+with open("artworks.json", "r", encoding="utf-8") as f:
     artworks = json.load(f)
 
 target_date = datetime(2025, 4, 29)
@@ -92,7 +92,9 @@ client = OpenAI(
 image_generated = False
 N_PROMPTS = 8
 
-file_name = google_search_api_call(f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}")
+file_name = google_search_api_call(
+    f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}"
+)
 links_and_format_pairs, search_terms = google_search_response_parser(file_name)
 download_images(links_and_format_pairs, search_terms)
 
@@ -102,19 +104,18 @@ image_files.sort()
 
 image_generated = False
 N_PROMPTS = 8
-    
-for i in range(0,N_PROMPTS):
+
+for i in range(0, N_PROMPTS):
     try:
         prompt = create_prompt(random.choice(alternate_prompts))
         print(f"Attempt {i+1} with prompt: {prompt}")
 
-
-        image_filename = (
-            f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.jpg"
-        )
+        image_filename = f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.jpg"
         image_filepath = os.path.join(media_dir, image_filename)
         with open(image_files[0], "rb") as image_file:
-            result = client.images.edit(image=image_file, prompt=prompt, model="gpt-image-1")
+            result = client.images.edit(
+                image=image_file, prompt=prompt, model="gpt-image-1"
+            )
         image_base64 = result.data[0].b64_json
         if image_base64 is None:
             raise ValueError("No image data returned from API")
@@ -123,41 +124,67 @@ for i in range(0,N_PROMPTS):
         # Convert PNG to JPG using PIL
         png_image = Image.open(io.BytesIO(image_bytes))
         # Convert to RGB if necessary (PNG might have transparency)
-        if png_image.mode in ('RGBA', 'LA', 'P'):
-            rgb_image = Image.new('RGB', png_image.size, (255, 255, 255))
-            if png_image.mode == 'P':
-                png_image = png_image.convert('RGBA')
-            rgb_image.paste(png_image, mask=png_image.split()[-1] if png_image.mode in ('RGBA', 'LA') else None)
+        if png_image.mode in ("RGBA", "LA", "P"):
+            rgb_image = Image.new("RGB", png_image.size, (255, 255, 255))
+            if png_image.mode == "P":
+                png_image = png_image.convert("RGBA")
+            rgb_image.paste(
+                png_image,
+                mask=(
+                    png_image.split()[-1] if png_image.mode in ("RGBA", "LA") else None
+                ),
+            )
             png_image = rgb_image
-        
+
         # Save as JPG
-        png_image.save(image_filepath, 'JPEG', quality=95)
+        png_image.save(image_filepath, "JPEG", quality=95)
         print(
             f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
         )
         image_generated = True
-        break 
+        break
     except BadRequestError as e:
         print(f"Attempt {i+1} failed with BadRequestError: {e}")
         if i < N_PROMPTS:
-             print("Retrying with an alternate prompt...")
+            print("Retrying with an alternate prompt...")
         else:
             print("All prompts failed.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-        break 
+        break
 
 if not image_generated:
     print("Failed to generate image after multiple attempts.")
     # Optionally, handle the failure e.g., by exiting or sending a different email
     exit()
 
+# Generate a simple blurb about the days artwork
+blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. Include only its historical context and any specific, verifiable details 
+related to its creation (date, place, patronage, historical events influencing it, etc.). 
+Do not offer opinions, interpretations, or evaluations. If any of those historical details are unknown or disputed, 
+simply omit them. If possible, make this blurb read as if written by museum curator Dana Friis-Hansen.
+"""
+
+blurb_completion = client.chat.completions.create(
+    model="gpt-4.1",
+    messages=[
+        {
+            "role": "user",
+            "content": blurb_prompt,
+        }
+    ],
+)
+
+
+blurb = blurb_completion.choices[0].message.content
+
+
 
 data = {
     "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
     "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
     "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
-    "text": f"Todays artwork is {artwork_choice['title']} by {artwork_choice['artist']}. Have a great bear day!",
+    "text": f"Todays artwork is {artwork_choice['title']} by {artwork_choice['artist']}. Have a great bear day! \n \nTODAYS DESCRIPTION: \n{blurb}",
 }
 
 
@@ -165,13 +192,15 @@ if os.getenv("MAILGUN_CC_EMAILS"):
     cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
     data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
 
-if os.path.exists(image_filepath): # Only send email if image was generated
-    print(requests.post(
-        f"{os.getenv('MAILGUN_DOMAIN')}",
-        auth=("api", os.environ["MAILGUN_API_KEY"]),
-        files=[("inline", open(image_filepath, "rb"))],
-        data=data,
-    ))
+if os.path.exists(image_filepath):  # Only send email if image was generated
+    print(
+        requests.post(
+            f"{os.getenv('MAILGUN_DOMAIN')}",
+            auth=("api", os.environ["MAILGUN_API_KEY"]),
+            files=[("inline", open(image_filepath, "rb"))],
+            data=data,
+        )
+    )
     print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
 else:
     print(f"Email not sent as image {image_filename} was not generated.")
