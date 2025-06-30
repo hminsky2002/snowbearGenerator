@@ -159,10 +159,10 @@ if not image_generated:
     exit()
 
 # Generate a simple blurb about the days artwork
-blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. Include only its historical context and any specific, verifiable details 
+blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. If possible, make this blurb read as if written by museum curator Dana Friis-Hansen. Include only its historical context and any specific, verifiable details 
 related to its creation (date, place, patronage, historical events influencing it, etc.). 
 Do not offer opinions, interpretations, or evaluations. If any of those historical details are unknown or disputed, 
-simply omit them. If possible, make this blurb read as if written by museum curator Dana Friis-Hansen.
+simply omit them. 
 """
 
 blurb_completion = client.chat.completions.create(
