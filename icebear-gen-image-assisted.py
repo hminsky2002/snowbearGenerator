@@ -38,10 +38,13 @@ def create_prompt(bear_modifier=""):
     return f""" {bear_modifier}. Edit this image to feature a cartoon polar bear 
   inspired by Ice Bear from
  "We Bare Bears". The polar bear should be well integrated into the
- style and spirit of the original artwork. If the original artwork
+ style and spirit of the original artwork, not necessarily the main character,
+ perhaps even in the background.
+ If the original artwork
  contains people, consider substituting the polar bear for one or more
  of them, or adding it alongside them. If there are no people,
- incorporate the polar bear creatively into the scene. If the artwork
+ incorporate the polar bear creatively into the scene, taking in the context
+ and reacting stoically as Ice Bear does. If the artwork
  is abstract, the polar bear's depiction should also be abstract,
  matching the original style. The goal is for the polar bear to appear
  as if it were part of the original artist's composition. If multiple
