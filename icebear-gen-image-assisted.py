@@ -38,8 +38,8 @@ def create_prompt(bear_modifier=""):
     return f""" {bear_modifier}. Edit this image to feature a cartoon polar bear 
   inspired by Ice Bear from
  "We Bare Bears". The polar bear should be well integrated into the
- style and spirit of the original artwork, not necessarily the main character,
- perhaps even in the background.
+ style and spirit of the original artwork, sometimes as the main character,
+but sometimes  perhaps in the background.
  If the original artwork
  contains people, consider substituting the polar bear for one or more
  of them, or adding it alongside them. If there are no people,
@@ -70,7 +70,8 @@ def create_prompt(bear_modifier=""):
  really the appearance must match up as much as possible. If there is text in the
 artwork image, put in just a subtle references to bears or to Ice Bear, either
 altering a single name to have some bear-like reference or a altering single word to be more  bear-like. Don't overdo it, be
-subtle.  """
+subtle. Plan and think carefully before rendering, so as to get the bear as well integrated as possible into the spirit and activity
+of the artwork """
 
 
 alternate_prompts = [
@@ -162,7 +163,7 @@ if not image_generated:
     exit()
 
 # Generate a simple blurb about the days artwork
-blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. If possible, make this blurb read as if written by museum curator Dana Friis-Hansen. Include only its historical context and any specific, verifiable details 
+blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. If possible, make this blurb read as if written by museum curator. Include only its historical context and any specific, verifiable details 
 related to its creation (date, place, patronage, historical events influencing it, etc.). 
 Do not offer opinions, interpretations, or evaluations. If any of those historical details are unknown or disputed, 
 simply omit them. 

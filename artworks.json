@@ -534,11 +534,6 @@
     "year": "1944"
   },
   {
-    "title": "Judith Slaying Holofernes",
-    "artist": "Artemisia Gentileschi",
-    "year": "1620"
-  },
-  {
     "title": "Electric Dress",
     "artist": "Atsuko Tanaka",
     "year": "1956"
@@ -1063,33 +1058,7 @@
     "artist": "Francisco Goya",
     "year": "1814"
   },
-  {
-    "title": "Falling Water",
-    "artist": "Frank Lloyd Wright",
-    "year": "1939"
-  },
-  {
-    "title": "Fallingwater",
-    "artist": "Frank Lloyd Wright",
-    "year": "1939"
-  },
-  {
-    "title": "Fallingwater Architectural Drawing",
-    "artist": "Frank Lloyd Wright",
-    "year": "1935"
-  },
-  {
-    "title": "Fallingwater Preliminary Sketch",
-    "artist": "Frank Lloyd Wright",
-    "year": "1935"
-  },
-  {
-    "title": "Guggenheim Museum New York Concept Drawing",
-    "artist": "Frank Lloyd Wright",
-    "year": "c. 1943"
-  },
-  {
-    "title": "Fly the Finest – BOAC",
+{    "title": "Fly the Finest – BOAC",
     "artist": "Frank Wootton",
     "year": "1950s"
   },
@@ -1557,11 +1526,6 @@
     "title": "The Jewish Cemetery",
     "artist": "Jacob van Ruisdael",
     "year": "1650"
-  },
-  {
-    "title": "The Death of Marat",
-    "artist": "Jacques-Louis David",
-    "year": "1793"
   },
   {
     "title": "Arrangement in Grey and Black No. 1",
@@ -2499,17 +2463,7 @@
     "year": "1955"
   },
   {
-    "title": "Falling Man",
-    "artist": "Richard Drew",
-    "year": "2001"
-  },
-  {
     "title": "Just What Is It that Makes Today's Homes So Different, So Appealing?",
-    "artist": "Richard Hamilton",
-    "year": "1956"
-  },
-  {
-    "title": "Just what is it that makes today's homes so different, so appealing?",
     "artist": "Richard Hamilton",
     "year": "1956"
   },
@@ -2784,9 +2738,19 @@
     "year": "1930"
   },
   {
-    "title": "The Gross Clinic",
-    "artist": "Thomas Eakins",
-    "year": "1875"
+    "title": "The Dog",
+    "artist": "Francisco Goya",
+    "year": "1820-23"
+  },
+  {
+    "title": "The Third of May",
+    "artist": "Francisco Goya",
+    "year": "1808"
+  },
+ {
+    "title": "Las Meninas",
+    "artist": "Diego Velázquez",
+    "year": "1656"
   },
   {
     "title": "Patent Drawing for the Incandescent Lamp",
@@ -2992,5 +2956,36 @@
     "title": "Woman with a Parrot",
     "artist": "Édouard Manet",
     "year": "1866"
+  },
+  {
+    "title": "The Gashlycrumb Tinies",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": ":contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "The Doubtful Guest",
+    "artist": "Edward Gorey",
+    "year": "1957",
+    "citation": ":contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "The Willowdale Handcar",
+    "artist": "Edward Gorey",
+    "year": "1962",
+    "citation": ":contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "The Epiplectic Bicycle",
+    "artist": "Edward Gorey",
+    "year": "1969",
+    "citation": ":contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "The Wuggly Ump",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": ":contentReference[oaicite:5]{index=5}"
   }
 ]
+
