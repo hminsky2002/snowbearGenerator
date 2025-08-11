@@ -38,43 +38,31 @@ difference = (target_date - today).days
 
 
 def create_prompt(bear_modifier=""):
-    return f""" {bear_modifier}. Edit this image to feature a cartoon polar bear 
-  inspired by Ice Bear from
- "We Bare Bears". The polar bear should be well integrated into the
- style and spirit of the original artwork, sometimes as the main character,
-but sometimes  perhaps in the background.
- If the original artwork
- contains people, consider substituting the polar bear for one or more
- of them, or adding it alongside them. If there are no people,
- incorporate the polar bear creatively into the scene, taking in the context
- and reacting stoically as Ice Bear does. If the artwork
- is abstract, the polar bear's depiction should also be abstract,
- matching the original style. The goal is for the polar bear to appear
- as if it were part of the original artist's composition. If multiple
- people are in the original, you might include other "We Bare Bears"
- characters, such as Griz or Panda,but ensure Ice Bear is prominent.
- Sometimes, include human figures alongside the bears to maintain the
- original's essence. Again, The polar bear should be well integrated
- into the style and spirit of the original artwork, in terms of
- drawing, paint, colors, texture, and in relation to the objects and
- activities in the scene. If there is some principal or background
- activity, the bear should be engaged in it. Even the facial
- expression and gaze on the bear should match the feel and intent of
- the scene. The artwork must be constructed so that in no way would
- cause violation of openAI image generation guidelines. Make every
- effort to make Ice Bear or bears blend in with the style and
- background, e.g., wear the same type of clothing, use same kind of
- lighting, shadows, coloring, and brush strokes, be properly occluded
- by objects in the scene. If the original is a sculpture, make a rendering
- of a scuplture with the bear modifications. The intent of the artwork must guide how the
- bear or bears are integrated into it. Artworks are unique because of
- the particular style they have, so use the original as a very literal
- guide, to preserve that unique style and colors, textures, technqiue,
- really the appearance must match up as much as possible. If there is text in the
-artwork image, put in just a subtle references to bears or to Ice Bear, either
-altering a single name to have some bear-like reference or a altering single word to be more  bear-like. Don't overdo it, be
-subtle. Plan and think carefully before rendering, so as to get the bear as well integrated as possible into the spirit and activity
-of the artwork """
+    return f"""{bear_modifier}. Edit this image to add a cartoon polar bear inspired by Ice Bear 
+from "We Bare Bears", while preserving the **exact** style, colors, textures, and visual 
+technique of the original artwork. The bear must be drawn so convincingly in the original 
+style that it appears as if it were always part of the scene. 
+
+Make the **smallest possible changes** to the image — keep all original details, composition, 
+and elements intact unless absolutely necessary to integrate the bear. Match lighting, 
+shadows, brush strokes, and texture exactly. If objects would naturally block part of the 
+bear, ensure proper occlusion for realism.
+
+If the original image contains people, you may subtly substitute the bear for one person, 
+or add the bear alongside them. If there are no people, integrate the bear creatively into 
+the scene’s activity or setting. If the original is abstract or a sculpture, the bear should 
+match that medium’s exact style and materials.
+
+The bear should reflect Ice Bear’s stoic demeanor and interact naturally with the environment 
+and ongoing activities. If other “We Bare Bears” characters are included, ensure Ice Bear 
+remains the focus.
+
+If the artwork contains visible text, make at most one **subtle** bear-related word change 
+(e.g., modifying a name or single word) without disrupting the text’s original tone or meaning.
+
+Above all: preserve the **unique identity** of the original artwork, making the bear feel like 
+a natural and seamless part of the artist’s original vision.
+"""
 
 
 alternate_prompts = [
