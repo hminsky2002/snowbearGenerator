@@ -61,7 +61,8 @@ If the artwork contains visible text, make at most one **subtle** bear-related w
 (e.g., modifying a name or single word) without disrupting the text’s original tone or meaning.
 
 Above all: preserve the **unique identity** of the original artwork, making the bear feel like 
-a natural and seamless part of the artist’s original vision.
+a natural and seamless part of the artist’s original vision, adapting to the drawing style, and
+feel of what the artist is doing that is unique to them..
 """
 
 
