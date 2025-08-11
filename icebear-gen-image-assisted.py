@@ -19,7 +19,10 @@ from google_custom_search_image_downloader import (
 # Parse command line arguments
 parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
 parser.add_argument("--env", type=str, help="Path to .env file (optional)")
+parser.add_argument("--sourcedir", type=str, help="Path to image file (optional)")
 args = parser.parse_args()
+
+args.sourcedir = args.sourcedir or None
 
 # Load environment variables
 load_dotenv(dotenv_path=args.env, override=True)
@@ -95,16 +98,18 @@ client = OpenAI(
 
 image_generated = False
 N_PROMPTS = 8
+if not args.sourcedir:
+    file_name = google_search_api_call(
+        f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}"
+    )
+    links_and_format_pairs, search_terms = google_search_response_parser(file_name)
+    download_images(links_and_format_pairs, search_terms)
 
-file_name = google_search_api_call(
-    f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}"
-)
-links_and_format_pairs, search_terms = google_search_response_parser(file_name)
-download_images(links_and_format_pairs, search_terms)
-
-image_files = glob.glob(f"{media_dir}/search_images/{search_terms}/*")
-image_files.sort()
-
+    image_files = glob.glob(f"{media_dir}/search_images/{search_terms}/*")
+    image_files.sort()
+else:
+    image_files = glob.glob(f"{args.sourcedir}/*")
+    image_files.sort()
 
 image_generated = False
 N_PROMPTS = 8
@@ -170,7 +175,7 @@ simply omit them.
 """
 
 blurb_completion = client.chat.completions.create(
-    model="gpt-4.1",
+    model="gpt-5",
     messages=[
         {
             "role": "user",
@@ -181,7 +186,6 @@ blurb_completion = client.chat.completions.create(
 
 
 blurb = blurb_completion.choices[0].message.content
-
 
 
 data = {
@@ -201,7 +205,10 @@ if os.path.exists(image_filepath):  # Only send email if image was generated
         requests.post(
             f"{os.getenv('MAILGUN_DOMAIN')}",
             auth=("api", os.environ["MAILGUN_API_KEY"]),
-            files=[("inline", open(image_filepath, "rb"))],
+            files=[
+                ("inline", open(image_filepath, "rb")),
+                ("inline", open(image_files[0], "rb")),
+            ],
             data=data,
         )
     )
