@@ -754,21 +754,6 @@
     "year": "1950"
   },
   {
-    "title": "A Young Man in Curlers at Home on West 20th Street, N.Y.C.",
-    "artist": "Diane Arbus",
-    "year": "1966"
-  },
-  {
-    "title": "Identical Twins, Roselle, New Jersey",
-    "artist": "Diane Arbus",
-    "year": "1967"
-  },
-  {
-    "title": "Subway Portrait",
-    "artist": "Diane Arbus",
-    "year": "1966"
-  },
-  {
     "title": "Detroit Industry Murals",
     "artist": "Diego Rivera",
     "year": "1932–1933"
@@ -2868,11 +2853,6 @@
     "year": "1956"
   },
   {
-    "title": "Monument to the Third International",
-    "artist": "Vladimir Tatlin",
-    "year": "c. 1920"
-  },
-  {
     "title": "Subway Passengers #17",
     "artist": "Walker Evans",
     "year": "1938"
@@ -3106,7 +3086,68 @@
     "artist": "Edward Gorey",
     "year": "1960",
     "citation": ":contentReference[oaicite:10]{index=10}"
+  },
+  {
+    "title": "Addams Family Cartoons",
+    "artist": "Charles Addams",
+    "year": "1938",
+    "citation": ":contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "View of the World from 9th Avenue",
+    "artist": "Saul Steinberg",
+    "year": "1976",
+    "citation": ":contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "Hurrah for St Trinian’s!",
+    "artist": "Ronald Searle",
+    "year": "1948",
+    "citation": ":contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "Illustrations for Titus Groan",
+    "artist": "Mervyn Peake",
+    "year": "1946",
+    "citation": ":contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "Salomé Illustrations",
+    "artist": "Aubrey Beardsley",
+    "year": "1894",
+    "citation": ":contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "The Melancholy Death of Oyster Boy & Other Stories",
+    "artist": "Tim Burton",
+    "year": "1997",
+    "citation": ":contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "title": "Playboy Cartoons",
+    "artist": "Gahan Wilson",
+    "year": "1960s",
+    "citation": ":contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "title": "A Book of Nonsense",
+    "artist": "Edward Lear",
+    "year": "1846",
+    "citation": ":contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "title": "La Planète Sauvage (concept art)",
+    "artist": "Roland Topor",
+    "year": "1973",
+    "citation": ":contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "title": "Outside Over There",
+    "artist": "Maurice Sendak",
+    "year": "1981",
+    "citation": ":contentReference[oaicite:10]{index=10}"
   }
 ]
+
 
 
