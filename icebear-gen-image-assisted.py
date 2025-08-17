@@ -62,7 +62,16 @@ If the artwork contains visible text, make at most one **subtle** bear-related w
 
 Above all: preserve the **unique identity** of the original artwork, making the bear feel like 
 a natural and seamless part of the artist’s original vision, adapting to the drawing style, and
-feel of what the artist is doing that is unique to them..
+feel of what the artist is doing that is unique to them.
+
+Make the bear be doing an activity that matches doing what a person would do in the context of the image.
+for example, if it is construction, the bear would be doing construction. If its a boat, the bear might be 
+piloting or rowing the boat. If it is a dinner, the bear could be cooking, serving, or eating dinner
+at a table. If people are out walking in a park, so is the bear. If they are playing a sport, the bear would be 
+doing that.  Pay attention to the scene and what activity person in the scene would naturally be performing
+and make the bear do that.
+
+.
 """
 
 
