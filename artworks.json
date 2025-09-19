@@ -3477,6 +3477,24 @@
     "citation": "Chrysalis Records"
   },
   {
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "year": "1969",
+    "citation": "https://en.wikipedia.org/wiki/Abbey_Road"
+  },
+  {
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "year": "1991",
+    "citation": "https://en.wikipedia.org/wiki/Nevermind"
+  },
+  {
+    "title": "Born to Run",
+    "artist": "Bruce Springsteen",
+    "year": "1975",
+    "citation": "https://en.wikipedia.org/wiki/Born_to_Run"
+  },
+  {
     "title": "Sticky Fingers",
     "artist": "The Rolling Stones",
     "year": "1971",
@@ -3571,5 +3589,179 @@
     "artist": "Warner Bros. Marketing",
     "year": "1990",
     "citation": "Warner Bros."
+  },
+  {
+    "title": "London Calling",
+    "artist": "The Clash",
+    "year": "1979",
+    "citation": "https://en.wikipedia.org/wiki/London_Calling"
+  },
+  {
+    "title": "Led Zeppelin IV",
+    "artist": "Led Zeppelin",
+    "year": "1971",
+    "citation": "https://en.wikipedia.org/wiki/Led_Zeppelin_IV"
+  },
+  {
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": "1976",
+    "citation": "https://en.wikipedia.org/wiki/Hotel_California_(Eagles_album)"
+  },
+  {
+    "title": "American Idiot",
+    "artist": "Green Day",
+    "year": "2004",
+    "citation": "https://en.wikipedia.org/wiki/American_Idiot"
+  },
+  {
+    "title": "Back in Black",
+    "artist": "AC/DC",
+    "year": "1980",
+    "citation": "https://en.wikipedia.org/wiki/Back_in_Black"
+  },
+  {
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": "1977",
+    "citation": "https://en.wikipedia.org/wiki/Rumours_(album)"
+  },
+  {
+    "title": "Who's Next",
+    "artist": "The Who",
+    "year": "1971",
+    "citation": "https://en.wikipedia.org/wiki/Who%27s_Next"
+  },
+  {
+    "title": "The Velvet Underground & Nico",
+    "artist": "The Velvet Underground",
+    "year": "1967",
+    "citation": "https://en.wikipedia.org/wiki/The_Velvet_Underground_%26_Nico"
+  },
+  {
+    "title": "A Night at the Opera",
+    "artist": "Queen",
+    "year": "1975",
+    "citation": "https://en.wikipedia.org/wiki/A_Night_at_the_Opera_(Queen_album)"
+  },
+  {
+    "title": "Is This It",
+    "artist": "The Strokes",
+    "year": "2001",
+    "citation": "https://en.wikipedia.org/wiki/Is_This_It"
+  },
+  {
+    "title": "Electric Ladyland",
+    "artist": "The Jimi Hendrix Experience",
+    "year": "1968",
+    "citation": "https://en.wikipedia.org/wiki/Electric_Ladyland"
+  },
+  {
+    "title": "The Wall",
+    "artist": "Pink Floyd",
+    "year": "1979",
+    "citation": "https://en.wikipedia.org/wiki/The_Wall"
+  },
+  {
+    "title": "Sgt. Pepper's Lonely Hearts Club Band",
+    "artist": "The Beatles",
+    "year": "1967",
+    "citation": "https://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band"
+  },
+  {
+    "title": "The Joshua Tree",
+    "artist": "U2",
+    "year": "1987",
+    "citation": "https://en.wikipedia.org/wiki/The_Joshua_Tree"
+  },
+  {
+    "title": "Brothers in Arms",
+    "artist": "Dire Straits",
+    "year": "1985",
+    "citation": "https://en.wikipedia.org/wiki/Brothers_in_Arms_(album)"
+  },
+  {
+    "title": "El Camino",
+    "artist": "The Black Keys",
+    "year": "2011",
+    "citation": "https://en.wikipedia.org/wiki/El_Camino_(The_Black_Keys_album)"
+  },
+{
+    "title": "Goodbye Yellow Brick Road",
+    "artist": "Elton John",
+    "year": "1973",
+    "citation": "https://en.wikipedia.org/wiki/Goodbye_Yellow_Brick_Road"
+  },
+ {
+    "title": "In Utero",
+    "artist": "Nirvana",
+    "year": "1993",
+    "citation": "https://en.wikipedia.org/wiki/In_Utero"
+  },
+{
+    "title": "Jagged Little Pill",
+    "artist": "Alanis Morissette",
+    "year": "1995",
+    "citation": "https://en.wikipedia.org/wiki/Jagged_Little_Pill"
+  },
+ {
+    "title": "Blood Sugar Sex Magik",
+    "artist": "Red Hot Chili Peppers",
+    "year": "1991",
+    "citation": "https://en.wikipedia.org/wiki/Blood_Sugar_Sex_Magik"
+  },
+{
+    "title": "Rockin’ the Blues",
+    "artist": "Champion Jack Dupree",
+    "year": "1958",
+    "citation": "https://en.wikipedia.org/wiki/Champion_Jack_Dupree"
+  },
+  {
+  "title": "Gris-Gris",
+  "artist": "Dr. John",
+  "year": "1968",
+  "citation": "https://en.wikipedia.org/wiki/Gris-Gris_(album)"
+},
+  {
+    "title": "Babylon",
+    "artist": "Dr. John",
+    "year": "1969",
+    "citation": "https://en.wikipedia.org/wiki/Babylon_(Dr._John_album)"
+  },
+  {
+    "title": "Remedies",
+    "artist": "Dr. John",
+    "year": "1970",
+    "citation": "https://en.wikipedia.org/wiki/Remedies_(album)"
+  },
+  {
+    "title": "The Sun, Moon & Herbs",
+    "artist": "Dr. John",
+    "year": "1971",
+    "citation": "https://en.wikipedia.org/wiki/The_Sun,_Moon_%26_Herbs"
+  },
+  {
+    "title": "Dr. John’s Gumbo",
+    "artist": "Dr. John",
+    "year": "1972",
+    "citation": "https://en.wikipedia.org/wiki/Dr._John%27s_Gumbo"
+  },
+  {
+    "title": "In the Right Place",
+    "artist": "Dr. John",
+    "year": "1973",
+    "citation": "https://en.wikipedia.org/wiki/In_the_Right_Place"
+  },
+  {
+    "title": "Desitively Bonnaroo",
+    "artist": "Dr. John",
+    "year": "1974",
+    "citation": "https://en.wikipedia.org/wiki/Desitively_Bonnaroo"
+  },
+  {
+    "title": "Locked Down",
+    "artist": "Dr. John",
+    "year": "2012",
+    "citation": "https://en.wikipedia.org/wiki/Locked_Down_(album)"
   }
 ]
