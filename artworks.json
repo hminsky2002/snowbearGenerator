@@ -1104,11 +1104,6 @@
     "year": "1965"
   },
   {
-    "title": "Beirut",
-    "artist": "Gabriele Basilico",
-    "year": "1991"
-  },
-  {
     "title": "La Route des Alpes",
     "artist": "Geo Dorival",
     "year": "1920s"
@@ -3192,7 +3187,249 @@
     "artist": "Maurice Sendak",
     "year": "1981",
     "citation": ":contentReference[oaicite:10]{index=10}"
+  },
+ {
+    "title": "View of the World from 9th Avenue",
+    "artist": "Saul Steinberg",
+    "year": "1976",
+    "citation": "The New Yorker"
+  },
+  {
+    "title": "The Art of Living",
+    "artist": "Saul Steinberg",
+    "year": "1949",
+    "citation": "Museum of Modern Art"
+  },
+  {
+    "title": "The Inspector",
+    "artist": "Saul Steinberg",
+    "year": "1955",
+    "citation": "Whitney Museum of American Art"
+  },
+  {
+    "title": "Woman at Dressing Table",
+    "artist": "Saul Steinberg",
+    "year": "1951",
+    "citation": "Private Collection"
+  },
+  {
+    "title": "Untitled (Mask Series)",
+    "artist": "Saul Steinberg",
+    "year": "1950s",
+    "citation": "Art Institute of Chicago"
+  },
+  {
+    "title": "The Americans",
+    "artist": "Saul Steinberg",
+    "year": "1958",
+    "citation": "MoMA Library"
+  },
+  {
+    "title": "Cover for The New Yorker, March 29, 1952",
+    "artist": "Saul Steinberg",
+    "year": "1952",
+    "citation": "The New Yorker Archives"
+  },
+  {
+    "title": "The Line",
+    "artist": "Saul Steinberg",
+    "year": "1954",
+    "citation": "Drawings Archive"
+  },
+  {
+    "title": "Untitled (Architectural Fantasy)",
+    "artist": "Saul Steinberg",
+    "year": "1960",
+    "citation": "Whitney Museum of American Art"
+  },
+  {
+    "title": "The Passport",
+    "artist": "Saul Steinberg",
+    "year": "1954",
+    "citation": "Metropolitan Museum of Art"
+  },
+  {
+    "title": "Beirut",
+    "artist": "Gabriele Basilico",
+    "year": "1991"
+  },
+[
+  {
+    "title": "Melencolia I",
+    "artist": "Albrecht Dürer",
+    "year": "1514",
+    "citation": "Kupferstichkabinett, Berlin"
+  },
+  {
+    "title": "The Knight, Death and the Devil",
+    "artist": "Albrecht Dürer",
+    "year": "1513",
+    "citation": "British Museum"
+  },
+  {
+    "title": "Saint Jerome in His Study",
+    "artist": "Albrecht Dürer",
+    "year": "1514",
+    "citation": "Metropolitan Museum of Art"
+  },
+  {
+    "title": "Self-Portrait at the Age of Thirteen",
+    "artist": "Albrecht Dürer",
+    "year": "1484",
+    "citation": "Albertina, Vienna"
+  },
+  {
+    "title": "The Rhinoceros",
+    "artist": "Albrecht Dürer",
+    "year": "1515",
+    "citation": "British Museum"
+  },
+  {
+    "title": "Portrait of Erasmus of Rotterdam",
+    "artist": "Hans Holbein the Younger",
+    "year": "1523",
+    "citation": "Kupferstichkabinett, Basel"
+  },
+  {
+    "title": "The Battle of the Naked Men",
+    "artist": "Antonio Pollaiuolo",
+    "year": "c. 1470–1475",
+    "citation": "Cleveland Museum of Art"
+  },
+  {
+    "title": "Christ Presented to the People (Ecce Homo)",
+    "artist": "Rembrandt van Rijn",
+    "year": "1655",
+    "citation": "Rijksmuseum, Amsterdam"
+  },
+  {
+    "title": "Adam and Eve",
+    "artist": "Lucas Cranach the Elder",
+    "year": "c. 1526",
+    "citation": "Uffizi Gallery"
+  },
+  {
+    "title": "The Blind Leading the Blind",
+    "artist": "Pieter Bruegel the Elder",
+    "year": "1568",
+    "citation": "Museo di Capodimonte, Naples"
+  },
+ {
+    "title": "Prison Interior (Carceri d’Invenzione)",
+    "artist": "Giovanni Battista Piranesi",
+    "year": "c. 1745",
+    "citation": "British Museum"
+  },
+  {
+    "title": "The Temptation of Saint Anthony",
+    "artist": "Jacques Callot",
+    "year": "1635",
+    "citation": "Louvre Museum"
+  },
+  {
+    "title": "Etching of a Sleeping Cat",
+    "artist": "Wenceslaus Hollar",
+    "year": "1646",
+    "citation": "British Museum"
+  },
+  {
+    "title": "Christ Carrying the Cross",
+    "artist": "Martin Schongauer",
+    "year": "c. 1475",
+    "citation": "Metropolitan Museum of Art"
+  },
+  {
+    "title": "The Ploughman",
+    "artist": "Hendrick Goltzius",
+    "year": "1580",
+    "citation": "Rijksmuseum, Amsterdam"
+  },
+  {
+    "title": "Virgin and Child with Cat",
+    "artist": "Albrecht Altdorfer",
+    "year": "c. 1520",
+    "citation": "Albertina, Vienna"
+  },
+  {
+    "title": "Battle Scene",
+    "artist": "Hans Burgkmair the Elder",
+    "year": "c. 1510",
+    "citation": "Kupferstichkabinett, Berlin"
+  },
+  {
+    "title": "St. Jerome in Penitence",
+    "artist": "Lucas van Leyden",
+    "year": "c. 1510",
+    "citation": "Rijksmuseum, Amsterdam"
+  },
+  {
+    "title": "The Large Horse",
+    "artist": "Albrecht Dürer",
+    "year": "1505",
+    "citation": "Germanisches Nationalmuseum, Nuremberg"
+  },
+[
+  {
+    "title": "Fear and Loathing in Las Vegas Illustrations",
+    "artist": "Ralph Steadman",
+    "year": "1971",
+    "citation": "Rolling Stone Archives"
+  },
+  {
+    "title": "I, Leonardo",
+    "artist": "Ralph Steadman",
+    "year": "1983",
+    "citation": "André Deutsch Ltd."
+  },
+  {
+    "title": "Scarfe on Politics",
+    "artist": "Gerald Scarfe",
+    "year": "1980",
+    "citation": "The Sunday Times"
+  },
+  {
+    "title": "Pink Floyd: The Wall Illustrations",
+    "artist": "Gerald Scarfe",
+    "year": "1979",
+    "citation": "EMI Records"
+  },
+  {
+    "title": "Fritz the Cat (Film Stills and Drawings)",
+    "artist": "Ralph Bakshi",
+    "year": "1972",
+    "citation": "Bakshi Productions"
+  },
+  {
+    "title": "Jimbo in Paradise",
+    "artist": "Gary Panter",
+    "year": "1988",
+    "citation": "Raw Books"
+  },
+  {
+    "title": "Lost in Space",
+    "artist": "Gary Panter",
+    "year": "1984",
+    "citation": "Pee Dog Press"
+  },
+  {
+    "title": "The Wall Street Journal Cartoons",
+    "artist": "Edward Sorel",
+    "year": "1970s",
+    "citation": "WSJ Archives"
+  },
+  {
+    "title": "End Bad Breath",
+    "artist": "Philip Guston",
+    "year": "1975",
+    "citation": "Museum of Modern Art"
+  },
+  {
+    "title": "Cartoon for The Village Voice",
+    "artist": "Ralph Steadman",
+    "year": "1970s",
+    "citation": "Village Voice Archives"
   }
+
 ]
 
 
