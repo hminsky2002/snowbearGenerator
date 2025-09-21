@@ -3253,7 +3253,6 @@
     "artist": "Gabriele Basilico",
     "year": "1991"
   },
-[
   {
     "title": "Melencolia I",
     "artist": "Albrecht Dürer",
@@ -3368,7 +3367,6 @@
     "year": "1505",
     "citation": "Germanisches Nationalmuseum, Nuremberg"
   },
-[
   {
     "title": "Fear and Loathing in Las Vegas Illustrations",
     "artist": "Ralph Steadman",
@@ -3405,12 +3403,7 @@
     "year": "1988",
     "citation": "Raw Books"
   },
-  {
-    "title": "Lost in Space",
-    "artist": "Gary Panter",
-    "year": "1984",
-    "citation": "Pee Dog Press"
-  },
+
   {
     "title": "The Wall Street Journal Cartoons",
     "artist": "Edward Sorel",
@@ -3428,9 +3421,155 @@
     "artist": "Ralph Steadman",
     "year": "1970s",
     "citation": "Village Voice Archives"
+  },
+  {
+    "title": "Born in the U.S.A.",
+    "artist": "Bruce Springsteen",
+    "year": "1984",
+    "citation": "Columbia Records"
+  },
+  {
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": "1977",
+    "citation": "Warner Bros. Records"
+  },
+  {
+    "title": "Arrival",
+    "artist": "ABBA",
+    "year": "1976",
+    "citation": "Polar Music"
+  },
+  {
+    "title": "News of the World",
+    "artist": "Queen",
+    "year": "1977",
+    "citation": "EMI Records"
+  },
+  {
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": "1976",
+    "citation": "Asylum Records"
+  },
+  {
+    "title": "The Dark Side of the Moon",
+    "artist": "Pink Floyd",
+    "year": "1973",
+    "citation": "Harvest Records"
+  },
+  {
+    "title": "Led Zeppelin IV",
+    "artist": "Led Zeppelin",
+    "year": "1971",
+    "citation": "Atlantic Records"
+  },
+  {
+    "title": "Sgt. Pepper’s Lonely Hearts Club Band",
+    "artist": "The Beatles",
+    "year": "1967",
+    "citation": "Parlophone Records"
+  },
+  {
+    "title": "Parallel Lines",
+    "artist": "Blondie",
+    "year": "1978",
+    "citation": "Chrysalis Records"
+  },
+  {
+    "title": "Sticky Fingers",
+    "artist": "The Rolling Stones",
+    "year": "1971",
+    "citation": "Rolling Stones Records"
+  },
+  {
+    "title": "Casablanca",
+    "artist": "Warner Bros. Studio Design Dept.",
+    "year": "1942",
+    "citation": "Warner Bros."
+  },
+  {
+    "title": "Citizen Kane",
+    "artist": "RKO Studio Marketing",
+    "year": "1941",
+    "citation": "RKO Pictures"
+  },
+  {
+    "title": "Sunset Boulevard",
+    "artist": "Paramount Studio Marketing",
+    "year": "1950",
+    "citation": "Paramount Pictures"
+  },
+  {
+    "title": "Rebel Without a Cause",
+    "artist": "Warner Bros. Studio Art Dept.",
+    "year": "1955",
+    "citation": "Warner Bros."
+  },
+  {
+    "title": "Vertigo",
+    "artist": "Saul Bass",
+    "year": "1958",
+    "citation": "Paramount Pictures"
+  },
+  {
+    "title": "Psycho",
+    "artist": "Universal Studio Advertising",
+    "year": "1960",
+    "citation": "Universal Pictures"
+  },
+  {
+    "title": "Dr. No",
+    "artist": "Mitchell Hooks",
+    "year": "1962",
+    "citation": "Eon Productions / United Artists"
+  },
+  {
+    "title": "The Good, the Bad and the Ugly",
+    "artist": "Italian Release Poster Artist Unknown",
+    "year": "1966",
+    "citation": "Produzioni Europee Associati"
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "artist": "Robert McCall",
+    "year": "1968",
+    "citation": "MGM"
+  },
+  {
+    "title": "A Clockwork Orange",
+    "artist": "Bill Gold",
+    "year": "1971",
+    "citation": "Warner Bros."
+  },
+  {
+    "title": "The Godfather",
+    "artist": "S. Neil Fujita",
+    "year": "1972",
+    "citation": "Paramount Pictures"
+  },
+  {
+    "title": "Jaws",
+    "artist": "Roger Kastel",
+    "year": "1975",
+    "citation": "Universal Pictures"
+  },
+  {
+    "title": "Star Wars",
+    "artist": "Tom Jung",
+    "year": "1977",
+    "citation": "Lucasfilm / 20th Century Fox"
+  },
+  {
+    "title": "Blade Runner",
+    "artist": "John Alvin",
+    "year": "1982",
+    "citation": "Warner Bros."
+  },
+  {
+    "title": "Goodfellas",
+    "artist": "Warner Bros. Marketing",
+    "year": "1990",
+    "citation": "Warner Bros."
   }
-
 ]
-
-
-
