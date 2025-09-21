@@ -995,11 +995,6 @@
     "year": "1930"
   },
   {
-    "title": "The Burial of the Count of Orgaz",
-    "artist": "El Greco",
-    "year": "1586"
-  },
-  {
     "title": "Switzerland – Jungfrau Railway",
     "artist": "Emil Cardinaux",
     "year": "1910s"
@@ -3763,5 +3758,369 @@
     "artist": "Dr. John",
     "year": "2012",
     "citation": "https://en.wikipedia.org/wiki/Locked_Down_(album)"
+  },
+  {
+    "title": "King Kong",
+    "artist": "Unknown / RKO Studio Artists",
+    "year": "1933",
+    "citation": "https://en.wikipedia.org/wiki/King_Kong_(1933_film)"
+  },
+  {
+    "title": "Gone with the Wind",
+    "artist": "Howard Terpning",
+    "year": "1939",
+    "citation": "https://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)"
+  },
+  {
+    "title": "Casablanca",
+    "artist": "Bill Gold (Warner Bros. design studio)",
+    "year": "1942",
+    "citation": "https://en.wikipedia.org/wiki/Casablanca_(film)"
+  },
+  {
+    "title": "Citizen Kane",
+    "artist": "Unknown / RKO Studio Artists",
+    "year": "1941",
+    "citation": "https://en.wikipedia.org/wiki/Citizen_Kane"
+  },
+  {
+    "title": "Sunset Boulevard",
+    "artist": "Unknown / Paramount Studio Artists",
+    "year": "1950",
+    "citation": "https://en.wikipedia.org/wiki/Sunset_Boulevard_(film)"
+  },
+  {
+    "title": "Rebel Without a Cause",
+    "artist": "Bill Gold",
+    "year": "1955",
+    "citation": "https://en.wikipedia.org/wiki/Rebel_Without_a_Cause"
+  },
+  {
+    "title": "Psycho",
+    "artist": "Tony Palladino (title design), Universal Studio Artists",
+    "year": "1960",
+    "citation": "https://en.wikipedia.org/wiki/Psycho_(1960_film)"
+  },
+  {
+    "title": "Breakfast at Tiffany's",
+    "artist": "Robert McGinnis",
+    "year": "1961",
+    "citation": "https://en.wikipedia.org/wiki/Breakfast_at_Tiffany%27s_(film)"
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "artist": "Robert McCall",
+    "year": "1968",
+    "citation": "https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)"
+  },
+  {
+    "title": "A Clockwork Orange",
+    "artist": "Philip Castle",
+    "year": "1971",
+    "citation": "https://en.wikipedia.org/wiki/A_Clockwork_Orange_(film)"
+  },
+  {
+    "title": "Coalbrookdale by Night",
+    "artist": "Philip James de Loutherbourg",
+    "year": "1801",
+    "citation": "https://en.wikipedia.org/wiki/Philip_James_de_Loutherbourg"
+  },
+  {
+    "title": "The Iron Rolling Mill",
+    "artist": "Adolph Menzel",
+    "year": "1875",
+    "citation": "https://en.wikipedia.org/wiki/Adolph_Menzel"
+  },
+  {
+    "title": "Rain, Steam and Speed – The Great Western Railway",
+    "artist": "J. M. W. Turner",
+    "year": "1844",
+    "citation": "https://en.wikipedia.org/wiki/Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway"
+  },
+  {
+    "title": "The Cotton Mill",
+    "artist": "Joseph Wright of Derby",
+    "year": "1782–1783",
+    "citation": "https://en.wikipedia.org/wiki/Joseph_Wright_of_Derby"
+  },
+  {
+    "title": "Manchester from Kersal Moor",
+    "artist": "William Wyld",
+    "year": "1852",
+    "citation": "https://en.wikipedia.org/wiki/William_Wyld"
+  },
+  {
+    "title": "The Forge",
+    "artist": "Francisco de Goya",
+    "year": "c. 1817–1820",
+    "citation": "https://en.wikipedia.org/wiki/The_Forge_(Goya)"
+  },
+  {
+    "title": "Blast Furnaces at Coalbrookdale",
+    "artist": "Loutherbourg Circle",
+    "year": "1800s",
+    "citation": "https://en.wikipedia.org/wiki/Coalbrookdale"
+  },
+  {
+    "title": "Iron and Coal",
+    "artist": "William Bell Scott",
+    "year": "1855–1860",
+    "citation": "https://en.wikipedia.org/wiki/William_Bell_Scott"
+  },
+  {
+    "title": "The Railway Station",
+    "artist": "William Powell Frith",
+    "year": "1862",
+    "citation": "https://en.wikipedia.org/wiki/The_Railway_Station_(Frith)"
+  },
+  {
+    "title": "Factories at Clichy",
+    "artist": "Vincent van Gogh",
+    "year": "1887",
+    "citation": "https://en.wikipedia.org/wiki/Vincent_van_Gogh"
+  },
+  {
+    "title": "The Weavers",
+    "artist": "Käthe Kollwitz",
+    "year": "1893–1897",
+    "citation": "https://en.wikipedia.org/wiki/K%C3%A4the_Kollwitz"
+  },
+  {
+    "title": "The Foundry",
+    "artist": "Jean-François Millet",
+    "year": "c. 1855",
+    "citation": "https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Millet"
+  },
+  {
+    "title": "Brooklyn Bridge Construction",
+    "artist": "Joseph Pennell",
+    "year": "1883",
+    "citation": "https://en.wikipedia.org/wiki/Joseph_Pennell"
+  },
+  {
+    "title": "Men of the Docks",
+    "artist": "George Bellows",
+    "year": "1912",
+    "citation": "https://en.wikipedia.org/wiki/Men_of_the_Docks"
+  },
+  {
+    "title": "The Stevedores",
+    "artist": "Diego Rivera",
+    "year": "c. 1930",
+    "citation": "https://en.wikipedia.org/wiki/Diego_Rivera"
+  },
+  {
+    "title": "Industry",
+    "artist": "Charles Sheeler",
+    "year": "1932",
+    "citation": "https://en.wikipedia.org/wiki/Charles_Sheeler"
+  },
+  {
+    "title": "Pittsburgh Mills",
+    "artist": "Joseph Stella",
+    "year": "c. 1920",
+    "citation": "https://en.wikipedia.org/wiki/Joseph_Stella"
+  },
+  {
+    "title": "The Builders",
+    "artist": "Fernand Léger",
+    "year": "1950 (post-WWII but reflects industrial labor)",
+    "citation": "https://en.wikipedia.org/wiki/Fernand_L%C3%A9ger"
+  },
+  {
+    "title": "River Rouge Plant",
+    "artist": "Diego Rivera",
+    "year": "1932–1933",
+    "citation": "https://en.wikipedia.org/wiki/Detroit_Industry_Murals"
+  },
+  {
+    "title": "Night Shift",
+    "artist": "C. R. W. Nevinson",
+    "year": "1918",
+    "citation": "https://en.wikipedia.org/wiki/C._R._W._Nevinson"
+  },
+  {
+    "title": "Venice Canal",
+    "artist": "Maurits Cornelis Escher",
+    "year": "1925",
+    "citation": "https://en.wikipedia.org/wiki/M._C._Escher"
+  },
+  {
+    "title": "Canal in Holland",
+    "artist": "Maurits Cornelis Escher",
+    "year": "1930s",
+    "citation": "https://mcescher.com/gallery"
+  },
+  {
+    "title": "The Grand Canal, Venice",
+    "artist": "J. M. W. Turner",
+    "year": "1835",
+    "citation": "https://en.wikipedia.org/wiki/J._M._W._Turner"
+  },
+  {
+    "title": "View of Delft",
+    "artist": "Johannes Vermeer",
+    "year": "1660–1661",
+    "citation": "https://en.wikipedia.org/wiki/View_of_Delft"
+  },
+  {
+    "title": "The Seine and Notre Dame in Paris",
+    "artist": "Henri Matisse",
+    "year": "1898",
+    "citation": "https://en.wikipedia.org/wiki/Henri_Matisse"
+  },
+  {
+    "title": "Across the River on a Spring Evening",
+    "artist": "Utagawa Hiroshige",
+    "year": "1856",
+    "citation": "https://en.wikipedia.org/wiki/Hiroshige"
+  },
+  {
+    "title": "Canal Scene, Venice",
+    "artist": "John Singer Sargent",
+    "year": "c. 1903",
+    "citation": "https://en.wikipedia.org/wiki/John_Singer_Sargent"
+  },
+  {
+    "title": "The Oxbow (View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm)",
+    "artist": "Thomas Cole",
+    "year": "1836",
+    "citation": "https://en.wikipedia.org/wiki/The_Oxbow"
+  },
+  {
+    "title": "Canal in Amsterdam",
+    "artist": "Claude Monet",
+    "year": "1874",
+    "citation": "https://en.wikipedia.org/wiki/Claude_Monet"
+  },
+  {
+    "title": "River Landscape with a Church",
+    "artist": "Canaletto",
+    "year": "1740s",
+    "citation": "https://en.wikipedia.org/wiki/Canaletto"
+  },
+  {
+    "title": "Venice Canal",
+    "artist": "Maurits Cornelis Escher",
+    "year": "1925",
+    "citation": "https://en.wikipedia.org/wiki/M._C._Escher"
+  },
+  {
+    "title": "Canal in Holland",
+    "artist": "Maurits Cornelis Escher",
+    "year": "1930s",
+    "citation": "https://mcescher.com/gallery"
+  },
+  {
+    "title": "The Grand Canal, Venice",
+    "artist": "J. M. W. Turner",
+    "year": "1835",
+    "citation": "https://en.wikipedia.org/wiki/J._M._W._Turner"
+  },
+  {
+    "title": "View of Delft",
+    "artist": "Johannes Vermeer",
+    "year": "1660–1661",
+    "citation": "https://en.wikipedia.org/wiki/View_of_Delft"
+  },
+  {
+    "title": "The Seine and Notre Dame in Paris",
+    "artist": "Henri Matisse",
+    "year": "1898",
+    "citation": "https://en.wikipedia.org/wiki/Henri_Matisse"
+  },
+  {
+    "title": "Across the River on a Spring Evening",
+    "artist": "Utagawa Hiroshige",
+    "year": "1856",
+    "citation": "https://en.wikipedia.org/wiki/Hiroshige"
+  },
+  {
+    "title": "Canal Scene, Venice",
+    "artist": "John Singer Sargent",
+    "year": "c. 1903",
+    "citation": "https://en.wikipedia.org/wiki/John_Singer_Sargent"
+  },
+  {
+    "title": "The Oxbow (View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm)",
+    "artist": "Thomas Cole",
+    "year": "1836",
+    "citation": "https://en.wikipedia.org/wiki/The_Oxbow"
+  },
+  {
+    "title": "Canal in Amsterdam",
+    "artist": "Claude Monet",
+    "year": "1874",
+    "citation": "https://en.wikipedia.org/wiki/Claude_Monet"
+  },
+  {
+    "title": "River Landscape with a Church",
+    "artist": "Canaletto",
+    "year": "1740s",
+    "citation": "https://en.wikipedia.org/wiki/Canaletto"
+  },
+  {
+    "title": "Whistler’s Mother by the River",
+    "artist": "James McNeill Whistler",
+    "year": "1861",
+    "citation": "https://en.wikipedia.org/wiki/James_McNeill_Whistler"
+  },
+  {
+    "title": "A Canal in Bruges",
+    "artist": "Frank Brangwyn",
+    "year": "1905",
+    "citation": "https://en.wikipedia.org/wiki/Frank_Brangwyn"
+  },
+  {
+    "title": "Willow Bridge at Kameido",
+    "artist": "Utagawa Hiroshige",
+    "year": "1857",
+    "citation": "https://en.wikipedia.org/wiki/Hiroshige"
+  },
+  {
+    "title": "Qiantang River Tidal Bore",
+    "artist": "Zhang Daqian",
+    "year": "1930s",
+    "citation": "https://en.wikipedia.org/wiki/Zhang_Daqian"
+  },
+  {
+    "title": "Canal in Venice",
+    "artist": "Paul Signac",
+    "year": "1904",
+    "citation": "https://en.wikipedia.org/wiki/Paul_Signac"
+  },
+  {
+    "title": "Floating Market, Bangkok",
+    "artist": "Erich Wolfsfeld",
+    "year": "1920s",
+    "citation": "https://en.wikipedia.org/wiki/Erich_Wolfsfeld"
+  },
+  {
+    "title": "Kyoto Canal Scene",
+    "artist": "Kaburagi Kiyokata",
+    "year": "1910s",
+    "citation": "https://en.wikipedia.org/wiki/Kiyokata_Kaburagi"
+  },
+  {
+    "title": "Boating on the Hudson River",
+    "artist": "Winslow Homer",
+    "year": "1869",
+    "citation": "https://en.wikipedia.org/wiki/Winslow_Homer"
+  },
+  {
+    "title": "Ganges at Benares",
+    "artist": "Edwin Lord Weeks",
+    "year": "1883",
+    "citation": "https://en.wikipedia.org/wiki/Edwin_Lord_Weeks"
+  },
+  {
+    "title": "The Nile at Luxor",
+    "artist": "David Roberts",
+    "year": "1849",
+    "citation": "https://en.wikipedia.org/wiki/David_Roberts_(painter)"
   }
 ]
+
+
+
+
