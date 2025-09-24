@@ -197,7 +197,7 @@ data = {
 
 if os.getenv("MAILGUN_CC_EMAILS"):
     cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
-    data["cc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
+    data["bcc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
 
 if os.path.exists(image_filepath):  # Only send email if image was generated
     print(
