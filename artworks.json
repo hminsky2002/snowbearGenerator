@@ -2799,11 +2799,6 @@
     "year": "1818–1819"
   },
   {
-    "title": "The Raft of the Medusa",
-    "artist": "Théodore Géricault",
-    "year": "1819"
-  },
-  {
     "title": "The Last Supper",
     "artist": "Tintoretto",
     "year": "1594"
@@ -5012,8 +5007,226 @@
   { "title": "Santa Looking at Bird in a Tree", "artist": "Saul Steinberg", "year": "ca. 1952", "citation": "Whitney Museum of American Art collection" },
   { "title": "The Parade", "artist": "Saul Steinberg", "year": "1950", "citation": "Whitney Museum of American Art collection" },
   { "title": "Dal Vero", "artist": "Saul Steinberg", "year": "1983", "citation": "Published in artist’s sketchbook series ‘Dal Vero’" },
-  { "title": "The Passport", "artist": "Saul Steinberg", "year": "1954", "citation": "Book published by Saul Steinberg" }
+  { "title": "The Passport", "artist": "Saul Steinberg", "year": "1954", "citation": "Book published by Saul Steinberg" },
+  {
+    "title": "Normandie",
+    "artist": "A. M. Cassandre",
+    "year": "1935",
+    "citation": "https://www.moma.org/collection/works/6091"
+  },
+  {
+    "title": "La Plage de Calvi, Corse",
+    "artist": "Roger Broders",
+    "year": "1928",
+    "citation": "https://www.swanngalleries.com/news/vintage-posters/2018/08/october-25-rare-important-travel-posters-4/" 
+  },
+  {
+    "title": "Sur la Côte d’Azur",
+    "artist": "Roger Broders",
+    "year": "circa 1931",
+    "citation": "https://www.swanngalleries.com/news/vintage-posters/2018/08/october-25-rare-important-travel-posters-4/" 
+  },
+  {
+    "title": "Vence Travel Poster",
+    "artist": "Roger Broders",
+    "year": "1930",
+    "citation": "https://archive.org/details/1930-vence-travel-poster-by-roger-broders"
+  },
+  {
+    "title": "Meeting d’Aviation Nice",
+    "artist": "Charles-Léonce Brossé (Bsor / Bzor)",
+    "year": "1910",
+    "citation": "https://en.wikipedia.org/wiki/Charles-L%C3%A9once_Bross%C3%A9"
+  },
+  {
+    "title": "Étoile du Nord",
+    "artist": "A. M. Cassandre",
+    "year": "1927",
+    "citation": "https://en.wikipedia.org/wiki/Cassandre"
+  },
+  {
+    "title": "La Route Bleue (Ligne Paris-Côte d’Azur)",
+    "artist": "A. M. Cassandre",
+    "year": "1929",
+    "citation": "https://en.wikipedia.org/wiki/Cassandre"
+  },
+  {
+    "title": "L’Atlantique",
+    "artist": "A. M. Cassandre",
+    "year": "1931",
+    "citation": "https://cassandre-france.com/lithographic-publication-based-on-cassandre"
+  },
+  {
+    "title": "Nord Express",
+    "artist": "A. M. Cassandre",
+    "year": "1925",
+    "citation": "https://en.wikipedia.org/wiki/Cassandre"
+  },
+  {
+    "title": "Golden Mountain Pullman Express",
+    "artist": "Roger Broders",
+    "year": "circa 1930",
+    "citation": "https://flashbak.com/fifteen-beautiful-french-art-deco-travel-posters-by-roger-broders-39458/"
+  },
+  {
+    "title": "Winter Sports (French Alps)",
+    "artist": "Roger Broders",
+    "year": "circa 1930",
+    "citation": "https://flashbak.com/fifteen-beautiful-french-art-deco-travel-posters-by-roger-broders-39458/"
+  },
+  {
+    "title": "Les Sports d’Hiver à St Pierre de Chartreuse",
+    "artist": "Roger Broders",
+    "year": "1930",
+    "citation": "https://flashbak.com/fifteen-beautiful-french-art-deco-travel-posters-by-roger-broders-39458/"
+  },
+  {
+    "title": "New York, The Wonder City of the World (NYC travel poster)",
+    "artist": "Adolph Treidler",
+    "year": "1927",
+    "citation": "https://www.swanngalleries.com/news/vintage-posters/2018/08/october-25-rare-important-travel-posters-4/"
+  },
+  {
+    "title": "Sea Breezes and Sunshine at Lytham St. Annes",
+    "artist": "W. Smithson Broadhead",
+    "year": "circa 1930",
+    "citation": "https://www.swanngalleries.com/news/vintage-posters/2018/10/records-results-rare-important-travel-posters-4/"
+  },
+  {
+    "title": "Visit Palestine",
+    "artist": "Franz Krausz",
+    "year": "1936",
+    "citation": "https://www.swanngalleries.com/news/vintage-posters/2019/11/records-results-travel-posters-fall-2019/"
+  },
+  { "title": "The Parade", "artist": "Saul Steinberg", "year": "1950", "citation": "Whitney Museum of American Art collection" },
+  { "title": "Diana: The Mourning Issue", "artist": "TIME Magazine editors", "year": "1997", "citation": "TIME, September 15, 1997" },
+  { "title": "The Afghan Girl", "artist": "Steve McCurry (photographer)", "year": "1985", "citation": "National Geographic, June 1985" },
+  { "title": "The Beatles", "artist": "Jann Wenner & staff", "year": "1967", "citation": "Rolling Stone, Issue 1, November 9, 1967" },
+  { "title": "Barack Obama – Person of the Year", "artist": "TIME Magazine photo team", "year": "2008", "citation": "TIME, December 29, 2008" },
+  { "title": "Marilyn Monroe: The Last Sitting", "artist": "Bert Stern (photographer)", "year": "1962", "citation": "Vogue, July 1962" },
+  { "title": "John Lennon in U.S. Army Jacket", "artist": "Annie Leibovitz (photographer)", "year": "1971", "citation": "Rolling Stone, January 21, 1971" },
+  { "title": "The New Yorker 1st Issue", "artist": "Rea Irvin", "year": "1925", "citation": "The New Yorker, February 21, 1925" },
+  { "title": "Vanity Fair Demi Moore Pregnancy Cover", "artist": "Annie Leibovitz (photographer)", "year": "1991", "citation": "Vanity Fair, August 1991" },
+  { "title": "The September Issue – Beyoncé", "artist": "Tyler Mitchell (photographer)", "year": "2018", "citation": "Vogue, September 2018" },
+  { "title": "The Velvet Underground & Nico", "artist": "Andy Warhol", "year": "1967", "citation": "Esquire, April 1967" },
+  { "title": "The Flapper", "artist": "John Held Jr.", "year": "1926", "citation": "Life Magazine, February 1926" },
+  { "title": "Jazz Age Dancer", "artist": "Miguel Covarrubias", "year": "1929", "citation": "Vanity Fair, October 1929" },
+  { "title": "Franklin D. Roosevelt – Man of the Year", "artist": "TIME Magazine design team", "year": "1932", "citation": "TIME, January 2, 1933" },
+  { "title": "Gone with the Wind", "artist": "Vogue editorial staff", "year": "1939", "citation": "Vogue, December 1939" },
+  { "title": "Rosie the Riveter", "artist": "Norman Rockwell", "year": "1943", "citation": "The Saturday Evening Post, May 29, 1943" },
+  { "title": "The Post-War American Dream", "artist": "Norman Rockwell", "year": "1948", "citation": "The Saturday Evening Post, April 24, 1948" },
+  { "title": "Andy Warhol Campbell’s Soup Cans", "artist": "Andy Warhol", "year": "1962", "citation": "Art News, July 1962" },
+  { "title": "Apollo 11 on the Moon", "artist": "NASA Photo / LIFE editors", "year": "1969", "citation": "LIFE, July 25, 1969" },
+  { "title": "Earthrise", "artist": "NASA / Bill Anders (photographer)", "year": "1969", "citation": "National Geographic, January 1969" },
+  { "title": "The End of Innocence (Nixon Resigns)", "artist": "TIME Editorial Team", "year": "1974", "citation": "TIME, August 19, 1974" },
+  { "title": "Princess Diana – Wedding", "artist": "Vogue editorial team", "year": "1981", "citation": "Vogue, August 1981" },
+  { "title": "Madonna’s Iconic Portrait", "artist": "Herb Ritts (photographer)", "year": "1989", "citation": "Rolling Stone, May 1989" },
+  { "title": "See America", "artist": "WPA Federal Art Project", "year": "1938", "citation": "U.S. National Park Service poster" },
+  { "title": "Visit India", "artist": "Government of India Tourist Office", "year": "1930s", "citation": "Government of India travel poster" },
+  { "title": "Norway – The Land of the Midnight Sun", "artist": "Unknown", "year": "1935", "citation": "Norwegian State Railways" },
+  { "title": "Air France – Paris", "artist": "Georges Mathieu", "year": "1952", "citation": "Air France travel poster collection" },
+  { "title": "Visit Cuba", "artist": "Conrado Massaguer", "year": "1929", "citation": "Cuban Tourist Commission" },
+  { "title": "Travel in Japan by Train", "artist": "Japanese Government Railways", "year": "1937", "citation": "Japanese National Tourism Organization" },
+  { "title": "Fly TWA – Trans World Airlines", "artist": "David Klein", "year": "1956", "citation": "TWA Poster Collection, MoMA" },
+  { "title": "See Canada", "artist": "Canadian Pacific Railway", "year": "1930", "citation": "Canadian Pacific Railway poster" },
+  { "title": "Ski in Switzerland", "artist": "Emil Cardinaux", "year": "1920", "citation": "Swiss National Tourist Office" },
+  { "title": "Visit Mexico", "artist": "Ernesto García Cabral", "year": "1935", "citation": "Mexican Tourist Board poster" },
+  { "title": "Fly BOAC to Africa", "artist": "Frank Wootton", "year": "1950", "citation": "British Overseas Airways Corporation poster" },
+  { "title": "Australia – The Sunburnt Country", "artist": "Percy Trompf", "year": "1930s", "citation": "Australian National Travel Association" },
+  { "title": "New Zealand – Scenic Wonderland", "artist": "Marcus King", "year": "1934", "citation": "New Zealand Railways Publicity Studio" },
+  { "title": "Egypt – Land of Antiquity", "artist": "Gaston Goor", "year": "1932", "citation": "Egyptian State Tourist Office" },
+  { "title": "See America – Yellowstone", "artist": "WPA Federal Art Project", "year": "1938", "citation": "Library of Congress, WPA Poster Collection" },
+  { "title": "Holland – Tulip Time", "artist": "Derk Wiersma", "year": "1950s", "citation": "Dutch National Tourist Office" },
+  { "title": "South Africa – Sunshine and Surf", "artist": "South African Railways", "year": "1935", "citation": "South African Tourism poster" },
+  { "title": "Travel in Spain", "artist": "Manuel Monleón", "year": "1929", "citation": "Spanish Tourism Board, Barcelona International Exposition" },
+  { "title": "Venice – Italia", "artist": "Giovanni Guerzoni", "year": "1930s", "citation": "Italian State Railways" },
+  { "title": "Hawaiian Islands – United Air Lines", "artist": "Stan Galli", "year": "1950s", "citation": "United Air Lines poster collection" },
+  { "title": "The Wedding at Cana", "artist": "Paolo Veronese", "year": "1563", "citation": "Louvre Museum, Paris" },
+  { "title": "The Night Watch", "artist": "Rembrandt van Rijn", "year": "1642", "citation": "Rijksmuseum, Amsterdam" },
+  { "title": "A Dance to the Music of Time", "artist": "Nicolas Poussin", "year": "1634–1636", "citation": "The Wallace Collection, London" },
+  { "title": "The Derby at Epsom", "artist": "Jean-Louis-Ernest Meissonier", "year": "1861", "citation": "Musée d’Orsay, Paris" },
+  { "title": "Liberty Leading the People", "artist": "Eugène Delacroix", "year": "1830", "citation": "Louvre Museum, Paris" },
+  { "title": "The Tennis Court Oath", "artist": "Jacques-Louis David (unfinished)", "year": "1791", "citation": "Musée Carnavalet, Paris" },
+  { "title": "Bathers at Asnières", "artist": "Georges Seurat", "year": "1884", "citation": "National Gallery, London" },
+  { "title": "Beach Scene", "artist": "Winslow Homer", "year": "1869", "citation": "Metropolitan Museum of Art, New York" },
+  { "title": "The Triumph of Caesar (series)", "artist": "Andrea Mantegna", "year": "1484–1492", "citation": "Royal Collection, London" },
+  { "title": "Christ Carrying the Cross (Engraved Passion)", "artist": "Albrecht Dürer", "year": "1497–1500", "citation": "Albertina, Vienna" },
+  { "title": "The Large Horse", "artist": "Albrecht Dürer", "year": "1505", "citation": "Kupferstichkabinett, Berlin" },
+  { "title": "The Miseries of War (Les Misères et les Malheurs de la Guerre)", "artist": "Jacques Callot", "year": "1633", "citation": "Bibliothèque nationale de France, Paris" },
+  { "title": "Los Caprichos", "artist": "Francisco Goya", "year": "1797–1799", "citation": "Prado Museum, Madrid" },
+  { "title": "The Third of May 1808 (print version, after painting)", "artist": "Francisco Goya", "year": "1860s", "citation": "Biblioteca Nacional de España" },
+  { "title": "The Four Horsemen of the Apocalypse", "artist": "Albrecht Dürer", "year": "1498", "citation": "Metropolitan Museum of Art, New York" },
+  { "title": "A Harlot’s Progress (series)", "artist": "William Hogarth", "year": "1732", "citation": "British Museum, London" },
+  { "title": "A Rake’s Progress (series)", "artist": "William Hogarth", "year": "1735", "citation": "Sir John Soane’s Museum, London" },
+  { "title": "Gin Lane", "artist": "William Hogarth", "year": "1751", "citation": "British Museum, London" },
+  { "title": "Karako Children at Play", "artist": "Katsushika Hokusai", "year": "1790s", "citation": "Tokyo National Museum" },
+  { "title": "One Hundred Famous Views of Edo", "artist": "Utagawa Hiroshige", "year": "1856–1858", "citation": "Brooklyn Museum, New York" },
+  { "title": "Great Wave off Kanagawa", "artist": "Katsushika Hokusai", "year": "1831", "citation": "Metropolitan Museum of Art, New York" },
+  { "title": "The Entry of the Crusaders into Constantinople (engraved reproduction)", "artist": "Gustave Doré", "year": "1871", "citation": "Various illustrated editions of Villehardouin" },
+  { "title": "Freedom from Want", "artist": "Norman Rockwell", "year": "1943", "citation": "The Saturday Evening Post, March 6, 1943" },
+  { "title": "Freedom of Speech", "artist": "Norman Rockwell", "year": "1943", "citation": "The Saturday Evening Post, February 20, 1943" },
+  { "title": "The Problem We All Live With", "artist": "Norman Rockwell", "year": "1964", "citation": "Look Magazine, January 14, 1964" },
+  { "title": "Shuffleton’s Barbershop", "artist": "Norman Rockwell", "year": "1950", "citation": "Norman Rockwell Museum, Stockbridge" },
+  { "title": "Saying Grace", "artist": "Norman Rockwell", "year": "1951", "citation": "The Saturday Evening Post, November 24, 1951" },
+  { "title": "The Runaway", "artist": "Norman Rockwell", "year": "1958", "citation": "The Saturday Evening Post, September 20, 1958" },
+  { "title": "Girl at Mirror", "artist": "Norman Rockwell", "year": "1954", "citation": "The Saturday Evening Post, March 6, 1954" },
+  { "title": "Triple Self-Portrait", "artist": "Norman Rockwell", "year": "1960", "citation": "The Saturday Evening Post, February 13, 1960" },
+  { "title": "Doctor and the Doll", "artist": "Norman Rockwell", "year": "1929", "citation": "The Saturday Evening Post, March 9, 1929" },
+  { "title": "Homecoming Marine", "artist": "Norman Rockwell", "year": "1945", "citation": "The Saturday Evening Post, October 13, 1945" },
+  { "title": "The Jester", "artist": "J.C. Leyendecker", "year": "1923", "citation": "Saturday Evening Post cover" },
+  { "title": "New Year’s Baby 1907", "artist": "J.C. Leyendecker", "year": "1907", "citation": "Saturday Evening Post, December 29, 1906" },
+  { "title": "The Arrow Collar Man", "artist": "J.C. Leyendecker", "year": "1910s", "citation": "Collar advertising campaign" },
+  { "title": "The Giant", "artist": "N.C. Wyeth", "year": "1923", "citation": "Illustration for Scribner’s Magazine" },
+  { "title": "Treasure Island Illustrations", "artist": "N.C. Wyeth", "year": "1911", "citation": "Charles Scribner’s Sons edition" },
+  { "title": "Family Group Reading", "artist": "Mary Cassatt", "year": "1891", "citation": "Smithsonian American Art Museum" },
+  { "title": "Mother and Child (The Bath)", "artist": "Mary Cassatt", "year": "1893", "citation": "Art Institute of Chicago" },
+  { "title": "Breaking Home Ties", "artist": "Norman Rockwell", "year": "1954", "citation": "The Saturday Evening Post, September 25, 1954" },
+  { "title": "Christmas Homecoming", "artist": "Norman Rockwell", "year": "1948", "citation": "The Saturday Evening Post, December 25, 1948" },
+  { "title": "Checkers Game", "artist": "Stevan Dohanos", "year": "1944", "citation": "The Saturday Evening Post, August 5, 1944" },
+  { "title": "Rain, Steam and Speed – The Great Western Railway", "artist": "J.M.W. Turner", "year": "1844", "citation": "National Gallery, London" },
+  { "title": "The Fighting Temeraire", "artist": "J.M.W. Turner", "year": "1839", "citation": "National Gallery, London" },
+  { "title": "Iron and Coal", "artist": "William Bell Scott", "year": "1860", "citation": "Laing Art Gallery, Newcastle" },
+  { "title": "The Railway Station", "artist": "William Powell Frith", "year": "1862", "citation": "Royal Holloway, University of London" },
+  { "title": "Work", "artist": "Ford Madox Brown", "year": "1852–1865", "citation": "Manchester Art Gallery" },
+  { "title": "The Iron Rolling Mill (Modern Cyclopes)", "artist": "Adolph von Menzel", "year": "1875", "citation": "Neue Nationalgalerie, Berlin" },
+  { "title": "Constructing the Iron Bridge", "artist": "Philip James de Loutherbourg", "year": "1779", "citation": "Science Museum, London" },
+  { "title": "Men of the Docks", "artist": "George Bellows", "year": "1912", "citation": "National Gallery, London" },
+  { "title": "The Machine Room", "artist": "Fernand Léger", "year": "1920", "citation": "Musée National d’Art Moderne, Paris" },
+  { "title": "Workers and Turbines", "artist": "Diego Rivera", "year": "1932–1933", "citation": "Detroit Institute of Arts, Detroit Industry Murals" },
+  { "title": "Electric Power, The Harnessing of Niagara", "artist": "Joseph Pennell", "year": "1919", "citation": "Library of Congress, Washington D.C." },
+  { "title": "Gasholders, Chelsea", "artist": "Charles Ginner", "year": "1910s", "citation": "Tate Britain, London" },
+  { "title": "Tank Manufacture (Factory Scene)", "artist": "Laura Knight", "year": "1942", "citation": "Imperial War Museum, London" },
+  { "title": "Women at the Wheel of Drills", "artist": "Stanley Spencer", "year": "1941–1943", "citation": "Imperial War Museum, London" },
+  { "title": "Shipbuilding on the Clyde (series)", "artist": "Stanley Spencer", "year": "1940–1946", "citation": "Imperial War Museum, London" },
+  { "title": "A Foundry", "artist": "Louis Lozowick", "year": "1933", "citation": "Whitney Museum of American Art, New York" },
+  { "title": "The Tube Shelter Perspective", "artist": "Henry Moore", "year": "1941", "citation": "Imperial War Museum, London" },
+  { "title": "Workers Leaving the Lumière Factory", "artist": "Louis Lumière (film still, often reproduced as photoengraving)", "year": "1895", "citation": "Institut Lumière, Lyon" },
+  { "title": "Attack on a Gasholder, London Blitz", "artist": "Henry Rushbury", "year": "1940", "citation": "Imperial War Museum, London" },
+  { "title": "The Building of the Ships", "artist": "Edward Ardizzone", "year": "1942", "citation": "Imperial War Museum, London" },
+  { "title": "Barges on the Canal", "artist": "John Constable", "year": "1826", "citation": "Victoria and Albert Museum, London" },
+  { "title": "The Hay Wain", "artist": "John Constable", "year": "1821", "citation": "National Gallery, London" },
+  { "title": "Flatford Mill (Scene on a Navigable River)", "artist": "John Constable", "year": "1816", "citation": "Tate Britain, London" },
+  { "title": "Coal Barges on the Thames", "artist": "J.M.W. Turner", "year": "1806", "citation": "Tate Britain, London" },
+  { "title": "Canal in Holland with Barges", "artist": "Jacob van Ruisdael", "year": "1660s", "citation": "Rijksmuseum, Amsterdam" },
+  { "title": "Shipping on the Maas near Dordrecht", "artist": "Aelbert Cuyp", "year": "1650", "citation": "National Gallery, London" },
+  { "title": "Bridge over the Canal, Haarlem", "artist": "Jacob van Ruisdael", "year": "1670", "citation": "Rijksmuseum, Amsterdam" },
+  { "title": "Barge Haulers on the Volga", "artist": "Ilya Repin", "year": "1870–1873", "citation": "State Russian Museum, St. Petersburg" },
+  { "title": "Canal Scene in Venice with Boats and Figures", "artist": "Canaletto", "year": "1730", "citation": "National Gallery, London" },
+  { "title": "The Grand Canal, Venice", "artist": "J.M.W. Turner", "year": "1835", "citation": "Metropolitan Museum of Art, New York" },
+  { "title": "Canal Boats and Bargemen", "artist": "Charles François Daubigny", "year": "1860s", "citation": "Musée d’Orsay, Paris" },
+  { "title": "Towpath on the Canal", "artist": "Jean-Baptiste-Camille Corot", "year": "1850s", "citation": "Musée du Louvre, Paris" },
+  { "title": "Canal in Holland with Skaters and Boats", "artist": "Andreas Schelfhout", "year": "1830s", "citation": "Rijksmuseum, Amsterdam" },
+  { "title": "Industrial Canal Scene, Manchester", "artist": "L.S. Lowry", "year": "1930s", "citation": "The Lowry, Salford" },
+  { "title": "Barge at a Lock", "artist": "David Cox", "year": "1827", "citation": "Birmingham Museum and Art Gallery" }
 ]
+
+
+
+
+
+
+
+
 
 
 

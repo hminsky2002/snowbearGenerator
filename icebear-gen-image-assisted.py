@@ -86,6 +86,7 @@ alternate_prompts = [
 
 artwork_choice = random.choice(artworks)
 
+print(f"artwork_choice = {artwork_choice}")
 media_dir = "./media"
 if not os.path.exists(media_dir):
     os.makedirs(media_dir)
