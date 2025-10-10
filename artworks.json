@@ -1364,21 +1364,6 @@
     "year": "1951"
   },
   {
-    "title": "The Blue Nude",
-    "artist": "Henri Matisse",
-    "year": "1907"
-  },
-  {
-    "title": "The Dance",
-    "artist": "Henri Matisse",
-    "year": "1909–1910"
-  },
-  {
-    "title": "The Green Stripe",
-    "artist": "Henri Matisse",
-    "year": "1905"
-  },
-  {
     "title": "The Music Lesson",
     "artist": "Henri Matisse",
     "year": "1917"
@@ -1397,16 +1382,6 @@
     "title": "The Red Studio",
     "artist": "Henri Matisse",
     "year": "1911"
-  },
-  {
-    "title": "The Snail",
-    "artist": "Henri Matisse",
-    "year": "1953"
-  },
-  {
-    "title": "Woman with a Hat",
-    "artist": "Henri Matisse",
-    "year": "1905"
   },
   {
     "title": "Carnival Evening",
@@ -2631,11 +2606,6 @@
   {
     "title": "The Birth of Venus",
     "artist": "Sandro Botticelli",
-    "year": "1486"
-  },
-  {
-    "title": "The Birth of Venus",
-    "artist": "Sandro Botticelli",
     "year": "c. 1484–1486"
   },
   {
@@ -2802,11 +2772,6 @@
     "title": "The Last Supper",
     "artist": "Tintoretto",
     "year": "1594"
-  },
-  {
-    "title": "Venus of Urbino",
-    "artist": "Titian",
-    "year": "1538"
   },
   {
     "title": "The Avengers",
@@ -5217,7 +5182,83 @@
   { "title": "Towpath on the Canal", "artist": "Jean-Baptiste-Camille Corot", "year": "1850s", "citation": "Musée du Louvre, Paris" },
   { "title": "Canal in Holland with Skaters and Boats", "artist": "Andreas Schelfhout", "year": "1830s", "citation": "Rijksmuseum, Amsterdam" },
   { "title": "Industrial Canal Scene, Manchester", "artist": "L.S. Lowry", "year": "1930s", "citation": "The Lowry, Salford" },
-  { "title": "Barge at a Lock", "artist": "David Cox", "year": "1827", "citation": "Birmingham Museum and Art Gallery" }
+  { "title": "Barge at a Lock", "artist": "David Cox", "year": "1827", "citation": "Birmingham Museum and Art Gallery" },
+{
+  "title": "The Dream",
+  "artist": "Henri Rousseau",
+  "year": "1910"
+},
+{
+  "title": "The Sleeping Gypsy",
+  "artist": "Henri Rousseau",
+  "year": "1897"
+},
+{
+  "title": "Tiger in a Tropical Storm (Surprised!)",
+  "artist": "Henri Rousseau",
+  "year": "1891"
+},
+{
+  "title": "The Snake Charmer",
+  "artist": "Henri Rousseau",
+  "year": "1907"
+},
+{
+  "title": "The Hungry Lion Throws Itself on the Antelope",
+  "artist": "Henri Rousseau",
+  "year": "1905"
+},
+{
+  "title": "Chemins de Fer du Nord – Londres",
+  "artist": "Roger Broders",
+  "year": "1925"
+},
+{
+  "title": "Lait pur stérilisé de la Vingeanne",
+  "artist": "Benjamin Rabier",
+  "year": "1923"
+},
+{
+  "title": "Norge Refrigerator",
+  "artist": "Otto Baumberger",
+  "year": "1928"
+},
+{
+  "title": "The Orient Line to Australia",
+  "artist": "Walter Jardine",
+  "year": "1926"
+},
+{
+  "title": "Duilio – Navigazione Generale Italiana",
+  "artist": "Marcello Dudovich",
+  "year": "1923"
+},
+{
+  "title": "Société Générale – Banque Française",
+  "artist": "Jean Carlu",
+  "year": "1927"
+},
+{
+  "title": "Shell – The Quick Starting Pair",
+  "artist": "Edward McKnight Kauffer",
+  "year": "1929"
+},
+{
+  "title": "Bal des Petits Lits Blancs",
+  "artist": "Paul Colin",
+  "year": "1928"
+},
+{
+  "title": "Bally Chaussures",
+  "artist": "Pierre Fix-Masseau",
+  "year": "1929"
+},
+{
+  "title": "PKZ Zürich",
+  "artist": "Otto Baumberger",
+  "year": "1923"
+}
+
 ]
 
 
