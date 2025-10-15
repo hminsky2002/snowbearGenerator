@@ -5250,9 +5250,100 @@
   "title": "PKZ Zürich",
   "artist": "Otto Baumberger",
   "year": "1923"
-}
+},
 
+  {
+    "title": "Fear and Loathing in Las Vegas (Illustrations)",
+    "artist": "Ralph Steadman",
+    "year": "1971",
+    "url": "https://www.ralphsteadman.com/"  
+  },
+  {
+    "title": "The Grapes of Ralph",
+    "artist": "Ralph Steadman",
+    "year": "1992",
+    "url": "https://www.ralphsteadman.com/"  
+  },
+  {
+    "title": "The Joke's Over",
+    "artist": "Ralph Steadman",
+    "year": "2006",
+    "url": "https://www.ralphsteadman.com/"  
+  },
+  {
+    "title": "Animal Farm Illustrations",
+    "artist": "Ralph Steadman",
+    "year": "1995",
+    "url": "https://www.ralphsteadman.com/"  
+  },
+  {
+    "title": "The Devil’s Dictionary Illustrations",
+    "artist": "Ralph Steadman",
+    "year": "2003",
+    "url": "https://www.ralphsteadman.com/"  
+  },
+  {
+    "title": "Pink Floyd: The Wall Illustrations",
+    "artist": "Gerald Scarfe",
+    "year": "1979",
+    "url": "https://geraldscarfe.com/the-art-of-pink-floyd-the-wall/"  
+  },
+  {
+    "title": "Original Storyboard for Pink Floyd The Wall",
+    "artist": "Gerald Scarfe",
+    "year": "c. 1981",
+    "url": "https://sfae.com/Artists/Gerald-Scarfe/Original-Storyboard-for-Pink-Floyd-The-Wall-c-1981"  
+  },
+  {
+    "title": "Pink Floyd The Wall: The Judge and Pink",
+    "artist": "Gerald Scarfe",
+    "year": "–",
+    "url": "https://geraldscarfe.com/product/pink-floyd-the-wall-the-judge-and-pink/"  
+  },
+  {
+    "title": "Pink Floyd The Wall: Set of 6 prints",
+    "artist": "Gerald Scarfe",
+    "year": "–",
+    "url": "https://geraldscarfe.com/product/pink-floyd-the-wall-set-of-6-prints/"  
+  },
+  {
+    "title": "The Making of Pink Floyd: The Wall (Book with art)",
+    "artist": "Gerald Scarfe",
+    "year": "2010",
+    "url": "https://geraldscarfe.com/the-art-of-pink-floyd-the-wall/"  
+  },
+  {
+    "title": "Scarfe on Scarfe",
+    "artist": "Gerald Scarfe",
+    "year": "1986",
+    "url": "https://geraldscarfe.com/"  
+  },
+  {
+    "title": "Yes Minister / Yes, Prime Minister title sequences",
+    "artist": "Gerald Scarfe",
+    "year": "1980s",
+    "url": "https://en.wikipedia.org/wiki/Gerald_Scarfe"  
+  },
+  {
+    "title": "Fritz the Cat",
+    "artist": "Robert Crumb",
+    "year": "1965",
+    "url": "https://en.wikipedia.org/wiki/Robert_Crumb"  
+  },
+  {
+    "title": "Keep on Truckin’",
+    "artist": "Robert Crumb",
+    "year": "1968",
+    "url": "https://en.wikipedia.org/wiki/Robert_Crumb"  
+  },
+  {
+    "title": "The Eclipse of the Sun",
+    "artist": "George Grosz",
+    "year": "1926",
+    "url": "https://en.wikipedia.org/wiki/George_Grosz"  
+  }
 ]
+
 
 
 
