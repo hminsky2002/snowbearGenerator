@@ -5251,7 +5251,207 @@
   "artist": "Otto Baumberger",
   "year": "1923"
 },
-
+{
+  "title": "King Kong",
+  "artist": "Reynold Brown (attributed)",
+  "year": "1933"
+},
+{
+  "title": "Gone with the Wind",
+  "artist": "Howard Terpning",
+  "year": "1939"
+},
+{
+  "title": "Casablanca",
+  "artist": "Bill Gold",
+  "year": "1942"
+},
+{
+  "title": "Gilda",
+  "artist": "Artcraft Litho & Printing Co.",
+  "year": "1946"
+},
+{
+  "title": "Singin’ in the Rain",
+  "artist": "Betty Grable Studio (MGM Art Dept.)",
+  "year": "1952"
+},
+{
+  "title": "Vertigo",
+  "artist": "Saul Bass",
+  "year": "1958"
+},
+{
+  "title": "North by Northwest",
+  "artist": "Saul Bass",
+  "year": "1959"
+},
+{
+  "title": "Breakfast at Tiffany’s",
+  "artist": "Robert McGinnis",
+  "year": "1961"
+},
+{
+  "title": "Dr. No",
+  "artist": "Mitchell Hooks",
+  "year": "1962"
+},
+{
+  "title": "La Dolce Vita",
+  "artist": "Carlantonio Longi",
+  "year": "1960"
+}
+,{
+  "title": "Battleship Potemkin",
+  "artist": "Vladimir Stenberg & Georgii Stenberg",
+  "year": "1925 (revival posters c.1930s)"
+},
+{
+  "title": "The Seventh Seal",
+  "artist": "Sandzen Studio (Sweden)",
+  "year": "1957"
+},
+{
+  "title": "Rashomon",
+  "artist": "B2-size Toho Studio Design Dept.",
+  "year": "1950"
+},
+{
+  "title": "Ugetsu",
+  "artist": "Daiei Studio Poster Division",
+  "year": "1953"
+},
+{
+  "title": "La Strada",
+  "artist": "Ercole Brini",
+  "year": "1954"
+},
+{
+  "title": "8½",
+  "artist": "Sandro Symeoni",
+  "year": "1963"
+},
+{
+  "title": "Knife in the Water (Nóż w wodzie)",
+  "artist": "Andrzej Pągowski",
+  "year": "1962"
+},
+{
+  "title": "Ashes and Diamonds (Popiół i diament)",
+  "artist": "Waldemar Świerzy",
+  "year": "1958"
+},
+{
+  "title": "Hiroshima mon amour",
+  "artist": "Pierre Étaix",
+  "year": "1959"
+},
+{
+  "title": "The 400 Blows (Les Quatre Cents Coups)",
+  "artist": "René Ferracci",
+  "year": "1959"
+}
+,
+{
+  "title": "The Fair at Impruneta",
+  "artist": "Giuseppe Zocchi",
+  "year": "1744"
+},
+{
+  "title": "A Capriccio of Classical Ruins",
+  "artist": "Giovanni Battista Tiepolo",
+  "year": "1740"
+},
+{
+  "title": "The Interior of St. Peter’s Basilica, Rome",
+  "artist": "Luigi Rossini",
+  "year": "1822"
+},
+{
+  "title": "The Temples of Paestum",
+  "artist": "Luigi Rossini",
+  "year": "1824"
+},
+{
+  "title": "Paris, Rue des Chantres",
+  "artist": "Charles Meryon",
+  "year": "1850"
+},
+{
+  "title": "La Morgue",
+  "artist": "Charles Meryon",
+  "year": "1854"
+},
+{
+  "title": "The Harbour of Honfleur",
+  "artist": "Félix Bracquemond",
+  "year": "1868"
+},
+{
+  "title": "The Flood at Saint-Cloud",
+  "artist": "Félix Buhot",
+  "year": "1878"
+},
+{
+  "title": "The Westminster Bridge and Abbey",
+  "artist": "Hedley Fitton",
+  "year": "1890"
+},
+{
+  "title": "The Cathedrals of Amiens and Chartres",
+  "artist": "John Taylor Arms",
+  "year": "1917 (inspired by 19th-century Gothic revival traditions)"
+}
+,{
+  "title": "Rain, Steam and Speed – The Great Western Railway (etching study)",
+  "artist": "J.M.W. Turner",
+  "year": "1844"
+},
+{
+  "title": "The Coalbrookdale Ironworks",
+  "artist": "Philip James de Loutherbourg",
+  "year": "1801"
+},
+{
+  "title": "Factories at Leeds",
+  "artist": "Joseph Mallord William Turner",
+  "year": "1816"
+},
+{
+  "title": "The Black Country",
+  "artist": "John Sell Cotman",
+  "year": "1830"
+},
+{
+  "title": "The Railway Bridge, Leeds",
+  "artist": "Francis Seymour Haden",
+  "year": "1864"
+},
+{
+  "title": "The Forge",
+  "artist": "Adolphe Appian",
+  "year": "1860"
+},
+{
+  "title": "The Thames Below London Bridge",
+  "artist": "James McNeill Whistler",
+  "year": "1878"
+},
+{
+  "title": "Manchester from Kersal Moor",
+  "artist": "William Wyld",
+  "year": "1852"
+},
+{
+  "title": "The Great Wheel, Paris Exposition",
+  "artist": "Félix Buhot",
+  "year": "1889"
+},
+{
+  "title": "Steel Works at Sheffield",
+  "artist": "Hubert von Herkomer",
+  "year": "1875"
+},
   {
     "title": "Fear and Loathing in Las Vegas (Illustrations)",
     "artist": "Ralph Steadman",
@@ -5411,27 +5611,414 @@
     "year": "1966",
     "notes": "Surreal, nervous ink line; psychologically charged.",
     "url": "https://en.wikipedia.org/wiki/Roland_Topor"
+  },
+  {
+    "title": "Job Cigarettes Poster",
+    "artist": "Alphonse Mucha",
+    "year": "1898",
+    "notes": "Art Nouveau masterpiece featuring a woman with flowing hair and ornate patterns.",
+    "url": "https://en.wikipedia.org/wiki/Alphonse_Mucha"
+  },
+  {
+    "title": "La Goulue at the Moulin Rouge",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": "1891",
+    "notes": "Bold lithograph capturing the nightlife of Paris; iconic for poster art history.",
+    "url": "https://en.wikipedia.org/wiki/Henri_de_Toulouse-Lautrec"
+  },
+  {
+    "title": "Absinthe Robette",
+    "artist": "Privat Livemont",
+    "year": "1896",
+    "notes": "Graceful woman raising a glass of absinthe; flowing Art Nouveau design.",
+    "url": "https://en.wikipedia.org/wiki/Privat_Livemont"
+  },
+  {
+    "title": "Lait pur Stérilisé de la Vingeanne",
+    "artist": "Théophile Steinlen",
+    "year": "1894",
+    "notes": "Warm domestic scene promoting sterilized milk; early modern advertising charm.",
+    "url": "https://en.wikipedia.org/wiki/Th%C3%A9ophile_Steinlen"
+  },
+  {
+    "title": "Cachou Lajaunie",
+    "artist": "Leonetto Cappiello",
+    "year": "1900",
+    "notes": "Early example of bold color and character-driven advertising.",
+    "url": "https://en.wikipedia.org/wiki/Leonetto_Cappiello"
+  },
+  {
+    "title": "Bitter Campari",
+    "artist": "Leonetto Cappiello",
+    "year": "1921",
+    "notes": "Bright, surreal imagery; established Campari’s visual identity.",
+    "url": "https://en.wikipedia.org/wiki/Campari"
+  },
+  {
+    "title": "Chocolat Menier",
+    "artist": "Firmin Bouisset",
+    "year": "1893",
+    "notes": "Features the famous little girl writing on a wall; family-friendly branding icon.",
+    "url": "https://en.wikipedia.org/wiki/Firmin_Bouisset"
+  },
+  {
+    "title": "Dubonnet Aperitif",
+    "artist": "A.M. Cassandre",
+    "year": "1932",
+    "notes": "Modernist triptych showing evolution of enjoying Dubonnet; witty visual narrative.",
+    "url": "https://en.wikipedia.org/wiki/A._M._Cassandre"
+  },
+  {
+    "title": "Normandie Ocean Liner Poster",
+    "artist": "A.M. Cassandre",
+    "year": "1935",
+    "notes": "Streamlined Art Deco depiction of the French ocean liner; symbol of luxury and progress.",
+    "url": "https://en.wikipedia.org/wiki/SS_Normandie"
+  },
+  {
+    "title": "Drink Coca-Cola",
+    "artist": "Haddon Sundblom",
+    "year": "1931",
+    "notes": "Introduced the jolly red-suited Santa Claus; key in shaping modern holiday imagery.",
+    "url": "https://en.wikipedia.org/wiki/Haddon_Sundblom"
+  },
+  {
+    "title": "Air France – L’Afrique",
+    "artist": "Lucien Boucher",
+    "year": "1938",
+    "notes": "Dreamlike map-style travel poster; elegant, cartographic surrealism.",
+    "url": "https://en.wikipedia.org/wiki/Lucien_Boucher"
+  },
+  {
+    "title": "The Uncle Sam 'I Want You' Poster",
+    "artist": "James Montgomery Flagg",
+    "year": "1917",
+    "notes": "Iconic U.S. recruitment poster; became a global symbol of patriotism.",
+    "url": "https://en.wikipedia.org/wiki/I_Want_You_(poster)"
+  },
+  {
+    "title": "Keep Calm and Carry On",
+    "artist": "British Ministry of Information",
+    "year": "1939",
+    "notes": "Wartime morale booster rediscovered decades later as a cultural meme.",
+    "url": "https://en.wikipedia.org/wiki/Keep_Calm_and_Carry_On"
+  },
+  {
+    "title": "Rosie the Riveter – We Can Do It!",
+    "artist": "J. Howard Miller",
+    "year": "1943",
+    "notes": "Empowering WWII poster encouraging women to join the workforce.",
+    "url": "https://en.wikipedia.org/wiki/We_Can_Do_It!"
+  },
+  {
+    "title": "Drink Guinness for Strength",
+    "artist": "John Gilroy",
+    "year": "1935",
+    "notes": "Whimsical poster series featuring animals; playful and humorous branding.",
+    "url": "https://en.wikipedia.org/wiki/Guinness_advertising"
+  },
+  {
+    "title": "See America – WPA Travel Poster",
+    "artist": "Works Progress Administration",
+    "year": "1938",
+    "notes": "Stylized national park travel poster from New Deal-era public art.",
+    "url": "https://en.wikipedia.org/wiki/Works_Progress_Administration"
+  },
+  {
+    "title": "Pan American Airways – South America",
+    "artist": "Jean Carlu",
+    "year": "1939",
+    "notes": "Bold geometric composition promoting air travel modernism.",
+    "url": "https://en.wikipedia.org/wiki/Jean_Carlu"
+  },
+  {
+    "title": "Orangina Poster",
+    "artist": "Bernard Villemot",
+    "year": "1953",
+    "notes": "Minimalist curves and orange hues; classic postwar French design.",
+    "url": "https://en.wikipedia.org/wiki/Bernard_Villemot"
+  },
+  {
+    "title": "Vespa Scooter Poster",
+    "artist": "Ernesto Giusti",
+    "year": "1951",
+    "notes": "Stylish depiction of Italian postwar optimism and mobility.",
+    "url": "https://en.wikipedia.org/wiki/Vespa"
+  },
+  {
+    "title": "Perrier – C’est Fou!",
+    "artist": "Bernard Villemot",
+    "year": "1970",
+    "notes": "Playful, sensual composition; continuation of Villemot’s sleek style.",
+    "url": "https://en.wikipedia.org/wiki/Perrier"
+  },
+  {
+    "title": "Côte d’Azur Pullman Express",
+    "artist": "A.M. Cassandre",
+    "year": "1927",
+    "notes": "Train poster emphasizing speed and luxury with streamlined, geometric design.",
+    "url": "https://en.wikipedia.org/wiki/A._M._Cassandre"
+  },
+  {
+    "title": "Visit Spain – Iberia Airlines",
+    "artist": "José Morell",
+    "year": "1930",
+    "notes": "Vivid travel poster capturing Spain’s warmth and Mediterranean sunlight through Deco stylization.",
+    "url": "https://en.wikipedia.org/wiki/Iberia_(airline)"
+  },
+  {
+    "title": "Chicago World's Fair – A Century of Progress",
+    "artist": "Weimer Pursell",
+    "year": "1933",
+    "notes": "Dynamic modernist composition celebrating technological progress and architecture.",
+    "url": "https://en.wikipedia.org/wiki/Century_of_Progress"
+  },
+  {
+    "title": "Fly TWA to New York",
+    "artist": "David Klein",
+    "year": "1956",
+    "notes": "Technicolor depiction of New York skyline with jazz-age energy; bridge between Deco and Mid-century design.",
+    "url": "https://en.wikipedia.org/wiki/David_Klein_(artist)"
+  },
+  {
+    "title": "Cunard Line to New York",
+    "artist": "Frederic C. Herrick",
+    "year": "1936",
+    "notes": "Strong vertical composition of ocean liner funnels; classic maritime Deco.",
+    "url": "https://en.wikipedia.org/wiki/Cunard_Line"
+  },
+  {
+    "title": "Egypt Travel Poster",
+    "artist": "Jean Carlu",
+    "year": "1930",
+    "notes": "Modernist rendering of the Sphinx and pyramids with simplified geometry and radiant desert tones.",
+    "url": "https://en.wikipedia.org/wiki/Jean_Carlu"
+  },
+  {
+    "title": "Southampton – Gateway to the World",
+    "artist": "Frank Newbould",
+    "year": "1936",
+    "notes": "British Art Deco poster featuring elegant ships and coastal vistas; created for Southern Railway.",
+    "url": "https://en.wikipedia.org/wiki/Frank_Newbould"
+  },
+  {
+    "title": "See America – WPA National Parks Poster",
+    "artist": "Works Progress Administration",
+    "year": "1938",
+    "notes": "Stylized, serene landscapes; Deco-influenced simplification of natural forms.",
+    "url": "https://en.wikipedia.org/wiki/Works_Progress_Administration"
+  },
+  {
+    "title": "Drink Coca-Cola",
+    "artist": "Haddon Sundblom",
+    "year": "1953",
+    "notes": "Sunny, wholesome scene of a woman enjoying Coke; bright colors and idealized realism typical of 1950s advertising.",
+    "url": "https://en.wikipedia.org/wiki/Haddon_Sundblom"
+  },
+  {
+    "title": "Volkswagen Beetle – Think Small",
+    "artist": "Helmut Krone (DDB)",
+    "year": "1959",
+    "notes": "Minimalist ad campaign that revolutionized marketing; witty and clean composition.",
+    "url": "https://en.wikipedia.org/wiki/Think_Small"
+  },
+  {
+    "title": "Lucky Strike – It's Toasted",
+    "artist": "Raymond Loewy",
+    "year": "1955",
+    "notes": "Bold industrial design aesthetic paired with sleek typography by Loewy, the father of streamlining.",
+    "url": "https://en.wikipedia.org/wiki/Raymond_Loewy"
+  },
+  {
+    "title": "Perrier – C’est Fou!",
+    "artist": "Bernard Villemot",
+    "year": "1955",
+    "notes": "Elegant, curvilinear design with playful sophistication; hallmark of Villemot’s minimalism.",
+    "url": "https://en.wikipedia.org/wiki/Bernard_Villemot"
+  },
+  {
+    "title": "Vespa Scooter Poster",
+    "artist": "Ernesto Giusti",
+    "year": "1951",
+    "notes": "Stylish depiction of Italian freedom and postwar optimism; bright and breezy composition.",
+    "url": "https://en.wikipedia.org/wiki/Vespa"
+  },
+  {
+    "title": "General Electric – Progress Is Our Most Important Product",
+    "artist": "General Electric Advertising Dept.",
+    "year": "1954",
+    "notes": "Classic corporate optimism; glowing atomic-age imagery symbolizing innovation.",
+    "url": "https://en.wikipedia.org/wiki/General_Electric"
+  },
+  {
+    "title": "Pan Am – Fly to Europe",
+    "artist": "David Klein",
+    "year": "1958",
+    "notes": "Vibrant travel poster showing European landmarks; bold color fields and simplified silhouettes.",
+    "url": "https://en.wikipedia.org/wiki/David_Klein_(artist)"
+  },
+  {
+    "title": "Chanel No.5 Advertisement",
+    "artist": "Andy Warhol (for Vogue reproduction)",
+    "year": "1955",
+    "notes": "Luxurious minimalism with golden highlights; defined mid-century glamour marketing.",
+    "url": "https://en.wikipedia.org/wiki/Chanel_No._5"
+  },
+  {
+    "title": "Pepsi – The Light Refreshment",
+    "artist": "American Art Department",
+    "year": "1952",
+    "notes": "Fresh-faced models and patriotic palette; youthful energy emblematic of 1950s consumerism.",
+    "url": "https://en.wikipedia.org/wiki/Pepsi"
+  },
+  {
+    "title": "Campbell’s Soup – Homemaker’s Favorite",
+    "artist": "Campbell’s Advertising Studio",
+    "year": "1957",
+    "notes": "Idealized domestic scene featuring the Campbell Kids; warm colors and cheerful realism.",
+    "url": "https://en.wikipedia.org/wiki/Campbell_Soup_Company"
+  },
+  {
+    "title": "Shell Motor Spirit – British Quality",
+    "artist": "Edward McKnight Kauffer",
+    "year": "1934",
+    "notes": "Cubist-inspired poster blending industry and nature; bold angles, Shell’s famous yellow and red branding.",
+    "url": "https://en.wikipedia.org/wiki/Edward_McKnight_Kauffer"
+  },
+  {
+    "title": "Bovril – Gives Strength",
+    "artist": "John Hassall",
+    "year": "1910",
+    "notes": "Quaint Edwardian-era illustration emphasizing vitality; iconic bull imagery for Bovril’s beef extract.",
+    "url": "https://en.wikipedia.org/wiki/John_Hassall_(artist)"
+  },
+  {
+    "title": "Michelin Man (Bibendum)",
+    "artist": "O’Galop (Marius Rossillon)",
+    "year": "1898",
+    "notes": "One of the first brand mascots in advertising; humorous depiction of Bibendum made from tires.",
+    "url": "https://en.wikipedia.org/wiki/Bibendum"
+  },
+  {
+    "title": "General Motors – Futurama Exhibit",
+    "artist": "Norman Bel Geddes",
+    "year": "1939",
+    "notes": "Created for the New York World’s Fair; visionary ad for the future of mobility and design.",
+    "url": "https://en.wikipedia.org/wiki/Norman_Bel_Geddes"
+  },
+  {
+    "title": "Ford V8 – Streamlined Power",
+    "artist": "Ford Motor Company",
+    "year": "1934",
+    "notes": "Art Deco automotive poster showing speed and aerodynamic style; chrome and motion emphasized.",
+    "url": "https://en.wikipedia.org/wiki/Ford_V8"
+  },
+  {
+    "title": "Electrolux – Servant to the Home",
+    "artist": "Swedish Advertising Studio",
+    "year": "1936",
+    "notes": "Mid-century industrial optimism; promotes domestic convenience and modern design.",
+    "url": "https://en.wikipedia.org/wiki/Electrolux"
+  },
+  {
+    "title": "Kodak – The Brownie Camera",
+    "artist": "Kodak Advertising Department",
+    "year": "1923",
+    "notes": "Early consumer photography ad showing families capturing leisure moments; simple, wholesome imagery.",
+    "url": "https://en.wikipedia.org/wiki/Brownie_(camera)"
+  },
+  {
+    "title": "Texaco – The Star of the American Road",
+    "artist": "American Art Department",
+    "year": "1954",
+    "notes": "Patriotic palette and sleek cars; emblematic of postwar American automotive freedom.",
+    "url": "https://en.wikipedia.org/wiki/Texaco"
+  },
+  {
+    "title": "DuPont – Better Things for Better Living",
+    "artist": "DuPont Design Division",
+    "year": "1948",
+    "notes": "Industrial design advertising emphasizing chemistry as a source of progress; atomic-age optimism.",
+    "url": "https://en.wikipedia.org/wiki/DuPont"
+  },
+  {
+    "title": "Westinghouse – We Can Do It!",
+    "artist": "J. Howard Miller",
+    "year": "1943",
+    "notes": "Industrial morale poster that became a feminist symbol; created for factory workers during WWII.",
+    "url": "https://en.wikipedia.org/wiki/We_Can_Do_It!"
+  },
+  {
+    "title": "Boeing – The Jet Age Begins",
+    "artist": "Boeing Advertising",
+    "year": "1958",
+    "notes": "Streamlined jet profile with glowing contrails; celebrating the dawn of commercial air travel.",
+    "url": "https://en.wikipedia.org/wiki/Boeing"
+  },
+  {
+    "title": "Pan American World Airways – The World Is Smaller",
+    "artist": "Jean Carlu",
+    "year": "1948",
+    "notes": "Clean global motif connecting cities by lines; minimalistic early corporate internationalism.",
+    "url": "https://en.wikipedia.org/wiki/Pan_American_World_Airways"
+  },
+  {
+    "title": "IBM – Think",
+    "artist": "Paul Rand",
+    "year": "1958",
+    "notes": "Corporate modernism distilled; visual wit and minimal typography defining mid-century branding.",
+    "url": "https://en.wikipedia.org/wiki/Paul_Rand_(graphic_designer)"
+  },
+  {
+    "title": "Esso – Happy Motoring!",
+    "artist": "Standard Oil Advertising Dept.",
+    "year": "1952",
+    "notes": "Playful cartoon mascots and bright roadside palette; cheerful postwar consumerism.",
+    "url": "https://en.wikipedia.org/wiki/Esso"
+  },
+  {
+    "title": "Frigidaire – The Modern Kitchen",
+    "artist": "General Motors Appliance Division",
+    "year": "1950",
+    "notes": "Idealized domestic life; chrome appliances and atomic-age typography.",
+    "url": "https://en.wikipedia.org/wiki/Frigidaire"
+  },
+  {
+    "title": "Philco Television – The Window to the World",
+    "artist": "Philco Corporation",
+    "year": "1953",
+    "notes": "Celebrates the television as a family centerpiece; glowing screens and futuristic motifs.",
+    "url": "https://en.wikipedia.org/wiki/Philco"
+  },
+  {
+    "title": "Cinzano Vermouth",
+    "artist": "Leonetto Cappiello",
+    "year": "1920",
+    "notes": "Joyous composition with prancing zebra; one of Cappiello’s most famous dynamic poster designs.",
+    "url": "https://en.wikipedia.org/wiki/Leonetto_Cappiello"
+  },
+  {
+    "title": "General Electric – Lighting the Future",
+    "artist": "General Electric Advertising Studio",
+    "year": "1935",
+    "notes": "Electric light as a symbol of progress; radiant, industrial optimism of the interwar period.",
+    "url": "https://en.wikipedia.org/wiki/General_Electric"
+  },
+  {
+    "title": "Air France – Le Monde Entier",
+    "artist": "Lucien Boucher",
+    "year": "1951",
+    "notes": "Celestial map of Air France routes; dreamlike and sophisticated travel branding.",
+    "url": "https://en.wikipedia.org/wiki/Lucien_Boucher"
+  },
+  {
+    "title": "Evinrude Outboard Motors",
+    "artist": "American Industrial Illustrator",
+    "year": "1955",
+    "notes": "Family boating adventure rendered in bold realism; conveys freedom and leisure.",
+    "url": "https://en.wikipedia.org/wiki/Evinrude_Outboard_Motors"
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+]
 
 
