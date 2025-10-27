@@ -2839,11 +2839,6 @@
     "year": "1889"
   },
   {
-    "title": "Chicago Sidewalk",
-    "artist": "Vivian Maier",
-    "year": "1956"
-  },
-  {
     "title": "Subway Passengers #17",
     "artist": "Walker Evans",
     "year": "1938"
@@ -6209,8 +6204,130 @@
   { "title": "Compagnie Internationale des Wagons-Lits", "artist": "Pierre Fix-Masseau", "year": "1935", "citation": "Musée de l’Affiche, Paris" },
   { "title": "Travel by Train – WPA Poster", "artist": "Works Progress Administration", "year": "1938", "citation": "U.S. Library of Congress, WPA Collection" },
   { "title": "Pennsylvania Railroad – The Broadway Limited", "artist": "Vernon Howe Bailey", "year": "1935", "citation": "Pennsylvania Railroad Archives" },
-  { "title": "LNER – East Coast Joys", "artist": "Tom Purvis", "year": "1930", "citation": "National Railway Museum, York" }
+  { "title": "LNER – East Coast Joys", "artist": "Tom Purvis", "year": "1930", "citation": "National Railway Museum, York" },
+  {
+    "title": "Côte d’Azur",
+    "artist": "Roger Broders",
+    "year": "1930",
+    "citation": "PLM Railway Poster, Paris-Lyon-Méditerranée"
+  },
+  {
+    "title": "Visit Hawaii",
+    "artist": "Frank Macintosh",
+    "year": "1935",
+    "citation": "Matson Navigation Company Travel Poster"
+  },
+  {
+    "title": "Fly TWA – New York",
+    "artist": "David Klein",
+    "year": "1956",
+    "citation": "Trans World Airlines Advertising Series"
+  },
+  {
+    "title": "See America",
+    "artist": "National Park Service",
+    "year": "1938",
+    "citation": "U.S. Works Progress Administration (WPA) Poster Series"
+  },
+  {
+    "title": "Visit India",
+    "artist": "Air India Design Studio",
+    "year": "1960",
+    "citation": "Air India Maharaja Poster Series"
+  },
+  {
+    "title": "Norway: The Land of the Midnight Sun",
+    "artist": "Ben Blessum",
+    "year": "1930",
+    "citation": "Norwegian State Railways Travel Poster"
+  },
+  {
+    "title": "Fly Swissair – The Alps",
+    "artist": "Herbert Leupin",
+    "year": "1952",
+    "citation": "Swissair Poster Collection, Museum für Gestaltung Zürich"
+  },
+  {
+    "title": "Visit Australia – Great Barrier Reef",
+    "artist": "James Northfield",
+    "year": "1935",
+    "citation": "Australian National Travel Association Poster"
+  },
+  {
+    "title": "Visit Japan",
+    "artist": "Kōshirō Onchi",
+    "year": "1937",
+    "citation": "Japan Tourist Bureau Poster Archive"
+  },
+  {
+    "title": "Fly BOAC to Africa",
+    "artist": "Derrick Hass",
+    "year": "1952",
+    "citation": "British Overseas Airways Corporation Poster Collection"
+  },
+  {
+    "title": "Fly TWA – New York",
+    "artist": "David Klein",
+    "year": "1956",
+    "citation": "Trans World Airlines Advertising Series"
+  },
+  {
+    "title": "Visit Yellowstone National Park",
+    "artist": "Chester Don Powell",
+    "year": "1938",
+    "citation": "U.S. Works Progress Administration (WPA) National Parks Series"
+  },
+  {
+    "title": "Fly Pan Am to South America",
+    "artist": "Paul George Lawler",
+    "year": "1938",
+    "citation": "Pan American Airways Poster Archive"
+  },
+  {
+    "title": "See America – Grand Canyon National Park",
+    "artist": "Alexander Dux",
+    "year": "1938",
+    "citation": "WPA Federal Art Project"
+  },
+  {
+    "title": "Fly Swissair – The Alps",
+    "artist": "Herbert Leupin",
+    "year": "1952",
+    "citation": "Swissair Poster Collection, Museum für Gestaltung Zürich"
+  },
+  {
+    "title": "Visit Yosemite National Park",
+    "artist": "Chester Don Powell",
+    "year": "1938",
+    "citation": "WPA Federal Art Project, U.S. Department of the Interior"
+  },
+  {
+    "title": "Fly BOAC to Africa",
+    "artist": "Derrick Hass",
+    "year": "1952",
+    "citation": "British Overseas Airways Corporation Poster Collection"
+  },
+  {
+    "title": "Glacier National Park – Great Northern Railway",
+    "artist": "Winold Reiss",
+    "year": "1935",
+    "citation": "Great Northern Railway Advertising Division"
+  },
+  {
+    "title": "See America – Zion National Park",
+    "artist": "Chester Don Powell",
+    "year": "1938",
+    "citation": "WPA National Park Poster Series"
+  },
+  {
+    "title": "Fly to California – United Air Lines",
+    "artist": "Joseph Binder",
+    "year": "1950",
+    "citation": "United Air Lines Poster Series"
+  }
 ]
+
+
 
 
 
