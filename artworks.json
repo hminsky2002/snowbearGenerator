@@ -2044,41 +2044,6 @@
     "year": "1911"
   },
   {
-    "title": "Back of the Neck (from The First Papers of Surrealism)",
-    "artist": "Marcel Duchamp",
-    "year": "1942"
-  },
-  {
-    "title": "Bicycle Wheel",
-    "artist": "Marcel Duchamp",
-    "year": "1913"
-  },
-  {
-    "title": "Disks of Newton",
-    "artist": "Marcel Duchamp",
-    "year": "1920"
-  },
-  {
-    "title": "Fountain",
-    "artist": "Marcel Duchamp",
-    "year": "1917"
-  },
-  {
-    "title": "Nude Descending a Staircase, No. 2",
-    "artist": "Marcel Duchamp",
-    "year": "1912"
-  },
-  {
-    "title": "The Bride Stripped Bare by Her Bachelors, Even",
-    "artist": "Marcel Duchamp",
-    "year": "1923"
-  },
-  {
-    "title": "The Party",
-    "artist": "Marcel Dzama",
-    "year": "2004"
-  },
-  {
     "title": "New Zealand Railways – Tongariro National Park",
     "artist": "Marcus King",
     "year": "1930s"
@@ -6324,7 +6289,7 @@
     "artist": "Joseph Binder",
     "year": "1950",
     "citation": "United Air Lines Poster Series"
-=======
+},
     "title": "See America – Glacier National Park",
     "artist": "F. R. Harper",
     "year": "c. 1910",
@@ -6673,6 +6638,607 @@
     "year": "1866",
     "citation": "American Civil Engineering Engraving Collections",
     "image_url": "https://www.google.com/search?q=19th+century+surveyors+engraving&tbm=isch"
+=======
+  },
+  {
+    "title": "London-Paris-London by the Big Ships of Imperial Airways",
+    "artist": "Unknown",
+    "year": "c.1930",
+    "citation": "Imperial Airways, UK"
+  },
+  {
+    "title": "Transpacific Flight – Pan American Airways",
+    "artist": "Unknown",
+    "year": "1930s",
+    "citation": "Pan American Airways (Pan Am)"
+  },
+  {
+    "title": "Air Orient",
+    "artist": "Paul Colin",
+    "year": "1930",
+    "citation": "Air Orient (Air France)"
+  },
+  {
+    "title": "California – Yosemite National Park (Santa Fe Railway)",
+    "artist": "Don Perceval",
+    "year": "1949",
+    "citation": "Atchison, Topeka & Santa Fe Railway"
+  },
+  {
+    "title": "Yosemite National Park – WPA style poster",
+    "artist": "Unknown",
+    "year": "c.1938",
+    "citation": "Works Progress Administration (USA)"
+  },
+  {
+    "title": "Caribbean (Caraíbas) – Pan American Airlines",
+    "artist": "Unknown",
+    "year": "c.1950s",
+    "citation": "Pan Am Airways"
+  },
+  {
+    "title": "To the Caribbean – KLM Royal Dutch Airlines",
+    "artist": "Leendert Spierenburg",
+    "year": "1950s",
+    "citation": "KLM Royal Dutch Airlines"
+  },
+  {
+    "title": "Caribbean – Fly BOAC",
+    "artist": "Unknown",
+    "year": "1950s",
+    "citation": "British Overseas Airways Corporation (BOAC)"
+  },
+  {
+    "title": "See China by Plane – CNAC (China National Aviation Corp)",
+    "artist": "Unknown",
+    "year": "1930s",
+    "citation": "CNAC / Chinese National Aviation Corporation"
+  },
+  {
+    "title": "Tunisie, Afrique – Tunis Air",
+    "artist": "Even",
+    "year": "1930s",
+    "citation": "Société Tunisienne de l’Air"
+  },
+  {
+    "title": "Confetti",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": "1894",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "La Chaîne Simpson (Bicycle Chain)",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": "1896",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "Le Photographe Sescau",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": "1896",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "La Passagère du 54 – Promenade",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": "1896",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "Compagnie Française des Chocolats et des Thés",
+    "artist": "Théophile-Alexandre Steinlen",
+    "year": "1895",
+    "citation": "Imprimerie Charles Verneau, Paris"
+  },
+  {
+    "title": "Saxoléine – Huile de Pétrole",
+    "artist": "Jules Chéret",
+    "year": "1895",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "Salon des Cent – Exposition de l’Art Nouveau",
+    "artist": "Georges de Feure",
+    "year": "1894",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "Loïe Fuller",
+    "artist": "Jean de Paléologue (PAL)",
+    "year": "1894",
+    "citation": "Imprimerie Chaix, Paris"
+  },
+  {
+    "title": "France-Champagne",
+    "artist": "Pierre Bonnard",
+    "year": "1891",
+    "citation": "Imprimerie Ancourt, Paris"
+  },
+  {
+    "title": "Cacao Van Houten",
+    "artist": "Henri Meunier",
+    "year": "1897",
+    "citation": "Imprimerie F. Appelmans, Brussels"
+  },
+  {
+    "title": "Portrait of Four Women",
+    "artist": "Jeremiah Gurney",
+    "year": "c.1852-1857",
+    "citation": "Gurney studio, New York"
+  },
+  {
+    "title": "Studio Portrait of a Man (Watertown Studio)",
+    "artist": "Unknown",
+    "year": "c.1880s",
+    "citation": "The Watertown Studio, Massachusetts"
+  },
+  {
+    "title": "Victorian Woman in Dress (Studio Portrait)",
+    "artist": "Unknown",
+    "year": "c.1870s-80s",
+    "citation": "Vintage photograph, sepia tone"
+  },
+  {
+    "title": "Group Portrait of Two Girls in Identical Dresses",
+    "artist": "Jeremiah Gurney",
+    "year": "c.1857",
+    "citation": "Gurney studio, New York"
+  },
+  {
+    "title": "Occupational Portrait of a Worker with Tools",
+    "artist": "Unknown",
+    "year": "c.1860s-70s",
+    "citation": "Library of Congress, 19th-century studio photograph"
+  },
+  {
+    "title": "Portrait of a Woman with Bonnet",
+    "artist": "Unknown",
+    "year": "c.1850s",
+    "citation": "Albumen print, 19th-century portrait collection"
+  },
+  {
+    "title": "Full-Length Portrait of a Gentleman in Formal Dress",
+    "artist": "Unknown",
+    "year": "c.1880s-90s",
+    "citation": "19th-century photography archive"
+  },
+  {
+    "title": "Studio Portrait of a Child Seated",
+    "artist": "Unknown",
+    "year": "c.1870s",
+    "citation": "19th-century studio photograph collection"
+  },
+  {
+    "title": "Portrait of a Victorian Couple",
+    "artist": "Unknown",
+    "year": "c.1860s",
+    "citation": "Daguerreotype/early print from 19th-century"
+  },
+  {
+    "title": "Coalbrookdale by Night",
+    "artist": "Philip James de Loutherbourg",
+    "year": "1801",
+    "citation": "Depicts the Bedlam Furnaces at Coalbrookdale, symbolizing the birth of the Industrial Revolution in Ironbridge Gorge, England."
+  },
+  {
+    "title": "An Iron Forge",
+    "artist": "Joseph Wright of Derby",
+    "year": "1772",
+    "citation": "Early industrial scene showing a water-powered forge and ironworkers, emphasizing light and machinery."
+  },
+  {
+    "title": "Progress (The Advance of Civilization)",
+    "artist": "Asher Brown Durand",
+    "year": "1853",
+    "citation": "Allegorical landscape showing locomotives, telegraph poles, and westward expansion as symbols of industrial progress."
+  },
+  {
+    "title": "A Country Blacksmith (Disputing upon the Price of Iron)",
+    "artist": "J. M. W. Turner",
+    "year": "1807",
+    "citation": "Depicts a rural forge, blending traditional craftsmanship with emerging industrial themes."
+  },
+  {
+    "title": "Allegory of Industry",
+    "artist": "Francisco de Goya",
+    "year": "c.1805",
+    "citation": "Shows women working at spinning wheels, representing the spirit of industrial labor and production."
+  },
+  {
+    "title": "Factories at Asnières (Seen from the Quai de Clichy)",
+    "artist": "Vincent van Gogh",
+    "year": "1887",
+    "citation": "Impressionist depiction of factory chimneys near Paris, capturing the beauty and tension of industrial landscapes."
+  },
+  {
+    "title": "Arrival of the Normandy Train, Gare Saint-Lazare",
+    "artist": "Claude Monet",
+    "year": "1877",
+    "citation": "Impressionist masterpiece showing steam, iron, and glass of the Paris train station — a celebration of modernity."
+  },
+  {
+    "title": "Le Pont Boieldieu à Rouen, Temps Mouillé",
+    "artist": "Camille Pissarro",
+    "year": "1896",
+    "citation": "Depicts the industrial quays and bridges of Rouen, reflecting the industrialized urban environment."
+  },
+  {
+    "title": "Ironworks Borsig, Berlin",
+    "artist": "Karl Eduard Biermann",
+    "year": "1847",
+    "citation": "Realistic depiction of the Borsig ironworks in Berlin, emphasizing industrial scale and architecture."
+  },
+  {
+    "title": "The Fighting Temeraire",
+    "artist": "J. M. W. Turner",
+    "year": "1839",
+    "citation": "Symbolic painting of a sailing ship towed by a steam tugboat, representing the end of an era and rise of industrial power."
+  },
+  {
+    "title": "Vitruvian Man",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1490",
+    "citation": "Pen and ink drawing illustrating ideal human proportions based on Vitruvius; Gallerie dell’Accademia, Venice."
+  },
+  {
+    "title": "Design for a Flying Machine (Codex on the Flight of Birds)",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1505",
+    "citation": "Technical sketch showing winged apparatus inspired by bird flight; Turin Royal Library."
+  },
+  {
+    "title": "Studies for the Adoration of the Magi – Perspective and Architecture",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1481",
+    "citation": "Architectural perspective study and human grouping with geometric precision; Uffizi Gallery, Florence."
+  },
+  {
+    "title": "Self-Propelled Cart (Mechanical Vehicle Design)",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1495",
+    "citation": "Early concept of a spring-driven vehicle—sometimes considered a precursor to the automobile; Codex Atlanticus."
+  },
+  {
+    "title": "Design for a Multi-Barreled Cannon",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1485",
+    "citation": "Military engineering drawing showing rotating gun barrels for continuous fire; Codex Atlanticus."
+  },
+  {
+    "title": "Sketches of Hydraulic Machines and Water Lifting Devices",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1480–1490",
+    "citation": "Technical studies of pumps, gears, and water systems; Codex Leicester and Codex Madrid I."
+  },
+  {
+    "title": "The Parachute Design",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1485",
+    "citation": "Cone-shaped parachute concept annotated with dimensional notes; Codex Atlanticus."
+  },
+  {
+    "title": "Studies of Siege Engines and Catapults",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1482–1485",
+    "citation": "Drawings of trebuchets and defensive walls; part of Leonardo’s military engineering commissions for Ludovico Sforza."
+  },
+  {
+    "title": "Mechanical Drawings of Gear Systems and Bearings",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1490s",
+    "citation": "Highly detailed mechanical diagrams of pulleys, screws, and cams demonstrating modern engineering principles; Codex Madrid II."
+  },
+  {
+    "title": "Design for a Helical Air Screw (Aerial Screw)",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1485",
+    "citation": "Famous spiral-shaped flying device, an early conceptualization of helicopter flight; Codex B."
+  },
+  {
+    "title": "Flying Machine with Bat Wings",
+    "artist": "Leonardo da Vinci",
+    "year": "c.1488–1489",
+    "citation": "Mechanical study imitating bat anatomy for flight; Codex on the Flight of Birds."
+  },
+  {
+    "title": "„Busti“, Bertoldo",
+    "artist": "Saul Steinberg",
+    "year": "April 27, 1937",
+    "citation": "Published in the Italian magazine Bertoldo; early cartoon drawing. :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "„Arte pura“, Bertoldo",
+    "artist": "Saul Steinberg",
+    "year": "August 27, 1937",
+    "citation": "Published in the Italian magazine Bertoldo; example of Steinberg’s early humour. :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "„Mobili ultramoderni“ (Ultramodern Furniture), Bertoldo",
+    "artist": "Saul Steinberg",
+    "year": "November 16, 1937",
+    "citation": "Cartoon about modern furniture published in Bertoldo. :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "Panorami di Steinberg",
+    "artist": "Saul Steinberg",
+    "year": "February 11, 1938",
+    "citation": "Published in Bertoldo; early panorama drawing. :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "“Persiflage from Paris”, Harper’s Bazaar",
+    "artist": "Saul Steinberg",
+    "year": "March 15, 1940",
+    "citation": "Two-page drawing published in Harper’s Bazaar. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "„Disegno con battuta“ (Gag drawing)",
+    "artist": "Saul Steinberg",
+    "year": "March 8, 1941",
+    "citation": "Published in Bertoldo captioned “That’s my husband, he has an inferiority complex.” :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "title": "Untitled (Tempera on board)",
+    "artist": "Saul Steinberg",
+    "year": "1941",
+    "citation": "Tempera on board, 13 ¾ × 9 7/8 in; Estate of Aldo Buzzi. :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "title": "“But it is half man and half horse”, The New Yorker",
+    "artist": "Saul Steinberg",
+    "year": "October 25, 1941",
+    "citation": "Steinberg’s first drawing in The New Yorker magazine. :contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "title": "Strada Palas",
+    "artist": "Saul Steinberg",
+    "year": "1942",
+    "citation": "Ink, watercolor, and pencil on paper, 14 7/8 × 21 ¾ in; Morgan Library & Museum, New York. :contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "title": "Propaganda drawing (Hitler as a two-faced wolf)",
+    "artist": "Saul Steinberg",
+    "year": "1944",
+    "citation": "Produced by OSS Morale Operations in Rome during WWII. :contentReference[oaicite:10]{index=10}"
+  },
+  {
+    "title": "Portrait of Bernard Rudofsky",
+    "artist": "Saul Steinberg",
+    "year": "c. 1944",
+    "citation": "Photostat, 11 ¾ × 8 ¼ in; The Bernard Rudofsky Estate, Vienna. :contentReference[oaicite:11]{index=11}"
+  },
+  {
+    "title": "Untitled",
+    "artist": "Saul Steinberg",
+    "year": "1948",
+    "citation": "Ink on paper, 14 ¼ × 11 ¼ in; Saul Steinberg Papers, Yale University. :contentReference[oaicite:12]{index=12}"
+  },
+  {
+    "title": "Untitled (1962-64)",
+    "artist": "Saul Steinberg",
+    "year": "1962-64",
+    "citation": "Ink, pencil, and watercolor on paper, 22 × 23 in; National Gallery of Art, Washington, DC. :contentReference[oaicite:13]{index=13}"
+  },
+  {
+    "title": "Untitled (New Year’s Eve)",
+    "artist": "Saul Steinberg",
+    "year": "1954-60",
+    "citation": "Ink, watercolor, and colored pencil on paper, 14 ½ × 23 in; Cincinnati Art Museum. :contentReference[oaicite:14]{index=14}"
+  },
+  {
+    "title": "Self-Portrait, 1984",
+    "artist": "Saul Steinberg",
+    "year": "1984",
+    "citation": "Pencil, crayon, and colored pencil on paper, 11 × 14 in; National Gallery of Art, Washington, DC. :contentReference[oaicite:15]{index=15}"
+  },
+  {
+    "title": "Self-Portrait (Marker & crayon), 1984",
+    "artist": "Saul Steinberg",
+    "year": "1984",
+    "citation": "Marker and crayon on paper, 10½ × 14 in; Blanton Museum of Art, University of Texas at Austin. :contentReference[oaicite:16]{index=16}"
+  },
+  {
+    "title": "Untitled, 1965",
+    "artist": "Saul Steinberg",
+    "year": "1965",
+    "citation": "Pencil, ink, colored pencil, and collage on paper, 22¼ × 27½ in; Private collection. :contentReference[oaicite:17]{index=17}"
+  },
+  {
+    "title": "Flowers and Ink Bottles, 1985",
+    "artist": "Saul Steinberg",
+    "year": "1985",
+    "citation": "Watercolor, crayon, colored pencil, charcoal, gouache, pencil and collage on paper, 21¼ × 19 in; National Gallery of Art, Washington, DC. :contentReference[oaicite:18]{index=18}"
+  },
+  {
+    "title": "Las Vegas, 1985",
+    "artist": "Saul Steinberg",
+    "year": "1985",
+    "citation": "Colored pencil, ink, and pencil on paper, 23⅛ × 29 in; Private collection. :contentReference[oaicite:19]{index=19}"
+  },
+  {
+    "title": "Soho Kiss, 1985",
+    "artist": "Saul Steinberg",
+    "year": "1985",
+    "citation": "Pencil and crayon on paper, 11 × 14 in; Saul Steinberg Papers, Yale University. :contentReference[oaicite:20]{index=20}"
+  },
+  {
+    "title": "The Doubtful Guest",
+    "artist": "Edward Gorey",
+    "year": "1957",
+    "citation": "Short illustrated book by Gorey about a strange penguin-creature arriving at a Victorian household. :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "The Object-Lesson",
+    "artist": "Edward Gorey",
+    "year": "1958",
+    "citation": "Picture book by Gorey: surreal, disorienting, with Victorian/Edwardian settings and sparse narrative. :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "The Gashlycrumb Tinies",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": "Gorey’s famous abecedarium of deaths of children ('A is for Amy who fell down the stairs…'). Included in The Vinegar Works set. :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "The Insect God",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": "One of the trio in The Vinegar Works: a Gothic illustrated narrative of abduction and insects. :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "The West Wing",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": "Another in The Vinegar Works; numbered sequence of haunting images, no text. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "The Iron Tonic: Or, A Winter Afternoon in Lonely Valley",
+    "artist": "Edward Gorey",
+    "year": "1969",
+    "citation": "Surrealist country-house mystery in Gorey’s fine-lined engraving style. :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "title": "The Headless Bust: A Melancholy Meditation on the False Millennium",
+    "artist": "Edward Gorey",
+    "year": "1999",
+    "citation": "Late-career Gorey illustrated book, blending dark whimsy and his signature style. :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "title": "The Unstrung Harp",
+    "artist": "Edward Gorey",
+    "year": "1953",
+    "citation": "Gorey’s first book-as-author/illustrator; listed in his bibliography. :contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "title": "The Bug Book",
+    "artist": "Edward Gorey",
+    "year": "1959",
+    "citation": "Gorey illustrated book with insect theme (one of his early works). :contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "title": "The Willowdale Handcar: Or, The Return of the Black Doll",
+    "artist": "Edward Gorey",
+    "year": "1962",
+    "citation": "Gorey illustrated tale combining Victorian style and haunted themes. :contentReference[oaicite:10]{index=10}"
+  },
+  {
+    "title": "Where Madness Reigns: The Art of Gris Grimly",
+    "artist": "Gris Grimly",
+    "year": "2009",
+    "citation": "Illustrated book by Gris Grimly exploring dark whimsy, monsters, children’s gothic. :contentReference[oaicite:12]{index=12}"
+  },
+  {
+    "title": "The Envious Siblings: And Other Morbid Nursery Rhymes",
+    "artist": "Landis Blair",
+    "year": "2019",
+    "citation": "Illustrated by Landis Blair; heavily cross-hatched drawings, influenced by Gorey. :contentReference[oaicite:14]{index=14}"
+  },
+  {
+    "title": "Matchbook Miniatures",
+    "artist": "Jason D’Aquino",
+    "year": "2011",
+    "citation": "Work by Jason D’Aquino — miniature pen-and-ink drawings on found objects, macabre and detailed; cites Gorey among his influences. :contentReference[oaicite:16]{index=16}"
+  },
+  {
+    "title": "Gothic Blue Book IV: The Folklore Edition",
+    "artist": "Abigail Larson",
+    "year": "2014",
+    "citation": "Illustrated by Abigail Larson; dark-fantasy/gothic style, Victorian aesthetic. :contentReference[oaicite:18]{index=18}"
+  },
+  {
+    "title": "Bizenghast Vol. 1",
+    "artist": "M. Alice LeGrow",
+    "year": "2005",
+    "citation": "Graphic novel by M. Alice LeGrow with gothic, wood-cut influenced illustration. :contentReference[oaicite:20]{index=20}"
+  },
+  {
+    "title": "The Curious Sofa",
+    "artist": "Edward Gorey",
+    "year": "1961",
+    "citation": "Illustrated book by Gorey (pen name Ogdred Weary); satirical, with erotic innuendo through Victorian style illustration. :contentReference[oaicite:21]{index=21}"
+  },
+  {
+    "title": "The Awdrey-Gore Legacy",
+    "artist": "Edward Gorey",
+    "year": "1972",
+    "citation": "One of Gorey’s later titles from his bibliography. :contentReference[oaicite:22]{index=22}"
+  },
+  {
+    "title": "The Dwindling Party",
+    "artist": "Edward Gorey",
+    "year": "1982",
+    "citation": "Gorey’s illustrated book blending his macabre narrative and drawing style. (Listed in bibliography) :contentReference[oaicite:23]{index=23}"
+  },
+  {
+    "title": "The Utter Zoo",
+    "artist": "Edward Gorey",
+    "year": "1967",
+    "citation": "Alphabetic illustrated book by Gorey combining weird animals and Victorian style. :contentReference[oaicite:24]{index=24}"
+  },
+  {
+    "title": "The Black Doll",
+    "artist": "Edward Gorey",
+    "year": "1973",
+    "citation": "Gorey-illustrated book listed among his works. :contentReference[oaicite:25]{index=25}"
+  },
+  {
+    "title": "The Gothic Room, “Marble House”",
+    "artist": null,
+    "year": "c. 1892-94",
+    "citation": "Interior of the Marble House mansion in Newport, Rhode Island featuring ornate plaster ceilings, stained-glass windows and dark wood panelling in the Gothic Revival style."
+  },
+  {
+    "title": "Dining Hall with Pointed‐Arch Windows and Ribbed Vault Ceiling",
+    "artist": null,
+    "year": "late-19th century",
+    "citation": "A dramatic dining room in a gothic-mansion interior showing pointed arch window frames, vaulted ceiling ribs and a deeply shadowed palette."
+  },
+  {
+    "title": "Grand Staircase, “Lyndhurst Mansion”",
+    "artist": null,
+    "year": "1838 (north wing addition c. 1880)",
+    "citation": "The staircase in Lyndhurst Mansion, Tarrytown, New York, features narrow halls, sharply arched windows and vaulted ornamentation characteristic of Gothic interiors. :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "Hall with Wrought Iron Balustrade and Dark Oak Panelling",
+    "artist": null,
+    "year": "mid-19th century",
+    "citation": "Interior hall of a Victorian Gothic mansion in England with dark oak wall panelling, ironwork balustrades and atmospheric volumetric light."
+  },
+  {
+    "title": "Vaulted Salon with Stained Glass and Carved Stonework",
+    "artist": null,
+    "year": "c. 1858-62",
+    "citation": "Interior of “Treverbyn Vean”, Cornwall — designed by architect William Burges; retains original medieval-inspired interior detailing in a Gothic Revival mansion. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "Library with Dark Velvet Draperies and Gothic Furnishings",
+    "artist": null,
+    "year": "early 20th century re-fit",
+    "citation": "A mansion-style gothic library space characterised by heavy drapes, carved high-back chairs, dark wood bookshelves and candle-style lighting."
+  },
+  {
+    "title": "Bedroom in Gothic Revival Mansion with Hammerbeam Ceiling",
+    "artist": null,
+    "year": "late-19th century",
+    "citation": "Bedroom in a Gothic Revival mansion showing a hammerbeam ceiling, pointed arch window and richly patterned textile furnishings."
+  },
+  {
+    "title": "Formal Drawing Room with Ribbed Vault Ceiling and Tapestry Wall Coverings",
+    "artist": null,
+    "year": "c. 1860s",
+    "citation": "Drawing room of a grand gothic mansion, furnished with tapestry walls, carved mantel, and ceiling ribs painted in a medieval revival palette."
+  },
+  {
+    "title": "Hallway with Stone Floor and Iron Chandeliers in Gothic Mansion",
+    "artist": null,
+    "year": "modern renovation of 19th-century mansion",
+    "citation": "Interior hallway of a gothic mansion featuring stone tile flooring, dark wood panelled walls and wrought iron chandeliers, creating a moody transition space."
+  },
+  {
+    "title": "Conservatory/Orangery in Gothic Style with Vaulted Skylight and Pointed Arches",
+    "artist": null,
+    "year": "c. 1880s",
+    "citation": "A glass-roofed conservatory attached to a gothic-mansion home, with pointed-arch window frames, tracery, and wrought iron details typical of Gothic Revival interiors."
   }
 ]
 
