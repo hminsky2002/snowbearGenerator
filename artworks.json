@@ -5346,6 +5346,110 @@
   "year": "1917 (inspired by 19th-century Gothic revival traditions)"
 }
 ,{
+=======
+}
+,{
+  "title": "Battleship Potemkin",
+  "artist": "Vladimir Stenberg & Georgii Stenberg",
+  "year": "1925 (revival posters c.1930s)"
+},
+{
+  "title": "The Seventh Seal",
+  "artist": "Sandzen Studio (Sweden)",
+  "year": "1957"
+},
+{
+  "title": "Rashomon",
+  "artist": "B2-size Toho Studio Design Dept.",
+  "year": "1950"
+},
+{
+  "title": "Ugetsu",
+  "artist": "Daiei Studio Poster Division",
+  "year": "1953"
+},
+{
+  "title": "La Strada",
+  "artist": "Ercole Brini",
+  "year": "1954"
+},
+{
+  "title": "8½",
+  "artist": "Sandro Symeoni",
+  "year": "1963"
+},
+{
+  "title": "Knife in the Water (Nóż w wodzie)",
+  "artist": "Andrzej Pągowski",
+  "year": "1962"
+},
+{
+  "title": "Ashes and Diamonds (Popiół i diament)",
+  "artist": "Waldemar Świerzy",
+  "year": "1958"
+},
+{
+  "title": "Hiroshima mon amour",
+  "artist": "Pierre Étaix",
+  "year": "1959"
+},
+{
+  "title": "The 400 Blows (Les Quatre Cents Coups)",
+  "artist": "René Ferracci",
+  "year": "1959"
+}
+,
+{
+  "title": "The Fair at Impruneta",
+  "artist": "Giuseppe Zocchi",
+  "year": "1744"
+},
+{
+  "title": "A Capriccio of Classical Ruins",
+  "artist": "Giovanni Battista Tiepolo",
+  "year": "1740"
+},
+{
+  "title": "The Interior of St. Peter’s Basilica, Rome",
+  "artist": "Luigi Rossini",
+  "year": "1822"
+},
+{
+  "title": "The Temples of Paestum",
+  "artist": "Luigi Rossini",
+  "year": "1824"
+},
+{
+  "title": "Paris, Rue des Chantres",
+  "artist": "Charles Meryon",
+  "year": "1850"
+},
+{
+  "title": "La Morgue",
+  "artist": "Charles Meryon",
+  "year": "1854"
+},
+{
+  "title": "The Harbour of Honfleur",
+  "artist": "Félix Bracquemond",
+  "year": "1868"
+},
+{
+  "title": "The Flood at Saint-Cloud",
+  "artist": "Félix Buhot",
+  "year": "1878"
+},
+{
+  "title": "The Westminster Bridge and Abbey",
+  "artist": "Hedley Fitton",
+  "year": "1890"
+},
+{
+  "title": "The Cathedrals of Amiens and Chartres",
+  "artist": "John Taylor Arms",
+  "year": "1917 (inspired by 19th-century Gothic revival traditions)"
+}
+,{
   "title": "Rain, Steam and Speed – The Great Western Railway (etching study)",
   "artist": "J.M.W. Turner",
   "year": "1844"
@@ -5394,6 +5498,7 @@
   "title": "Steel Works at Sheffield",
   "artist": "Hubert von Herkomer",
   "year": "1875"
+<<<<<<< Updated upstream
 },
   {
     "title": "Fear and Loathing in Las Vegas (Illustrations)",
@@ -6290,7 +6395,7 @@
     "year": "1950",
     "citation": "United Air Lines Poster Series"
 },
-    "title": "See America – Glacier National Park",
+   { "title": "See America – Glacier National Park",
     "artist": "F. R. Harper",
     "year": "c. 1910",
     "citation": "Listed in Library of Congress WPA & Early Travel Poster Collection",
@@ -7241,5 +7346,7 @@
     "citation": "A glass-roofed conservatory attached to a gothic-mansion home, with pointed-arch window frames, tracery, and wrought iron details typical of Gothic Revival interiors."
   }
 ]
+
+
 
 
