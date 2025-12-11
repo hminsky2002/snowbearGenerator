@@ -6324,14 +6324,356 @@
     "artist": "Joseph Binder",
     "year": "1950",
     "citation": "United Air Lines Poster Series"
+=======
+    "title": "See America – Glacier National Park",
+    "artist": "F. R. Harper",
+    "year": "c. 1910",
+    "citation": "Listed in Library of Congress WPA & Early Travel Poster Collection",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Glacier%20National%20Park%20poster"
+  },
+  {
+    "title": "Visit Yosemite – Sentinel Rock",
+    "artist": "Willard Frederic Elms",
+    "year": "1938",
+    "citation": "National Park Service Posters, Yosemite Archives",
+    "image_url": "https://www.nps.gov/museum/exhibits/posters/yosemite.htm"
+  },
+  {
+    "title": "The Adirondacks – New York Central Lines",
+    "artist": "Walter L. Greene",
+    "year": "1920",
+    "citation": "New York Central Railroad Poster Catalog",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Adirondacks%20New%20York%20Central%20poster"
+  },
+  {
+    "title": "Seine et Marne – Chemins de Fer de l’État",
+    "artist": "André Galland",
+    "year": "c. 1925",
+    "citation": "French National Railway (SNCF) Poster Archives",
+    "image_url": "https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=Seine%20et%20Marne%20Affiche"
+  },
+  {
+    "title": "Norway – The Land of the Midnight Sun",
+    "artist": "Andreas Bloch",
+    "year": "c. 1895",
+    "citation": "Norwegian Tourist Association Historical Poster Series",
+    "image_url": "https://digitaltmuseum.no/search/?q=Andreas%20Bloch%20Norway%20poster"
+  },
+  {
+    "title": "Visit Lapland – Midnight Sun",
+    "artist": "H. A. Larsen",
+    "year": "1930s",
+    "citation": "Scandinavian Travel Poster Archive",
+    "image_url": "https://digitaltmuseum.no/search/?q=Lapland%20poster"
+  },
+  {
+    "title": "South Africa – Union-Castle Line",
+    "artist": "Charles Pears",
+    "year": "c. 1924",
+    "citation": "Union-Castle Line Promotional Poster Catalogue",
+    "image_url": "https://collections.rmg.co.uk/collections/objects/503316.html"
+  },
+  {
+    "title": "Canada Pacific – The Canadian Rockies",
+    "artist": "Peter Ewart",
+    "year": "1950s",
+    "citation": "Canadian Pacific Railway Poster Collection",
+    "image_url": "https://www.gallery.ca/collection/search-the-collection?key=Peter%20Ewart%20poster"
+  },
+  {
+    "title": "Japan – Nikko the Sacred Mountains",
+    "artist": "Kichisaburō Takahashi",
+    "year": "c. 1910",
+    "citation": "Japan Travel Bureau Historical Prints",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Nikko%20Japan%20travel%20poster"
+  },
+  {
+    "title": "Australia – Great Barrier Reef Cruises",
+    "artist": "Gert Sellheim",
+    "year": "1930s",
+    "citation": "Australian National Maritime Museum Poster Collection",
+    "image_url": "https://collections.sea.museum/search/Gert%20Sellheim%20poster"
+  },
+  {
+    "title": "Monaco – La Route du Soleil",
+    "artist": "Geo Ham",
+    "year": "1930",
+    "citation": "Monaco Tourism Poster Collection",
+    "image_url": "https://bibliotheque-numerique.monaco.mc/search?search=Geo%20Ham%20Monaco"
+  },
+  {
+    "title": "Hawaii – Go by Clipper",
+    "artist": "Paul George Lawler",
+    "year": "1940s",
+    "citation": "Pan Am Clipper Poster Archive",
+    "image_url": "https://www.smithsonianmag.com/search/?q=Pan%20Am%20Hawaii%20poster"
+  },
+  {
+    "title": "Argentina – Patagonian Lakes",
+    "artist": "Pablo Juan Manca",
+    "year": "1940s",
+    "citation": "South American Railway & Tourism Poster Archive",
+    "image_url": "https://www.bellasartes.gob.ar/coleccion/obras/?q=manca"
+  },
+  {
+    "title": "Ceylon – Pearl of the Orient",
+    "artist": "Anonymous",
+    "year": "unspecified",
+    "citation": "British Empire & Commonwealth Tourism Posters Collection",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Ceylon%20travel%20poster"
+  },
+  {
+    "title": "Iceland – Geysers and Glaciers",
+    "artist": "Ásgrímur Jónsson",
+    "year": "c. 1925",
+    "citation": "Icelandic National Museum Tourism Posters",
+    "image_url": "https://sarpur.is/search/?q=%C3%81sgr%C3%ADmur%20J%C3%B3nsson%20poster"
+  },
+  {
+    "title": "The Dolomites – Italia",
+    "artist": "Mario Puppo",
+    "year": "1950s",
+    "citation": "ENIT Italian State Tourist Office Posters Archive",
+    "image_url": "https://www.enit.it/en/media-library.html?searchword=poster"
+  },
+  {
+    "title": "New Zealand – Thermal Wonderland",
+    "artist": "Leonard Mitchell",
+    "year": "1950s",
+    "citation": "Tourism New Zealand Vintage Poster Collection",
+    "image_url": "https://tiaki.natlib.govt.nz/search?q=Leonard%20Mitchell%20poster"
+  },
+  {
+    "title": "Tangier – Gateway to Africa",
+    "artist": "Joseph de la Nézière",
+    "year": "1920s",
+    "citation": "French Colonial Travel Poster Archive",
+    "image_url": "https://gallica.bnf.fr/services/engine/search/sru?query=N%C3%A9zi%C3%A8re%20Tangier%20affiche"
+  },
+  {
+    "title": "Syria – The Orient Calls",
+    "artist": "Jean Desmeures",
+    "year": "1930s",
+    "citation": "Middle Eastern Travel Poster Collection",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Syria%20travel%20poster"
+  },
+  {
+    "title": "Alaska – See America",
+    "artist": "Edwin L. Crandall",
+    "year": "c. 1938",
+    "citation": "WPA Federal Art Project, U.S. National Archives",
+    "image_url": "https://www.loc.gov/pictures/search/?q=Alaska%20See%20America%20poster"
+  },
+  {
+    "title": "The Great Eastern Under Construction",
+    "artist": "Robert Wallace Hester",
+    "year": "1857",
+    "citation": "Illustrated London News Engineering Engravings Catalog",
+    "image_url": "https://www.google.com/search?q=The+Great+Eastern+Hester+engraving&tbm=isch"
+  },
+  {
+    "title": "The Iron Rolling Mill (Eisenwalzwerk)",
+    "artist": "Adolph Menzel",
+    "year": "1875",
+    "citation": "Kupferstichkabinett Berlin Menzel Prints",
+    "image_url": "https://www.google.com/search?q=Adolph+Menzel+Iron+Rolling+Mill+engraving&tbm=isch"
+  },
+  {
+    "title": "Interior of a Cotton Mill",
+    "artist": "Anonymous",
+    "year": "c. 1830",
+    "citation": "British Industrial Revolution Engraving Archive",
+    "image_url": "https://www.google.com/search?q=Cotton+Mill+engraving+1830&tbm=isch"
+  },
+  {
+    "title": "View of Niagara Falls",
+    "artist": "William Henry Bartlett",
+    "year": "1840",
+    "citation": "Bartlett North American Scenery Series",
+    "image_url": "https://www.google.com/search?q=Bartlett+Niagara+Falls+engraving&tbm=isch"
+  },
+  {
+    "title": "Coal Miners Descending the Shaft",
+    "artist": "Henri Lanos",
+    "year": "1893",
+    "citation": "Le Monde Illustré Industrial Engravings",
+    "image_url": "https://www.google.com/search?q=Henri+Lanos+coal+miners+engraving&tbm=isch"
+  },
+  {
+    "title": "The Crystal Palace Interior During the Exhibition",
+    "artist": "George Baxter",
+    "year": "1851",
+    "citation": "Great Exhibition Illustrated Engravings",
+    "image_url": "https://www.google.com/search?q=Crystal+Palace+interior+engraving+1851&tbm=isch"
+  },
+  {
+    "title": "Steamboat on the Mississippi",
+    "artist": "Alfred R. Waud",
+    "year": "1860s",
+    "citation": "Civil War and American Frontier Engravings",
+    "image_url": "https://www.google.com/search?q=Alfred+Waud+steamboat+Mississippi+engraving&tbm=isch"
+  },
+  {
+    "title": "Logging in the Pacific Northwest",
+    "artist": "Anonymous",
+    "year": "1888",
+    "citation": "Harper's Weekly Engraved Illustrations",
+    "image_url": "https://www.google.com/search?q=Harper%27s+Weekly+logging+engraving&tbm=isch"
+  },
+  {
+    "title": "The London Docks",
+    "artist": "Thomas Hosmer Shepherd",
+    "year": "c. 1828",
+    "citation": "Metropolitan Improvements Engraving Series",
+    "image_url": "https://www.google.com/search?q=Shepherd+London+Docks+engraving&tbm=isch"
+  },
+  {
+    "title": "Road Building with Steam Roller",
+    "artist": "Anonymous",
+    "year": "1890s",
+    "citation": "Victorian Industrial Process Engravings",
+    "image_url": "https://www.google.com/search?q=Victorian+steam+roller+engraving&tbm=isch"
+  },
+  {
+    "title": "Interior of the Paris Opera House (Garnier)",
+    "artist": "E. Appert",
+    "year": "1875",
+    "citation": "Second Empire Architectural Engravings",
+    "image_url": "https://www.google.com/search?q=Paris+Opera+House+engraving+Appert&tbm=isch"
+  },
+  {
+    "title": "Lumberjacks on the River Drive",
+    "artist": "Frederic Remington",
+    "year": "1888",
+    "citation": "Harper's Weekly Remington Graphics",
+    "image_url": "https://www.google.com/search?q=Frederic+Remington+lumberjacks+engraving&tbm=isch"
+  },
+  {
+    "title": "The Foundry Workers",
+    "artist": "Charles Maurand",
+    "year": "1860s",
+    "citation": "Industrial Engravings from L'Illustration",
+    "image_url": "https://www.google.com/search?q=Charles+Maurand+foundry+engraving&tbm=isch"
+  },
+  {
+    "title": "Railway Station Interior at Leipzig",
+    "artist": "Gustav Schönleber",
+    "year": "c. 1880",
+    "citation": "19th-Century Railway Architecture Engravings",
+    "image_url": "https://www.google.com/search?q=Leipzig+railway+station+engravings&tbm=isch"
+  },
+  {
+    "title": "North Sea Fishermen at Work",
+    "artist": "Hans Thoma",
+    "year": "1890",
+    "citation": "German Realist Wood and Steel Engravings",
+    "image_url": "https://www.google.com/search?q=Hans+Thoma+fishermen+engraving&tbm=isch"
+  },
+  {
+    "title": "Women Weavers at the Loom",
+    "artist": "Édouard Garnier",
+    "year": "1872",
+    "citation": "French Industrial and Domestic Trades Engravings",
+    "image_url": "https://www.google.com/search?q=Garnier+women+weavers+engraving&tbm=isch"
+  },
+  {
+    "title": "Blacksmiths at the Forge",
+    "artist": "John Charles Dollman",
+    "year": "1885",
+    "citation": "Victorian Trades and Crafts Illustrated Press",
+    "image_url": "https://www.google.com/search?q=Dollman+blacksmith+engraving&tbm=isch"
+  },
+  {
+    "title": "Women Harvesting Wheat",
+    "artist": "Jules Breton",
+    "year": "1890",
+    "citation": "19th-Century Rural Labor Engravings",
+    "image_url": "https://www.google.com/search?q=Jules+Breton+harvest+engraving&tbm=isch"
+  },
+  {
+    "title": "Shipbuilders in the Yard",
+    "artist": "Samuel Walters",
+    "year": "c. 1850",
+    "citation": "Maritime Industry Engraving Collections",
+    "image_url": "https://www.google.com/search?q=shipbuilders+engraving+1850&tbm=isch"
+  },
+  {
+    "title": "Women Working in a Laundry House",
+    "artist": "Anonymous",
+    "year": "1893",
+    "citation": "Harper’s Weekly Domestic Labor Series",
+    "image_url": "https://www.google.com/search?q=Victorian+laundry+house+engraving&tbm=isch"
+  },
+  {
+    "title": "Telegraph Operators in the War Office",
+    "artist": "W. H. Boot",
+    "year": "1878",
+    "citation": "Communications Technology in Engravings",
+    "image_url": "https://www.google.com/search?q=telegraph+operators+engraving&tbm=isch"
+  },
+  {
+    "title": "Teachers in a Rural Schoolhouse",
+    "artist": "Unknown",
+    "year": "c. 1860",
+    "citation": "Early American Education Prints",
+    "image_url": "https://www.google.com/search?q=19th+century+rural+school+engraving&tbm=isch"
+  },
+  {
+    "title": "Nurses in the Military Hospital",
+    "artist": "Gavin Hamilton (after)",
+    "year": "c. 1855",
+    "citation": "Crimean War Medical Service Engravings",
+    "image_url": "https://www.google.com/search?q=Crimean+War+hospital+engraving&tbm=isch"
+  },
+  {
+    "title": "Bakers at the Oven",
+    "artist": "Gustave Doré",
+    "year": "1870s",
+    "citation": "Doré Social and Urban Life Engravings",
+    "image_url": "https://www.google.com/search?q=Gustave+Dore+baker+engraving&tbm=isch"
+  },
+  {
+    "title": "Printer’s Workshop: Setting Type",
+    "artist": "Anonymous",
+    "year": "1867",
+    "citation": "Historical Printing Trade Engravings",
+    "image_url": "https://www.google.com/search?q=19th+century+printers+workshop+engraving&tbm=isch"
+  },
+  {
+    "title": "Fish Market Women at the Wharf",
+    "artist": "Charles Maurand",
+    "year": "1864",
+    "citation": "Industry and Urban Labor in L’Illustration",
+    "image_url": "https://www.google.com/search?q=Charles+Maurand+fish+market+engraving&tbm=isch"
+  },
+  {
+    "title": "Railway Signalmen in the Tower",
+    "artist": "Anonymous",
+    "year": "1892",
+    "citation": "Railway Operations Illustrated Press",
+    "image_url": "https://www.google.com/search?q=railway+signal+tower+engraving&tbm=isch"
+  },
+  {
+    "title": "Street Vendors in Paris",
+    "artist": "Paul Gavarni",
+    "year": "1845",
+    "citation": "Parisian Urban Trades Engravings",
+    "image_url": "https://www.google.com/search?q=Gavarni+street+vendor+engraving&tbm=isch"
+  },
+  {
+    "title": "Winemakers Crushing Grapes",
+    "artist": "Anonymous",
+    "year": "c. 1880",
+    "citation": "European Agricultural Trades Engravings",
+    "image_url": "https://www.google.com/search?q=19th+century+grape+crushing+engraving&tbm=isch"
+  },
+  {
+    "title": "Engineers Surveying the Land",
+    "artist": "George Barnard",
+    "year": "1866",
+    "citation": "American Civil Engineering Engraving Collections",
+    "image_url": "https://www.google.com/search?q=19th+century+surveyors+engraving&tbm=isch"
   }
 ]
-
-
-
-
-
-
-
 
 
