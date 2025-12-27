@@ -70,7 +70,7 @@ piloting or rowing the boat. If it is a dinner, the bear could be cooking, servi
 at a table. If people are out walking in a park, so is the bear. The bear's clothing should match that
 of the primary characters in the scene, or be appropriate for the task being performed.. If they are playing a sport, the bear would be 
 doing that.  Pay attention to the scene and what activity person in the scene would naturally be performing
-and make the bear do that.
+and make the bear do that. If there are people in the background, replace some of them with bears as well.
 
 .
 """
