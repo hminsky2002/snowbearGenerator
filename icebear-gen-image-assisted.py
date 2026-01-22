@@ -20,6 +20,7 @@ from google_custom_search_image_downloader import (
 parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
 parser.add_argument("--env", type=str, help="Path to .env file (optional)")
 parser.add_argument("--sourcedir", type=str, help="Path to image file (optional)")
+parser.add_argument("--artwork", type=str, help="JSON blob of artwork reference (e.g., '{\"title\": \"Starry Night\", \"artist\": \"Vincent van Gogh\"}')")
 args = parser.parse_args()
 
 args.sourcedir = args.sourcedir or None
@@ -84,9 +85,17 @@ alternate_prompts = [
 ]
 
 
-artwork_choice = random.choice(artworks)
-
-print(f"artwork_choice = {artwork_choice}")
+# Use provided artwork JSON or pick randomly
+if args.artwork:
+    try:
+        artwork_choice = json.loads(args.artwork)
+        print(f"Using provided artwork: {artwork_choice}")
+    except json.JSONDecodeError as e:
+        print(f"Error parsing artwork JSON: {e}")
+        exit(1)
+else:
+    artwork_choice = random.choice(artworks)
+    print(f"Randomly selected artwork: {artwork_choice}")
 media_dir = "./media"
 if not os.path.exists(media_dir):
     os.makedirs(media_dir)
