@@ -1,0 +1,872 @@
+[
+  {
+    "title": "Lion Panel (Chauvet Cave)",
+    "artist": "Unknown",
+    "year": "c. 30,000–32,000 BCE",
+    "citation": "Chauvet-Pont-d’Arc Cave paintings, Ardèche, France"
+  },
+  {
+    "title": "Hall of the Bulls (Lascaux Cave)",
+    "artist": "Unknown",
+    "year": "c. 17,000 BCE",
+    "citation": "Lascaux Cave paintings, Dordogne, France"
+  },
+  {
+    "title": "Bust of Nefertiti",
+    "artist": "Thutmose (workshop)",
+    "year": "c. 1345 BCE",
+    "citation": "Ägyptisches Museum Berlin (Amarna period)"
+  },
+  {
+    "title": "Standard of Ur",
+    "artist": "Unknown",
+    "year": "c. 2600–2400 BCE",
+    "citation": "British Museum; Sumerian inlaid box"
+  },
+  {
+    "title": "Stele of Hammurabi",
+    "artist": "Unknown",
+    "year": "c. 1754 BCE",
+    "citation": "Louvre; basalt stele with law code"
+  },
+  {
+    "title": "Mask of Agamemnon",
+    "artist": "Unknown",
+    "year": "c. 1550–1500 BCE",
+    "citation": "National Archaeological Museum, Athens (Mycenaean)"
+  },
+  {
+    "title": "Parthenon Sculptures (Elgin Marbles)",
+    "artist": "Workshop of Phidias",
+    "year": "c. 447–432 BCE",
+    "citation": "Acropolis/Parthenon program; British Museum holdings"
+  },
+  {
+    "title": "Augustus of Prima Porta",
+    "artist": "Unknown (Roman copyist)",
+    "year": "early 1st century CE",
+    "citation": "Vatican Museums; marble statue of Augustus"
+  },
+  {
+    "title": "Trajan’s Column",
+    "artist": "Imperial Roman workshops",
+    "year": "113 CE",
+    "citation": "Rome; spiral relief narrative"
+  },
+  {
+    "title": "Sarcophagus of the Spouses",
+    "artist": "Unknown",
+    "year": "c. 520 BCE",
+    "citation": "National Etruscan Museum, Villa Giulia"
+  },
+  {
+    "title": "Seated Scribe",
+    "artist": "Unknown",
+    "year": "c. 2450–2325 BCE",
+    "citation": "Louvre; Old Kingdom Egypt sculpture"
+  },
+  {
+    "title": "Terracotta Army (First Emperor’s Mausoleum)",
+    "artist": "Qin imperial workshops",
+    "year": "c. 210 BCE",
+    "citation": "Lintong District, Xi’an; mausoleum of Qin Shi Huang"
+  },
+  {
+    "title": "Longmen Grottoes: Vairocana Buddha (Fengxian Temple)",
+    "artist": "Tang dynasty artisans",
+    "year": "675 CE",
+    "citation": "Longmen Grottoes, Luoyang; monumental stone carving"
+  },
+  {
+    "title": "The Great Stupa at Sanchi",
+    "artist": "Mauryan/Sunga period builders",
+    "year": "3rd century BCE (expanded 1st century BCE)",
+    "citation": "Sanchi, India; Buddhist architecture"
+  },
+  {
+    "title": "Ajanta Cave Paintings",
+    "artist": "Unknown",
+    "year": "2nd century BCE–6th century CE",
+    "citation": "Ajanta Caves, Maharashtra; Buddhist murals"
+  },
+  {
+    "title": "Bayeux Tapestry",
+    "artist": "Unknown (workshop)",
+    "year": "c. 1070s",
+    "citation": "Bayeux Museum; embroidered narrative of 1066"
+  },
+  {
+    "title": "Book of Kells",
+    "artist": "Unknown (monastic scribes)",
+    "year": "c. 800",
+    "citation": "Trinity College Dublin; illuminated manuscript"
+  },
+  {
+    "title": "Hagia Sophia",
+    "artist": "Anthemius of Tralles & Isidore of Miletus",
+    "year": "537",
+    "citation": "Istanbul; Byzantine architecture under Justinian I"
+  },
+  {
+    "title": "Dome of the Rock",
+    "artist": "Umayyad builders",
+    "year": "691–692",
+    "citation": "Jerusalem; early Islamic architecture"
+  },
+  {
+    "title": "Great Mosque of Córdoba",
+    "artist": "Umayyad/Andalusian builders",
+    "year": "784–987",
+    "citation": "Córdoba; hypostyle mosque expanded over centuries"
+  },
+  {
+    "title": "Chartres Cathedral (west façade and stained glass)",
+    "artist": "Unknown",
+    "year": "c. 1145–1220",
+    "citation": "Chartres, France; Gothic architecture and glass"
+  },
+  {
+    "title": "Angkor Wat",
+    "artist": "Khmer Empire builders",
+    "year": "early 12th century",
+    "citation": "Cambodia; temple complex under Suryavarman II"
+  },
+  {
+    "title": "The Calling of Saint Matthew",
+    "artist": "Caravaggio",
+    "year": "1599–1600",
+    "citation": "Contarelli Chapel, San Luigi dei Francesi, Rome"
+  },
+  {
+    "title": "Mona Lisa",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1503–1506",
+    "citation": "Louvre; portrait painting (Renaissance oil technique)"
+  },
+  {
+    "title": "The Sistine Chapel Ceiling",
+    "artist": "Michelangelo",
+    "year": "1508–1512",
+    "citation": "Vatican; fresco cycle"
+  },
+  {
+    "title": "The Ghent Altarpiece",
+    "artist": "Jan van Eyck (and Hubert van Eyck)",
+    "year": "1432",
+    "citation": "St. Bavo’s Cathedral, Ghent"
+  },
+  {
+    "title": "Très Riches Heures du Duc de Berry",
+    "artist": "Limbourg brothers",
+    "year": "c. 1412–1416",
+    "citation": "Chantilly; celebrated illuminated manuscript"
+  },
+  {
+    "title": "The Rape of the Sabine Women",
+    "artist": "Giambologna",
+    "year": "1582–1583",
+    "citation": "Loggia dei Lanzi, Florence"
+  },
+  {
+    "title": "David",
+    "artist": "Donatello",
+    "year": "c. 1440s",
+    "citation": "Bargello Museum, Florence; early Renaissance bronze"
+  },
+  {
+    "title": "St. Peter’s Basilica (new basilica)",
+    "artist": "Bramante, Michelangelo, Maderno, Bernini (team)",
+    "year": "1506–1626",
+    "citation": "Vatican City; major Renaissance/Baroque project"
+  },
+  {
+    "title": "Ecstasy of Saint Teresa",
+    "artist": "Gian Lorenzo Bernini",
+    "year": "1647–1652",
+    "citation": "Cornaro Chapel, Santa Maria della Vittoria, Rome"
+  },
+  {
+    "title": "Under the Wave off Kanagawa (early impression)",
+    "artist": "Katsushika Hokusai",
+    "year": "c. 1830–1833",
+    "citation": "Ukiyo-e woodblock printing; multiple museum impressions"
+  },
+  {
+    "title": "A Bar at the Folies-Bergère",
+    "artist": "Édouard Manet",
+    "year": "1882",
+    "citation": "Courtauld Gallery, London"
+  },
+  {
+    "title": "The Treachery of Images (This is Not a Pipe)",
+    "artist": "René Magritte",
+    "year": "1929",
+    "citation": "Los Angeles County Museum of Art (LACMA)"
+  },
+  {
+    "title": "Black Square",
+    "artist": "Kazimir Malevich",
+    "year": "1915",
+    "citation": "First shown at 0.10 exhibition (various versions in museums)"
+  },
+  {
+    "title": "Fountain",
+    "artist": "Marcel Duchamp",
+    "year": "1917",
+    "citation": "Readymade; original lost—replicas in major museums"
+  },
+  {
+    "title": "Les Demoiselles d’Avignon",
+    "artist": "Pablo Picasso",
+    "year": "1907",
+    "citation": "MoMA, New York"
+  },
+  {
+    "title": "The Third of May 1808",
+    "artist": "Francisco Goya",
+    "year": "1814",
+    "citation": "Museo del Prado, Madrid"
+  },
+  {
+    "title": "The Great Bath (Hiroshima)",
+    "artist": "Utagawa Hiroshige",
+    "year": "1857",
+    "citation": "Ukiyo-e landscape print (One Hundred Famous Views of Edo)"
+  },
+  {
+    "title": "The Thinker",
+    "artist": "Auguste Rodin",
+    "year": "1880–1904 (casts later)",
+    "citation": "Originally for The Gates of Hell; bronze casts worldwide"
+  },
+  {
+    "title": "Bird in Space",
+    "artist": "Constantin Brâncuși",
+    "year": "1923",
+    "citation": "Modernist sculpture; multiple versions in museums"
+  },
+  {
+    "title": "Bauhaus Building, Dessau",
+    "artist": "Walter Gropius",
+    "year": "1925–1926",
+    "citation": "Germany; modernist architecture & design school"
+  },
+  {
+    "title": "Villa Savoye",
+    "artist": "Le Corbusier",
+    "year": "1928–1931",
+    "citation": "Poissy, France; modern architecture"
+  },
+  {
+    "title": "Fallingwater",
+    "artist": "Frank Lloyd Wright",
+    "year": "1935–1939",
+    "citation": "Mill Run, Pennsylvania; integration with landscape"
+  },
+  {
+    "title": "Seagram Building",
+    "artist": "Ludwig Mies van der Rohe & Philip Johnson",
+    "year": "1954–1958",
+    "citation": "New York City; International Style skyscraper"
+  },
+  {
+    "title": "Sydney Opera House",
+    "artist": "Jørn Utzon",
+    "year": "1959–1973",
+    "citation": "Sydney; iconic modern architecture"
+  },
+  {
+    "title": "Eames Lounge Chair and Ottoman",
+    "artist": "Charles & Ray Eames",
+    "year": "1956",
+    "citation": "Herman Miller; industrial design landmark"
+  },
+  {
+    "title": "Braun SK 4 “Snow White’s Coffin”",
+    "artist": "Dieter Rams & Hans Gugelot",
+    "year": "1956",
+    "citation": "Braun; product design with transparent acrylic lid"
+  },
+  {
+    "title": "London Underground Map",
+    "artist": "Harry Beck",
+    "year": "1933",
+    "citation": "Diagrammatic transit map design innovation"
+  },
+  {
+    "title": "Glider Chair (Wassily Chair)",
+    "artist": "Marcel Breuer",
+    "year": "1925",
+    "citation": "Bauhaus tubular steel furniture design"
+  },
+  {
+    "title": "Eiffel Tower",
+    "artist": "Gustave Eiffel (engineering team)",
+    "year": "1887–1889",
+    "citation": "Paris; iron lattice engineering for 1889 Exposition"
+  },
+  {
+    "title": "Crystal Palace",
+    "artist": "Joseph Paxton",
+    "year": "1851",
+    "citation": "Great Exhibition, London; prefabricated iron-and-glass"
+  },
+  {
+    "title": "The Great Mosque of Djenné (reconstruction)",
+    "artist": "Local masons (Sudano-Sahelian tradition)",
+    "year": "1907",
+    "citation": "Djenné, Mali; adobe architecture, annual replastering"
+  },
+  {
+    "title": "Campbell’s Soup Cans",
+    "artist": "Andy Warhol",
+    "year": "1962",
+    "citation": "Pop Art series; MoMA holdings"
+  },
+  {
+    "title": "No. 61 (Rust and Blue)",
+    "artist": "Mark Rothko",
+    "year": "1953",
+    "citation": "MoMA; color field painting"
+  },
+  {
+    "title": "One: Number 31, 1950",
+    "artist": "Jackson Pollock",
+    "year": "1950",
+    "citation": "MoMA; large-scale drip painting"
+  },
+  {
+    "title": "The Gates",
+    "artist": "Christo and Jeanne-Claude",
+    "year": "2005",
+    "citation": "Temporary installation in Central Park, New York"
+  },
+  {
+    "title": "Moonrise, Hernandez, New Mexico",
+    "artist": "Ansel Adams",
+    "year": "1941",
+    "citation": "Photographic print; Zone System exposure/printing"
+  },
+  {
+    "title": "Afghan Girl",
+    "artist": "Steve McCurry",
+    "year": "1984",
+    "citation": "National Geographic cover image (portrait photography)"
+  },
+  {
+    "title": "Earthrise",
+    "artist": "William Anders (Apollo 8)",
+    "year": "1968",
+    "citation": "NASA photograph from lunar orbit"
+  },
+  {
+    "title": "Blue Marble",
+    "artist": "NASA / Apollo 17 crew",
+    "year": "1972",
+    "citation": "Iconic full-Earth photograph"
+  },
+  {
+    "title": "Lunch Atop a Skyscraper",
+    "artist": "Charles C. Ebbets (attributed)",
+    "year": "1932",
+    "citation": "RCA Building construction photo, New York"
+  },
+  {
+    "title": "The Dance",
+    "artist": "Henri Matisse",
+    "year": "1909–1910",
+    "citation": "Hermitage Museum; modernist color and form"
+  },
+  {
+    "title": "Les Nymphéas (Water Lilies, large panels)",
+    "artist": "Claude Monet",
+    "year": "c. 1914–1926",
+    "citation": "Musée de l’Orangerie; immersive installation"
+  },
+  {
+    "title": "The Great Masturbator",
+    "artist": "Salvador Dalí",
+    "year": "1929",
+    "citation": "Museo Reina Sofía, Madrid"
+  },
+  {
+    "title": "Le Déjeuner sur l’herbe",
+    "artist": "Édouard Manet",
+    "year": "1863",
+    "citation": "Musée d’Orsay; modernity scandal painting"
+  },
+  {
+    "title": "The Death of Marat",
+    "artist": "Jacques-Louis David",
+    "year": "1793",
+    "citation": "Musées royaux des Beaux-Arts de Belgique"
+  },
+  {
+    "title": "The Arnolfini Portrait (technical: oil glazing)",
+    "artist": "Jan van Eyck",
+    "year": "1434",
+    "citation": "National Gallery, London; early oil technique showcase"
+  },
+  {
+    "title": "Great Mosque of Isfahan (Masjid-e Jameh)",
+    "artist": "Various (Seljuk/Ilkhanid/Safavid)",
+    "year": "8th–17th centuries",
+    "citation": "Isfahan, Iran; evolving mosque architecture"
+  },
+  {
+    "title": "Alhambra",
+    "artist": "Nasrid dynasty builders",
+    "year": "13th–14th centuries",
+    "citation": "Granada; Islamic palatial architecture and muqarnas"
+  },
+  {
+    "title": "The Taj Mahal",
+    "artist": "Ustad Ahmad Lahori (attributed) & Mughal artisans",
+    "year": "1632–1653",
+    "citation": "Agra; Mughal architecture and pietra dura"
+  },
+  {
+    "title": "Great Zimbabwe (Hill Complex)",
+    "artist": "Shona builders",
+    "year": "11th–15th centuries",
+    "citation": "Zimbabwe; dry-stone architecture"
+  },
+  {
+    "title": "Benin Bronzes (court plaques)",
+    "artist": "Edo (Benin) artists",
+    "year": "16th–17th centuries",
+    "citation": "Kingdom of Benin; brass plaques dispersed in museums"
+  },
+  {
+    "title": "Nkisi Nkonde (power figure)",
+    "artist": "Kongo peoples",
+    "year": "19th century",
+    "citation": "Central Africa; ritual sculpture with inserted nails"
+  },
+  {
+    "title": "The Great Serpent Mound",
+    "artist": "Fort Ancient culture (attributed)",
+    "year": "c. 1070",
+    "citation": "Ohio; monumental earthwork"
+  },
+  {
+    "title": "Moai (Rapa Nui stone figures)",
+    "artist": "Rapa Nui carvers",
+    "year": "c. 1250–1500",
+    "citation": "Easter Island; megalithic sculpture"
+  },
+  {
+    "title": "Codex Mendoza",
+    "artist": "Aztec scribes and Spanish overseers",
+    "year": "c. 1541–1542",
+    "citation": "Manuscript documenting Aztec life; Bodleian Library"
+  },
+  {
+    "title": "Temple of Kukulcán (El Castillo)",
+    "artist": "Maya builders",
+    "year": "c. 9th–12th centuries",
+    "citation": "Chichén Itzá; astronomical architecture"
+  },
+  {
+    "title": "The Great Mosque of Samarra (Malwiya Minaret)",
+    "artist": "Abbasid builders",
+    "year": "c. 848–852",
+    "citation": "Samarra, Iraq; spiral minaret engineering"
+  },
+  {
+    "title": "The Great Buddha (Daibutsu) of Tōdai-ji",
+    "artist": "Nara period artisans",
+    "year": "752 (casting), later repairs",
+    "citation": "Nara, Japan; large bronze Buddha statue"
+  },
+  {
+    "title": "The Great Wave (technical: bokashi gradation)",
+    "artist": "Katsushika Hokusai",
+    "year": "c. 1831",
+    "citation": "Woodblock printing technique; bokashi shading"
+  },
+  {
+    "title": "Unité d’Habitation",
+    "artist": "Le Corbusier",
+    "year": "1947–1952",
+    "citation": "Marseille; housing prototype and béton brut"
+  },
+  {
+    "title": "Sagrada Família",
+    "artist": "Antoni Gaudí",
+    "year": "1882–present",
+    "citation": "Barcelona; evolving basilica, structural experimentation"
+  },
+  {
+    "title": "The Death of Sardanapalus",
+    "artist": "Eugène Delacroix",
+    "year": "1827",
+    "citation": "Louvre; Romantic color and composition"
+  },
+  {
+    "title": "The Sleeping Venus",
+    "artist": "Giorgione (completed by Titian)",
+    "year": "c. 1510",
+    "citation": "Gemäldegalerie Alte Meister, Dresden"
+  },
+  {
+    "title": "A Bar at the Folies-Bergère (mirror optics)",
+    "artist": "Édouard Manet",
+    "year": "1882",
+    "citation": "Courtauld Gallery; notable for reflected perspective"
+  },
+  {
+    "title": "The Great Glass (The Bride Stripped Bare by Her Bachelors, Even)",
+    "artist": "Marcel Duchamp",
+    "year": "1915–1923",
+    "citation": "Philadelphia Museum of Art; glass, lead wire, dust"
+  },
+  {
+    "title": "Untitled (Portrait of Ross in L.A.)",
+    "artist": "Félix González-Torres",
+    "year": "1991",
+    "citation": "Candy spill installation; conceptual and participatory"
+  },
+  {
+    "title": "The Crossing",
+    "artist": "Bill Viola",
+    "year": "1996",
+    "citation": "Video installation; slow-motion water/fire imagery"
+  },
+  {
+    "title": "Everydays: The First 5000 Days",
+    "artist": "Beeple (Mike Winkelmann)",
+    "year": "2021",
+    "citation": "Digital collage; landmark NFT-era sale"
+  },
+  {
+    "title": "Rain Room",
+    "artist": "Random International",
+    "year": "2012",
+    "citation": "Interactive installation with sensor-controlled rain"
+  },
+  {
+    "title": "Higgs Oceanic: 1000 (spot painting)",
+    "artist": "Damien Hirst",
+    "year": "1994",
+    "citation": "Spot painting series; conceptual production model"
+  },
+  {
+    "title": "The Clock",
+    "artist": "Christian Marclay",
+    "year": "2010",
+    "citation": "24-hour video montage synchronized to real time"
+  },
+  {
+    "title": "Untitled (Perfect Lovers)",
+    "artist": "Felix Gonzalez-Torres",
+    "year": "1991",
+    "citation": "Two synchronized clocks; conceptual sculpture"
+  },
+  {
+    "title": "The Artist Is Present",
+    "artist": "Marina Abramović",
+    "year": "2010",
+    "citation": "Performance at MoMA, New York"
+  },
+  {
+    "title": "Isenheim Altarpiece",
+    "artist": "Matthias Grünewald",
+    "year": "1512–1516",
+    "citation": "Unterlinden Museum, Colmar; dramatic Northern Renaissance polyptych"
+  },
+  {
+    "title": "The Desperate Man (Self-Portrait)",
+    "artist": "Gustave Courbet",
+    "year": "c. 1843–1845",
+    "citation": "Private collections/museum loans; Romantic realism"
+  },
+  {
+    "title": "The Gross Clinic",
+    "artist": "Thomas Eakins",
+    "year": "1875",
+    "citation": "Philadelphia Museum of Art; surgical realism and modern medicine"
+  },
+  {
+    "title": "The Great Bathers",
+    "artist": "Paul Cézanne",
+    "year": "c. 1898–1905",
+    "citation": "Philadelphia Museum of Art / National Gallery; late structural painting"
+  },
+  {
+    "title": "Whistler’s Nocturne: Blue and Gold – Old Battersea Bridge",
+    "artist": "James McNeill Whistler",
+    "year": "c. 1872–1875",
+    "citation": "Tate; tonal painting and aesthetic movement"
+  },
+  {
+    "title": "Judith Slaying Holofernes",
+    "artist": "Artemisia Gentileschi",
+    "year": "c. 1612–1613",
+    "citation": "Uffizi / Naples versions; Baroque drama and agency"
+  },
+  {
+    "title": "The Anatomy Lesson of Dr. Nicolaes Tulp",
+    "artist": "Rembrandt van Rijn",
+    "year": "1632",
+    "citation": "Mauritshuis; group portrait and scientific culture"
+  },
+  {
+    "title": "The Night Café",
+    "artist": "Vincent van Gogh",
+    "year": "1888",
+    "citation": "Yale University Art Gallery; expressive color theory"
+  },
+  {
+    "title": "A Wheatfield with Cypresses",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "citation": "National Gallery, London / Met; post-impressionist brushwork"
+  },
+  {
+    "title": "Les Noces (The Wedding)",
+    "artist": "Natalia Goncharova",
+    "year": "1910",
+    "citation": "Russian avant-garde; neo-primitivism"
+  },
+  {
+    "title": "The Large Glass (replica/installation context)",
+    "artist": "Marcel Duchamp",
+    "year": "1915–1923",
+    "citation": "Philadelphia Museum of Art; mechanomorphic conceptual work"
+  },
+  {
+    "title": "The Swinging London 'Blow-Up' Poster",
+    "artist": "David Hockney",
+    "year": "1966",
+    "citation": "Pop-era graphic/print work (various editions)"
+  },
+  {
+    "title": "Stag Beetle",
+    "artist": "Albrecht Dürer",
+    "year": "1505",
+    "citation": "Getty / collections; natural history watercolor study"
+  },
+  {
+    "title": "Great Piece of Turf",
+    "artist": "Albrecht Dürer",
+    "year": "1503",
+    "citation": "Albertina, Vienna; botanical realism"
+  },
+  {
+    "title": "The Art of Painting",
+    "artist": "Johannes Vermeer",
+    "year": "c. 1666–1668",
+    "citation": "Kunsthistorisches Museum, Vienna"
+  },
+  {
+    "title": "The Oath of the Horatii",
+    "artist": "Jacques-Louis David",
+    "year": "1784",
+    "citation": "Louvre; Neoclassical civic virtue"
+  },
+  {
+    "title": "The Coronation of Napoleon",
+    "artist": "Jacques-Louis David",
+    "year": "1805–1807",
+    "citation": "Louvre; imperial propaganda painting"
+  },
+  {
+    "title": "The Sleeping Woman (Le Rêve)",
+    "artist": "Pablo Picasso",
+    "year": "1932",
+    "citation": "Private collections; voluptuous modern portrait"
+  },
+  {
+    "title": "Les Femmes d’Alger (Version O)",
+    "artist": "Pablo Picasso",
+    "year": "1955",
+    "citation": "Private collection; modernist series after Delacroix"
+  },
+  {
+    "title": "No. 14 (Gray)",
+    "artist": "Mark Rothko",
+    "year": "1960",
+    "citation": "SFMOMA; color field painting"
+  },
+  {
+    "title": "Campbell’s Soup Cans (screenprint portfolio)",
+    "artist": "Andy Warhol",
+    "year": "1968",
+    "citation": "Editioned prints; Pop reproduction methods"
+  },
+  {
+    "title": "Erased de Kooning Drawing",
+    "artist": "Robert Rauschenberg",
+    "year": "1953",
+    "citation": "San Francisco Museum of Modern Art; conceptual erasure"
+  },
+  {
+    "title": "Monogram",
+    "artist": "Robert Rauschenberg",
+    "year": "1955–1959",
+    "citation": "Moderna Museet; combine painting/sculpture"
+  },
+  {
+    "title": "Untitled (Stack)",
+    "artist": "Donald Judd",
+    "year": "1967",
+    "citation": "Minimalist wall-mounted units; metal/plexi fabrication"
+  },
+  {
+    "title": "L.H.O.O.Q.",
+    "artist": "Marcel Duchamp",
+    "year": "1919",
+    "citation": "Postcard intervention; Dada icon"
+  },
+  {
+    "title": "Campbell’s Soup Cans (installation context)",
+    "artist": "Andy Warhol",
+    "year": "1962",
+    "citation": "Ferus Gallery debut; Pop Art moment"
+  },
+  {
+    "title": "The Brick Country House",
+    "artist": "Mies van der Rohe",
+    "year": "1923–1924 (project)",
+    "citation": "Unbuilt modernist architectural project"
+  },
+  {
+    "title": "E-1027",
+    "artist": "Eileen Gray",
+    "year": "1926–1929",
+    "citation": "Roquebrune-Cap-Martin; modern architecture & interiors"
+  },
+  {
+    "title": "Barcelona Chair",
+    "artist": "Ludwig Mies van der Rohe & Lilly Reich",
+    "year": "1929",
+    "citation": "Designed for Barcelona International Exposition"
+  },
+  {
+    "title": "Perriand Chaise Longue (LC4)",
+    "artist": "Le Corbusier, Pierre Jeanneret & Charlotte Perriand",
+    "year": "1928",
+    "citation": "Modern furniture; tubular steel ergonomics"
+  },
+  {
+    "title": "Uncle Sam Wants You",
+    "artist": "James Montgomery Flagg",
+    "year": "1917",
+    "citation": "U.S. Army recruitment poster; mass graphic reproduction"
+  },
+  {
+    "title": "Beat the Whites with the Red Wedge",
+    "artist": "El Lissitzky",
+    "year": "1919",
+    "citation": "Constructivist propaganda poster"
+  },
+  {
+    "title": "The Kiss (Kiss I)",
+    "artist": "Gustav Klimt",
+    "year": "1907–1908",
+    "citation": "Belvedere, Vienna; gold leaf and symbolism"
+  },
+  {
+    "title": "The Skeleton Dance",
+    "artist": "Walt Disney (Silly Symphonies)",
+    "year": "1929",
+    "citation": "Early synchronized sound animation"
+  },
+  {
+    "title": "A Trip to the Moon (Le Voyage dans la Lune)",
+    "artist": "Georges Méliès",
+    "year": "1902",
+    "citation": "Pioneering special-effects cinema"
+  },
+  {
+    "title": "The Arrival of a Train at La Ciotat",
+    "artist": "Auguste & Louis Lumière",
+    "year": "1896",
+    "citation": "Early projected film exhibition"
+  },
+  {
+    "title": "Bauhaus Typography (Universal Typeface studies)",
+    "artist": "Herbert Bayer",
+    "year": "1925",
+    "citation": "Bauhaus design experiments in type"
+  },
+  {
+    "title": "Helvetica (typeface)",
+    "artist": "Max Miedinger (Haas Type Foundry)",
+    "year": "1957",
+    "citation": "Swiss typography; later named Helvetica"
+  },
+  {
+    "title": "The London Tube Map (diagram evolution)",
+    "artist": "Harry Beck",
+    "year": "1933",
+    "citation": "Transit diagram as modern information design"
+  },
+  {
+    "title": "The Vitruvian Man (study drawing)",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1490",
+    "citation": "Gallerie dell’Accademia, Venice; proportion study"
+  },
+  {
+    "title": "A Philosopher Giving a Lecture on the Orrery",
+    "artist": "Joseph Wright of Derby",
+    "year": "c. 1766",
+    "citation": "Derby Museum / versions; Enlightenment science spectacle"
+  },
+  {
+    "title": "Saturn Devouring His Son",
+    "artist": "Francisco Goya",
+    "year": "c. 1819–1823",
+    "citation": "Museo del Prado; Black Paintings"
+  },
+  {
+    "title": "The Great Wave (Prussian blue innovation)",
+    "artist": "Katsushika Hokusai",
+    "year": "c. 1831",
+    "citation": "Woodblock print using imported Prussian blue pigment"
+  },
+  {
+    "title": "The Great Buddha of Kamakura",
+    "artist": "Unknown (Kamakura period artisans)",
+    "year": "1252",
+    "citation": "Kōtoku-in, Kamakura; bronze casting"
+  },
+  {
+    "title": "The Thinker (original plaster concept)",
+    "artist": "Auguste Rodin",
+    "year": "c. 1880",
+    "citation": "Initially conceived for The Gates of Hell"
+  },
+  {
+    "title": "The Horse Fair",
+    "artist": "Rosa Bonheur",
+    "year": "1852–1855",
+    "citation": "Metropolitan Museum of Art; monumental animal painting"
+  },
+  {
+    "title": "The Two Fridas",
+    "artist": "Frida Kahlo",
+    "year": "1939",
+    "citation": "Museo de Arte Moderno, Mexico City"
+  },
+  {
+    "title": "Self-Portrait with Thorn Necklace and Hummingbird",
+    "artist": "Frida Kahlo",
+    "year": "1940",
+    "citation": "Harry Ransom Center; personal iconography"
+  },
+  {
+    "title": "Nighthawks (study drawing/paint)",
+    "artist": "Edward Hopper",
+    "year": "1942",
+    "citation": "Preparatory studies; composition and lighting"
+  },
+  {
+    "title": "The Black Square (later version)",
+    "artist": "Kazimir Malevich",
+    "year": "c. 1929",
+    "citation": "Tretyakov/Russian Museum versions; Suprematism"
+  }
+]
