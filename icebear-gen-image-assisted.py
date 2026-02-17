@@ -61,6 +61,11 @@ remains the focus.
 If the artwork contains visible text, make at most one **subtle** bear-related word change 
 (e.g., modifying a name or single word) without disrupting the text’s original tone or meaning.
 
+If the artwork contains sillhouettes of people, make them into silhouettes of ice bears. 
+
+Some people in the background can be replaced by bears also, if they are not too prominent, i.e., in a crowd or
+far away. 
+
 Above all: preserve the **unique identity** of the original artwork, making the bear feel like 
 a natural and seamless part of the artist’s original vision, adapting to the drawing style, and
 feel of what the artist is doing that is unique to them.
