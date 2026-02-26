@@ -11016,7 +11016,231 @@
     "artist": "Tom Jung",
     "year": 1977,
     "citation": "https://en.wikipedia.org/wiki/Star_Wars_(film)"
-  }
+  },
+  {
+    "title": "Campari",
+    "artist": "Leonetto Cappiello",
+    "year": "1921"
+  },
+  {
+    "title": "Nord Express",
+    "artist": "A.M. Cassandre",
+    "year": "1927"
+  },
+  {
+    "title": "L'Atlantique",
+    "artist": "A.M. Cassandre",
+    "year": "1931"
+  },
+  {
+    "title": "Dubonnet",
+    "artist": "A.M. Cassandre",
+    "year": "1932"
+  },
+  {
+    "title": "Normandie",
+    "artist": "A.M. Cassandre",
+    "year": "1935"
+  },
+  {
+    "title": "Guinness Zoo Series",
+    "artist": "John Gilroy",
+    "year": "1935"
+  },
+  {
+    "title": "Air France",
+    "artist": "Lucien Boucher",
+    "year": "1938"
+  },
+  {
+    "title": "Lucky Strike – It's Toasted",
+    "artist": "Unknown",
+    "year": "1942"
+  },
+  {
+    "title": "Coca-Cola – Sign of Good Taste",
+    "artist": "Haddon Sundblom",
+    "year": "1950"
+  },
+  {
+    "title": "IBM Eye-Bee-M",
+    "artist": "Paul Rand",
+    "year": "1956"
+  },
+  {
+    "title": "Think Small",
+    "artist": "Helmut Krone",
+    "year": "1959"
+  },
+  {
+    "title": "Pirelli",
+    "artist": "Armando Testa",
+    "year": "1960"
+  },
+  {
+    "title": "Pan Am – World's Most Experienced Airline",
+    "artist": "Unknown",
+    "year": "1960"
+  },
+  {
+    "title": "Braniff International Airways",
+    "artist": "Alexander Girard",
+    "year": "1965"
+  },
+  {
+    "title": "British Rail Inter-City",
+    "artist": "Gordon House",
+    "year": "1965"
+  },
+  {
+    "title": "Olivetti Valentine",
+    "artist": "Ettore Sottsass",
+    "year": "1969"
+  },
+  {
+    "title": "Coca-Cola – I'd Like to Buy the World a Coke",
+    "artist": "Bill Backer",
+    "year": "1971"
+  },
+  {
+    "title": "United Colors of Benetton (Early Campaign)",
+    "artist": "Oliviero Toscani",
+    "year": "1970"
+  },
+  {
+    "title": "New York City – I Love New York",
+    "artist": "Milton Glaser",
+    "year": "1977"
+  },
+  {
+    "title": "Absolut Vodka (Prototype Campaign)",
+    "artist": "Unknown",
+    "year": "1979"
+  },
+  {
+    "title": "Le Chat Noir",
+    "artist": "Theophile Steinlen",
+    "year": "1926"
+  },
+  {
+    "title": "Byrrh",
+    "artist": "Leonetto Cappiello",
+    "year": "1925"
+  },
+  {
+    "title": "Cinzano",
+    "artist": "Leonetto Cappiello",
+    "year": "1920"
+  },
+  {
+    "title": "Shell – Motor Oil",
+    "artist": "Edward McKnight Kauffer",
+    "year": "1933"
+  },
+  {
+    "title": "London Transport",
+    "artist": "Edward McKnight Kauffer",
+    "year": "1924"
+  },
+  {
+    "title": "Bally",
+    "artist": "Bernard Villemot",
+    "year": "1938"
+  },
+  {
+    "title": "Air India – Maharaja",
+    "artist": "Umesh Rao",
+    "year": "1946"
+  },
+  {
+    "title": "De Beers – A Diamond is Forever",
+    "artist": "Frances Gerety",
+    "year": "1948"
+  },
+  {
+    "title": "Mobil – Pegasus",
+    "artist": "Unknown",
+    "year": "1954"
+  },
+  {
+    "title": "Esso – Put a Tiger in Your Tank",
+    "artist": "Raymond Savignac",
+    "year": "1959"
+  },
+  {
+    "title": "Alitalia",
+    "artist": "Giovanni Pintori",
+    "year": "1960"
+  },
+  {
+    "title": "Olivetti Lettera 22",
+    "artist": "Giovanni Pintori",
+    "year": "1950"
+  },
+  {
+    "title": "Polaroid SX-70",
+    "artist": "Paul Giambarba",
+    "year": "1972"
+  },
+  {
+    "title": "Kodak – Instamatic Camera",
+    "artist": "Unknown",
+    "year": "1963"
+  },
+  {
+    "title": "Swissair",
+    "artist": "Herbert Leupin",
+    "year": "1955"
+  },
+  {
+    "title": "Fiat 500",
+    "artist": "Armando Testa",
+    "year": "1957"
+  },
+  {
+    "title": "Chrysler – Forward Look",
+    "artist": "Charles Eames",
+    "year": "1955"
+  },
+  {
+    "title": "Westinghouse – You Can Be Sure",
+    "artist": "Bradbury Thompson",
+    "year": "1956"
+  },
+  {
+    "title": "Marlboro Man",
+    "artist": "Darcy McManus",
+    "year": "1955"
+  },
+  {
+    "title": "Smirnoff – It Leaves You Breathless",
+    "artist": "Unknown",
+    "year": "1960"
+  },
+  { "title": "Swiss National Tourist Office Poster (Zermatt)", "artist": "Emil Cardinaux", "year": "1908", "citation": "Zermatt Travel Poster, Switzerland Tourism Archive" },
+  { "title": "Hawaii Travel Poster (Pan American Airways)", "artist": "Stan Galli", "year": "1958", "citation": "Pan Am Hawaii Poster, Mid-Century Airline Advertising" },
+  { "title": "Orient-Express Travel Poster", "artist": "Roger Broders", "year": "1927", "citation": "PLM Railway Poster, French National Railway Archives" },
+  { "title": "The Great Wave off Kanagawa", "artist": "Katsushika Hokusai", "year": "1831", "citation": "Thirty-Six Views of Mount Fuji series" },
+  { "title": "Sudden Shower over Shin-Ōhashi Bridge and Atake", "artist": "Utagawa Hiroshige", "year": "1857", "citation": "One Hundred Famous Views of Edo series" },
+  { "title": "Ringling Bros. and Barnum & Bailey Circus Poster", "artist": "Strobridge Lithographing Company", "year": "1899", "citation": "The Library of Congress Circus Poster Collection" },
+  { "title": "Beat the Whites with the Red Wedge", "artist": "El Lissitzky", "year": "1919", "citation": "Russian Constructivist Propaganda Poster" },
+  { "title": "Kente Cloth Pattern (Ewe Tradition)", "artist": "Unknown", "year": "19th century", "citation": "Traditional Ghanaian Textile Weaving" },
+  { "title": "Court Scene of Shah Jahan", "artist": "Attributed to Bichitr", "year": "1631", "citation": "Mughal Miniature Painting, The Met Museum Collection" },
+  { "title": "Yosemite National Park Poster", "artist": "Chester Don Powell", "year": "1938", "citation": "Works Progress Administration Federal Art Project" },
+  { "title": "La Sirena (Lotería Card)", "artist": "Don Clemente Gallo", "year": "1887", "citation": "Traditional Mexican Lotería Deck" },
+  { "title": "California Orange Crate Label (Redlands Brand)", "artist": "Unknown", "year": "1910", "citation": "Vintage Citrus Crate Label Collection" },
+  { "title": "White Star Line Poster (RMS Titanic)", "artist": "Unknown", "year": "1911", "citation": "White Star Line promotional lithograph, Maritime Archive Collection" },
+  { "title": "Guinness Is Good For You", "artist": "John Gilroy", "year": "1935", "citation": "Guinness Advertising Poster Campaign" },
+  { "title": "Drink Coca-Cola (Delicious and Refreshing)", "artist": "Haddon Sundblom", "year": "1931", "citation": "Coca-Cola Advertising Archive" },
+  { "title": "London Underground Poster (Power – The Nerve Centre of London’s Underground)", "artist": "Edward McKnight Kauffer", "year": "1930", "citation": "London Transport Museum Poster Collection" },
+  { "title": "Cadbury’s Cocoa Advertisement", "artist": "Unknown", "year": "1885", "citation": "Victorian Trade Card Series, Cadbury Archive" },
+  { "title": "Sunlight Soap Advertisement", "artist": "Unknown", "year": "1890", "citation": "Lever Brothers Advertising Ephemera Collection" },
+  { "title": "Pullman Palace Car Company Broadside", "artist": "Unknown", "year": "1875", "citation": "Pullman Company Promotional Print, Newberry Library" },
+  { "title": "Brooklyn Bridge (Currier & Ives Print)", "artist": "Currier & Ives", "year": "1883", "citation": "Library of Congress Popular Graphic Arts Collection" },
+  { "title": "Detroit Industry Murals", "artist": "Diego Rivera", "year": "1933", "citation": "Detroit Institute of Arts Fresco Cycle" },
+  { "title": "Coney Island Travel Poster", "artist": "Unknown", "year": "1905", "citation": "Coney Island Lithographic Advertising Poster" },
+  { "title": "Atchison, Topeka and Santa Fe Railway Poster", "artist": "Unknown", "year": "1895", "citation": "Santa Fe Railway Promotional Poster Collection" },
+  { "title": "British Empire Exhibition Poster (Wembley)", "artist": "Fred Taylor", "year": "1924", "citation": "UK National Archives Poster Collection" }
 ]
 
 
