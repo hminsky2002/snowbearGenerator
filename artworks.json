@@ -11361,5 +11361,64 @@
   { "title": "Main Building, Centennial International Exhibition", "artist": "Unknown", "year": "1876", "citation": "Lithograph, Library of Congress" },
   { "title": "World’s Columbian Exposition (Court of Honor)", "artist": "Charles Dudley Arnold (photographer)", "year": "1893", "citation": "Chicago Historical Society Archive" },
   { "title": "Galerie des Machines, Exposition Universelle", "artist": "Louis-Émile Durandelle (photographer)", "year": "1889", "citation": "Bibliothèque nationale de France" },
-  { "title": "Royal Academy Summer Exhibition (Interior View)", "artist": "Unknown", "year": "c. 1838", "citation": "Engraving, Royal Academy Collection, London" }
+  { "title": "Royal Academy Summer Exhibition (Interior View)", "artist": "Unknown", "year": "c. 1838", "citation": "Engraving, Royal Academy Collection, London" },
+{    "title": "Alice's Adventures in Wonderland (Original Illustrations)",
+    "artist": "John Tenniel",
+    "year": "1865",
+    "citation": "First published edition illustrations that defined the visual identity of Alice and remain the most iconic representations"
+  },
+  {
+    "title": "Alice's Adventures Under Ground (Manuscript Drawings)",
+    "artist": "Lewis Carroll",
+    "year": "1864",
+    "citation": "Author’s original hand-drawn illustrations in the manuscript preceding the published book"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland (Rackham Edition)",
+    "artist": "Arthur Rackham",
+    "year": "1907",
+    "citation": "Art Nouveau–influenced reinterpretation following the book’s entry into the public domain :contentReference[oaicite:0]{index=0}"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland (American Edition)",
+    "artist": "Maria L. Kirk",
+    "year": "1904",
+    "citation": "Early American illustrated edition offering a softer, painterly interpretation of the story :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "title": "Alice in Wonderland (Color Plates)",
+    "artist": "Harry Theaker",
+    "year": "1911",
+    "citation": "Hand-colored Tenniel illustrations that established Alice’s iconic blue dress :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "title": "Alice in Wonderland",
+    "artist": "Willy Pogany",
+    "year": "1929",
+    "citation": "Decorative, stylized illustrations from the Golden Age of illustration :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "artist": "Mervyn Peake",
+    "year": "1946",
+    "citation": "Dark, highly expressive pen-and-ink illustrations emphasizing psychological tone :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "artist": "Salvador Dalí",
+    "year": "1969",
+    "citation": "Surrealist interpretation blending Carroll’s narrative with dreamlike imagery :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "title": "Alice in Wonderland",
+    "artist": "Ralph Steadman",
+    "year": "1967",
+    "citation": "Grotesque, satirical reinterpretation reflecting countercultural aesthetics :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "artist": "Milo Winter",
+    "year": "1916",
+    "citation": "Classic American illustration style with clear narrative scenes for children’s editions :contentReference[oaicite:7]{index=7}"
+  }
 ]
