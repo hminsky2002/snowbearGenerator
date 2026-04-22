@@ -1,45 +1,229 @@
-from openai import OpenAI, BadRequestError
-import os
-import json
-import base64
-import random
-from datetime import datetime
-import requests
+#!/usr/bin/env python3
+
+from __future__ import annotations
+
 import argparse
-from dotenv import load_dotenv
-from PIL import Image
-import io
+import base64
 import glob
+import io
+import json
+import os
+import random
+import sys
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+from urllib.parse import urlparse
+
+import requests
+from dotenv import load_dotenv
+from openai import BadRequestError, OpenAI
+from PIL import Image
+
 from google_custom_search_image_downloader import (
+    download_images,
     google_search_api_call,
     google_search_response_parser,
-    download_images,
 )
 
-# Parse command line arguments
-parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
-parser.add_argument("--env", type=str, help="Path to .env file (optional)")
-parser.add_argument("--sourcedir", type=str, help="Path to image file (optional)")
-parser.add_argument("--artwork", type=str, help="JSON blob of artwork reference (e.g., '{\"title\": \"Starry Night\", \"artist\": \"Vincent van Gogh\"}')")
-args = parser.parse_args()
 
-args.sourcedir = args.sourcedir or None
+DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
+#DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
+DEFAULT_TEXT_MODEL = os.getenv("OPENAI_TEXT_MODEL", "gpt-5.4")
+DEFAULT_OUTPUT_SIZE = os.getenv("OPENAI_IMAGE_SIZE", "1024x1024")
+DEFAULT_OUTPUT_QUALITY = os.getenv("OPENAI_IMAGE_QUALITY", "high")
+DEFAULT_OUTPUT_FORMAT = os.getenv("OPENAI_IMAGE_FORMAT", "jpeg")
+DEFAULT_OUTPUT_COMPRESSION = int(os.getenv("OPENAI_IMAGE_COMPRESSION", "90"))
+DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "high")
+DEFAULT_MAX_ATTEMPTS = int(os.getenv("OPENAI_IMAGE_MAX_ATTEMPTS", "4"))
 
-# Load environment variables
-load_dotenv(dotenv_path=args.env, override=True)
-
-with open("artworks.json", "r", encoding="utf-8") as f:
-    artworks = json.load(f)
-
-target_date = datetime(2025, 4, 29)
-
-today = datetime.today()
-
-difference = (target_date - today).days
+MEDIA_DIR = Path("./media")
+SEARCH_IMAGES_DIR = MEDIA_DIR / "search_images"
+ARTWORKS_JSON = Path("./artworks.json")
+DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
 
 
-def create_prompt(bear_modifier=""):
-    return f"""{bear_modifier}. Edit this image to add a cartoon polar bear inspired by Ice Bear 
+@dataclass
+class Artwork:
+    title: str
+    artist: str
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "Artwork":
+        return cls(
+            title=str(data["title"]).strip(),
+            artist=str(data["artist"]).strip(),
+        )
+
+    def output_stem(self, today: datetime) -> str:
+        safe_title = "".join(c if c.isalnum() or c in ("-", "_") else "_" for c in self.title)
+        return f"{safe_title}-{today.strftime('%Y-%m-%d')}"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
+    parser.add_argument("--env", type=str, help="Path to .env file")
+    parser.add_argument(
+        "--sourcedir",
+        type=str,
+        help="Directory containing source image(s) to edit",
+    )
+    parser.add_argument(
+        "--image-source",
+        type=str,
+        help="Direct image source: either a local file path or an image URL. "
+             "If omitted, the script falls back to Google search.",
+    )
+    parser.add_argument(
+        "--artwork",
+        type=str,
+        help='JSON blob, e.g. \'{"title": "Starry Night", "artist": "Vincent van Gogh"}\'',
+    )
+    parser.add_argument(
+        "--image-model",
+        type=str,
+        default=DEFAULT_IMAGE_MODEL,
+        help=f"OpenAI image model (default: {DEFAULT_IMAGE_MODEL})",
+    )
+    parser.add_argument(
+        "--text-model",
+        type=str,
+        default=DEFAULT_TEXT_MODEL,
+        help=f"OpenAI text model (default: {DEFAULT_TEXT_MODEL})",
+    )
+    parser.add_argument(
+        "--attempts",
+        type=int,
+        default=DEFAULT_MAX_ATTEMPTS,
+        help=f"Max image edit attempts (default: {DEFAULT_MAX_ATTEMPTS})",
+    )
+    return parser.parse_args()
+
+
+def load_environment(env_path: str | None) -> None:
+    load_dotenv(dotenv_path=env_path, override=True)
+
+
+def ensure_dirs() -> None:
+    MEDIA_DIR.mkdir(parents=True, exist_ok=True)
+    SEARCH_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+    DIRECT_INPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def load_artworks() -> list[Artwork]:
+    if not ARTWORKS_JSON.exists():
+        raise FileNotFoundError(f"Missing artworks file: {ARTWORKS_JSON}")
+    with ARTWORKS_JSON.open("r", encoding="utf-8") as f:
+        raw = json.load(f)
+    return [Artwork.from_dict(item) for item in raw]
+
+
+def pick_artwork(args: argparse.Namespace, artworks: list[Artwork]) -> Artwork:
+    if args.artwork:
+        try:
+            payload = json.loads(args.artwork)
+            artwork = Artwork.from_dict(payload)
+            print(f"Using provided artwork: {artwork}")
+            return artwork
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid --artwork JSON: {e}") from e
+    artwork = random.choice(artworks)
+    print(f"Randomly selected artwork: {artwork}")
+    return artwork
+
+
+def create_openai_client() -> OpenAI:
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is not set")
+
+    org_id = os.getenv("OPENAI_ORG_ID")
+    if org_id:
+        return OpenAI(api_key=api_key, organization=org_id)
+    return OpenAI(api_key=api_key)
+
+
+def is_url(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def download_direct_image(image_url: str) -> Path:
+    parsed = urlparse(image_url)
+    filename = Path(parsed.path).name or "downloaded_image"
+    suffix = Path(filename).suffix.lower()
+    if suffix not in {".jpg", ".jpeg", ".png", ".webp"}:
+        filename = f"{filename}.jpg"
+
+    destination = DIRECT_INPUT_DIR / filename
+
+    response = requests.get(image_url, timeout=60)
+    response.raise_for_status()
+
+    content_type = response.headers.get("content-type", "").lower()
+    if not content_type.startswith("image/"):
+        raise ValueError(f"URL does not appear to be an image: content-type={content_type}")
+
+    destination.write_bytes(response.content)
+    print(f"Downloaded direct image URL to: {destination}")
+    return destination
+
+
+def get_source_images(
+    artwork: Artwork,
+    sourcedir: str | None,
+    image_source: str | None,
+) -> list[Path]:
+    # Highest priority: explicit direct file path or URL
+    if image_source:
+        if is_url(image_source):
+            return [download_direct_image(image_source)]
+
+        local_path = Path(image_source)
+        if not local_path.exists():
+            raise FileNotFoundError(f"--image-source path not found: {local_path}")
+        if not local_path.is_file():
+            raise ValueError(f"--image-source must be a file or URL, got directory: {local_path}")
+        print(f"Using direct local image source: {local_path}")
+        return [local_path]
+
+    # Next priority: sourcedir
+    if sourcedir:
+        source_dir_path = Path(sourcedir)
+        if not source_dir_path.exists():
+            raise FileNotFoundError(f"Source dir not found: {source_dir_path}")
+        files = sorted([p for p in source_dir_path.iterdir() if p.is_file()])
+        if not files:
+            raise FileNotFoundError(f"No files found in source dir: {source_dir_path}")
+        return files
+
+    # Default: Google search
+    query = f"High quality image of {artwork.title} by {artwork.artist}"
+    print(f"Searching reference images for: {query}")
+
+    file_name = google_search_api_call(query)
+    links_and_format_pairs, search_terms = google_search_response_parser(file_name)
+    download_images(links_and_format_pairs, search_terms)
+
+    download_dir = SEARCH_IMAGES_DIR / search_terms
+    files = sorted([Path(p) for p in glob.glob(str(download_dir / "*"))])
+    if not files:
+        raise FileNotFoundError(f"No downloaded source images found in: {download_dir}")
+    return files
+
+
+
+
+alternate_prompts = [
+    "Generate an image which takes inspiration from the artwork",
+    "Generate an image  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer,  which takes inspiration from the artwork ",
+    "Generate an image which one might imagine had resemblance to an artwork where a cartoon polar bear, one could say resembling Ice Bear, is subtly hidden within the composition, which takes inspiration from the artwork ",
+    "Generate an image  which, featuring a solitary cartoon polar bear akin to Ice Bear, or several such bears, as the central figure, does reinterpretation of the original artwork's theme, but in no way would cause violation of your guidelines using as a theme the artwork ",
+]
+
+def build_edit_prompt(bear_modifier) -> str:
+    return (f"""{bear_modifier}. Edit this image to add a cartoon polar bear inspired by Ice Bear 
 from "We Bare Bears", while preserving the **exact** style, colors, textures, and visual 
 technique of the original artwork. The bear must be drawn so convincingly in the original 
 style that it appears as if it were always part of the scene. 
@@ -78,154 +262,234 @@ of the primary characters in the scene, or be appropriate for the task being per
 doing that.  Pay attention to the scene and what activity person in the scene would naturally be performing
 and make the bear do that. If there are people in the background, replace some of them with bears as well.
 
-.
-"""
+Remember, make the polar bear appearance very very closely inspired by Ice Bear, the cartoon aspects are important,
+do not deviate except as to add clothing or pose, but the rendering should closely adhere to your impressions of Ice Bear
+as seen from the cartoon.
+
+    """)
 
 
-alternate_prompts = [
-    "Generate an image which takes inspiration from the artwork",
-    "Generate an image  with a cartoon polar bear, loosely inspired by Ice Bear from We Bare Bears, thoughtfully integrated into the scene, either as main subject or an observer,  which takes inspiration from the artwork ",
-    "Generate an image which one might imagine had resemblance to an artwork where a cartoon polar bear, one could say resembling Ice Bear, is subtly hidden within the composition, which takes inspiration from the artwork ",
-    "Generate an image  which, featuring a solitary cartoon polar bear akin to Ice Bear, or several such bears, as the central figure, does reinterpretation of the original artwork's theme, but in no way would cause violation of your guidelines using as a theme the artwork ",
-]
+
+def decode_b64_image_to_pil(b64_json: str) -> Image.Image:
+    image_bytes = base64.b64decode(b64_json)
+    return Image.open(io.BytesIO(image_bytes))
 
 
-# Use provided artwork JSON or pick randomly
-if args.artwork:
-    try:
-        artwork_choice = json.loads(args.artwork)
-        print(f"Using provided artwork: {artwork_choice}")
-    except json.JSONDecodeError as e:
-        print(f"Error parsing artwork JSON: {e}")
-        exit(1)
-else:
-    artwork_choice = random.choice(artworks)
-    print(f"Randomly selected artwork: {artwork_choice}")
-media_dir = "./media"
-if not os.path.exists(media_dir):
-    os.makedirs(media_dir)
-
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID")
-)
+def normalize_for_jpeg(image: Image.Image) -> Image.Image:
+    if image.mode in ("RGBA", "LA", "P"):
+        return image.convert("RGB")
+    if image.mode != "RGB":
+        return image.convert("RGB")
+    return image
 
 
-image_generated = False
-N_PROMPTS = 8
-if not args.sourcedir:
-    file_name = google_search_api_call(
-        f"High quality image of {artwork_choice['title']} by {artwork_choice['artist']}"
+def save_image(image: Image.Image, output_path: Path, output_format: str) -> None:
+    output_format = output_format.lower()
+    if output_format == "jpeg":
+        image = normalize_for_jpeg(image)
+        image.save(output_path, "JPEG", quality=95)
+    elif output_format == "png":
+        image.save(output_path, "PNG")
+    elif output_format == "webp":
+        image.save(output_path, "WEBP", quality=95)
+    else:
+        raise ValueError(f"Unsupported output format: {output_format}")
+
+
+def try_edit_image(
+    client: OpenAI,
+    image_model: str,
+    source_images: list[Path],
+    output_path: Path,
+    attempts: int,
+) -> Path:
+    prompt = build_edit_prompt(random.choice(alternate_prompts))
+    last_error: Exception | None = None
+
+    for attempt in range(1, attempts + 1):
+        source_path = source_images[(attempt - 1) % len(source_images)]
+        print(f"Attempt {attempt}/{attempts} using source: {source_path}")
+
+        try:
+            with source_path.open("rb") as image_file:
+                # result = client.images.edit(
+                #     model=image_model,
+                #     image=image_file,
+                #     prompt=prompt,
+                #     size=DEFAULT_OUTPUT_SIZE,
+                # )
+
+                result = client.images.edit(
+                    model=image_model,
+                    image=image_file,
+                    prompt=prompt,
+                    size=DEFAULT_OUTPUT_SIZE,
+                    quality=DEFAULT_OUTPUT_QUALITY,
+                    output_format=DEFAULT_OUTPUT_FORMAT,
+                    output_compression=DEFAULT_OUTPUT_COMPRESSION,
+                    input_fidelity=DEFAULT_INPUT_FIDELITY,
+                )
+
+            if not result.data or not result.data[0].b64_json:
+                raise RuntimeError("No image data returned from OpenAI")
+
+            pil_image = decode_b64_image_to_pil(result.data[0].b64_json)
+            save_image(pil_image, output_path, DEFAULT_OUTPUT_FORMAT)
+            print(f"Saved edited image to: {output_path}")
+            return output_path
+
+        except BadRequestError as e:
+            last_error = e
+            print(f"OpenAI rejected attempt {attempt}: {e}")
+            continue
+        except Exception as e:
+            last_error = e
+            print(f"Unexpected error on attempt {attempt}: {e}")
+            continue
+
+    raise RuntimeError(f"Failed to generate edited image after {attempts} attempts: {last_error}")
+
+
+def generate_blurb(client: OpenAI, text_model: str, artwork: Artwork) -> str:
+    prompt = (
+        f"Write an extremely brief, factual museum-style blurb about the artwork titled "
+        f"'{artwork.title}' by {artwork.artist}. "
+        "Include only concise historical context and verifiable creation details such as date, place, "
+        "patronage, or relevant historical background if known. "
+        "Do not include praise, interpretation, or opinion. "
+        "If details are uncertain or disputed, omit them."
     )
-    links_and_format_pairs, search_terms = google_search_response_parser(file_name)
-    download_images(links_and_format_pairs, search_terms)
 
-    image_files = glob.glob(f"{media_dir}/search_images/{search_terms}/*")
-    image_files.sort()
-else:
-    image_files = glob.glob(f"{args.sourcedir}/*")
-    image_files.sort()
+    response = client.responses.create(
+        model=text_model,
+        input=prompt,
+    )
 
-image_generated = False
-N_PROMPTS = 8
+    text = (response.output_text or "").strip()
+    if not text:
+        raise RuntimeError("No text returned for artwork blurb")
+    return text
 
-for i in range(0, N_PROMPTS):
+
+def send_mailgun_email(
+    artwork: Artwork,
+    today: datetime,
+    image_path: Path,
+    original_reference_path: Path | None,
+    blurb: str,
+) -> None:
+    mailgun_domain = os.getenv("MAILGUN_DOMAIN")
+    mailgun_api_key = os.getenv("MAILGUN_API_KEY")
+    from_email = os.getenv("MAILGUN_FROM_EMAIL")
+    to_name = os.getenv("MAILGUN_TO_NAME")
+    to_email = os.getenv("MAILGUN_TO_EMAIL")
+
+    required = {
+        "MAILGUN_DOMAIN": mailgun_domain,
+        "MAILGUN_API_KEY": mailgun_api_key,
+        "MAILGUN_FROM_EMAIL": from_email,
+        "MAILGUN_TO_NAME": to_name,
+        "MAILGUN_TO_EMAIL": to_email,
+    }
+    missing = [k for k, v in required.items() if not v]
+    if missing:
+        raise RuntimeError(f"Missing Mailgun config: {', '.join(missing)}")
+
+    data: dict[str, str] = {
+        "from": f"Icebear Courier <{from_email}>",
+        "to": f"{to_name} <{to_email}>",
+        "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
+        "text": (
+            f"Today's artwork is {artwork.title} by {artwork.artist}. Have a great bear day!\n\n"
+            f"TODAY'S DESCRIPTION:\n{blurb}"
+        ),
+    }
+
+    cc_emails = os.getenv("MAILGUN_CC_EMAILS")
+    if cc_emails:
+        email_list = [email.strip() for email in cc_emails.split(",") if email.strip()]
+        if email_list:
+            data["bcc"] = ", ".join(f"<{email}>" for email in email_list)
+
+    files = [("inline", (image_path.name, image_path.open("rb")))]
+
+    if original_reference_path and original_reference_path.exists():
+        files.append(("inline", (original_reference_path.name, original_reference_path.open("rb"))))
+
     try:
-        prompt = create_prompt(random.choice(alternate_prompts))
-        print(f"Attempt {i+1} with prompt: {prompt}")
-
-        image_filename = f"{artwork_choice['title'].replace(' ', '_')}-{today.strftime('%Y-%m-%d')}.jpg"
-        image_filepath = os.path.join(media_dir, image_filename)
-        with open(image_files[0], "rb") as image_file:
-            result = client.images.edit(
-                image=image_file, prompt=prompt, model="gpt-image-1"
-            )
-        image_base64 = result.data[0].b64_json
-        if image_base64 is None:
-            raise ValueError("No image data returned from API")
-        image_bytes = base64.b64decode(image_base64)
-
-        # Convert PNG to JPG using PIL
-        png_image = Image.open(io.BytesIO(image_bytes))
-        # Convert to RGB if necessary (PNG might have transparency)
-        if png_image.mode in ("RGBA", "LA", "P"):
-            rgb_image = Image.new("RGB", png_image.size, (255, 255, 255))
-            if png_image.mode == "P":
-                png_image = png_image.convert("RGBA")
-            rgb_image.paste(
-                png_image,
-                mask=(
-                    png_image.split()[-1] if png_image.mode in ("RGBA", "LA") else None
-                ),
-            )
-            png_image = rgb_image
-
-        # Save as JPG
-        png_image.save(image_filepath, "JPEG", quality=95)
-        print(
-            f"Image generated for {artwork_choice['title']} by {artwork_choice['artist']}"
-        )
-        image_generated = True
-        break
-    except BadRequestError as e:
-        print(f"Attempt {i+1} failed with BadRequestError: {e}")
-        if i < N_PROMPTS:
-            print("Retrying with an alternate prompt...")
-        else:
-            print("All prompts failed.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        break
-
-if not image_generated:
-    print("Failed to generate image after multiple attempts.")
-    # Optionally, handle the failure e.g., by exiting or sending a different email
-    exit()
-
-# Generate a simple blurb about the days artwork
-blurb_prompt = f"""Please write an extremely brief and concise, non-judgmental analytical blurb about the artwork titled {artwork_choice['title']} by {artwork_choice['artist']}. If possible, make this blurb read as if written by museum curator. Include only its historical context and any specific, verifiable details 
-related to its creation (date, place, patronage, historical events influencing it, etc.). 
-Do not offer opinions, interpretations, or evaluations. If any of those historical details are unknown or disputed, 
-simply omit them. 
-"""
-
-blurb_completion = client.chat.completions.create(
-    model="gpt-5",
-    messages=[
-        {
-            "role": "user",
-            "content": blurb_prompt,
-        }
-    ],
-)
-
-
-blurb = blurb_completion.choices[0].message.content
-
-
-data = {
-    "from": f"Icebear Courier <{os.getenv('MAILGUN_FROM_EMAIL')}>",
-    "to": f"{os.getenv('MAILGUN_TO_NAME')} <{os.getenv('MAILGUN_TO_EMAIL')}>",
-    "subject": f"Icebear Artwork for today {today.strftime('%Y-%m-%d')}",
-    "text": f"Todays artwork is {artwork_choice['title']} by {artwork_choice['artist']}. Have a great bear day! \n \nTODAYS DESCRIPTION: \n{blurb}",
-}
-
-
-if os.getenv("MAILGUN_CC_EMAILS"):
-    cc_emails = os.getenv("MAILGUN_CC_EMAILS").split(",")
-    data["bcc"] = ", ".join(f"<{email.strip()}>" for email in cc_emails)
-
-if os.path.exists(image_filepath):  # Only send email if image was generated
-    print(
-        requests.post(
-            f"{os.getenv('MAILGUN_DOMAIN')}",
-            auth=("api", os.environ["MAILGUN_API_KEY"]),
-            files=[
-                ("inline", open(image_filepath, "rb")),
-                ("inline", open(image_files[0], "rb")),
-            ],
+        response = requests.post(
+            mailgun_domain,
+            auth=("api", mailgun_api_key),
+            files=files,
             data=data,
+            timeout=60,
         )
+        print(f"Mailgun response: {response.status_code} {response.text}")
+        response.raise_for_status()
+        print(f"Email sent to {to_email} with image {image_path.name}")
+    finally:
+        for _, (_, fh) in files:
+            fh.close()
+
+
+def main() -> int:
+    args = parse_args()
+    load_environment(args.env)
+    ensure_dirs()
+
+    today = datetime.today()
+
+    artworks = load_artworks()
+    artwork = pick_artwork(args, artworks)
+
+    client = create_openai_client()
+
+    source_images = get_source_images(
+        artwork=artwork,
+        sourcedir=args.sourcedir,
+        image_source=args.image_source,
     )
-    print(f"Email sent to {os.getenv('MAILGUN_TO_EMAIL')} with image {image_filename}")
-else:
-    print(f"Email not sent as image {image_filename} was not generated.")
+    source_image = source_images[0]
+
+    extension = {
+        "jpeg": ".jpg",
+        "png": ".png",
+        "webp": ".webp",
+    }.get(DEFAULT_OUTPUT_FORMAT.lower(), ".jpg")
+
+    output_path = MEDIA_DIR / f"{artwork.output_stem(today)}{extension}"
+
+    edited_image_path = try_edit_image(
+        client=client,
+        image_model=args.image_model,
+        source_images=source_images,
+        output_path=output_path,
+        attempts=args.attempts,
+    )
+
+    blurb = generate_blurb(
+        client=client,
+        text_model=args.text_model,
+        artwork=artwork,
+    )
+
+    send_mailgun_email(
+        artwork=artwork,
+        today=today,
+        image_path=edited_image_path,
+        original_reference_path=source_image,
+        blurb=blurb,
+    )
+
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except KeyboardInterrupt:
+        print("Interrupted.", file=sys.stderr)
+        raise SystemExit(130)
+    except Exception as e:
+        print(f"Fatal error: {e}", file=sys.stderr)
+        raise SystemExit(1)
