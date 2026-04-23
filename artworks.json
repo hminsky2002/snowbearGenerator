@@ -11420,5 +11420,101 @@
     "artist": "Milo Winter",
     "year": "1916",
     "citation": "Classic American illustration style with clear narrative scenes for children’s editions :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "title": "Flying Machine Patent",
+    "artist": "Orville Wright and Wilbur Wright",
+    "year": "1906",
+    "citation": "US Patent No. 821,393 illustrating the Wright brothers’ system of aerodynamic control for powered flight"
+  },
+  {
+    "title": "Electric Lamp Patent",
+    "artist": "Thomas Edison",
+    "year": "1880",
+    "citation": "US Patent No. 223,898 showing the design of a practical incandescent light bulb"
+  },
+  {
+    "title": "Telephone Patent",
+    "artist": "Alexander Graham Bell",
+    "year": "1876",
+    "citation": "US Patent No. 174,465 depicting early apparatus for transmitting vocal sounds electrically"
+  },
+  {
+    "title": "Tesla Coil Patent",
+    "artist": "Nikola Tesla",
+    "year": "1891",
+    "citation": "US Patent No. 454,622 illustrating a system for producing high-voltage electrical currents"
+  },
+  {
+    "title": "Light Bulb Improvement Patent",
+    "artist": "Hiram Maxim",
+    "year": "1880",
+    "citation": "Patent drawings showing improvements to incandescent lighting systems and filaments"
+  },
+  {
+    "title": "Phonograph Patent",
+    "artist": "Thomas Edison",
+    "year": "1878",
+    "citation": "US Patent No. 200,521 illustrating the first device capable of recording and reproducing sound"
+  },
+  {
+    "title": "Airplane Design Patent",
+    "artist": "Glenn Curtiss",
+    "year": "1911",
+    "citation": "Patent drawings representing early aircraft design competing with Wright innovations"
+  },
+  {
+    "title": "Apple Computer Patent",
+    "artist": "Steve Jobs and Steve Wozniak",
+    "year": "1980",
+    "citation": "Patent illustrations related to personal computer architecture and user interaction"
+  },
+  {
+    "title": "iPhone Design Patent",
+    "artist": "Apple Inc. (Jonathan Ive and team)",
+    "year": "2007",
+    "citation": "Design patent D618,677 depicting the minimalist touchscreen smartphone form factor"
+  },
+  {
+    "title": "Helicopter Aerial Screw",
+    "artist": "Leonardo da Vinci",
+    "year": "1489",
+    "citation": "Conceptual drawing of a helical air screw often cited as a precursor to helicopter design"
+  },
+{
+    "title": "Phonograph Patent",
+    "artist": "Thomas Edison",
+    "year": "1878",
+    "citation": "US Patent No. 200,521 depicting a device for recording and reproducing sound"
+  },
+  {
+    "title": "Safety Elevator Brake Patent",
+    "artist": "Elisha Otis",
+    "year": "1861",
+    "citation": "Patent illustrating a safety mechanism preventing elevator free-fall, enabling skyscraper development"
+  },
+  {
+    "title": "Radio Apparatus Patent",
+    "artist": "Guglielmo Marconi",
+    "year": "1904",
+    "citation": "Patent for wireless telegraphy systems enabling long-distance radio communication"
+  },
+  {
+    "title": "Ballpoint Pen Patent",
+    "artist": "László Bíró",
+    "year": "1938",
+    "citation": "Patent illustrating a rolling ball mechanism for smooth ink delivery"
+  },
+  {
+    "title": "Transistor Patent",
+    "artist": "John Bardeen, Walter Brattain, and William Shockley",
+    "year": "1947",
+    "citation": "Bell Labs patent drawings representing the first semiconductor transistor"
+  },
+  {
+    "title": "Xerography Process Patent",
+    "artist": "Chester Carlson",
+    "year": "1942",
+    "citation": "Patent illustrating the dry photocopying process that led to modern copiers"
   }
 ]
