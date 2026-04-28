@@ -228,6 +228,11 @@ from "We Bare Bears", while preserving the **exact** style, colors, textures, an
 technique of the original artwork. The bear must be drawn so convincingly in the original 
 style that it appears as if it were always part of the scene. 
 
+Importantly, make the polar bear appearance very very closely inspired by Ice Bear drawing style, keeping the unique cartoon aspects are important,
+do not deviate except as to add clothing or pose, but the rendering should closely adhere to your impressions of Ice Bear
+as seen from the cartoon. Preserving and following the Ice Bear cartoon style is essential. Shape of body and head, proportions, expressions, size and placement
+of eyes, ears, nose and mouth, are key. Proportion of paws and body etc should all adhere to known examples of Ice Bear images.
+
 Make the **smallest possible changes** to the image — keep all original details, composition, 
 and elements intact unless absolutely necessary to integrate the bear. Match lighting, 
 shadows, brush strokes, and texture exactly. If objects would naturally block part of the 
@@ -262,9 +267,9 @@ of the primary characters in the scene, or be appropriate for the task being per
 doing that.  Pay attention to the scene and what activity person in the scene would naturally be performing
 and make the bear do that. If there are people in the background, replace some of them with bears as well.
 
-Remember, make the polar bear appearance very very closely inspired by Ice Bear, the cartoon aspects are important,
+Remember, make the polar bear's appearance very very closely inspired by Ice Bear, the cartoon aspects are important,
 do not deviate except as to add clothing or pose, but the rendering should closely adhere to your impressions of Ice Bear
-as seen from the cartoon.
+as seen from the cartoon. Preserving and following the Ice Bear cartoon style is essential.
 
     """)
 
