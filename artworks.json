@@ -11532,5 +11532,127 @@
   { "title": "The Oregon Trail", "artist": "Albert Bierstadt", "year": "1869", "citation": "Butler Institute of American Art" },
   { "title": "The Rocky Mountains, Lander’s Peak", "artist": "Albert Bierstadt", "year": "1863", "citation": "Metropolitan Museum of Art, 07.123" },
   { "title": "The Grand Canyon of the Yellowstone", "artist": "Thomas Moran", "year": "1872", "citation": "U.S. Department of the Interior Museum" },
-  { "title": "The Last Spike", "artist": "Thomas Hill", "year": "1881", "citation": "Central Pacific Railroad Photographic History Museum" }
+  { "title": "The Last Spike", "artist": "Thomas Hill", "year": "1881", "citation": "Central Pacific Railroad Photographic History Museum" },
+  {
+    "title": "Alice with the Cheshire Cat",
+    "artist": "John Tenniel",
+    "year": "1865",
+    "citation": "Alice's Adventures in Wonderland"
+  },
+  {
+    "title": "The Lizard Lounge",
+    "artist": "Ralph Steadman",
+    "year": "1971",
+    "citation": "Fear and Loathing in Las Vegas (Rolling Stone illustration)"
+  },
+  {
+    "title": "The Hill: Hobbiton-across-the-Water",
+    "artist": "J.R.R. Tolkien",
+    "year": "1937",
+    "citation": "The Hobbit"
+  },
+  {
+    "title": "The Cowardly Lion",
+    "artist": "W.W. Denslow",
+    "year": "1900",
+    "citation": "The Wonderful Wizard of Oz"
+  },
+  {
+    "title": "Peter Pan in Kensington Gardens",
+    "artist": "Arthur Rackham",
+    "year": "1906",
+    "citation": "Peter Pan in Kensington Gardens"
+  },
+  {
+    "title": "The Raven",
+    "artist": "Gustave Doré",
+    "year": "1883",
+    "citation": "The Raven by Edgar Allan Poe"
+  },
+  {
+    "title": "Ahab's Monomania",
+    "artist": "Rockwell Kent",
+    "year": "1930",
+    "citation": "Moby Dick"
+  },
+  {
+    "title": "The Little Prince Drawing the Boa Constrictor",
+    "artist": "Antoine de Saint-Exupéry",
+    "year": "1943",
+    "citation": "The Little Prince"
+  },
+  {
+    "title": "The Ghost of Christmas Present",
+    "artist": "John Leech",
+    "year": "1843",
+    "citation": "A Christmas Carol"
+  },
+  {
+    "title": "Cover Illustration for 'The Tale of Peter Rabbit'",
+    "artist": "Beatrix Potter",
+    "year": "1902",
+    "citation": "The Tale of Peter Rabbit"
+  },
+  {
+    "title": "Winnie-the-Pooh and Christopher Robin",
+    "artist": "E.H. Shepard",
+    "year": "1926",
+    "citation": "Winnie-the-Pooh"
+  },
+  {
+    "title": "The Wild Things Dance",
+    "artist": "Maurice Sendak",
+    "year": "1963",
+    "citation": "Where the Wild Things Are"
+  },
+  {
+    "title": "The Caterpillar",
+    "artist": "Eric Carle",
+    "year": "1969",
+    "citation": "The Very Hungry Caterpillar"
+  },
+  {
+    "title": "The Lorax",
+    "artist": "Dr. Seuss",
+    "year": "1971",
+    "citation": "The Lorax"
+  },
+  {
+    "title": "The Giant Peach Takes Flight",
+    "artist": "Quentin Blake",
+    "year": "1995",
+    "citation": "James and the Giant Peach (Revised Edition)"
+  },
+  {
+    "title": "Don Quixote and Sancho Panza",
+    "artist": "Gustave Doré",
+    "year": "1863",
+    "citation": "Don Quixote"
+  },
+  {
+    "title": "Paddington at the Station",
+    "artist": "Peggy Fortnum",
+    "year": "1958",
+    "citation": "A Bear Called Paddington"
+  },
+  {
+    "title": "Gulliver in Lilliput",
+    "artist": "J.J. Grandville",
+    "year": "1838",
+    "citation": "Gulliver's Travels"
+  },
+  {
+    "title": "The Giving Tree",
+    "artist": "Shel Silverstein",
+    "year": "1964",
+    "citation": "The Giving Tree"
+  },
+  {
+    "title": "Long John Silver",
+    "artist": "N.C. Wyeth",
+    "year": "1911",
+    "citation": "Treasure Island"
+  }
 ]
+
+
