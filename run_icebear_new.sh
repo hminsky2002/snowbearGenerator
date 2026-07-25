@@ -5,10 +5,12 @@ cd ~/src/snowbearGenerator
 
 # Activate virtual environment
 source venv/bin/activate
-set -a source .env
+set -a
+source .env
+set +a
 
 # Run the script
-python icebear-gen-image-assisted.py
+python icebear-gen-image-assisted.py --env .env
 
 # Deactivate virtual environment
 deactivate

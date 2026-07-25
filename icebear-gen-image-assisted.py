@@ -133,15 +133,41 @@ def pick_artwork(args: argparse.Namespace, artworks: list[Artwork]) -> Artwork:
     return artwork
 
 
+def resolve_openai_base_url() -> str:
+    """Return a usable OpenAI base URL.
+
+    The OpenAI SDK reads OPENAI_BASE_URL when set. An empty value or a host
+    without an http(s) scheme produces:
+      httpx.UnsupportedProtocol: Request URL is missing an 'http://' or 'https://' protocol
+    which the SDK wraps as APIConnectionError("Connection error.").
+    """
+    default = "https://api.openai.com/v1"
+    raw = (os.getenv("OPENAI_BASE_URL") or "").strip()
+    if not raw:
+        return default
+
+    parsed = urlparse(raw)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        raise RuntimeError(
+            f"OPENAI_BASE_URL must be an absolute http(s) URL, got {raw!r}. "
+            f"Example: {default}"
+        )
+    return raw.rstrip("/")
+
+
 def create_openai_client() -> OpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set")
 
-    org_id = os.getenv("OPENAI_ORG_ID")
+    base_url = resolve_openai_base_url()
+    org_id = os.getenv("OPENAI_ORG_ID") or None
+    print(f"OpenAI base_url: {base_url}")
+
+    kwargs: dict[str, Any] = {"api_key": api_key, "base_url": base_url}
     if org_id:
-        return OpenAI(api_key=api_key, organization=org_id)
-    return OpenAI(api_key=api_key)
+        kwargs["organization"] = org_id
+    return OpenAI(**kwargs)
 
 
 def is_url(value: str) -> bool:
@@ -462,7 +488,10 @@ def main() -> int:
         "webp": ".webp",
     }.get(DEFAULT_OUTPUT_FORMAT.lower(), ".jpg")
 
-    output_path = MEDIA_DIR / f"{artwork.output_stem(today)}{extension}"
+    if args.image_source:
+        output_path = MEDIA_DIR / f"icebear-{source_image.stem}{extension}"
+    else:
+        output_path = MEDIA_DIR / f"{artwork.output_stem(today)}{extension}"
 
     edited_image_path = try_edit_image(
         client=client,
