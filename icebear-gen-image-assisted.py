@@ -4,28 +4,23 @@ from __future__ import annotations
 
 import argparse
 import base64
-import glob
+import html
 import io
 import json
 import os
 import random
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 from dotenv import load_dotenv
 from openai import BadRequestError, OpenAI
 from PIL import Image
-
-from google_custom_search_image_downloader import (
-    download_images,
-    google_search_api_call,
-    google_search_response_parser,
-)
 
 
 DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
@@ -42,23 +37,78 @@ MEDIA_DIR = Path("./media")
 SEARCH_IMAGES_DIR = MEDIA_DIR / "search_images"
 ARTWORKS_JSON = Path("./artworks.json")
 DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
+MAX_REFERENCE_DOWNLOADS = 3
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8,text/html;q=0.4",
+}
+_USELESS_CITATION = re.compile(
+    r"^(:contentReference|not specified|unspecified|n/?a)\b",
+    re.IGNORECASE,
+)
+_OG_IMAGE_PATTERNS = [
+    re.compile(
+        r'<meta[^>]+property=["\']og:image:secure_url["\'][^>]+content=["\']([^"\']+)',
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image:secure_url["\']',
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+        re.IGNORECASE,
+    ),
+]
 
 
 @dataclass
 class Artwork:
     title: str
     artist: str
+    year: str | None = None
+    citation: str | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Artwork":
+        year = data.get("year")
+        citation = data.get("citation")
         return cls(
             title=str(data["title"]).strip(),
             artist=str(data["artist"]).strip(),
+            year=_clean_citation(year),
+            citation=_clean_citation(citation),
         )
 
     def output_stem(self, today: datetime) -> str:
         safe_title = "".join(c if c.isalnum() or c in ("-", "_") else "_" for c in self.title)
         return f"{safe_title}-{today.strftime('%Y-%m-%d')}"
+
+    def search_description(self) -> str:
+        lines = [
+            f"Title: {self.title}",
+            f"Artist: {self.artist}",
+        ]
+        if self.year:
+            lines.append(f"Year: {self.year}")
+        if self.citation:
+            lines.append(f"Citation / known source: {self.citation}")
+        return "\n".join(lines)
 
 
 def parse_args() -> argparse.Namespace:
@@ -73,7 +123,7 @@ def parse_args() -> argparse.Namespace:
         "--image-source",
         type=str,
         help="Direct image source: either a local file path or an image URL. "
-             "If omitted, the script falls back to Google search.",
+             "If omitted, ChatGPT web search picks the best matching reference image.",
     )
     parser.add_argument(
         "--artwork",
@@ -170,9 +220,256 @@ def create_openai_client() -> OpenAI:
     return OpenAI(**kwargs)
 
 
+def _clean_optional_text(value: Any) -> str | None:
+    if value is None:
+        return None
+    text = str(value).strip()
+    return text or None
+
+
+def _clean_citation(value: Any) -> str | None:
+    text = _clean_optional_text(value)
+    if not text or _USELESS_CITATION.match(text):
+        return None
+    return text
+
+
+def _sanitize_filename(value: str) -> str:
+    sanitized = re.sub(r"[^A-Za-z0-9._-]+", "_", value).strip("._")
+    return sanitized or "artwork"
+
+
 def is_url(value: str) -> bool:
     parsed = urlparse(value)
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def _looks_like_image(content: bytes, content_type: str) -> bool:
+    if content_type.startswith("image/"):
+        return True
+    return content.startswith((b"\x89PNG", b"\xff\xd8\xff", b"GIF87a", b"GIF89a", b"RIFF"))
+
+
+def _extract_og_image(page_html: str, page_url: str) -> str | None:
+    for pattern in _OG_IMAGE_PATTERNS:
+        match = pattern.search(page_html)
+        if not match:
+            continue
+        raw = html.unescape(match.group(1).strip())
+        if raw.startswith("//"):
+            raw = f"{urlparse(page_url).scheme}:{raw}"
+        resolved = urljoin(page_url, raw)
+        if is_url(resolved):
+            return resolved
+    return None
+
+
+def _filename_for_url(image_url: str, artwork: Artwork, index: int) -> str:
+    parsed = urlparse(image_url)
+    suffix = Path(parsed.path).suffix.lower()
+    if suffix not in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
+        suffix = ".jpg"
+    stem = _sanitize_filename(f"{artwork.artist}_{artwork.title}")
+    return f"{index}_{stem}{suffix}"
+
+
+def _extract_json_object(text: str) -> dict[str, Any]:
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
+        cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        parsed = json.loads(cleaned)
+        if isinstance(parsed, dict):
+            return parsed
+    except json.JSONDecodeError:
+        pass
+
+    match = re.search(r"\{.*\}", cleaned, re.DOTALL)
+    if not match:
+        raise ValueError(f"No JSON object found in model output: {text[:400]}")
+    parsed = json.loads(match.group(0))
+    if not isinstance(parsed, dict):
+        raise ValueError("Model JSON was not an object")
+    return parsed
+
+
+def _collect_urls(*groups: Any) -> list[str]:
+    seen: set[str] = set()
+    urls: list[str] = []
+    for group in groups:
+        if group is None:
+            continue
+        values = group if isinstance(group, list) else [group]
+        for value in values:
+            if not isinstance(value, str):
+                continue
+            candidate = value.strip().rstrip(").,]}'\"")
+            if not is_url(candidate) or candidate in seen:
+                continue
+            seen.add(candidate)
+            urls.append(candidate)
+    return urls
+
+
+def _image_urls_from_web_search(response: Any) -> list[str]:
+    urls: list[str] = []
+    for item in getattr(response, "output", None) or []:
+        item_type = getattr(item, "type", None)
+        dumped = item.model_dump() if hasattr(item, "model_dump") else None
+        if item_type != "web_search_call" and not (
+            isinstance(dumped, dict) and dumped.get("type") == "web_search_call"
+        ):
+            continue
+
+        results = getattr(item, "results", None)
+        if results is None and isinstance(dumped, dict):
+            results = dumped.get("results")
+        if not results:
+            continue
+
+        for result in results:
+            if isinstance(result, dict):
+                urls.extend(
+                    _collect_urls(
+                        result.get("image_url"),
+                        result.get("url"),
+                    )
+                )
+            else:
+                urls.extend(
+                    _collect_urls(
+                        getattr(result, "image_url", None),
+                        getattr(result, "url", None),
+                    )
+                )
+    return urls
+
+
+def _create_artwork_image_search(
+    client: OpenAI,
+    text_model: str,
+    prompt: str,
+) -> Any:
+    attempts: list[dict[str, Any]] = [
+        {
+            "tools": [
+                {
+                    "type": "web_search",
+                    "search_content_types": ["image", "text"],
+                    "image_settings": {"max_results": 8, "caption": True},
+                }
+            ],
+            "tool_choice": {"type": "web_search"},
+            "include": ["web_search_call.results"],
+        },
+        {
+            "tools": [{"type": "web_search"}],
+            "tool_choice": {"type": "web_search"},
+        },
+        {
+            "tools": [{"type": "web_search"}],
+        },
+    ]
+
+    last_error: Exception | None = None
+    for extra in attempts:
+        try:
+            return client.responses.create(
+                model=text_model,
+                input=prompt,
+                **extra,
+            )
+        except BadRequestError as e:
+            last_error = e
+            print(f"Retrying ChatGPT image search with a simpler request: {e}")
+
+    raise RuntimeError(f"ChatGPT image search failed: {last_error}")
+
+
+def find_artwork_image_urls(
+    client: OpenAI,
+    text_model: str,
+    artwork: Artwork,
+) -> list[str]:
+    prompt = f"""Search the web for the most appropriate high-quality reference image of this exact artwork:
+
+{artwork.search_description()}
+
+Requirements:
+- Identify THIS specific work, not a similarly titled piece, tribute, parody, meme, merchandise photo, or a crop of a different painting.
+- Prefer museum, Wikimedia Commons, official artist, or publisher pages. If the citation is a product listing URL, start there.
+- Prefer a complete, well-lit view of the original work over details, frames on a wall, or screenshots.
+- Prefer a direct image file URL (jpg/jpeg/png/webp) that can be downloaded.
+
+Return JSON only, with no markdown:
+{{
+  "url": "https://...",
+  "alternate_urls": ["https://...", "https://..."],
+  "reason": "one sentence explaining why this is the correct work"
+}}
+"""
+
+    print(f"Asking ChatGPT to find a reference image for: {artwork.title} by {artwork.artist}")
+    response = _create_artwork_image_search(client, text_model, prompt)
+    search_urls = _image_urls_from_web_search(response)
+
+    model_urls: list[str] = []
+    text = (response.output_text or "").strip()
+    if text:
+        try:
+            payload = _extract_json_object(text)
+            reason = payload.get("reason")
+            if reason:
+                print(f"ChatGPT image choice: {reason}")
+            model_urls = _collect_urls(payload.get("url"), payload.get("alternate_urls"))
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"Could not parse ChatGPT image-URL JSON: {e}")
+            url_matches = re.findall(r"https?://[^\s\"'<>]+", text)
+            model_urls = _collect_urls(url_matches)
+
+    urls = _collect_urls(model_urls, search_urls)
+    if not urls:
+        raise RuntimeError(
+            f"ChatGPT did not return a usable image URL for {artwork.title} by {artwork.artist}"
+        )
+
+    print(f"ChatGPT selected {len(urls)} candidate image URL(s)")
+    for index, url in enumerate(urls, start=1):
+        print(f"  {index}. {url}")
+    return urls
+
+
+def download_image_from_url(image_url: str, destination: Path, depth: int = 0) -> Path:
+    if depth > 2:
+        raise ValueError(f"Could not resolve an image from: {image_url}")
+
+    headers = dict(BROWSER_HEADERS)
+    host = urlparse(image_url).netloc.lower()
+    if "wikimedia.org" in host or "wikipedia.org" in host:
+        headers["Referer"] = "https://commons.wikimedia.org/"
+
+    response = requests.get(image_url, headers=headers, timeout=60, allow_redirects=True)
+    response.raise_for_status()
+
+    content_type = response.headers.get("content-type", "").split(";")[0].strip().lower()
+    content = response.content
+    looks_like_html = content_type.startswith("text/html") or (
+        not _looks_like_image(content, content_type) and b"<html" in content[:4000].lower()
+    )
+    if looks_like_html:
+        og_url = _extract_og_image(response.text, response.url or image_url)
+        if not og_url:
+            raise ValueError(f"URL is a web page, not an image: {image_url}")
+        print(f"Resolved page to og:image: {og_url}")
+        return download_image_from_url(og_url, destination, depth=depth + 1)
+
+    if not _looks_like_image(content, content_type):
+        raise ValueError(f"URL does not appear to be an image: content-type={content_type}")
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(content)
+    return destination
 
 
 def download_direct_image(image_url: str) -> Path:
@@ -183,15 +480,7 @@ def download_direct_image(image_url: str) -> Path:
         filename = f"{filename}.jpg"
 
     destination = DIRECT_INPUT_DIR / filename
-
-    response = requests.get(image_url, timeout=60)
-    response.raise_for_status()
-
-    content_type = response.headers.get("content-type", "").lower()
-    if not content_type.startswith("image/"):
-        raise ValueError(f"URL does not appear to be an image: content-type={content_type}")
-
-    destination.write_bytes(response.content)
+    download_image_from_url(image_url, destination)
     print(f"Downloaded direct image URL to: {destination}")
     return destination
 
@@ -200,6 +489,8 @@ def get_source_images(
     artwork: Artwork,
     sourcedir: str | None,
     image_source: str | None,
+    client: OpenAI,
+    text_model: str,
 ) -> list[Path]:
     # Highest priority: explicit direct file path or URL
     if image_source:
@@ -224,19 +515,29 @@ def get_source_images(
             raise FileNotFoundError(f"No files found in source dir: {source_dir_path}")
         return files
 
-    # Default: Google search
-    query = f"High quality image of {artwork.title} by {artwork.artist}"
-    print(f"Searching reference images for: {query}")
+    urls = find_artwork_image_urls(client, text_model, artwork)
+    download_dir = SEARCH_IMAGES_DIR / _sanitize_filename(f"{artwork.title}_{artwork.artist}")
+    download_dir.mkdir(parents=True, exist_ok=True)
 
-    file_name = google_search_api_call(query)
-    links_and_format_pairs, search_terms = google_search_response_parser(file_name)
-    download_images(links_and_format_pairs, search_terms)
+    downloaded: list[Path] = []
+    last_error: Exception | None = None
+    for index, url in enumerate(urls):
+        if len(downloaded) >= MAX_REFERENCE_DOWNLOADS:
+            break
+        destination = download_dir / _filename_for_url(url, artwork, index)
+        try:
+            path = download_image_from_url(url, destination)
+            print(f"Downloaded ChatGPT-selected image: {url} -> {path}")
+            downloaded.append(path)
+        except Exception as e:
+            last_error = e
+            print(f"Failed to download {url}: {e}")
 
-    download_dir = SEARCH_IMAGES_DIR / search_terms
-    files = sorted([Path(p) for p in glob.glob(str(download_dir / "*"))])
-    if not files:
-        raise FileNotFoundError(f"No downloaded source images found in: {download_dir}")
-    return files
+    if not downloaded:
+        raise FileNotFoundError(
+            f"No downloadable ChatGPT image URLs for {artwork.title} by {artwork.artist}: {last_error}"
+        )
+    return downloaded
 
 
 
@@ -479,6 +780,8 @@ def main() -> int:
         artwork=artwork,
         sourcedir=args.sourcedir,
         image_source=args.image_source,
+        client=client,
+        text_model=args.text_model,
     )
     source_image = source_images[0]
 
