@@ -33,7 +33,8 @@ DEFAULT_OUTPUT_COMPRESSION = int(os.getenv("OPENAI_IMAGE_COMPRESSION", "90"))
 DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "high")
 DEFAULT_MAX_ATTEMPTS = int(os.getenv("OPENAI_IMAGE_MAX_ATTEMPTS", "4"))
 
-MEDIA_DIR = Path("./media")
+MEDIA_ROOT = Path("./media")
+MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
 SEARCH_IMAGES_DIR = MEDIA_DIR / "search_images"
 ARTWORKS_JSON = Path("./artworks.json")
 DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
@@ -166,9 +167,11 @@ def load_environment(env_path: str | None) -> None:
 
 
 def ensure_dirs() -> None:
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
     MEDIA_DIR.mkdir(parents=True, exist_ok=True)
     SEARCH_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
     DIRECT_INPUT_DIR.mkdir(parents=True, exist_ok=True)
+    print(f"Using process-local media dir: {MEDIA_DIR.resolve()}")
 
 
 def load_artworks() -> list[Artwork]:
