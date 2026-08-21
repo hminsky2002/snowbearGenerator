@@ -38,6 +38,7 @@ SEARCH_IMAGES_DIR = MEDIA_DIR / "search_images"
 ARTWORKS_JSON = Path("./artworks.json")
 DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
 MAX_REFERENCE_DOWNLOADS = 3
+MAX_ARTWORK_TRIES = 10
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -111,6 +112,15 @@ class Artwork:
         return "\n".join(lines)
 
 
+class LowConfidenceImageMatch(Exception):
+    def __init__(self, artwork: Artwork, reason: str) -> None:
+        self.artwork = artwork
+        self.reason = reason
+        super().__init__(
+            f"Low-confidence image match for {artwork.title} by {artwork.artist}: {reason}"
+        )
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate IceBear artwork images")
     parser.add_argument("--env", type=str, help="Path to .env file")
@@ -169,7 +179,11 @@ def load_artworks() -> list[Artwork]:
     return [Artwork.from_dict(item) for item in raw]
 
 
-def pick_artwork(args: argparse.Namespace, artworks: list[Artwork]) -> Artwork:
+def pick_artwork(
+    args: argparse.Namespace,
+    artworks: list[Artwork],
+    exclude: set[tuple[str, str]] | None = None,
+) -> Artwork:
     if args.artwork:
         try:
             payload = json.loads(args.artwork)
@@ -178,7 +192,12 @@ def pick_artwork(args: argparse.Namespace, artworks: list[Artwork]) -> Artwork:
             return artwork
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid --artwork JSON: {e}") from e
-    artwork = random.choice(artworks)
+
+    skipped = exclude or set()
+    candidates = [item for item in artworks if (item.title, item.artist) not in skipped]
+    if not candidates:
+        raise RuntimeError("No remaining artworks to try")
+    artwork = random.choice(candidates)
     print(f"Randomly selected artwork: {artwork}")
     return artwork
 
@@ -387,6 +406,17 @@ def _create_artwork_image_search(
     raise RuntimeError(f"ChatGPT image search failed: {last_error}")
 
 
+def _is_high_confidence(payload: dict[str, Any]) -> bool:
+    high_confidence = payload.get("high_confidence")
+    if isinstance(high_confidence, bool):
+        return high_confidence
+    if isinstance(high_confidence, str):
+        return high_confidence.strip().lower() in {"true", "yes", "high"}
+
+    confidence = str(payload.get("confidence") or "").strip().lower()
+    return confidence == "high"
+
+
 def find_artwork_image_urls(
     client: OpenAI,
     text_model: str,
@@ -401,12 +431,15 @@ Requirements:
 - Prefer museum, Wikimedia Commons, official artist, or publisher pages. If the citation is a product listing URL, start there.
 - Prefer a complete, well-lit view of the original work over details, frames on a wall, or screenshots.
 - Prefer a direct image file URL (jpg/jpeg/png/webp) that can be downloaded.
+- Set high_confidence to true only if you are highly confident the chosen URL is this exact artwork.
+- If you cannot find this exact work with high confidence, set high_confidence to false and url to null.
 
 Return JSON only, with no markdown:
 {{
-  "url": "https://...",
+  "url": "https://..." or null,
   "alternate_urls": ["https://...", "https://..."],
-  "reason": "one sentence explaining why this is the correct work"
+  "high_confidence": true,
+  "reason": "one sentence explaining why this is or is not a confident match"
 }}
 """
 
@@ -415,23 +448,33 @@ Return JSON only, with no markdown:
     search_urls = _image_urls_from_web_search(response)
 
     model_urls: list[str] = []
+    reason = ""
+    high_confidence = False
     text = (response.output_text or "").strip()
     if text:
         try:
             payload = _extract_json_object(text)
-            reason = payload.get("reason")
+            reason = str(payload.get("reason") or "").strip()
             if reason:
                 print(f"ChatGPT image choice: {reason}")
+            high_confidence = _is_high_confidence(payload)
             model_urls = _collect_urls(payload.get("url"), payload.get("alternate_urls"))
         except (json.JSONDecodeError, ValueError) as e:
             print(f"Could not parse ChatGPT image-URL JSON: {e}")
-            url_matches = re.findall(r"https?://[^\s\"'<>]+", text)
-            model_urls = _collect_urls(url_matches)
+            reason = str(e)
+            high_confidence = False
+
+    if not high_confidence:
+        raise LowConfidenceImageMatch(
+            artwork,
+            reason or "ChatGPT did not report high confidence for this artwork",
+        )
 
     urls = _collect_urls(model_urls, search_urls)
     if not urls:
-        raise RuntimeError(
-            f"ChatGPT did not return a usable image URL for {artwork.title} by {artwork.artist}"
+        raise LowConfidenceImageMatch(
+            artwork,
+            reason or "ChatGPT reported high confidence but returned no image URL",
         )
 
     print(f"ChatGPT selected {len(urls)} candidate image URL(s)")
@@ -772,17 +815,45 @@ def main() -> int:
     today = datetime.today()
 
     artworks = load_artworks()
-    artwork = pick_artwork(args, artworks)
-
     client = create_openai_client()
 
-    source_images = get_source_images(
-        artwork=artwork,
-        sourcedir=args.sourcedir,
-        image_source=args.image_source,
-        client=client,
-        text_model=args.text_model,
-    )
+    artwork: Artwork | None = None
+    source_images: list[Path] | None = None
+    last_error: Exception | None = None
+    tried: set[tuple[str, str]] = set()
+    max_tries = 1 if args.artwork or args.image_source or args.sourcedir else MAX_ARTWORK_TRIES
+
+    for attempt in range(1, max_tries + 1):
+        try:
+            artwork = pick_artwork(args, artworks, exclude=tried)
+        except RuntimeError as e:
+            last_error = e
+            print(f"No more unused artworks to try: {e}")
+            break
+        tried.add((artwork.title, artwork.artist))
+        if max_tries > 1:
+            print(
+                f"Artwork search attempt {attempt}/{max_tries}: "
+                f"{artwork.title} by {artwork.artist}"
+            )
+        try:
+            source_images = get_source_images(
+                artwork=artwork,
+                sourcedir=args.sourcedir,
+                image_source=args.image_source,
+                client=client,
+                text_model=args.text_model,
+            )
+            break
+        except LowConfidenceImageMatch as e:
+            last_error = e
+            print(f"Skipping artwork (low confidence): {e}")
+
+    if artwork is None or source_images is None:
+        raise RuntimeError(
+            f"Gave up after {len(tried)} artwork "
+            f"{'try' if len(tried) == 1 else 'tries'}: {last_error}"
+        )
     source_image = source_images[0]
 
     extension = {
