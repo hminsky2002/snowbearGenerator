@@ -1,4 +1,185 @@
 [
+  {
+    "title": "Pat the Bunny",
+    "artist": "Dorothy Kunhardt",
+    "year": "1940",
+    "citation": "First published by Simon & Schuster"
+  },
+  {
+    "title": "Make Way for Ducklings",
+    "artist": "Robert McCloskey",
+    "year": "1941",
+    "citation": "First published by Viking Press"
+  },
+  {
+    "title": "The Little Engine That Could",
+    "artist": "Watty Piper and Lois Lenski",
+    "year": "1930",
+    "citation": "First published by Platt & Munk"
+  },
+  {
+    "title": "The Little House",
+    "artist": "Virginia Lee Burton",
+    "year": "1942",
+    "citation": "First published by Houghton Mifflin"
+  },
+  {
+    "title": "The Carrot Seed",
+    "artist": "Ruth Krauss and Crockett Johnson",
+    "year": "1945",
+    "citation": "First published by Harper & Brothers"
+  },
+  {
+    "title": "Caps for Sale",
+    "artist": "Esphyr Slobodkina",
+    "year": "1940",
+    "citation": "First published by W. R. Scott"
+  },
+  {
+    "title": "The Runaway Bunny",
+    "artist": "Margaret Wise Brown and Clement Hurd",
+    "year": "1942",
+    "citation": "First published by Harper & Brothers"
+  },
+  {
+    "title": "Blueberries for Sal",
+    "artist": "Robert McCloskey",
+    "year": "1948",
+    "citation": "First published by Viking Press"
+  },
+  {
+    "title": "The Monster at the End of This Book",
+    "artist": "Jon Stone and Michael Smollin",
+    "year": "1971",
+    "citation": "First published as a Little Golden Book"
+  },
+  {
+    "title": "Jumanji",
+    "artist": "Chris Van Allsburg",
+    "year": "1981",
+    "citation": "First published by Houghton Mifflin"
+  },
+  {
+    "title": "Where the Wild Things Are",
+    "artist": "Maurice Sendak",
+    "year": "1963",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Goodnight Moon",
+    "artist": "Margaret Wise Brown and Clement Hurd",
+    "year": "1947",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Very Hungry Caterpillar",
+    "artist": "Eric Carle",
+    "year": "1969",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Cat in the Hat",
+    "artist": "Dr. Seuss",
+    "year": "1957",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Green Eggs and Ham",
+    "artist": "Dr. Seuss",
+    "year": "1960",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Snowy Day",
+    "artist": "Ezra Jack Keats",
+    "year": "1962",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Tale of Peter Rabbit",
+    "artist": "Beatrix Potter",
+    "year": "1902",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Giving Tree",
+    "artist": "Shel Silverstein",
+    "year": "1964",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Corduroy",
+    "artist": "Don Freeman",
+    "year": "1968",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Brown Bear, Brown Bear, What Do You See?",
+    "artist": "Bill Martin Jr. and Eric Carle",
+    "year": "1967",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Alexander and the Terrible, Horrible, No Good, Very Bad Day",
+    "artist": "Judith Viorst and Ray Cruz",
+    "year": "1972",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Strega Nona",
+    "artist": "Tomie dePaola",
+    "year": "1975",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "The Gruffalo",
+    "artist": "Julia Donaldson and Axel Scheffler",
+    "year": "1999",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Chicka Chicka Boom Boom",
+    "artist": "Bill Martin Jr., John Archambault, and Lois Ehlert",
+    "year": "1989",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Love You Forever",
+    "artist": "Robert Munsch and Sheila McGraw",
+    "year": "1986",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Oh, the Places You'll Go!",
+    "artist": "Dr. Seuss",
+    "year": "1990",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Madeline",
+    "artist": "Ludwig Bemelmans",
+    "year": "1939",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Curious George",
+    "artist": "H. A. Rey and Margret Rey",
+    "year": "1941",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Harold and the Purple Crayon",
+    "artist": "Crockett Johnson",
+    "year": "1955",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+  {
+    "title": "Don't Let the Pigeon Drive the Bus!",
+    "artist": "Mo Willems",
+    "year": "2003",
+    "citation": "TIME's 100 Best Children's Books of All Time"
+  },
+
 { "title": "A Walk in the Woods", "artist": "Bob Ross", "year": "1983", "citation": "Season 1, Episode 1 of The Joy of Painting" },
   { "title": "Row Boat on the Beach", "artist": "Bob Ross", "year": "1992", "citation": "Season 24, Episode 10" },
   { "title": "Misty Waterfall", "artist": "Bob Ross", "year": "circa 1980 / Season 7", "citation": "Season 7, Episode 6" },
