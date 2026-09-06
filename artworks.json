@@ -11890,7 +11890,485 @@
     "artist": "N.C. Wyeth",
     "year": "1911",
     "citation": "Treasure Island"
+  },
+  {
+    "title": "Vitruvian Man",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1490",
+    "citation": "Leonardo da Vinci Vitruvian Man anatomical proportions technical drawing"
+  },
+  {
+    "title": "Aerial Screw",
+    "artist": "Leonardo da Vinci",
+    "year": "c. 1489",
+    "citation": "Leonardo da Vinci aerial screw helicopter drawing Paris Manuscript B folio 83v"
+  },
+  {
+    "title": "Dissected Human Figure",
+    "artist": "Andreas Vesalius and workshop illustrators",
+    "year": "1543",
+    "citation": "Vesalius De Humani Corporis Fabrica muscle man anatomical plate 1543"
+  },
+  {
+    "title": "The Flea",
+    "artist": "Robert Hooke",
+    "year": "1665",
+    "citation": "Robert Hooke flea engraving Micrographia Scheme XXXIV"
+  },
+  {
+    "title": "Prism and the Spectrum of Light",
+    "artist": "Isaac Newton",
+    "year": "1704",
+    "citation": "Isaac Newton Opticks prism spectrum experiment original diagram"
+  },
+  {
+    "title": "Separate-Condenser Steam Engine",
+    "artist": "James Watt",
+    "year": "1769",
+    "citation": "James Watt steam engine separate condenser British Patent No. 913 drawing"
+  },
+  {
+    "title": "Jacquard Loom and Punch-Card Mechanism",
+    "artist": "Joseph Marie Jacquard",
+    "year": "1804",
+    "citation": "Jacquard loom punched card mechanism original technical drawing"
+  },
+  {
+    "title": "Daguerreotype Camera",
+    "artist": "Louis Daguerre and Alphonse Giroux",
+    "year": "1839",
+    "citation": "1839 Giroux daguerreotype camera original technical diagram"
+  },
+  {
+    "title": "Electromagnetic Telegraph",
+    "artist": "Samuel Morse",
+    "year": "1840",
+    "citation": "Samuel Morse telegraph US Patent 1647 original patent drawing"
+  },
+  {
+    "title": "Lockstitch Sewing Machine",
+    "artist": "Isaac Singer",
+    "year": "1851",
+    "citation": "Isaac Singer sewing machine US Patent 8294 original drawing"
+  },
+  {
+    "title": "Safety Elevator Mechanism",
+    "artist": "Elisha Otis",
+    "year": "1861",
+    "citation": "Elisha Otis safety elevator US Patent 31128 original patent drawing"
+  },
+  {
+    "title": "Improvement in Telegraphy: The Telephone",
+    "artist": "Alexander Graham Bell",
+    "year": "1876",
+    "citation": "Alexander Graham Bell telephone US Patent 174465 patent drawing"
+  },
+  {
+    "title": "Incandescent Electric Lamp",
+    "artist": "Thomas Edison",
+    "year": "1880",
+    "citation": "Thomas Edison electric lamp US Patent 223898 original patent drawing"
+  },
+  {
+    "title": "Patent-Motorwagen",
+    "artist": "Karl Benz",
+    "year": "1886",
+    "citation": "Karl Benz Patent-Motorwagen German Patent DRP 37435 technical drawing"
+  },
+  {
+    "title": "Electromagnetic Motor",
+    "artist": "Nikola Tesla",
+    "year": "1888",
+    "citation": "Nikola Tesla AC induction motor US Patent 381968 original drawing"
+  },
+  {
+    "title": "Flying Machine",
+    "artist": "Orville Wright and Wilbur Wright",
+    "year": "1906",
+    "citation": "Wright brothers Flying Machine US Patent 821393 original patent drawing"
+  },
+  {
+    "title": "Frequency-Hopping Secret Communication System",
+    "artist": "Hedy Lamarr and George Antheil",
+    "year": "1942",
+    "citation": "Hedy Lamarr George Antheil Secret Communication System US Patent 2292387 drawing"
+  },
+  {
+    "title": "Feynman Diagram",
+    "artist": "Richard Feynman",
+    "year": "1949",
+    "citation": "Richard Feynman original electron photon interaction diagram 1949 paper"
+  },
+  {
+    "title": "DNA Double-Helix Diagram",
+    "artist": "Odile Crick",
+    "year": "1953",
+    "citation": "Odile Crick original DNA double helix diagram Watson Crick Nature 1953"
+  },
+  {
+    "title": "Pioneer Plaque",
+    "artist": "Carl Sagan, Frank Drake, and Linda Salzman Sagan",
+    "year": "1972",
+    "citation": "Pioneer 10 plaque pulsar map hydrogen diagram human figures original drawing"
+  },
+
+  {
+    "title": "Lemon",
+    "artist": "Doyle Dane Bernbach",
+    "year": "1960",
+    "citation": "1960 Volkswagen Beetle Lemon magazine advertisement white car black background"
+  },
+  {
+    "title": "We Try Harder",
+    "artist": "Doyle Dane Bernbach",
+    "year": "1962",
+    "citation": "1962 Avis We Try Harder number two magazine advertisement"
+  },
+  {
+    "title": "You Don't Have to Be Jewish to Love Levy's",
+    "artist": "Doyle Dane Bernbach and Howard Zieff",
+    "year": "1961",
+    "citation": "1961 Levy's rye bread You Don't Have to Be Jewish magazine ad Howard Zieff"
+  },
+  {
+    "title": "Things Go Better with Coke",
+    "artist": "McCann-Erickson",
+    "year": "1963",
+    "citation": "1963 Coca-Cola Things Go Better with Coke vintage magazine advertisement"
+  },
+  {
+    "title": "Come Alive! You're in the Pepsi Generation",
+    "artist": "BBDO",
+    "year": "1964",
+    "citation": "1964 Come Alive You're in the Pepsi Generation magazine print ad"
+  },
+  {
+    "title": "Come to Marlboro Country",
+    "artist": "Leo Burnett",
+    "year": "1964",
+    "citation": "1964 Marlboro Country cowboy horseback vintage magazine advertisement"
+  },
+  {
+    "title": "Us Tareyton Smokers Would Rather Fight Than Switch!",
+    "artist": "BBDO",
+    "year": "1963",
+    "citation": "1963 Tareyton Rather Fight Than Switch black eye magazine advertisement"
+  },
+  {
+    "title": "The End of the Plain Plane",
+    "artist": "Mary Wells Lawrence and Jack Tinker & Partners",
+    "year": "1965",
+    "citation": "1965 Braniff End of the Plain Plane Emilio Pucci colorful airline magazine ad"
+  },
+  {
+    "title": "No Matter What Shape Your Stomach's In",
+    "artist": "Jack Tinker & Partners",
+    "year": "1966",
+    "citation": "1966 Alka-Seltzer No Matter What Shape Your Stomach's In print advertisement"
+  },
+  {
+    "title": "Meet the Swinger",
+    "artist": "Doyle Dane Bernbach",
+    "year": "1965",
+    "citation": "1965 Polaroid Swinger camera Meet the Swinger magazine advertisement"
+  },
+  {
+    "title": "Kodak Instamatic Camera",
+    "artist": "J. Walter Thompson",
+    "year": "1963",
+    "citation": "1963 Kodak Instamatic camera cartridge loading vintage magazine ad"
+  },
+  {
+    "title": "The Unexpected Mustang",
+    "artist": "J. Walter Thompson",
+    "year": "1964",
+    "citation": "1964 Ford Mustang Unexpected magazine advertisement first model"
+  },
+  {
+    "title": "It's Ugly, but It Gets You There",
+    "artist": "Doyle Dane Bernbach",
+    "year": "1969",
+    "citation": "1969 Volkswagen It's Ugly But It Gets You There Apollo lunar module print ad"
+  },
+  {
+    "title": "The Can Bag",
+    "artist": "Campbell's",
+    "year": "1969",
+    "citation": "1969 Campbell's Soup The Can Bag beach towel magazine advertisement"
+  },
+  {
+    "title": "You've Come a Long Way, Baby",
+    "artist": "Leo Burnett",
+    "year": "1968",
+    "citation": "1968 Virginia Slims You've Come a Long Way Baby vintage magazine ad"
+  },
+  {
+    "title": "What Becomes a Legend Most?",
+    "artist": "Jane Trahey and Richard Avedon",
+    "year": "1968",
+    "citation": "1968 Blackglama What Becomes a Legend Most Lauren Bacall Avedon magazine ad"
+  },
+  {
+    "title": "Does She—or Doesn't She?",
+    "artist": "Foote, Cone & Belding",
+    "year": "1960s",
+    "citation": "1960s Clairol Does She or Doesn't She hair color magazine advertisement"
+  },
+  {
+    "title": "I Dreamed I Went to Work in My Maidenform Bra",
+    "artist": "Maidenform",
+    "year": "1960s",
+    "citation": "1960s Maidenform I Dreamed I Went to Work in My Maidenform Bra print ad"
+  },
+  {
+    "title": "Put a Tiger in Your Tank",
+    "artist": "McCann-Erickson",
+    "year": "1964",
+    "citation": "1964 Esso Put a Tiger in Your Tank tiger tail gasoline magazine ad"
+  },
+  {
+    "title": "For Spacemen and Earth Families",
+    "artist": "General Foods",
+    "year": "1966",
+    "citation": "1966 Tang For Spacemen and Earth Families astronaut magazine advertisement"
+  },
+
+  {
+    "title": "Have a Coke = How Are You",
+    "artist": "The Coca-Cola Company",
+    "year": "1944",
+    "citation": "1944 Coca-Cola Have a Coke How Are You soldier overseas magazine advertisement"
+  },
+  {
+    "title": "Twice as Much for a Nickel",
+    "artist": "Pepsi-Cola",
+    "year": "1940",
+    "citation": "1940 Pepsi-Cola Twice as Much for a Nickel twelve ounce bottle magazine ad"
+  },
+  {
+    "title": "More Doctors Smoke Camels",
+    "artist": "R. J. Reynolds Tobacco Company",
+    "year": "1946",
+    "citation": "1946 More Doctors Smoke Camels physician white coat magazine advertisement"
+  },
+  {
+    "title": "Call for Philip Morris!",
+    "artist": "Philip Morris and Johnny Roventini",
+    "year": "1942",
+    "citation": "1942 Call for Philip Morris Johnny Roventini bellhop magazine advertisement"
+  },
+  {
+    "title": "Ronald Reagan Sends Chesterfield Christmas Greetings",
+    "artist": "Liggett & Myers Tobacco Company",
+    "year": "1949",
+    "citation": "1949 Ronald Reagan Chesterfield Christmas carton magazine advertisement"
+  },
+  {
+    "title": "A Diamond Is Forever",
+    "artist": "N. W. Ayer & Son",
+    "year": "1948",
+    "citation": "1948 De Beers A Diamond Is Forever young lovers illustrated magazine advertisement"
+  },
+  {
+    "title": "Which Twin Has the Toni?",
+    "artist": "Toni Company",
+    "year": "1948",
+    "citation": "1948 Which Twin Has the Toni Home Permanent identical twins magazine ad"
+  },
+  {
+    "title": "I Dreamed I Went Shopping in My Maidenform Bra",
+    "artist": "Maidenform",
+    "year": "1949",
+    "citation": "1949 Maidenform I Dreamed I Went Shopping in My Maidenform Bra original print ad"
+  },
+  {
+    "title": "Miss Chiquita Banana",
+    "artist": "United Fruit Company",
+    "year": "1944",
+    "citation": "1944 Miss Chiquita Banana fruit hat illustrated magazine advertisement"
+  },
+  {
+    "title": "Fresh Up with 7-Up",
+    "artist": "The Seven-Up Company",
+    "year": "1947",
+    "citation": "1947 Fresh Up with 7-Up family picnic vintage magazine advertisement"
+  },
+  {
+    "title": "Only You Can Prevent Forest Fires",
+    "artist": "U.S. Forest Service and Albert Staehle",
+    "year": "1947",
+    "citation": "1947 Smokey Bear Only You Can Prevent Forest Fires magazine public service ad"
+  },
+  {
+    "title": "The Civilian Jeep",
+    "artist": "Willys-Overland Motors",
+    "year": "1945",
+    "citation": "1945 Willys-Overland CJ-2A civilian Jeep farm work magazine advertisement"
+  },
+  {
+    "title": "The Futuramic Oldsmobile",
+    "artist": "General Motors",
+    "year": "1948",
+    "citation": "1948 Futuramic Oldsmobile 98 dramatic illustrated magazine advertisement"
+  },
+  {
+    "title": "Television Is Here",
+    "artist": "RCA Victor",
+    "year": "1946",
+    "citation": "1946 RCA Victor Television Is Here family watching tabletop TV magazine ad"
+  },
+  {
+    "title": "Motorola Golden View Television",
+    "artist": "Motorola",
+    "year": "1949",
+    "citation": "1949 Motorola Golden View television mahogany console magazine advertisement"
+  },
+  {
+    "title": "Snapshots from Home",
+    "artist": "Eastman Kodak",
+    "year": "1944",
+    "citation": "1944 Kodak Snapshots from Home American soldier wartime magazine advertisement"
+  },
+  {
+    "title": "The Tupperware Wonder Bowl",
+    "artist": "Tupperware",
+    "year": "1947",
+    "citation": "1947 Tupperware Wonder Bowl airtight seal refrigerator magazine advertisement"
+  },
+  {
+    "title": "Betty Crocker Party Cake Mix",
+    "artist": "General Mills",
+    "year": "1947",
+    "citation": "1947 Betty Crocker Party Cake Mix just add water magazine advertisement"
+  },
+  {
+    "title": "Pyrex Oven and Refrigerator Set",
+    "artist": "Corning Glass Works",
+    "year": "1947",
+    "citation": "1947 Pyrex oven and refrigerator set colorful glass dishes magazine ad"
+  },
+  {
+    "title": "Campbell Kids Wartime Soup Advertisement",
+    "artist": "Campbell Soup Company",
+    "year": "1943",
+    "citation": "1943 Campbell Kids wartime soup rationing vintage magazine advertisement"
+  },
+  {
+    "title": "They Laughed When I Sat Down at the Piano",
+    "artist": "John Caples",
+    "year": "1926",
+    "citation": "1926 They Laughed When I Sat Down at the Piano US School of Music original magazine ad"
+  },
+  {
+    "title": "Reach for a Lucky Instead of a Sweet",
+    "artist": "Lord & Thomas",
+    "year": "1929",
+    "citation": "1929 Lucky Strike Reach for a Lucky Instead of a Sweet magazine advertisement"
+  },
+  {
+    "title": "Guinness for Strength",
+    "artist": "John Gilroy and S. H. Benson",
+    "year": "1934",
+    "citation": "1934 John Gilroy Guinness for Strength man carrying girder print advertisement"
+  },
+  {
+    "title": "A Diamond Is Forever",
+    "artist": "Frances Gerety and N. W. Ayer & Son",
+    "year": "1948",
+    "citation": "1948 De Beers A Diamond Is Forever illustrated couple magazine advertisement"
+  },
+  {
+    "title": "The Man in the Hathaway Shirt",
+    "artist": "David Ogilvy",
+    "year": "1951",
+    "citation": "1951 Man in the Hathaway Shirt eyepatch George Wrangell magazine ad"
+  },
+  {
+    "title": "Does She—or Doesn't She?",
+    "artist": "Shirley Polykoff and Foote, Cone & Belding",
+    "year": "1956",
+    "citation": "1956 Clairol Does She or Doesn't She hair color original magazine advertisement"
+  },
+  {
+    "title": "At 60 Miles an Hour",
+    "artist": "David Ogilvy",
+    "year": "1958",
+    "citation": "1958 Rolls-Royce At 60 Miles an Hour electric clock magazine advertisement"
+  },
+  {
+    "title": "Think Small",
+    "artist": "Helmut Krone and Julian Koenig",
+    "year": "1959",
+    "citation": "1959 Volkswagen Think Small tiny Beetle white space original print ad"
+  },
+  {
+    "title": "Lemon",
+    "artist": "Helmut Krone and Julian Koenig",
+    "year": "1960",
+    "citation": "1960 Volkswagen Beetle Lemon black-and-white magazine advertisement"
+  },
+  {
+    "title": "We Try Harder",
+    "artist": "Paula Green and Helmut Krone",
+    "year": "1962",
+    "citation": "1962 Avis We Try Harder number two original magazine advertisement"
+  },
+  {
+    "title": "No Matter What Shape Your Stomach's In",
+    "artist": "Jack Tinker & Partners",
+    "year": "1966",
+    "citation": "1966 Alka-Seltzer No Matter What Shape Your Stomach's In print advertisement"
+  },
+  {
+    "title": "You've Come a Long Way, Baby",
+    "artist": "Leo Burnett",
+    "year": "1968",
+    "citation": "1968 Virginia Slims You've Come a Long Way Baby split-era magazine ad"
+  },
+  {
+    "title": "There Is No Finish Line",
+    "artist": "John Brown & Partners",
+    "year": "1977",
+    "citation": "1977 Nike There Is No Finish Line lone runner tree-lined road print ad"
+  },
+  {
+    "title": "Blown Away",
+    "artist": "Steve Steigman and Scali, McCabe, Sloves",
+    "year": "1979",
+    "citation": "1979 Maxell Blown Away man in chair lamp and martini magazine advertisement"
+  },
+  {
+    "title": "Absolut Perfection",
+    "artist": "TBWA",
+    "year": "1980",
+    "citation": "1980 Absolut Perfection vodka bottle with halo original magazine ad"
+  },
+  {
+    "title": "Nobody's Perfect",
+    "artist": "Porsche",
+    "year": "1983",
+    "citation": "1983 Porsche Nobody's Perfect Le Mans results magazine advertisement"
+  },
+  {
+    "title": "Pietà: The Face of AIDS",
+    "artist": "Therese Frare and Oliviero Toscani",
+    "year": "1992",
+    "citation": "1992 Benetton David Kirby AIDS Pietà colorized magazine advertisement"
+  },
+  {
+    "title": "Naomi Campbell Milk Mustache",
+    "artist": "Annie Leibovitz and Bozell Worldwide",
+    "year": "1995",
+    "citation": "1995 Naomi Campbell milk mustache celebrity magazine advertisement"
+  },
+  {
+    "title": "Think Different: Albert Einstein",
+    "artist": "TBWA Chiat/Day",
+    "year": "1997",
+    "citation": "1997 Apple Think Different Albert Einstein black-and-white magazine ad"
   }
+
+
 ]
 
 
