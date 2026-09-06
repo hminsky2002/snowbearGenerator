@@ -22,6 +22,11 @@ from dotenv import load_dotenv
 from openai import BadRequestError, OpenAI
 from PIL import Image
 
+from google_custom_search_image_downloader import (
+    google_search_api_call,
+    google_search_response_parser,
+)
+
 
 DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
 #DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
@@ -486,6 +491,69 @@ Return JSON only, with no markdown:
     return urls
 
 
+def _google_image_search_query(artwork: Artwork) -> str:
+    query = f"High quality image of {artwork.title} by {artwork.artist}"
+    if artwork.year:
+        query += f" {artwork.year}"
+    return query
+
+
+def find_artwork_image_urls_via_google(artwork: Artwork) -> list[str]:
+    query = _google_image_search_query(artwork)
+    print(f"Searching Google Images for: {query}")
+
+    api_key = os.getenv("GOOGLE_SEARCH_API_KEY")
+    engine_id = os.getenv("GOOGLE_SEARCH_ENGINE_ID")
+    if not api_key or not engine_id:
+        raise RuntimeError(
+            "Google image search fallback requires GOOGLE_SEARCH_API_KEY and "
+            "GOOGLE_SEARCH_ENGINE_ID"
+        )
+
+    response_file = google_search_api_call(query)
+    links_and_format_pairs, _search_terms = google_search_response_parser(response_file)
+    urls = [item["link"] for item in links_and_format_pairs if item.get("link")]
+    if not urls:
+        raise FileNotFoundError(
+            f"Google image search returned no results for {artwork.title} by {artwork.artist}"
+        )
+
+    print(f"Google search selected {len(urls)} candidate image URL(s)")
+    for index, url in enumerate(urls, start=1):
+        print(f"  {index}. {url}")
+    return urls
+
+
+def download_reference_images(
+    artwork: Artwork,
+    urls: list[str],
+    source_label: str,
+) -> list[Path]:
+    download_dir = SEARCH_IMAGES_DIR / _sanitize_filename(f"{artwork.title}_{artwork.artist}")
+    download_dir.mkdir(parents=True, exist_ok=True)
+
+    downloaded: list[Path] = []
+    last_error: Exception | None = None
+    for index, url in enumerate(urls):
+        if len(downloaded) >= MAX_REFERENCE_DOWNLOADS:
+            break
+        destination = download_dir / _filename_for_url(url, artwork, index)
+        try:
+            path = download_image_from_url(url, destination)
+            print(f"Downloaded {source_label} image: {url} -> {path}")
+            downloaded.append(path)
+        except Exception as e:
+            last_error = e
+            print(f"Failed to download {url}: {e}")
+
+    if not downloaded:
+        raise FileNotFoundError(
+            f"No downloadable {source_label} image URLs for "
+            f"{artwork.title} by {artwork.artist}: {last_error}"
+        )
+    return downloaded
+
+
 def download_image_from_url(image_url: str, destination: Path, depth: int = 0) -> Path:
     if depth > 2:
         raise ValueError(f"Could not resolve an image from: {image_url}")
@@ -561,29 +629,18 @@ def get_source_images(
             raise FileNotFoundError(f"No files found in source dir: {source_dir_path}")
         return files
 
-    urls = find_artwork_image_urls(client, text_model, artwork)
-    download_dir = SEARCH_IMAGES_DIR / _sanitize_filename(f"{artwork.title}_{artwork.artist}")
-    download_dir.mkdir(parents=True, exist_ok=True)
-
-    downloaded: list[Path] = []
-    last_error: Exception | None = None
-    for index, url in enumerate(urls):
-        if len(downloaded) >= MAX_REFERENCE_DOWNLOADS:
-            break
-        destination = download_dir / _filename_for_url(url, artwork, index)
-        try:
-            path = download_image_from_url(url, destination)
-            print(f"Downloaded ChatGPT-selected image: {url} -> {path}")
-            downloaded.append(path)
-        except Exception as e:
-            last_error = e
-            print(f"Failed to download {url}: {e}")
-
-    if not downloaded:
-        raise FileNotFoundError(
-            f"No downloadable ChatGPT image URLs for {artwork.title} by {artwork.artist}: {last_error}"
+    try:
+        urls = find_artwork_image_urls(client, text_model, artwork)
+        source_label = "ChatGPT-selected"
+    except LowConfidenceImageMatch as e:
+        print(
+            f"ChatGPT could not confidently find an image "
+            f"({e.reason}); falling back to Google image search"
         )
-    return downloaded
+        urls = find_artwork_image_urls_via_google(artwork)
+        source_label = "Google-selected"
+
+    return download_reference_images(artwork, urls, source_label)
 
 
 
