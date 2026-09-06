@@ -441,7 +441,7 @@ Requirements:
 - Prefer a direct image file URL (jpg/jpeg/png/webp) that can be downloaded.
 - Set high_confidence to true only if you are highly confident the chosen URL is this exact artwork.
 - If you cannot find this exact work with high confidence, set high_confidence to false and url to null.
-
+- really look at the image itself to determine if it is likely correct, does it make sense with respect to the title and background you know about the artwork?
 Return JSON only, with no markdown:
 {{
   "url": "https://..." or null,
