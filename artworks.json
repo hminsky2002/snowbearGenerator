@@ -1,184 +1,246 @@
 [
   {
-    "title": "Pat the Bunny",
-    "artist": "Dorothy Kunhardt",
-    "year": "1940",
-    "citation": "First published by Simon & Schuster"
+    "title": "Alice's Adventures in Wonderland",
+    "artist": "Lewis Carroll and John Tenniel",
+    "year": "1865",
+    "citation": "John Tenniel Alice Mad Hatter tea party original illustration"
   },
   {
-    "title": "Make Way for Ducklings",
-    "artist": "Robert McCloskey",
-    "year": "1941",
-    "citation": "First published by Viking Press"
+    "title": "The Wonderful Wizard of Oz",
+    "artist": "L. Frank Baum and W. W. Denslow",
+    "year": "1900",
+    "citation": "W. W. Denslow Dorothy Scarecrow Tin Woodman Cowardly Lion original illustration"
   },
   {
-    "title": "The Little Engine That Could",
-    "artist": "Watty Piper and Lois Lenski",
-    "year": "1930",
-    "citation": "First published by Platt & Munk"
+    "title": "The Little Prince",
+    "artist": "Antoine de Saint-Exupéry",
+    "year": "1943",
+    "citation": "Saint-Exupéry Little Prince standing on asteroid B-612 illustration"
   },
   {
-    "title": "The Little House",
-    "artist": "Virginia Lee Burton",
-    "year": "1942",
-    "citation": "First published by Houghton Mifflin"
+    "title": "The Hobbit",
+    "artist": "J. R. R. Tolkien",
+    "year": "1937",
+    "citation": "J. R. R. Tolkien The Hobbit 1937 original dust-jacket illustration"
   },
   {
-    "title": "The Carrot Seed",
-    "artist": "Ruth Krauss and Crockett Johnson",
-    "year": "1945",
-    "citation": "First published by Harper & Brothers"
-  },
-  {
-    "title": "Caps for Sale",
-    "artist": "Esphyr Slobodkina",
-    "year": "1940",
-    "citation": "First published by W. R. Scott"
-  },
-  {
-    "title": "The Runaway Bunny",
-    "artist": "Margaret Wise Brown and Clement Hurd",
-    "year": "1942",
-    "citation": "First published by Harper & Brothers"
-  },
-  {
-    "title": "Blueberries for Sal",
-    "artist": "Robert McCloskey",
-    "year": "1948",
-    "citation": "First published by Viking Press"
-  },
-  {
-    "title": "The Monster at the End of This Book",
-    "artist": "Jon Stone and Michael Smollin",
+    "title": "The Lorax",
+    "artist": "Dr. Seuss",
     "year": "1971",
-    "citation": "First published as a Little Golden Book"
+    "citation": "Dr. Seuss Lorax standing among colorful Truffula trees illustration"
   },
   {
-    "title": "Jumanji",
+    "title": "Where the Sidewalk Ends",
+    "artist": "Shel Silverstein",
+    "year": "1974",
+    "citation": "Shel Silverstein children and dog looking over edge of sidewalk illustration"
+  },
+  {
+    "title": "Maus: A Survivor's Tale",
+    "artist": "Art Spiegelman",
+    "year": "1986",
+    "citation": "Art Spiegelman Maus mice beneath cat face swastika cover illustration"
+  },
+  {
+    "title": "Persepolis",
+    "artist": "Marjane Satrapi",
+    "year": "2000",
+    "citation": "Marjane Satrapi Persepolis young Marji wearing veil illustration"
+  },
+  {
+    "title": "The Arrival",
+    "artist": "Shaun Tan",
+    "year": "2006",
+    "citation": "Shaun Tan The Arrival immigrant with suitcase and white-tailed creature illustration"
+  },
+  {
+    "title": "The Invention of Hugo Cabret",
+    "artist": "Brian Selznick",
+    "year": "2007",
+    "citation": "Brian Selznick Hugo Cabret boy looking through clock face illustration"
+  },
+  {
+    "title": "Diary of a Wimpy Kid",
+    "artist": "Jeff Kinney",
+    "year": "2007",
+    "citation": "Jeff Kinney Diary of a Wimpy Kid Greg Heffley backpack cartoon illustration"
+  },
+  {
+    "title": "The Polar Express",
     "artist": "Chris Van Allsburg",
-    "year": "1981",
-    "citation": "First published by Houghton Mifflin"
+    "year": "1985",
+    "citation": "Chris Van Allsburg Polar Express steam train outside boy's house at night illustration"
   },
   {
-    "title": "Where the Wild Things Are",
-    "artist": "Maurice Sendak",
-    "year": "1963",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Tuesday",
+    "artist": "David Wiesner",
+    "year": "1991",
+    "citation": "David Wiesner Tuesday frogs flying on lily pads illustration"
   },
   {
-    "title": "Goodnight Moon",
-    "artist": "Margaret Wise Brown and Clement Hurd",
-    "year": "1947",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Olivia",
+    "artist": "Ian Falconer",
+    "year": "2000",
+    "citation": "Ian Falconer Olivia pig wearing red dress dancing illustration"
   },
   {
-    "title": "The Very Hungry Caterpillar",
-    "artist": "Eric Carle",
-    "year": "1969",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Rainbow Fish",
+    "artist": "Marcus Pfister",
+    "year": "1992",
+    "citation": "Marcus Pfister Rainbow Fish blue fish with shimmering foil scales illustration"
   },
   {
-    "title": "The Cat in the Hat",
-    "artist": "Dr. Seuss",
-    "year": "1957",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Guess How Much I Love You",
+    "artist": "Sam McBratney and Anita Jeram",
+    "year": "1994",
+    "citation": "Anita Jeram Little Nutbrown Hare and Big Nutbrown Hare touching noses illustration"
   },
   {
-    "title": "Green Eggs and Ham",
-    "artist": "Dr. Seuss",
-    "year": "1960",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Day the Crayons Quit",
+    "artist": "Drew Daywalt and Oliver Jeffers",
+    "year": "2013",
+    "citation": "Oliver Jeffers Day the Crayons Quit crayons holding protest signs illustration"
   },
   {
-    "title": "The Snowy Day",
-    "artist": "Ezra Jack Keats",
-    "year": "1962",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Tiger Who Came to Tea",
+    "artist": "Judith Kerr",
+    "year": "1968",
+    "citation": "Judith Kerr tiger sitting at kitchen table drinking tea illustration"
   },
   {
-    "title": "The Tale of Peter Rabbit",
+    "title": "Room on the Broom",
+    "artist": "Julia Donaldson and Axel Scheffler",
+    "year": "2001",
+    "citation": "Axel Scheffler Room on the Broom witch cat dog bird frog flying illustration"
+  },
+  {
+    "title": "The Boy, the Mole, the Fox and the Horse",
+    "artist": "Charlie Mackesy",
+    "year": "2019",
+    "citation": "Charlie Mackesy boy mole fox and horse together illustration"
+  },
+
+  {
+    "title": "The Four Horsemen of the Apocalypse",
+    "artist": "Albrecht Dürer",
+    "year": "1498",
+    "citation": "Albrecht Dürer Four Horsemen woodcut The Apocalypse 1498"
+  },
+  {
+    "title": "The Great Red Dragon and the Woman Clothed with the Sun",
+    "artist": "William Blake",
+    "year": "1805–1810",
+    "citation": "William Blake Great Red Dragon Woman Clothed with the Sun Revelation watercolor"
+  },
+  {
+    "title": "Dante and Virgil in the Ninth Circle of Hell",
+    "artist": "Gustave Doré",
+    "year": "1861",
+    "citation": "Gustave Doré Dante Virgil Ninth Circle frozen lake Inferno engraving"
+  },
+  {
+    "title": "The Jabberwock",
+    "artist": "John Tenniel",
+    "year": "1871",
+    "citation": "John Tenniel Jabberwock original illustration Through the Looking-Glass"
+  },
+  {
+    "title": "The Peacock Skirt",
+    "artist": "Aubrey Beardsley",
+    "year": "1894",
+    "citation": "Aubrey Beardsley Peacock Skirt Salome original illustration"
+  },
+  {
+    "title": "Peter Rabbit in Mr. McGregor's Garden",
     "artist": "Beatrix Potter",
     "year": "1902",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "citation": "Beatrix Potter Peter Rabbit stealing radishes Mr McGregor garden watercolor"
   },
   {
-    "title": "The Giving Tree",
-    "artist": "Shel Silverstein",
-    "year": "1964",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Alice at the Mad Tea Party",
+    "artist": "Arthur Rackham",
+    "year": "1907",
+    "citation": "Arthur Rackham Alice Mad Tea Party 1907 color illustration"
   },
   {
-    "title": "Corduroy",
-    "artist": "Don Freeman",
-    "year": "1968",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "One More Step, Mr. Hands",
+    "artist": "N. C. Wyeth",
+    "year": "1911",
+    "citation": "N. C. Wyeth One More Step Mr Hands Treasure Island illustration"
   },
   {
-    "title": "Brown Bear, Brown Bear, What Do You See?",
-    "artist": "Bill Martin Jr. and Eric Carle",
-    "year": "1967",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The White Bear Carries the Princess Away",
+    "artist": "Kay Nielsen",
+    "year": "1914",
+    "citation": "Kay Nielsen white bear princess East of the Sun West of the Moon illustration"
   },
   {
-    "title": "Alexander and the Terrible, Horrible, No Good, Very Bad Day",
-    "artist": "Judith Viorst and Ray Cruz",
-    "year": "1972",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Map of the Hundred Acre Wood",
+    "artist": "E. H. Shepard",
+    "year": "1926",
+    "citation": "E. H. Shepard original Hundred Acre Wood map Winnie-the-Pooh"
   },
   {
-    "title": "Strega Nona",
-    "artist": "Tomie dePaola",
-    "year": "1975",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Moby Dick Rising from the Sea",
+    "artist": "Rockwell Kent",
+    "year": "1930",
+    "citation": "Rockwell Kent Moby Dick white whale rising from sea woodcut illustration"
   },
   {
-    "title": "The Gruffalo",
-    "artist": "Julia Donaldson and Axel Scheffler",
-    "year": "1999",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Boa Constrictor Digesting an Elephant",
+    "artist": "Antoine de Saint-Exupéry",
+    "year": "1943",
+    "citation": "Saint-Exupéry Little Prince boa constrictor digesting elephant drawing"
   },
   {
-    "title": "Chicka Chicka Boom Boom",
-    "artist": "Bill Martin Jr., John Archambault, and Lois Ehlert",
-    "year": "1989",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Lucy Meets Mr. Tumnus",
+    "artist": "Pauline Baynes",
+    "year": "1950",
+    "citation": "Pauline Baynes Lucy Mr Tumnus lamppost Narnia original illustration"
   },
   {
-    "title": "Love You Forever",
-    "artist": "Robert Munsch and Sheila McGraw",
-    "year": "1986",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "A Is for Amy Who Fell Down the Stairs",
+    "artist": "Edward Gorey",
+    "year": "1963",
+    "citation": "Edward Gorey A is for Amy fell down the stairs Gashlycrumb Tinies"
   },
   {
-    "title": "Oh, the Places You'll Go!",
-    "artist": "Dr. Seuss",
-    "year": "1990",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Wild Rumpus",
+    "artist": "Maurice Sendak",
+    "year": "1963",
+    "citation": "Maurice Sendak Wild Rumpus dancing monsters full-page illustration"
   },
   {
-    "title": "Madeline",
-    "artist": "Ludwig Bemelmans",
-    "year": "1939",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Very Hungry Caterpillar Becomes a Butterfly",
+    "artist": "Eric Carle",
+    "year": "1969",
+    "citation": "Eric Carle Very Hungry Caterpillar final butterfly collage illustration"
   },
   {
-    "title": "Curious George",
-    "artist": "H. A. Rey and Margret Rey",
-    "year": "1941",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The Snowman and the Boy Flying",
+    "artist": "Raymond Briggs",
+    "year": "1978",
+    "citation": "Raymond Briggs Snowman boy flying over city nighttime illustration"
   },
   {
-    "title": "Harold and the Purple Crayon",
-    "artist": "Crockett Johnson",
-    "year": "1955",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "The BFG Holding Sophie",
+    "artist": "Quentin Blake",
+    "year": "1982",
+    "citation": "Quentin Blake BFG holding tiny Sophie original illustration"
   },
   {
-    "title": "Don't Let the Pigeon Drive the Bus!",
-    "artist": "Mo Willems",
-    "year": "2003",
-    "citation": "TIME's 100 Best Children's Books of All Time"
+    "title": "Gandalf Confronts the Balrog",
+    "artist": "Alan Lee",
+    "year": "1991",
+    "citation": "Alan Lee Gandalf Balrog Bridge of Khazad-dûm Lord of the Rings illustration"
   },
+  {
+    "title": "Flying Frogs on Lily Pads",
+    "artist": "David Wiesner",
+    "year": "1991",
+    "citation": "David Wiesner Tuesday flying frogs lily pads nighttime illustration"
+  },
+
 
 { "title": "A Walk in the Woods", "artist": "Bob Ross", "year": "1983", "citation": "Season 1, Episode 1 of The Joy of Painting" },
   { "title": "Row Boat on the Beach", "artist": "Bob Ross", "year": "1992", "citation": "Season 24, Episode 10" },
