@@ -45,6 +45,7 @@ ARTWORKS_JSON = Path("./artworks.json")
 DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
 MAX_REFERENCE_DOWNLOADS = 3
 MAX_ARTWORK_TRIES = 10
+MAX_IMAGE_VERIFY_TRIES = int(os.getenv("OPENAI_IMAGE_VERIFY_TRIES", "10"))
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -414,6 +415,18 @@ def _create_artwork_image_search(
     raise RuntimeError(f"ChatGPT image search failed: {last_error}")
 
 
+def _as_bool(value: Any) -> bool | None:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        text = value.strip().lower()
+        if text in {"true", "yes", "y", "match", "matches"}:
+            return True
+        if text in {"false", "no", "n", "mismatch"}:
+            return False
+    return None
+
+
 def _is_high_confidence(payload: dict[str, Any]) -> bool:
     high_confidence = payload.get("high_confidence")
     if isinstance(high_confidence, bool):
@@ -524,34 +537,132 @@ def find_artwork_image_urls_via_google(artwork: Artwork) -> list[str]:
     return urls
 
 
+def _image_data_url(image_path: Path, max_dimension: int = 1024) -> str:
+    """Return a downscaled JPEG data URL so verification stays cheap."""
+    with Image.open(image_path) as image:
+        image = normalize_for_jpeg(image)
+        if max(image.size) > max_dimension:
+            image.thumbnail((max_dimension, max_dimension))
+        buffer = io.BytesIO()
+        image.save(buffer, "JPEG", quality=85)
+    encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
+    return f"data:image/jpeg;base64,{encoded}"
+
+
+def verify_image_matches_artwork(
+    client: OpenAI,
+    text_model: str,
+    artwork: Artwork,
+    image_path: Path,
+) -> tuple[bool, str]:
+    """Ask ChatGPT to look at the downloaded image and confirm it is this artwork."""
+    try:
+        data_url = _image_data_url(image_path)
+    except Exception as e:
+        return False, f"could not read the downloaded image: {e}"
+
+    prompt = f"""You are verifying whether an image really depicts one specific artwork.
+
+{artwork.search_description()}
+
+Look at the attached image and decide whether it is a reproduction of THIS exact artwork.
+
+Answer with matches=false if the image is any of:
+- a different work, including another work by the same artist or a similarly titled work
+- a tribute, parody, meme, AI remix, fan art, or merchandise/product photo
+- a photo or portrait of the artist, a book cover, a gallery interior, or a museum wall label
+- a heavily cropped detail, a watermarked or illegible thumbnail, or an error/placeholder image
+
+A straight reproduction of the work counts as a match even if it includes the frame or is
+photographed at a slight angle.
+
+Return JSON only, with no markdown:
+{{"matches": true, "reason": "one short sentence"}}
+"""
+
+    try:
+        response = client.responses.create(
+            model=text_model,
+            input=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": prompt},
+                        {"type": "input_image", "image_url": data_url},
+                    ],
+                }
+            ],
+        )
+    except Exception as e:
+        return False, f"verification request failed: {e}"
+
+    text = (response.output_text or "").strip()
+    if not text:
+        return False, "verification returned no text"
+
+    try:
+        payload = _extract_json_object(text)
+    except (json.JSONDecodeError, ValueError) as e:
+        return False, f"could not parse verification JSON: {e}"
+
+    matches = _as_bool(payload.get("matches"))
+    reason = str(payload.get("reason") or "").strip() or "no reason given"
+    if matches is None:
+        return False, f"verification did not report a verdict: {reason}"
+    return matches, reason
+
+
 def download_reference_images(
     artwork: Artwork,
     urls: list[str],
     source_label: str,
-) -> list[Path]:
+    client: OpenAI,
+    text_model: str,
+    verify_budget: int,
+) -> tuple[list[Path], int]:
+    """Download candidates and keep only those ChatGPT confirms are this artwork.
+
+    Returns the verified images plus the number of candidates rejected by
+    verification. Stops once `verify_budget` candidates have been rejected;
+    a budget of 0 or less skips verification entirely.
+    """
     download_dir = SEARCH_IMAGES_DIR / _sanitize_filename(f"{artwork.title}_{artwork.artist}")
     download_dir.mkdir(parents=True, exist_ok=True)
 
-    downloaded: list[Path] = []
-    last_error: Exception | None = None
+    verified: list[Path] = []
+    rejected = 0
     for index, url in enumerate(urls):
-        if len(downloaded) >= MAX_REFERENCE_DOWNLOADS:
+        if len(verified) >= MAX_REFERENCE_DOWNLOADS:
             break
+        if verify_budget > 0 and rejected >= verify_budget:
+            print(f"Giving up on {source_label} candidates after {rejected} rejected image(s)")
+            break
+
         destination = download_dir / _filename_for_url(url, artwork, index)
         try:
             path = download_image_from_url(url, destination)
-            print(f"Downloaded {source_label} image: {url} -> {path}")
-            downloaded.append(path)
         except Exception as e:
-            last_error = e
             print(f"Failed to download {url}: {e}")
+            continue
+        print(f"Downloaded {source_label} image: {url} -> {path}")
 
-    if not downloaded:
-        raise FileNotFoundError(
-            f"No downloadable {source_label} image URLs for "
-            f"{artwork.title} by {artwork.artist}: {last_error}"
-        )
-    return downloaded
+        if verify_budget <= 0:
+            verified.append(path)
+            continue
+
+        matches, reason = verify_image_matches_artwork(client, text_model, artwork, path)
+        if not matches:
+            rejected += 1
+            print(
+                f"Rejected candidate {rejected}/{verify_budget} ({url}): {reason}"
+            )
+            path.unlink(missing_ok=True)
+            continue
+
+        print(f"Verified candidate image {path}: {reason}")
+        verified.append(path)
+
+    return verified, rejected
 
 
 def download_image_from_url(image_url: str, destination: Path, depth: int = 0) -> Path:
@@ -629,18 +740,44 @@ def get_source_images(
             raise FileNotFoundError(f"No files found in source dir: {source_dir_path}")
         return files
 
+    budget = MAX_IMAGE_VERIFY_TRIES
     try:
         urls = find_artwork_image_urls(client, text_model, artwork)
-        source_label = "ChatGPT-selected"
     except LowConfidenceImageMatch as e:
         print(
             f"ChatGPT could not confidently find an image "
             f"({e.reason}); falling back to Google image search"
         )
-        urls = find_artwork_image_urls_via_google(artwork)
-        source_label = "Google-selected"
+    else:
+        images, rejected = download_reference_images(
+            artwork, urls, "ChatGPT-selected", client, text_model, budget
+        )
+        if images:
+            return images
+        budget -= rejected
+        if rejected and budget <= 0:
+            raise LowConfidenceImageMatch(
+                artwork,
+                f"all {rejected} candidate image(s) were rejected by image verification",
+            )
+        print(
+            "No ChatGPT-selected candidate passed image verification; "
+            "falling back to Google image search"
+        )
 
-    return download_reference_images(artwork, urls, source_label)
+    urls = find_artwork_image_urls_via_google(artwork)
+    images, rejected = download_reference_images(
+        artwork, urls, "Google-selected", client, text_model, budget
+    )
+    if images:
+        return images
+
+    total_rejected = (MAX_IMAGE_VERIFY_TRIES - budget) + rejected
+    raise LowConfidenceImageMatch(
+        artwork,
+        f"no candidate image passed image verification "
+        f"({total_rejected} rejected across ChatGPT and Google results)",
+    )
 
 
 
