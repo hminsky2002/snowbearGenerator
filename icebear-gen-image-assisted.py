@@ -37,6 +37,9 @@ DEFAULT_OUTPUT_FORMAT = os.getenv("OPENAI_IMAGE_FORMAT", "jpeg")
 DEFAULT_OUTPUT_COMPRESSION = int(os.getenv("OPENAI_IMAGE_COMPRESSION", "90"))
 DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "high")
 DEFAULT_MAX_ATTEMPTS = int(os.getenv("OPENAI_IMAGE_MAX_ATTEMPTS", "4"))
+DEFAULT_GIF_SECONDS = float(os.getenv("ICEBEAR_GIF_SECONDS", "3"))
+DEFAULT_GIF_WIDTH = int(os.getenv("ICEBEAR_GIF_WIDTH", "480"))
+GIF_KEYFRAMES = int(os.getenv("ICEBEAR_GIF_KEYFRAMES", "4"))
 
 MEDIA_ROOT = Path("./media")
 MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
@@ -164,6 +167,17 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=DEFAULT_MAX_ATTEMPTS,
         help=f"Max image edit attempts (default: {DEFAULT_MAX_ATTEMPTS})",
+    )
+    parser.add_argument(
+        "--gif",
+        action="store_true",
+        help="Also generate a short animated GIF of Ice Bear doing his activity in the artwork",
+    )
+    parser.add_argument(
+        "--gif-seconds",
+        type=float,
+        default=DEFAULT_GIF_SECONDS,
+        help=f"GIF length in seconds (default: {DEFAULT_GIF_SECONDS:g})",
     )
     return parser.parse_args()
 
@@ -922,6 +936,121 @@ def try_edit_image(
     raise RuntimeError(f"Failed to generate edited image after {attempts} attempts: {last_error}")
 
 
+def describe_bear_motion(
+    client: OpenAI,
+    text_model: str,
+    artwork: Artwork,
+    image_path: Path,
+    seconds: float,
+) -> str:
+    """Ask ChatGPT to look at the edited still and script a short loop of Ice Bear's activity."""
+    fallback = (
+        "The polar bear continues the activity he is doing in the scene with small, "
+        "deliberate, stoic movements."
+    )
+    prompt = f"""This image is a reinterpretation of "{artwork.title}" by {artwork.artist},
+with a cartoon polar bear (in the style of Ice Bear from "We Bare Bears") added to the scene.
+
+Describe, in 2-3 sentences, a {seconds:g}-second animation of this exact image in which the
+bear performs the activity he is already doing (e.g. rowing, painting, eating, walking),
+with a natural, simple motion that could loop. Other figures and elements may move subtly
+(water ripples, wind, flickering light) where it suits the scene. The camera stays still.
+
+Return only the description, no preamble."""
+
+    try:
+        response = client.responses.create(
+            model=text_model,
+            input=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": prompt},
+                        {"type": "input_image", "image_url": _image_data_url(image_path)},
+                    ],
+                }
+            ],
+        )
+    except Exception as e:
+        print(f"Could not describe bear motion, using a generic one: {e}")
+        return fallback
+
+    text = (response.output_text or "").strip()
+    return text or fallback
+
+
+def generate_gif_from_frames(
+    client: OpenAI,
+    image_model: str,
+    still_path: Path,
+    gif_path: Path,
+    motion: str,
+    seconds: float,
+) -> Path:
+    """Edit the still into a few poses of the activity and loop them back and forth."""
+    with Image.open(still_path) as still:
+        frames = [normalize_for_jpeg(still).copy()]
+
+    for index in range(1, GIF_KEYFRAMES):
+        prompt = f"""This image shows a cartoon polar bear (Ice Bear) in an artwork. {motion}
+
+Produce keyframe {index + 1} of {GIF_KEYFRAMES} of that motion: change ONLY the bear's pose
+(and anything he is directly holding or moving) to the next step of the motion, as a small
+incremental change from the previous keyframe. Everything else in the image must stay
+pixel-for-pixel identical: composition, framing, colors, style, other figures, background."""
+        print(f"Generating GIF keyframe {index + 1}/{GIF_KEYFRAMES}...")
+        # Edit from the previous keyframe so each pose advances from the last one.
+        previous = io.BytesIO()
+        frames[-1].save(previous, "PNG")
+        previous.seek(0)
+        result = client.images.edit(
+            model=image_model,
+            image=("keyframe.png", previous, "image/png"),
+            prompt=prompt,
+            size=DEFAULT_OUTPUT_SIZE,
+            quality=DEFAULT_OUTPUT_QUALITY,
+            output_format="png",
+            input_fidelity=DEFAULT_INPUT_FIDELITY,
+        )
+        if not result.data or not result.data[0].b64_json:
+            raise RuntimeError(f"No image data returned for keyframe {index + 1}")
+        frame = normalize_for_jpeg(decode_b64_image_to_pil(result.data[0].b64_json))
+        frames.append(frame.resize(frames[0].size))
+
+    # Ping-pong so the loop has no jump back to the first pose.
+    sequence = frames + frames[-2:0:-1]
+    duration_ms = max(80, int(seconds * 1000 / len(sequence)))
+    height = round(frames[0].height * DEFAULT_GIF_WIDTH / frames[0].width)
+    scaled = [frame.resize((DEFAULT_GIF_WIDTH, height), Image.LANCZOS) for frame in sequence]
+    scaled[0].save(
+        gif_path,
+        "GIF",
+        save_all=True,
+        append_images=scaled[1:],
+        duration=duration_ms,
+        loop=0,
+        optimize=True,
+    )
+    return gif_path
+
+
+def generate_gif(
+    client: OpenAI,
+    args: argparse.Namespace,
+    artwork: Artwork,
+    still_path: Path,
+) -> Path:
+    gif_path = still_path.with_suffix(".gif")
+    motion = describe_bear_motion(client, args.text_model, artwork, still_path, args.gif_seconds)
+    print(f"Bear motion: {motion}")
+
+    generate_gif_from_frames(
+        client, args.image_model, still_path, gif_path, motion, args.gif_seconds
+    )
+    print(f"Saved animated GIF to: {gif_path}")
+    return gif_path
+
+
 def generate_blurb(client: OpenAI, text_model: str, artwork: Artwork) -> str:
     prompt = (
         f"Write an extremely brief, factual museum-style blurb about the artwork titled "
@@ -949,6 +1078,7 @@ def send_mailgun_email(
     image_path: Path,
     original_reference_path: Path | None,
     blurb: str,
+    gif_path: Path | None = None,
 ) -> None:
     mailgun_domain = os.getenv("MAILGUN_DOMAIN")
     mailgun_api_key = os.getenv("MAILGUN_API_KEY")
@@ -984,6 +1114,9 @@ def send_mailgun_email(
             data["bcc"] = ", ".join(f"<{email}>" for email in email_list)
 
     files = [("inline", (image_path.name, image_path.open("rb")))]
+
+    if gif_path and gif_path.exists():
+        files.append(("inline", (gif_path.name, gif_path.open("rb"))))
 
     if original_reference_path and original_reference_path.exists():
         files.append(("inline", (original_reference_path.name, original_reference_path.open("rb"))))
@@ -1072,6 +1205,14 @@ def main() -> int:
         attempts=args.attempts,
     )
 
+    gif_path: Path | None = None
+    if args.gif:
+        # The still is the main event; a failed animation should not cost us the email.
+        try:
+            gif_path = generate_gif(client, args, artwork, edited_image_path)
+        except Exception as e:
+            print(f"Could not generate animated GIF, sending the still only: {e}")
+
     blurb = generate_blurb(
         client=client,
         text_model=args.text_model,
@@ -1084,6 +1225,7 @@ def main() -> int:
         image_path=edited_image_path,
         original_reference_path=source_image,
         blurb=blurb,
+        gif_path=gif_path,
     )
 
     return 0
