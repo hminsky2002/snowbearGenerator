@@ -10,7 +10,10 @@ import json
 import os
 import random
 import re
+import shutil
+import subprocess
 import sys
+import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -28,8 +31,17 @@ from google_custom_search_image_downloader import (
 )
 
 
-DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
-#DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
+# Which service draws the bear: "openai" (default) or "gemini". Gemini 3.1 Flash
+# Image costs about a third of OpenAI's high-quality edit. Text calls (search,
+# verification, blurb, GIF motion) always use OpenAI.
+IMAGE_PROVIDER = os.getenv("ICEBEAR_IMAGE_PROVIDER", "openai").strip().lower()
+if IMAGE_PROVIDER not in {"openai", "gemini"}:
+    raise SystemExit(f"ICEBEAR_IMAGE_PROVIDER must be 'openai' or 'gemini', got {IMAGE_PROVIDER!r}")
+if IMAGE_PROVIDER == "gemini":
+    DEFAULT_IMAGE_MODEL = os.getenv("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image")
+else:
+    DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
+GEMINI_ASPECT_RATIO = os.getenv("GEMINI_ASPECT_RATIO", "1:1")
 # The text model only verifies images, writes a short blurb and scripts the GIF
 # motion, so a mini model at low reasoning effort is plenty and far cheaper.
 DEFAULT_TEXT_MODEL = os.getenv("OPENAI_TEXT_MODEL", "gpt-5.4-mini")
@@ -47,9 +59,9 @@ DEFAULT_GIF_WIDTH = int(os.getenv("ICEBEAR_GIF_WIDTH", "1024"))
 GIF_KEYFRAMES = int(os.getenv("ICEBEAR_GIF_KEYFRAMES", "4"))
 GIF_FRAME_QUALITY = os.getenv("ICEBEAR_GIF_QUALITY", "high")
 GIF_INPUT_FIDELITY = os.getenv("ICEBEAR_GIF_INPUT_FIDELITY", "high")
-# How much a pixel (0-255, after averaging) must change between the still and a
+# How much a pixel (0-255, after a slight blur) must change between the still and a
 # keyframe to count as the bear moving rather than redraw noise.
-GIF_MOTION_THRESHOLD = int(os.getenv("ICEBEAR_GIF_MOTION_THRESHOLD", "28"))
+GIF_MOTION_THRESHOLD = int(os.getenv("ICEBEAR_GIF_MOTION_THRESHOLD", "60"))
 
 MEDIA_ROOT = Path("./media")
 MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
@@ -167,7 +179,7 @@ def parse_args() -> argparse.Namespace:
         "--image-model",
         type=str,
         default=DEFAULT_IMAGE_MODEL,
-        help=f"OpenAI image model (default: {DEFAULT_IMAGE_MODEL})",
+        help=f"Image model for ICEBEAR_IMAGE_PROVIDER={IMAGE_PROVIDER} (default: {DEFAULT_IMAGE_MODEL})",
     )
     parser.add_argument(
         "--text-model",
@@ -934,6 +946,154 @@ def save_image(image: Image.Image, output_path: Path, output_format: str) -> Non
         raise ValueError(f"Unsupported output format: {output_format}")
 
 
+class GeminiError(RuntimeError):
+    pass
+
+
+def _mime_type_for(path: Path) -> str:
+    return {
+        ".png": "image/png",
+        ".webp": "image/webp",
+    }.get(path.suffix.lower(), "image/jpeg")
+
+
+def edit_image(
+    client: OpenAI,
+    image_model: str,
+    image_bytes: bytes,
+    mime_type: str,
+    prompt: str,
+    quality: str,
+    input_fidelity: str,
+    output_format: str,
+) -> Image.Image:
+    """Edit one image with the configured provider and return the result.
+
+    `quality`, `input_fidelity` and `output_format` only apply to OpenAI; Gemini
+    has no equivalent settings.
+    """
+    if IMAGE_PROVIDER == "gemini":
+        return gemini_edit_image(image_model, image_bytes, mime_type, prompt)
+
+    result = client.images.edit(
+        model=image_model,
+        image=(f"source{_extension_for_mime(mime_type)}", image_bytes, mime_type),
+        prompt=prompt,
+        size=DEFAULT_OUTPUT_SIZE,
+        quality=quality,
+        output_format=output_format,
+        **({"output_compression": DEFAULT_OUTPUT_COMPRESSION} if output_format != "png" else {}),
+        input_fidelity=input_fidelity,
+    )
+    if not result.data or not result.data[0].b64_json:
+        raise RuntimeError("No image data returned from OpenAI")
+    return decode_b64_image_to_pil(result.data[0].b64_json)
+
+
+def _extension_for_mime(mime_type: str) -> str:
+    return {"image/png": ".png", "image/webp": ".webp"}.get(mime_type, ".jpg")
+
+
+def _gemini_request_target(model: str) -> tuple[str, dict[str, str]]:
+    """Return the URL and auth headers for a Gemini generateContent call.
+
+    With GEMINI_VERTEX_PROJECT set, calls go through Vertex AI using Application
+    Default Credentials and are billed to that Google Cloud project. Otherwise
+    they go to the Gemini API with GEMINI_API_KEY (AI Studio billing).
+    """
+    project = os.getenv("GEMINI_VERTEX_PROJECT")
+    if project:
+        location = os.getenv("GEMINI_VERTEX_LOCATION", "global")
+        host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
+        url = (
+            f"https://{host}/v1/projects/{project}/locations/{location}"
+            f"/publishers/google/models/{model}:generateContent"
+        )
+        return url, {
+            "Authorization": f"Bearer {_gcloud_access_token()}",
+            "x-goog-user-project": project,
+        }
+
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "ICEBEAR_IMAGE_PROVIDER=gemini needs GEMINI_API_KEY, or GEMINI_VERTEX_PROJECT "
+            "to use Vertex AI with Application Default Credentials"
+        )
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    return url, {"x-goog-api-key": api_key}
+
+
+def _gcloud_access_token() -> str:
+    # cron runs with a short PATH, so also look in the default SDK install location.
+    candidates = [shutil.which("gcloud"), str(Path.home() / "google-cloud-sdk/bin/gcloud")]
+    gcloud = next((c for c in candidates if c and Path(c).exists()), None)
+    if not gcloud:
+        raise RuntimeError("GEMINI_VERTEX_PROJECT is set but the gcloud command was not found")
+    result = subprocess.run(
+        [gcloud, "auth", "application-default", "print-access-token"],
+        capture_output=True,
+        text=True,
+        timeout=60,
+    )
+    token = result.stdout.strip()
+    if result.returncode != 0 or not token:
+        raise RuntimeError(
+            "Could not get an Application Default Credentials token; run "
+            f"'gcloud auth application-default login'. {result.stderr.strip()[:300]}"
+        )
+    return token
+
+
+def gemini_edit_image(model: str, image_bytes: bytes, mime_type: str, prompt: str) -> Image.Image:
+    url, headers = _gemini_request_target(model)
+    body = {
+        "contents": [
+            {
+                "role": "user",
+                "parts": [
+                    {"text": prompt},
+                    {
+                        "inline_data": {
+                            "mime_type": mime_type,
+                            "data": base64.b64encode(image_bytes).decode("ascii"),
+                        }
+                    },
+                ],
+            }
+        ],
+        "generationConfig": {
+            "responseModalities": ["IMAGE"],
+            "imageConfig": {"aspectRatio": GEMINI_ASPECT_RATIO},
+        },
+    }
+    # Vertex AI's shared capacity answers 429 when busy; wait and retry those and
+    # temporary server errors before giving up.
+    for wait in (15, 45, 90, None):
+        response = requests.post(url, headers=headers, json=body, timeout=300)
+        if response.status_code not in (429, 500, 503) or wait is None:
+            break
+        print(f"Gemini returned HTTP {response.status_code}; retrying in {wait}s")
+        time.sleep(wait)
+    try:
+        payload = response.json()
+    except ValueError:
+        raise GeminiError(f"HTTP {response.status_code}: {response.text[:300]}")
+    if "error" in payload:
+        raise GeminiError(f"HTTP {response.status_code}: {payload['error'].get('message')}")
+
+    candidates = payload.get("candidates") or []
+    for candidate in candidates:
+        for part in (candidate.get("content") or {}).get("parts") or []:
+            data = part.get("inlineData") or part.get("inline_data")
+            if data and data.get("data"):
+                return Image.open(io.BytesIO(base64.b64decode(data["data"]))).copy()
+
+    reason = candidates[0].get("finishReason") if candidates else None
+    feedback = payload.get("promptFeedback")
+    raise GeminiError(f"no image returned (finishReason={reason}, promptFeedback={feedback})")
+
+
 def try_edit_image(
     client: OpenAI,
     image_model: str,
@@ -949,29 +1109,16 @@ def try_edit_image(
         print(f"Attempt {attempt}/{attempts} using source: {source_path}")
 
         try:
-            with source_path.open("rb") as image_file:
-                # result = client.images.edit(
-                #     model=image_model,
-                #     image=image_file,
-                #     prompt=prompt,
-                #     size=DEFAULT_OUTPUT_SIZE,
-                # )
-
-                result = client.images.edit(
-                    model=image_model,
-                    image=image_file,
-                    prompt=prompt,
-                    size=DEFAULT_OUTPUT_SIZE,
-                    quality=DEFAULT_OUTPUT_QUALITY,
-                    output_format=DEFAULT_OUTPUT_FORMAT,
-                    output_compression=DEFAULT_OUTPUT_COMPRESSION,
-                    input_fidelity=DEFAULT_INPUT_FIDELITY,
-                )
-
-            if not result.data or not result.data[0].b64_json:
-                raise RuntimeError("No image data returned from OpenAI")
-
-            pil_image = decode_b64_image_to_pil(result.data[0].b64_json)
+            pil_image = edit_image(
+                client,
+                image_model,
+                source_path.read_bytes(),
+                _mime_type_for(source_path),
+                prompt,
+                quality=DEFAULT_OUTPUT_QUALITY,
+                input_fidelity=DEFAULT_INPUT_FIDELITY,
+                output_format=DEFAULT_OUTPUT_FORMAT,
+            )
             save_image(pil_image, output_path, DEFAULT_OUTPUT_FORMAT)
             print(f"Saved edited image to: {output_path}")
             return output_path
@@ -979,6 +1126,10 @@ def try_edit_image(
         except BadRequestError as e:
             last_error = e
             print(f"OpenAI rejected attempt {attempt}: {e}")
+            continue
+        except GeminiError as e:
+            last_error = e
+            print(f"Gemini rejected attempt {attempt}: {e}")
             continue
         except Exception as e:
             last_error = e
@@ -1058,22 +1209,26 @@ animation that starts from exactly this image. Change ONLY the bear's pose (and 
 is directly holding or moving), keeping the motion small and his face, proportions, line
 work and colors exactly as drawn. Everything else in the image must stay pixel-for-pixel
 identical: composition, framing, colors, style, other figures, background."""
-        print(f"Generating GIF keyframe {index + 1}/{GIF_KEYFRAMES}...")
-        source.seek(0)
-        result = client.images.edit(
-            model=image_model,
-            image=("keyframe.png", source, "image/png"),
-            prompt=prompt,
-            size=DEFAULT_OUTPUT_SIZE,
-            quality=GIF_FRAME_QUALITY,
-            output_format="png",
-            input_fidelity=GIF_INPUT_FIDELITY,
-        )
-        if not result.data or not result.data[0].b64_json:
-            raise RuntimeError(f"No image data returned for keyframe {index + 1}")
-        frame = normalize_for_jpeg(decode_b64_image_to_pil(result.data[0].b64_json))
-        frame = frame.resize(frames[0].size, Image.LANCZOS)
-        frames.append(lock_background(frames[0], frame))
+        # The model sometimes hands the still back unchanged; try once more before
+        # settling for a frame without motion.
+        for attempt in range(2):
+            print(f"Generating GIF keyframe {index + 1}/{GIF_KEYFRAMES}...")
+            frame = edit_image(
+                client,
+                image_model,
+                source.getvalue(),
+                "image/png",
+                prompt,
+                quality=GIF_FRAME_QUALITY,
+                input_fidelity=GIF_INPUT_FIDELITY,
+                output_format="png",
+            )
+            frame = normalize_for_jpeg(frame)
+            frame = frame.resize(frames[0].size, Image.LANCZOS)
+            locked = lock_background(frames[0], frame)
+            if locked is not frames[0]:
+                break
+        frames.append(locked)
 
     if DEFAULT_GIF_WIDTH < frames[0].width:
         height = round(frames[0].height * DEFAULT_GIF_WIDTH / frames[0].width)
@@ -1102,20 +1257,29 @@ def lock_background(still: Image.Image, frame: Image.Image) -> Image.Image:
     drifts and softens from frame to frame. Pasting the new pose onto the original
     still keeps everything else sharp and steady.
     """
-    # Work on a small copy of the difference: it removes regeneration noise and keeps
-    # the filters cheap. Upscaling the mask afterwards feathers its edge.
-    small = (still.width // 8, still.height // 8)
-    diff = ImageChops.difference(still, frame).convert("L").resize(small, Image.BOX)
-    moved = diff.point(lambda v: 255 if v > GIF_MOTION_THRESHOLD else 0)
-    moved = moved.filter(ImageFilter.MinFilter(3))  # drop isolated noise
+    # Mark pixels that changed strongly (after a slight blur, so redraw grain doesn't
+    # count), then mark each 16px block where at least 5% of pixels did. Counting
+    # strong pixels instead of averaging the difference keeps thin moved objects,
+    # such as a stick the bear picked up, whose old position must also be covered.
+    # Upscaling the mask afterwards feathers its edge.
+    small = (still.width // 16, still.height // 16)
+    diff = ImageChops.difference(
+        still.filter(ImageFilter.GaussianBlur(1)), frame.filter(ImageFilter.GaussianBlur(1))
+    ).convert("L")
+    strong = diff.point(lambda v: 255 if v > GIF_MOTION_THRESHOLD else 0)
+    moved = strong.resize(small, Image.BOX).point(lambda v: 255 if v > 13 else 0)
+    # Drop isolated blocks: keep a block only if another block next to it also changed.
+    # (Eroding instead would also drop thin objects, leaving e.g. the old stick behind.)
+    neighbours = moved.filter(ImageFilter.Kernel((3, 3), [1] * 9, scale=9))
+    moved = ImageChops.multiply(moved, neighbours.point(lambda v: 255 if v > 50 else 0))
     bbox = moved.getbbox()
     if bbox is None:
-        print("Keyframe: no visible motion; reusing the still")
+        print("Keyframe: no visible motion")
         return still
 
     # Paste one whole padded box around everything that moved. A mask shaped to the
     # changed pixels misses parts of a moving head and leaves a ghost of the old one.
-    pad = max(small) // 12
+    pad = max(2, max(small) // 12)
     left, top, right, bottom = bbox
     box = (
         max(0, left - pad),

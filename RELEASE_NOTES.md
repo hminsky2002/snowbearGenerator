@@ -1,5 +1,55 @@
 # Release Notes
 
+## 2026-11-05: Gemini as an image provider, cheaper runs, sharper GIFs
+
+### New: draw the bear with Gemini
+
+`ICEBEAR_IMAGE_PROVIDER=gemini` draws the bear (the daily still and the GIF
+keyframes) with Google's Gemini 3.1 Flash Image instead of OpenAI. In a
+three-artwork comparison it drew Ice Bear's face as well as OpenAI or better,
+and it kept the original composition and text intact. It blended into painted
+styles a little less than OpenAI. It costs about $0.07 per image against about
+$0.20 for OpenAI at high quality, and takes about 10 s instead of 30 s. Text
+calls (search, verification, blurb, GIF motion) still use OpenAI.
+
+| Setting | Default | Meaning |
+| --- | --- | --- |
+| `ICEBEAR_IMAGE_PROVIDER` | `openai` | `openai` or `gemini`. |
+| `GEMINI_IMAGE_MODEL` | `gemini-3.1-flash-image` | Gemini model used when the provider is `gemini`. |
+| `GEMINI_API_KEY` | none | Gemini API key, billed through AI Studio. |
+| `GEMINI_VERTEX_PROJECT` | none | If set, call Gemini through Vertex AI with Application Default Credentials (`gcloud auth application-default login`), billed to this Google Cloud project. It takes priority over `GEMINI_API_KEY`. |
+| `GEMINI_VERTEX_LOCATION` | `global` | Vertex AI location. |
+| `GEMINI_ASPECT_RATIO` | `1:1` | Output aspect ratio. |
+
+Vertex AI often answers HTTP 429 when its shared capacity is busy. Gemini calls
+wait and retry (15 s, 45 s, 90 s) on 429 and temporary server errors.
+
+### Cost changes
+
+- Text calls use `gpt-5.4-mini` at low reasoning effort (`OPENAI_TEXT_MODEL`,
+  `OPENAI_REASONING_EFFORT`). The image check sends its picture at low detail.
+- Reference images are found with Google Image search first. OpenAI web search
+  is only the fallback. Each source gets 3 rejected candidates before giving up
+  (`OPENAI_IMAGE_VERIFY_TRIES`).
+- Artworks with no findable reference image are listed in
+  `failed_artworks.json` and skipped by later runs. Delete an entry to retry it.
+- The OpenAI still stays at `high` quality and `high` input fidelity. `medium`
+  was tried and lost the bear's nose and mouth detail.
+
+### GIFs
+
+- Full 1024px resolution (`ICEBEAR_GIF_WIDTH`, was 480), and keyframes at high
+  quality.
+- Every keyframe is edited from the still, not the previous keyframe, so the
+  bear doesn't degrade from frame to frame.
+- Only a padded, feathered box around what moved is pasted onto the still, so
+  the rest of the scene stays sharp and identical. Motion is measured as the
+  share of strongly changed pixels per 16px block
+  (`ICEBEAR_GIF_MOTION_THRESHOLD`, default 60), which also catches thin objects
+  such as a stick that moved.
+- A keyframe that comes back without visible motion is generated once more.
+- All frames share one 256-colour palette, so colours don't flicker.
+
 ## `91f582d` (2026-11-02): Animated Ice Bear GIFs
 
 ### New: `--gif` flag
