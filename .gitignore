@@ -4,3 +4,4 @@ media
 search_images
 __pycache__
 .last_gif_run
+failed_artworks.json

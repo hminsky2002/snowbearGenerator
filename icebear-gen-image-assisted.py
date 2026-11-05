@@ -30,16 +30,23 @@ from google_custom_search_image_downloader import (
 
 DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
 #DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
-DEFAULT_TEXT_MODEL = os.getenv("OPENAI_TEXT_MODEL", "gpt-5.4")
+# The text model only verifies images, writes a short blurb and scripts the GIF
+# motion, so a mini model at low reasoning effort is plenty and far cheaper.
+DEFAULT_TEXT_MODEL = os.getenv("OPENAI_TEXT_MODEL", "gpt-5.4-mini")
+TEXT_REASONING_EFFORT = os.getenv("OPENAI_REASONING_EFFORT", "low")
 DEFAULT_OUTPUT_SIZE = os.getenv("OPENAI_IMAGE_SIZE", "1024x1024")
-DEFAULT_OUTPUT_QUALITY = os.getenv("OPENAI_IMAGE_QUALITY", "high")
+DEFAULT_OUTPUT_QUALITY = os.getenv("OPENAI_IMAGE_QUALITY", "medium")
 DEFAULT_OUTPUT_FORMAT = os.getenv("OPENAI_IMAGE_FORMAT", "jpeg")
 DEFAULT_OUTPUT_COMPRESSION = int(os.getenv("OPENAI_IMAGE_COMPRESSION", "90"))
-DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "high")
+DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "low")
 DEFAULT_MAX_ATTEMPTS = int(os.getenv("OPENAI_IMAGE_MAX_ATTEMPTS", "4"))
 DEFAULT_GIF_SECONDS = float(os.getenv("ICEBEAR_GIF_SECONDS", "3"))
 DEFAULT_GIF_WIDTH = int(os.getenv("ICEBEAR_GIF_WIDTH", "480"))
 GIF_KEYFRAMES = int(os.getenv("ICEBEAR_GIF_KEYFRAMES", "4"))
+# GIF frames are shrunk to DEFAULT_GIF_WIDTH, so low quality loses nothing visible.
+# Keyframes keep high input fidelity so the scene stays the same between frames.
+GIF_FRAME_QUALITY = os.getenv("ICEBEAR_GIF_QUALITY", "low")
+GIF_INPUT_FIDELITY = os.getenv("ICEBEAR_GIF_INPUT_FIDELITY", "high")
 
 MEDIA_ROOT = Path("./media")
 MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
@@ -48,7 +55,10 @@ ARTWORKS_JSON = Path("./artworks.json")
 DIRECT_INPUT_DIR = MEDIA_DIR / "direct_inputs"
 MAX_REFERENCE_DOWNLOADS = 3
 MAX_ARTWORK_TRIES = 10
-MAX_IMAGE_VERIFY_TRIES = int(os.getenv("OPENAI_IMAGE_VERIFY_TRIES", "10"))
+MAX_IMAGE_VERIFY_TRIES = int(os.getenv("OPENAI_IMAGE_VERIFY_TRIES", "3"))
+# Artworks for which no reference image could be found; later runs skip them
+# instead of paying to search for them again.
+FAILED_ARTWORKS_JSON = Path("./failed_artworks.json")
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -200,6 +210,42 @@ def load_artworks() -> list[Artwork]:
     with ARTWORKS_JSON.open("r", encoding="utf-8") as f:
         raw = json.load(f)
     return [Artwork.from_dict(item) for item in raw]
+
+
+def _read_failed_entries() -> list[dict[str, Any]]:
+    try:
+        with FAILED_ARTWORKS_JSON.open("r", encoding="utf-8") as f:
+            entries = json.load(f)
+    except FileNotFoundError:
+        return []
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"Ignoring unreadable {FAILED_ARTWORKS_JSON}: {e}")
+        return []
+    return [e for e in entries if isinstance(e, dict) and "title" in e and "artist" in e]
+
+
+def load_failed_artworks() -> set[tuple[str, str]]:
+    return {(e["title"], e["artist"]) for e in _read_failed_entries()}
+
+
+def record_failed_artwork(artwork: Artwork, reason: str) -> None:
+    """Remember an artwork with no findable reference image, so it is not searched again.
+
+    Delete its entry from the file to make it eligible again.
+    """
+    entries = _read_failed_entries()
+    if any(e["title"] == artwork.title and e["artist"] == artwork.artist for e in entries):
+        return
+    entries.append(
+        {
+            "title": artwork.title,
+            "artist": artwork.artist,
+            "reason": reason,
+            "date": datetime.today().strftime("%Y-%m-%d"),
+        }
+    )
+    with FAILED_ARTWORKS_JSON.open("w", encoding="utf-8") as f:
+        json.dump(entries, f, indent=2, ensure_ascii=False)
 
 
 def pick_artwork(
@@ -419,6 +465,7 @@ def _create_artwork_image_search(
         try:
             return client.responses.create(
                 model=text_model,
+                reasoning={"effort": TEXT_REASONING_EFFORT},
                 input=prompt,
                 **extra,
             )
@@ -597,12 +644,13 @@ Return JSON only, with no markdown:
     try:
         response = client.responses.create(
             model=text_model,
+            reasoning={"effort": TEXT_REASONING_EFFORT},
             input=[
                 {
                     "role": "user",
                     "content": [
                         {"type": "input_text", "text": prompt},
-                        {"type": "input_image", "image_url": data_url},
+                        {"type": "input_image", "image_url": data_url, "detail": "low"},
                     ],
                 }
             ],
@@ -754,43 +802,44 @@ def get_source_images(
             raise FileNotFoundError(f"No files found in source dir: {source_dir_path}")
         return files
 
-    budget = MAX_IMAGE_VERIFY_TRIES
+    # Google image search first: it is nearly free, while an OpenAI web search is
+    # billed per call plus the search results as input tokens. Each source gets
+    # its own verification budget.
+    google_rejected = 0
     try:
-        urls = find_artwork_image_urls(client, text_model, artwork)
-    except LowConfidenceImageMatch as e:
-        print(
-            f"ChatGPT could not confidently find an image "
-            f"({e.reason}); falling back to Google image search"
-        )
+        urls = find_artwork_image_urls_via_google(artwork)
+    except Exception as e:
+        print(f"Google image search failed ({e}); falling back to ChatGPT web search")
     else:
-        images, rejected = download_reference_images(
-            artwork, urls, "ChatGPT-selected", client, text_model, budget
+        images, google_rejected = download_reference_images(
+            artwork, urls, "Google-selected", client, text_model, MAX_IMAGE_VERIFY_TRIES
         )
         if images:
             return images
-        budget -= rejected
-        if rejected and budget <= 0:
-            raise LowConfidenceImageMatch(
-                artwork,
-                f"all {rejected} candidate image(s) were rejected by image verification",
-            )
         print(
-            "No ChatGPT-selected candidate passed image verification; "
-            "falling back to Google image search"
+            "No Google-selected candidate passed image verification; "
+            "falling back to ChatGPT web search"
         )
 
-    urls = find_artwork_image_urls_via_google(artwork)
-    images, rejected = download_reference_images(
-        artwork, urls, "Google-selected", client, text_model, budget
+    try:
+        urls = find_artwork_image_urls(client, text_model, artwork)
+    except LowConfidenceImageMatch as e:
+        raise LowConfidenceImageMatch(
+            artwork,
+            f"Google found no verified image and ChatGPT could not confidently find one "
+            f"({e.reason})",
+        ) from e
+
+    images, chatgpt_rejected = download_reference_images(
+        artwork, urls, "ChatGPT-selected", client, text_model, MAX_IMAGE_VERIFY_TRIES
     )
     if images:
         return images
 
-    total_rejected = (MAX_IMAGE_VERIFY_TRIES - budget) + rejected
     raise LowConfidenceImageMatch(
         artwork,
         f"no candidate image passed image verification "
-        f"({total_rejected} rejected across ChatGPT and Google results)",
+        f"({google_rejected + chatgpt_rejected} rejected across Google and ChatGPT results)",
     )
 
 
@@ -961,6 +1010,7 @@ Return only the description, no preamble."""
     try:
         response = client.responses.create(
             model=text_model,
+            reasoning={"effort": TEXT_REASONING_EFFORT},
             input=[
                 {
                     "role": "user",
@@ -1008,9 +1058,9 @@ pixel-for-pixel identical: composition, framing, colors, style, other figures, b
             image=("keyframe.png", previous, "image/png"),
             prompt=prompt,
             size=DEFAULT_OUTPUT_SIZE,
-            quality=DEFAULT_OUTPUT_QUALITY,
+            quality=GIF_FRAME_QUALITY,
             output_format="png",
-            input_fidelity=DEFAULT_INPUT_FIDELITY,
+            input_fidelity=GIF_INPUT_FIDELITY,
         )
         if not result.data or not result.data[0].b64_json:
             raise RuntimeError(f"No image data returned for keyframe {index + 1}")
@@ -1063,6 +1113,7 @@ def generate_blurb(client: OpenAI, text_model: str, artwork: Artwork) -> str:
 
     response = client.responses.create(
         model=text_model,
+        reasoning={"effort": TEXT_REASONING_EFFORT},
         input=prompt,
     )
 
@@ -1152,10 +1203,13 @@ def main() -> int:
     last_error: Exception | None = None
     tried: set[tuple[str, str]] = set()
     max_tries = 1 if args.artwork or args.image_source or args.sourcedir else MAX_ARTWORK_TRIES
+    failed = load_failed_artworks()
+    if failed:
+        print(f"Skipping {len(failed)} artwork(s) with no findable image ({FAILED_ARTWORKS_JSON})")
 
     for attempt in range(1, max_tries + 1):
         try:
-            artwork = pick_artwork(args, artworks, exclude=tried)
+            artwork = pick_artwork(args, artworks, exclude=tried | failed)
         except RuntimeError as e:
             last_error = e
             print(f"No more unused artworks to try: {e}")
@@ -1178,6 +1232,8 @@ def main() -> int:
         except LowConfidenceImageMatch as e:
             last_error = e
             print(f"Skipping artwork (low confidence): {e}")
+            if not args.artwork:
+                record_failed_artwork(artwork, e.reason)
 
     if artwork is None or source_images is None:
         raise RuntimeError(
