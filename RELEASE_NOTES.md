@@ -19,6 +19,7 @@ calls (search, verification, blurb, GIF motion) still use OpenAI.
 | `GEMINI_API_KEY` | none | Gemini API key, billed through AI Studio. |
 | `GEMINI_VERTEX_PROJECT` | none | If set, call Gemini through Vertex AI with Application Default Credentials (`gcloud auth application-default login`), billed to this Google Cloud project. It takes priority over `GEMINI_API_KEY`. |
 | `GEMINI_VERTEX_LOCATION` | `global` | Vertex AI location. |
+| `GCLOUD_PATH` | found automatically | Full path to `gcloud`, if cron can't find it on its PATH or in the usual install locations. |
 | `GEMINI_ASPECT_RATIO` | `1:1` | Output aspect ratio. |
 
 Vertex AI often answers HTTP 429 when its shared capacity is busy. Gemini calls

@@ -1025,8 +1025,18 @@ def _gemini_request_target(model: str) -> tuple[str, dict[str, str]]:
 
 
 def _gcloud_access_token() -> str:
-    # cron runs with a short PATH, so also look in the default SDK install location.
-    candidates = [shutil.which("gcloud"), str(Path.home() / "google-cloud-sdk/bin/gcloud")]
+    # cron runs with a short PATH, so also look in the usual install locations
+    # (macOS SDK, Homebrew, Debian/Ubuntu packages, snap). GCLOUD_PATH overrides.
+    candidates = [
+        os.getenv("GCLOUD_PATH"),
+        shutil.which("gcloud"),
+        str(Path.home() / "google-cloud-sdk/bin/gcloud"),
+        "/opt/homebrew/bin/gcloud",
+        "/usr/local/bin/gcloud",
+        "/usr/bin/gcloud",
+        "/snap/bin/gcloud",
+        "/usr/lib/google-cloud-sdk/bin/gcloud",
+    ]
     gcloud = next((c for c in candidates if c and Path(c).exists()), None)
     if not gcloud:
         raise RuntimeError("GEMINI_VERTEX_PROJECT is set but the gcloud command was not found")
