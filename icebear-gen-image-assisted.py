@@ -20,7 +20,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 from dotenv import load_dotenv
 from openai import BadRequestError, OpenAI
-from PIL import Image
+from PIL import Image, ImageChops, ImageFilter
 
 from google_custom_search_image_downloader import (
     google_search_api_call,
@@ -41,12 +41,13 @@ DEFAULT_OUTPUT_COMPRESSION = int(os.getenv("OPENAI_IMAGE_COMPRESSION", "90"))
 DEFAULT_INPUT_FIDELITY = os.getenv("OPENAI_INPUT_FIDELITY", "low")
 DEFAULT_MAX_ATTEMPTS = int(os.getenv("OPENAI_IMAGE_MAX_ATTEMPTS", "4"))
 DEFAULT_GIF_SECONDS = float(os.getenv("ICEBEAR_GIF_SECONDS", "3"))
-DEFAULT_GIF_WIDTH = int(os.getenv("ICEBEAR_GIF_WIDTH", "480"))
+DEFAULT_GIF_WIDTH = int(os.getenv("ICEBEAR_GIF_WIDTH", "1024"))
 GIF_KEYFRAMES = int(os.getenv("ICEBEAR_GIF_KEYFRAMES", "4"))
-# GIF frames are shrunk to DEFAULT_GIF_WIDTH, so low quality loses nothing visible.
-# Keyframes keep high input fidelity so the scene stays the same between frames.
-GIF_FRAME_QUALITY = os.getenv("ICEBEAR_GIF_QUALITY", "low")
+GIF_FRAME_QUALITY = os.getenv("ICEBEAR_GIF_QUALITY", "high")
 GIF_INPUT_FIDELITY = os.getenv("ICEBEAR_GIF_INPUT_FIDELITY", "high")
+# How much a pixel (0-255, after averaging) must change between the still and a
+# keyframe to count as the bear moving rather than redraw noise.
+GIF_MOTION_THRESHOLD = int(os.getenv("ICEBEAR_GIF_MOTION_THRESHOLD", "28"))
 
 MEDIA_ROOT = Path("./media")
 MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
@@ -1041,21 +1042,25 @@ def generate_gif_from_frames(
     with Image.open(still_path) as still:
         frames = [normalize_for_jpeg(still).copy()]
 
+    # Every keyframe is edited from the sharp still, not from the previous keyframe:
+    # chaining edits redraws the bear again for each frame and he degrades a little
+    # more every time.
+    source = io.BytesIO()
+    frames[0].save(source, "PNG")
     for index in range(1, GIF_KEYFRAMES):
+        progress = round(100 * index / (GIF_KEYFRAMES - 1))
         prompt = f"""This image shows a cartoon polar bear (Ice Bear) in an artwork. {motion}
 
-Produce keyframe {index + 1} of {GIF_KEYFRAMES} of that motion: change ONLY the bear's pose
-(and anything he is directly holding or moving) to the next step of the motion, as a small
-incremental change from the previous keyframe. Everything else in the image must stay
-pixel-for-pixel identical: composition, framing, colors, style, other figures, background."""
+Show the bear {progress}% of the way through that motion, as one keyframe of a short
+animation that starts from exactly this image. Change ONLY the bear's pose (and anything he
+is directly holding or moving), keeping the motion small and his face, proportions, line
+work and colors exactly as drawn. Everything else in the image must stay pixel-for-pixel
+identical: composition, framing, colors, style, other figures, background."""
         print(f"Generating GIF keyframe {index + 1}/{GIF_KEYFRAMES}...")
-        # Edit from the previous keyframe so each pose advances from the last one.
-        previous = io.BytesIO()
-        frames[-1].save(previous, "PNG")
-        previous.seek(0)
+        source.seek(0)
         result = client.images.edit(
             model=image_model,
-            image=("keyframe.png", previous, "image/png"),
+            image=("keyframe.png", source, "image/png"),
             prompt=prompt,
             size=DEFAULT_OUTPUT_SIZE,
             quality=GIF_FRAME_QUALITY,
@@ -1065,23 +1070,85 @@ pixel-for-pixel identical: composition, framing, colors, style, other figures, b
         if not result.data or not result.data[0].b64_json:
             raise RuntimeError(f"No image data returned for keyframe {index + 1}")
         frame = normalize_for_jpeg(decode_b64_image_to_pil(result.data[0].b64_json))
-        frames.append(frame.resize(frames[0].size))
+        frame = frame.resize(frames[0].size, Image.LANCZOS)
+        frames.append(lock_background(frames[0], frame))
+
+    if DEFAULT_GIF_WIDTH < frames[0].width:
+        height = round(frames[0].height * DEFAULT_GIF_WIDTH / frames[0].width)
+        frames = [frame.resize((DEFAULT_GIF_WIDTH, height), Image.LANCZOS) for frame in frames]
+    keyframes = quantize_with_shared_palette(frames)
 
     # Ping-pong so the loop has no jump back to the first pose.
-    sequence = frames + frames[-2:0:-1]
+    sequence = keyframes + keyframes[-2:0:-1]
     duration_ms = max(80, int(seconds * 1000 / len(sequence)))
-    height = round(frames[0].height * DEFAULT_GIF_WIDTH / frames[0].width)
-    scaled = [frame.resize((DEFAULT_GIF_WIDTH, height), Image.LANCZOS) for frame in sequence]
-    scaled[0].save(
+    sequence[0].save(
         gif_path,
         "GIF",
         save_all=True,
-        append_images=scaled[1:],
+        append_images=sequence[1:],
         duration=duration_ms,
         loop=0,
-        optimize=True,
+        optimize=False,  # keep the shared palette as built
     )
     return gif_path
+
+
+def lock_background(still: Image.Image, frame: Image.Image) -> Image.Image:
+    """Keep the generated frame only where the bear moved; elsewhere use the still.
+
+    The image model redraws the whole picture for every keyframe, so the background
+    drifts and softens from frame to frame. Pasting the new pose onto the original
+    still keeps everything else sharp and steady.
+    """
+    # Work on a small copy of the difference: it removes regeneration noise and keeps
+    # the filters cheap. Upscaling the mask afterwards feathers its edge.
+    small = (still.width // 8, still.height // 8)
+    diff = ImageChops.difference(still, frame).convert("L").resize(small, Image.BOX)
+    moved = diff.point(lambda v: 255 if v > GIF_MOTION_THRESHOLD else 0)
+    moved = moved.filter(ImageFilter.MinFilter(3))  # drop isolated noise
+    bbox = moved.getbbox()
+    if bbox is None:
+        print("Keyframe: no visible motion; reusing the still")
+        return still
+
+    # Paste one whole padded box around everything that moved. A mask shaped to the
+    # changed pixels misses parts of a moving head and leaves a ghost of the old one.
+    pad = max(small) // 12
+    left, top, right, bottom = bbox
+    box = (
+        max(0, left - pad),
+        max(0, top - pad),
+        min(small[0], right + pad),
+        min(small[1], bottom + pad),
+    )
+    coverage = (box[2] - box[0]) * (box[3] - box[1]) / (small[0] * small[1])
+    if coverage > 0.6:
+        # The model moved the whole scene; a patch would show a seam, so keep it all.
+        print(f"Keyframe differs over {coverage:.0%} of the image; using it whole")
+        return frame
+    print(f"Keyframe: keeping the new pose over {coverage:.0%} of the image")
+
+    mask = Image.new("L", small, 0)
+    mask.paste(255, box)
+    mask = mask.filter(ImageFilter.GaussianBlur(pad / 3)).resize(still.size, Image.BILINEAR)
+    return Image.composite(frame, still, mask)
+
+
+def quantize_with_shared_palette(frames: list[Image.Image]) -> list[Image.Image]:
+    """Reduce every frame to one 256-colour palette built from all of them.
+
+    A palette per frame makes colours flicker between frames; a shared one keeps the
+    still parts of the scene identical.
+    """
+    width, height = frames[0].size
+    strip = Image.new("RGB", (width, height * len(frames)))
+    for index, frame in enumerate(frames):
+        strip.paste(frame, (0, height * index))
+    palette = strip.quantize(colors=256, method=Image.Quantize.MEDIANCUT)
+    return [
+        frame.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG)
+        for frame in frames
+    ]
 
 
 def generate_gif(
