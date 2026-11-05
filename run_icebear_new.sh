@@ -12,7 +12,7 @@ set +a
 # Add --gif once every 7 days. The time of the last successful GIF run is kept
 # in a stamp file, so a missed or failed run makes the GIF on the next one.
 GIF_STAMP=.last_gif_run
-GIF_INTERVAL_DAYS=7
+GIF_INTERVAL_DAYS=30
 now=$(date +%s)
 last=$(cat "$GIF_STAMP" 2>/dev/null || echo 0)
 # Round to whole days so a run a few minutes earlier than last week's still counts.
