@@ -37,8 +37,10 @@ from google_custom_search_image_downloader import (
 IMAGE_PROVIDER = os.getenv("ICEBEAR_IMAGE_PROVIDER", "openai").strip().lower()
 if IMAGE_PROVIDER not in {"openai", "gemini"}:
     raise SystemExit(f"ICEBEAR_IMAGE_PROVIDER must be 'openai' or 'gemini', got {IMAGE_PROVIDER!r}")
+
+# previously "gemini-3.1-flash-image"
 if IMAGE_PROVIDER == "gemini":
-    DEFAULT_IMAGE_MODEL = os.getenv("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image")
+    DEFAULT_IMAGE_MODEL = os.getenv("GEMINI_IMAGE_MODEL", "gemini-3-pro-image")
 else:
     DEFAULT_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
 GEMINI_ASPECT_RATIO = os.getenv("GEMINI_ASPECT_RATIO", "1:1")
@@ -876,7 +878,10 @@ style that it appears as if it were always part of the scene.
 Importantly, make the polar bear appearance very very closely inspired by Ice Bear drawing style, keeping the unique cartoon aspects are important,
 do not deviate except as to add clothing or pose, but the rendering should closely adhere to your impressions of Ice Bear
 as seen from the cartoon. Preserving and following the Ice Bear cartoon style is essential. Shape of body and head, proportions, expressions, size and placement
-of eyes, ears, nose and mouth, are key. Proportion of paws and body etc should all adhere to known examples of Ice Bear images.
+of eyes, ears, nose and mouth, are key. Proportion of paws and body etc should all adhere to known examples of Ice Bear images. However, given that goal
+    it is equally important that the modifications blend in as well as possible to the style of the artwork. For example. if the artwork
+    is an etching, the bear should be drawn with same style. Likewise if the artwork were, say, a technical drawing, the bear would be
+    drawn as part of that technical drawing, with same pen strokes as if done by the original artwork's artist creator.
 
 Make the **smallest possible changes** to the image — keep all original details, composition, 
 and elements intact unless absolutely necessary to integrate the bear. Match lighting, 
@@ -892,7 +897,7 @@ The bear should reflect Ice Bear’s stoic demeanor and interact naturally with 
 and ongoing activities. If other “We Bare Bears” characters are included, ensure Ice Bear 
 remains the focus.
 
-If the artwork contains visible text, make at most one **subtle** bear-related word change 
+If the artwork contains visible text, make at most one or two **subtle** bear-related word change 
 (e.g., modifying a name or single word) without disrupting the text’s original tone or meaning.
 
 If the artwork contains sillhouettes of people, make them into silhouettes of ice bears. 
@@ -972,6 +977,7 @@ def edit_image(
     `quality`, `input_fidelity` and `output_format` only apply to OpenAI; Gemini
     has no equivalent settings.
     """
+    print(f"IMAGE_PROVIDER = {IMAGE_PROVIDER}, model={image_model}")
     if IMAGE_PROVIDER == "gemini":
         return gemini_edit_image(image_model, image_bytes, mime_type, prompt)
 

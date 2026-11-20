@@ -25,7 +25,7 @@ if [ "$days_since" -ge "$GIF_INTERVAL_DAYS" ]; then
 fi
 
 # Run the script
-python icebear-gen-image-assisted.py --env .env $gif_flag
+python icebear-gen-image-chatgpt-pick.py --env .env $gif_flag
 status=$?
 
 if [ -n "$gif_flag" ] && [ "$status" -eq 0 ]; then
