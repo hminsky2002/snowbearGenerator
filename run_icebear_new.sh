@@ -28,6 +28,8 @@ fi
 python icebear-gen-image-chatgpt-pick.py --env .env $gif_flag
 status=$?
 
+# The generator exits 3 when it sent the still but the GIF failed, so the stamp
+# is only written when the GIF really was made.
 if [ -n "$gif_flag" ] && [ "$status" -eq 0 ]; then
     echo "$now" > "$GIF_STAMP"
 fi

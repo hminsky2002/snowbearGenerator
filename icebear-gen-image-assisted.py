@@ -64,6 +64,8 @@ GIF_INPUT_FIDELITY = os.getenv("ICEBEAR_GIF_INPUT_FIDELITY", "high")
 # How much a pixel (0-255, after a slight blur) must change between the still and a
 # keyframe to count as the bear moving rather than redraw noise.
 GIF_MOTION_THRESHOLD = int(os.getenv("ICEBEAR_GIF_MOTION_THRESHOLD", "60"))
+# Exit status when --gif was asked for but only the still was sent.
+EXIT_GIF_FAILED = 3
 
 MEDIA_ROOT = Path("./media")
 MEDIA_DIR = MEDIA_ROOT / f"pid-{os.getpid()}"
@@ -1533,6 +1535,10 @@ def main() -> int:
         gif_path=gif_path,
     )
 
+    # The email went out either way, but tell the caller (run_icebear_new.sh)
+    # that the GIF it asked for is missing, so it retries the GIF next run.
+    if args.gif and gif_path is None:
+        return EXIT_GIF_FAILED
     return 0
 
 
